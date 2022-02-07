@@ -5,7 +5,8 @@
   "workspaces": [
     "loaders/*",
     "assets/*",
-    "theme/*"
+    "theme/*",
+    "utils/*"
   ],
   "devDependencies": {
     "@atls/code-service": "^0.0.10",

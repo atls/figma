@@ -85,12 +85,42 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@atls/figma-theme-font-sizes-generator@workspace:0.0.1, @atls/figma-theme-font-sizes-generator@workspace:theme/theme-font-sizes-generator":
+  version: 0.0.0-use.local
+  resolution: "@atls/figma-theme-font-sizes-generator@workspace:theme/theme-font-sizes-generator"
+  dependencies:
+    "@atls/figma-theme-generator-common": "workspace:0.0.1"
+    "@atls/figma-utils": "workspace:0.0.1"
+    "@types/node": 17.0.15
+    figma-js: ^1.14.0
+  languageName: unknown
+  linkType: soft
+
+"@atls/figma-theme-generator-common@workspace:0.0.1, @atls/figma-theme-generator-common@workspace:theme/theme-generator-common":
+  version: 0.0.0-use.local
+  resolution: "@atls/figma-theme-generator-common@workspace:theme/theme-generator-common"
+  dependencies:
+    "@types/node": 17.0.15
+    figma-js: ^1.14.0
+  languageName: unknown
+  linkType: soft
+
 "@atls/figma-theme@workspace:theme/theme":
   version: 0.0.0-use.local
   resolution: "@atls/figma-theme@workspace:theme/theme"
   dependencies:
+    "@atls/figma-theme-font-sizes-generator": "workspace:0.0.1"
     "@types/node": 17.0.15
     prettier: ^2.5.1
+  languageName: unknown
+  linkType: soft
+
+"@atls/figma-utils@workspace:0.0.1, @atls/figma-utils@workspace:utils/utils":
+  version: 0.0.0-use.local
+  resolution: "@atls/figma-utils@workspace:utils/utils"
+  dependencies:
+    "@types/node": 17.0.15
+    figma-js: ^1.14.0
   languageName: unknown
   linkType: soft
 

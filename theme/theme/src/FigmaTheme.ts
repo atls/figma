@@ -2,9 +2,10 @@ import path from 'path'
 import prettier from 'prettier'
 import { promises as fs } from 'fs'
 import { FileResponse } from 'figma-js'
+import { FigmaThemeFontSizesGenerator } from '@atls/figma-theme-font-sizes-generator'
 
 const generators = [
-
+  FigmaThemeFontSizesGenerator
 ]
 
 export class FigmaTheme {

@@ -39,6 +39,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "@atls/figma-theme-cli",
         "reference": "workspace:theme/theme-cli"
+      },
+      {
+        "name": "@atls/figma-theme-font-sizes-generator",
+        "reference": "workspace:theme/theme-font-sizes-generator"
+      },
+      {
+        "name": "@atls/figma-theme-generator-common",
+        "reference": "workspace:theme/theme-generator-common"
+      },
+      {
+        "name": "@atls/figma-utils",
+        "reference": "workspace:utils/utils"
       }
     ],
     "enableTopLevelFallback": true,
@@ -49,6 +61,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@atls/figma-file-loader", ["workspace:loaders/file-loader"]],
       ["@atls/figma-theme", ["workspace:theme/theme"]],
       ["@atls/figma-theme-cli", ["workspace:theme/theme-cli"]],
+      ["@atls/figma-theme-font-sizes-generator", ["workspace:theme/theme-font-sizes-generator"]],
+      ["@atls/figma-theme-generator-common", ["workspace:theme/theme-generator-common"]],
+      ["@atls/figma-utils", ["workspace:utils/utils"]],
       ["figma", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -150,6 +165,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./theme/theme/",
           "packageDependencies": [
             ["@atls/figma-theme", "workspace:theme/theme"],
+            ["@atls/figma-theme-font-sizes-generator", "workspace:theme/theme-font-sizes-generator"],
             ["@types/node", "npm:17.0.15"],
             ["prettier", "npm:2.5.1"]
           ],
@@ -167,6 +183,41 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["commander", "npm:9.0.0"],
             ["figma-js", "npm:1.14.0"],
             ["npmlog", "npm:6.0.0"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@atls/figma-theme-font-sizes-generator", [
+        ["workspace:theme/theme-font-sizes-generator", {
+          "packageLocation": "./theme/theme-font-sizes-generator/",
+          "packageDependencies": [
+            ["@atls/figma-theme-font-sizes-generator", "workspace:theme/theme-font-sizes-generator"],
+            ["@atls/figma-theme-generator-common", "workspace:theme/theme-generator-common"],
+            ["@atls/figma-utils", "workspace:utils/utils"],
+            ["@types/node", "npm:17.0.15"],
+            ["figma-js", "npm:1.14.0"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@atls/figma-theme-generator-common", [
+        ["workspace:theme/theme-generator-common", {
+          "packageLocation": "./theme/theme-generator-common/",
+          "packageDependencies": [
+            ["@atls/figma-theme-generator-common", "workspace:theme/theme-generator-common"],
+            ["@types/node", "npm:17.0.15"],
+            ["figma-js", "npm:1.14.0"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@atls/figma-utils", [
+        ["workspace:utils/utils", {
+          "packageLocation": "./utils/utils/",
+          "packageDependencies": [
+            ["@atls/figma-utils", "workspace:utils/utils"],
+            ["@types/node", "npm:17.0.15"],
+            ["figma-js", "npm:1.14.0"]
           ],
           "linkType": "SOFT",
         }]

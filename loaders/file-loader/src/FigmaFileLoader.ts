@@ -1,4 +1,3 @@
-import path from 'path'
 import { Client, ClientInterface, FileResponse, Node } from 'figma-js'
 
 export class FigmaFileLoader {
