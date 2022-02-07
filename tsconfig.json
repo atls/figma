@@ -26,6 +26,7 @@
   },
   "include": [
     "loaders/**/*",
-    "assets/**/*"
+    "assets/**/*",
+    "theme/**/*"
   ]
 }
