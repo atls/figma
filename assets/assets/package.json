@@ -1,5 +1,5 @@
 {
-  "name": "@atls/figma-file-loader",
+  "name": "@atls/figma-assets",
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
@@ -15,6 +15,11 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
-    "figma-js": "^1.14.0"
+    "@atls/figma-file-loader": "workspace:0.0.1",
+    "fs-extra": "^8.0.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "10.12.25"
   }
 }

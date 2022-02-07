@@ -3,7 +3,8 @@
   "private": true,
   "license": "BSD-3-Clause",
   "workspaces": [
-    "loaders/*"
+    "loaders/*",
+    "assets/*"
   ],
   "devDependencies": {
     "@atls/code-service": "^0.0.10"

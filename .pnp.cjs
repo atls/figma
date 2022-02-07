@@ -21,14 +21,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."
       },
       {
-        "name": "@torin-asakura/figma-file-loader",
+        "name": "@atls/figma-assets",
+        "reference": "workspace:assets/assets"
+      },
+      {
+        "name": "@atls/figma-file-loader",
         "reference": "workspace:loaders/file-loader"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$)",
     "fallbackExclusionList": [
-      ["@torin-asakura/figma-file-loader", ["workspace:loaders/file-loader"]],
+      ["@atls/figma-assets", ["workspace:assets/assets"]],
+      ["@atls/figma-file-loader", ["workspace:loaders/file-loader"]],
       ["figma", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -80,6 +85,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@atls/config-typescript", "npm:0.0.1"]
           ],
           "linkType": "HARD",
+        }]
+      ]],
+      ["@atls/figma-assets", [
+        ["workspace:assets/assets", {
+          "packageLocation": "./assets/assets/",
+          "packageDependencies": [
+            ["@atls/figma-assets", "workspace:assets/assets"],
+            ["@atls/figma-file-loader", "workspace:loaders/file-loader"],
+            ["@types/node", "npm:10.12.25"],
+            ["fs-extra", "npm:8.1.0"],
+            ["node-fetch", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#npm:2.6.7"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@atls/figma-file-loader", [
+        ["workspace:loaders/file-loader", {
+          "packageLocation": "./loaders/file-loader/",
+          "packageDependencies": [
+            ["@atls/figma-file-loader", "workspace:loaders/file-loader"],
+            ["figma-js", "npm:1.14.0"]
+          ],
+          "linkType": "SOFT",
         }]
       ]],
       ["@atls/webpack-proto-imports-loader", [
@@ -181,16 +209,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["@torin-asakura/figma-file-loader", [
-        ["workspace:loaders/file-loader", {
-          "packageLocation": "./loaders/file-loader/",
-          "packageDependencies": [
-            ["@torin-asakura/figma-file-loader", "workspace:loaders/file-loader"],
-            ["figma-js", "npm:1.14.0"]
-          ],
-          "linkType": "SOFT",
-        }]
-      ]],
       ["@types/cacheable-request", [
         ["npm:6.0.2", {
           "packageLocation": "./.yarn/cache/@types-cacheable-request-npm-6.0.2-894b6992d5-667d25808d.zip/node_modules/@types/cacheable-request/",
@@ -282,6 +300,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/node", [
+        ["npm:10.12.25", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-10.12.25-85edcad3a2-b40f3e3c73.zip/node_modules/@types/node/",
+          "packageDependencies": [
+            ["@types/node", "npm:10.12.25"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:13.13.52", {
           "packageLocation": "./.yarn/cache/@types-node-npm-13.13.52-95159539bb-8f1afff497.zip/node_modules/@types/node/",
           "packageDependencies": [
@@ -2014,6 +2039,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["fs-extra", [
+        ["npm:8.1.0", {
+          "packageLocation": "./.yarn/cache/fs-extra-npm-8.1.0-197473387f-bf44f0e6ce.zip/node_modules/fs-extra/",
+          "packageDependencies": [
+            ["fs-extra", "npm:8.1.0"],
+            ["graceful-fs", "npm:4.2.9"],
+            ["jsonfile", "npm:4.0.0"],
+            ["universalify", "npm:0.1.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["fs-minipass", [
         ["npm:2.1.0", {
           "packageLocation": "./.yarn/cache/fs-minipass-npm-2.1.0-501ef87306-1b8d128dae.zip/node_modules/fs-minipass/",
@@ -2380,6 +2417,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["jsonfile", [
+        ["npm:4.0.0", {
+          "packageLocation": "./.yarn/cache/jsonfile-npm-4.0.0-10ce3aea15-6447d6224f.zip/node_modules/jsonfile/",
+          "packageDependencies": [
+            ["jsonfile", "npm:4.0.0"],
+            ["graceful-fs", "npm:4.2.9"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["keyv", [
         ["npm:4.0.5", {
           "packageLocation": "./.yarn/cache/keyv-npm-4.0.5-9087738a8c-968ec062e6.zip/node_modules/keyv/",
@@ -2573,6 +2620,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/neo-async-npm-2.6.2-75d6902586-deac9f8d00.zip/node_modules/neo-async/",
           "packageDependencies": [
             ["neo-async", "npm:2.6.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["node-fetch", [
+        ["npm:2.6.7", {
+          "packageLocation": "./.yarn/cache/node-fetch-npm-2.6.7-777aa2a6df-8d816ffd1e.zip/node_modules/node-fetch/",
+          "packageDependencies": [
+            ["node-fetch", "npm:2.6.7"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#npm:2.6.7", {
+          "packageLocation": "./.yarn/__virtual__/node-fetch-virtual-9cf6e61833/0/cache/node-fetch-npm-2.6.7-777aa2a6df-8d816ffd1e.zip/node_modules/node-fetch/",
+          "packageDependencies": [
+            ["node-fetch", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#npm:2.6.7"],
+            ["@types/encoding", null],
+            ["encoding", null],
+            ["whatwg-url", "npm:5.0.0"]
+          ],
+          "packagePeers": [
+            "@types/encoding",
+            "encoding"
           ],
           "linkType": "HARD",
         }]
@@ -3368,6 +3438,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["tr46", [
+        ["npm:0.0.3", {
+          "packageLocation": "./.yarn/cache/tr46-npm-0.0.3-de53018915-726321c5ea.zip/node_modules/tr46/",
+          "packageDependencies": [
+            ["tr46", "npm:0.0.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["treeify", [
         ["npm:1.1.0", {
           "packageLocation": "./.yarn/cache/treeify-npm-1.1.0-abf9292333-aa00dded22.zip/node_modules/treeify/",
@@ -3443,6 +3522,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["universalify", [
+        ["npm:0.1.2", {
+          "packageLocation": "./.yarn/cache/universalify-npm-0.1.2-9b22d31d2d-40cdc60f6e.zip/node_modules/universalify/",
+          "packageDependencies": [
+            ["universalify", "npm:0.1.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["uri-js", [
         ["npm:4.4.1", {
           "packageLocation": "./.yarn/cache/uri-js-npm-4.4.1-66d11cbcaf-7167432de6.zip/node_modules/uri-js/",
@@ -3469,6 +3557,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["watchpack", "npm:2.3.1"],
             ["glob-to-regexp", "npm:0.4.1"],
             ["graceful-fs", "npm:4.2.9"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["webidl-conversions", [
+        ["npm:3.0.1", {
+          "packageLocation": "./.yarn/cache/webidl-conversions-npm-3.0.1-60310f6a2b-c92a0a6ab9.zip/node_modules/webidl-conversions/",
+          "packageDependencies": [
+            ["webidl-conversions", "npm:3.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -3535,6 +3632,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/webpack-sources-npm-3.2.3-6bfb5d9563-989e401b9f.zip/node_modules/webpack-sources/",
           "packageDependencies": [
             ["webpack-sources", "npm:3.2.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["whatwg-url", [
+        ["npm:5.0.0", {
+          "packageLocation": "./.yarn/cache/whatwg-url-npm-5.0.0-374fb45e60-b8daed4ad3.zip/node_modules/whatwg-url/",
+          "packageDependencies": [
+            ["whatwg-url", "npm:5.0.0"],
+            ["tr46", "npm:0.0.3"],
+            ["webidl-conversions", "npm:3.0.1"]
           ],
           "linkType": "HARD",
         }]
