@@ -1,5 +1,5 @@
 {
-  "name": "@atls/figma-utils",
+  "name": "@monstrs/figma-theme-colors-generator",
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
@@ -14,12 +14,12 @@
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },
+  "dependencies": {
+    "@atls/figma-utils": "workspace:0.0.1",
+    "color-namer": "^1.4.0"
+  },
   "devDependencies": {
     "@types/color-namer": "^1",
-    "@types/node": "17.0.15",
-    "figma-js": "^1.14.0"
-  },
-  "dependencies": {
-    "color-namer": "^1.4.0"
+    "@types/node": "17.0.15"
   }
 }

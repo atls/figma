@@ -41,6 +41,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:theme/theme-cli"
       },
       {
+        "name": "@monstrs/figma-theme-colors-generator",
+        "reference": "workspace:theme/theme-colors-generator"
+      },
+      {
         "name": "@atls/figma-theme-font-sizes-generator",
         "reference": "workspace:theme/theme-font-sizes-generator"
       },
@@ -64,6 +68,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@atls/figma-theme-font-sizes-generator", ["workspace:theme/theme-font-sizes-generator"]],
       ["@atls/figma-theme-generator-common", ["workspace:theme/theme-generator-common"]],
       ["@atls/figma-utils", ["workspace:utils/utils"]],
+      ["@monstrs/figma-theme-colors-generator", ["workspace:theme/theme-colors-generator"]],
       ["figma", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -216,7 +221,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./utils/utils/",
           "packageDependencies": [
             ["@atls/figma-utils", "workspace:utils/utils"],
+            ["@types/color-namer", "npm:1.3.0"],
             ["@types/node", "npm:17.0.15"],
+            ["color-namer", "npm:1.4.0"],
             ["figma-js", "npm:1.14.0"]
           ],
           "linkType": "SOFT",
@@ -310,6 +317,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@monstrs/figma-theme-colors-generator", [
+        ["workspace:theme/theme-colors-generator", {
+          "packageLocation": "./theme/theme-colors-generator/",
+          "packageDependencies": [
+            ["@monstrs/figma-theme-colors-generator", "workspace:theme/theme-colors-generator"],
+            ["@atls/figma-utils", "workspace:utils/utils"],
+            ["@types/color-namer", "npm:1.3.0"],
+            ["@types/node", "npm:17.0.15"],
+            ["color-namer", "npm:1.4.0"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["@nodelib/fs.scandir", [
         ["npm:2.1.5", {
           "packageLocation": "./.yarn/cache/@nodelib-fs.scandir-npm-2.1.5-89c67370dd-a970d595bd.zip/node_modules/@nodelib/fs.scandir/",
@@ -369,6 +389,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/keyv", "npm:3.1.3"],
             ["@types/node", "npm:17.0.10"],
             ["@types/responselike", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/color-namer", [
+        ["npm:1.3.0", {
+          "packageLocation": "./.yarn/cache/@types-color-namer-npm-1.3.0-36c93c7662-856121b866.zip/node_modules/@types/color-namer/",
+          "packageDependencies": [
+            ["@types/color-namer", "npm:1.3.0"]
           ],
           "linkType": "HARD",
         }]
@@ -1810,6 +1839,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["chroma-js", [
+        ["npm:1.4.1", {
+          "packageLocation": "./.yarn/cache/chroma-js-npm-1.4.1-cb90fab098-37cc353386.zip/node_modules/chroma-js/",
+          "packageDependencies": [
+            ["chroma-js", "npm:1.4.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["chrome-trace-event", [
         ["npm:1.0.3", {
           "packageLocation": "./.yarn/cache/chrome-trace-event-npm-1.0.3-e0ae3dcd60-cb8b1fc7e8.zip/node_modules/chrome-trace-event/",
@@ -1906,6 +1944,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["color-namer", [
+        ["npm:1.4.0", {
+          "packageLocation": "./.yarn/cache/color-namer-npm-1.4.0-d77f6a7ac2-d91b550a40.zip/node_modules/color-namer/",
+          "packageDependencies": [
+            ["color-namer", "npm:1.4.0"],
+            ["chroma-js", "npm:1.4.1"],
+            ["es6-weak-map", "npm:2.0.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["color-support", [
         ["npm:1.1.3", {
           "packageLocation": "./.yarn/cache/color-support-npm-1.1.3-3be5c53455-9b73568176.zip/node_modules/color-support/",
@@ -1957,6 +2006,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["path-key", "npm:3.1.1"],
             ["shebang-command", "npm:2.0.0"],
             ["which", "npm:2.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d", [
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/d-npm-1.0.1-64afbbc689-49ca0639c7.zip/node_modules/d/",
+          "packageDependencies": [
+            ["d", "npm:1.0.1"],
+            ["es5-ext", "npm:0.10.53"],
+            ["type", "npm:1.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -2162,6 +2222,54 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["es5-ext", [
+        ["npm:0.10.53", {
+          "packageLocation": "./.yarn/cache/es5-ext-npm-0.10.53-18c0039c41-24ec223692.zip/node_modules/es5-ext/",
+          "packageDependencies": [
+            ["es5-ext", "npm:0.10.53"],
+            ["es6-iterator", "npm:2.0.3"],
+            ["es6-symbol", "npm:3.1.3"],
+            ["next-tick", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["es6-iterator", [
+        ["npm:2.0.3", {
+          "packageLocation": "./.yarn/cache/es6-iterator-npm-2.0.3-4dadb0ccc1-6e48b1c2d9.zip/node_modules/es6-iterator/",
+          "packageDependencies": [
+            ["es6-iterator", "npm:2.0.3"],
+            ["d", "npm:1.0.1"],
+            ["es5-ext", "npm:0.10.53"],
+            ["es6-symbol", "npm:3.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["es6-symbol", [
+        ["npm:3.1.3", {
+          "packageLocation": "./.yarn/cache/es6-symbol-npm-3.1.3-34d72f2a23-cd49722c2a.zip/node_modules/es6-symbol/",
+          "packageDependencies": [
+            ["es6-symbol", "npm:3.1.3"],
+            ["d", "npm:1.0.1"],
+            ["ext", "npm:1.6.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["es6-weak-map", [
+        ["npm:2.0.3", {
+          "packageLocation": "./.yarn/cache/es6-weak-map-npm-2.0.3-5e57e0b4e6-19ca15f46d.zip/node_modules/es6-weak-map/",
+          "packageDependencies": [
+            ["es6-weak-map", "npm:2.0.3"],
+            ["d", "npm:1.0.1"],
+            ["es5-ext", "npm:0.10.53"],
+            ["es6-iterator", "npm:2.0.3"],
+            ["es6-symbol", "npm:3.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["escalade", [
         ["npm:3.1.1", {
           "packageLocation": "./.yarn/cache/escalade-npm-3.1.1-e02da076aa-a3e2a99f07.zip/node_modules/escalade/",
@@ -2363,6 +2471,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/events-npm-3.3.0-c280bc7e48-f6f487ad21.zip/node_modules/events/",
           "packageDependencies": [
             ["events", "npm:3.3.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["ext", [
+        ["npm:1.6.0", {
+          "packageLocation": "./.yarn/cache/ext-npm-1.6.0-d724ecc103-ca3ef4619e.zip/node_modules/ext/",
+          "packageDependencies": [
+            ["ext", "npm:1.6.0"],
+            ["type", "npm:2.6.0"]
           ],
           "linkType": "HARD",
         }]
@@ -3358,6 +3476,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/neo-async-npm-2.6.2-75d6902586-deac9f8d00.zip/node_modules/neo-async/",
           "packageDependencies": [
             ["neo-async", "npm:2.6.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["next-tick", [
+        ["npm:1.0.0", {
+          "packageLocation": "./.yarn/cache/next-tick-npm-1.0.0-0c0dd4bec1-83fcb3d4f8.zip/node_modules/next-tick/",
+          "packageDependencies": [
+            ["next-tick", "npm:1.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -4377,6 +4504,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/typanion-npm-3.7.1-b7ec4136b5-79f396a960.zip/node_modules/typanion/",
           "packageDependencies": [
             ["typanion", "npm:3.7.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["type", [
+        ["npm:1.2.0", {
+          "packageLocation": "./.yarn/cache/type-npm-1.2.0-e67311c4b2-dae8c64f82.zip/node_modules/type/",
+          "packageDependencies": [
+            ["type", "npm:1.2.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:2.6.0", {
+          "packageLocation": "./.yarn/cache/type-npm-2.6.0-bc8cf9ff15-80da01fcc0.zip/node_modules/type/",
+          "packageDependencies": [
+            ["type", "npm:2.6.0"]
           ],
           "linkType": "HARD",
         }]
