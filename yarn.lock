@@ -59,6 +59,7 @@ __metadata:
   dependencies:
     "@atls/figma-file-loader": "workspace:0.0.1"
     "@types/node": 17.0.15
+    figma-js: 1.14.0
     fs-extra: ^10.0.0
     node-fetch: ^3.2.0
   languageName: unknown
@@ -78,10 +79,24 @@ __metadata:
   dependencies:
     "@atls/figma-assets": "workspace:0.0.1"
     "@atls/figma-file-loader": "workspace:0.0.1"
+    "@atls/figma-theme": "workspace:0.0.1"
     "@types/node": 17.0.15
     commander: ^9.0.0
     figma-js: ^1.14.0
     npmlog: ^6.0.0
+  languageName: unknown
+  linkType: soft
+
+"@atls/figma-theme-colors-generator@workspace:theme/theme-colors-generator":
+  version: 0.0.0-use.local
+  resolution: "@atls/figma-theme-colors-generator@workspace:theme/theme-colors-generator"
+  dependencies:
+    "@atls/figma-theme-generator-common": "workspace:0.0.1"
+    "@atls/figma-utils": "workspace:0.0.1"
+    "@types/color-namer": ^1
+    "@types/node": 17.0.15
+    color-namer: ^1.4.0
+    figma-js: 1.14.0
   languageName: unknown
   linkType: soft
 
@@ -105,12 +120,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@atls/figma-theme@workspace:theme/theme":
+"@atls/figma-theme@workspace:0.0.1, @atls/figma-theme@workspace:theme/theme":
   version: 0.0.0-use.local
   resolution: "@atls/figma-theme@workspace:theme/theme"
   dependencies:
     "@atls/figma-theme-font-sizes-generator": "workspace:0.0.1"
     "@types/node": 17.0.15
+    figma-js: 1.14.0
     prettier: ^2.5.1
   languageName: unknown
   linkType: soft
@@ -202,17 +218,6 @@ __metadata:
   checksum: a824a1ec31591231e4bad5787641f59e9633827d0a2eaae131a288d33c9ef0290bd16fda8da6f7c0fcb014147865d12118df10db57f27f41e20da92369fcb3f1
   languageName: node
   linkType: hard
-
-"@monstrs/figma-theme-colors-generator@workspace:theme/theme-colors-generator":
-  version: 0.0.0-use.local
-  resolution: "@monstrs/figma-theme-colors-generator@workspace:theme/theme-colors-generator"
-  dependencies:
-    "@atls/figma-utils": "workspace:0.0.1"
-    "@types/color-namer": ^1
-    "@types/node": 17.0.15
-    color-namer: ^1.4.0
-  languageName: unknown
-  linkType: soft
 
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
@@ -1917,7 +1922,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"figma-js@npm:^1.14.0":
+"figma-js@npm:1.14.0, figma-js@npm:^1.14.0":
   version: 1.14.0
   resolution: "figma-js@npm:1.14.0"
   dependencies:

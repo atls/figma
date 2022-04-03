@@ -1,25 +1,27 @@
 {
-  "name": "@monstrs/figma-theme-colors-generator",
+  "name": "@atls/figma-theme-colors-generator",
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "builder build plugin",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },
   "dependencies": {
+    "@atls/figma-theme-generator-common": "workspace:0.0.1",
     "@atls/figma-utils": "workspace:0.0.1",
-    "color-namer": "^1.4.0"
+    "color-namer": "^1.4.0",
+    "figma-js": "1.14.0"
   },
   "devDependencies": {
     "@types/color-namer": "^1",
     "@types/node": "17.0.15"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

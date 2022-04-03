@@ -6,20 +6,20 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "builder build plugin",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
+  },
+  "dependencies": {
+    "color-namer": "^1.4.0"
   },
   "devDependencies": {
     "@types/color-namer": "^1",
     "@types/node": "17.0.15",
     "figma-js": "^1.14.0"
   },
-  "dependencies": {
-    "color-namer": "^1.4.0"
+  "publishConfig": {
+    "access": "public"
   }
 }

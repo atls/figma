@@ -6,9 +6,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "builder build plugin",
     "prepack": "yarn run build",
@@ -17,11 +14,15 @@
   "dependencies": {
     "@atls/figma-assets": "workspace:0.0.1",
     "@atls/figma-file-loader": "workspace:0.0.1",
+    "@atls/figma-theme": "workspace:0.0.1",
     "commander": "^9.0.0",
     "npmlog": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "17.0.15",
     "figma-js": "^1.14.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

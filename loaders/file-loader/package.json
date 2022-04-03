@@ -6,9 +6,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "builder build plugin",
     "prepack": "yarn run build",
@@ -16,5 +13,8 @@
   },
   "dependencies": {
     "figma-js": "^1.14.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

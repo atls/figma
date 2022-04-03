@@ -1,11 +1,9 @@
+import namer     from 'color-namer'
 import { Color } from 'figma-js'
-import namer from 'color-namer'
 
-export const isColor = (node: any): node is Color =>
-  node.r && node.g && node.b && node.a
+export const isColor = (node: any): node is Color => node.r && node.g && node.b && node.a
 
-export const toAverage = (node: Color) =>
-  ((node.r + node.g + node.b) / 3) * node.a
+export const toAverage = (node: Color) => ((node.r + node.g + node.b) / 3) * node.a
 
 export const normalizeChannel = (num: number) => Math.floor(num * 255)
 
@@ -30,9 +28,9 @@ export const toColorName = (color: string, skip: string[] = []): string => {
     const names = namer(color)
 
     const [appropriate] = namespaces
-      .map(namespace => {
+      .map((namespace) => {
         const [item] = names[namespace].filter(
-          current => !skip.includes(formatColorName(current.name))
+          (current) => !skip.includes(formatColorName(current.name))
         )
 
         return item

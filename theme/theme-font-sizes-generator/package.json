@@ -6,20 +6,20 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "build": "builder build plugin",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
+  },
+  "dependencies": {
+    "@atls/figma-utils": "workspace:0.0.1"
   },
   "devDependencies": {
     "@atls/figma-theme-generator-common": "workspace:0.0.1",
     "@types/node": "17.0.15",
     "figma-js": "^1.14.0"
   },
-  "dependencies": {
-    "@atls/figma-utils": "workspace:0.0.1"
+  "publishConfig": {
+    "access": "public"
   }
 }

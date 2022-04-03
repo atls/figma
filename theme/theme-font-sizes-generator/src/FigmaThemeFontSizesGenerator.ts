@@ -1,10 +1,12 @@
-import { FileResponse, Text } from 'figma-js'
-import { walk, isText } from '@atls/figma-utils'
-import {
-  FigmaThemeGenerator,
-  FigmaThemeGeneratorResult,
-} from '@atls/figma-theme-generator-common'
-import { SimpleMappingStrategy } from './strategy'
+import { FileResponse }              from 'figma-js'
+import { Text }                      from 'figma-js'
+
+import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
+import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
+import { isText }                    from '@atls/figma-utils'
+import { walk }                      from '@atls/figma-utils'
+
+import { SimpleMappingStrategy }     from './strategy'
 
 export class FigmaThemeFontSizesGenerator extends FigmaThemeGenerator {
   readonly name = 'fontSizes'
@@ -12,7 +14,7 @@ export class FigmaThemeFontSizesGenerator extends FigmaThemeGenerator {
   getFontSizes(nodes): Text[] {
     const textNodes: Text[] = []
 
-    walk(nodes, node => {
+    walk(nodes, (node) => {
       if (isText(node)) {
         textNodes.push(node)
       }

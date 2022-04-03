@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-shadow
 export enum FontSize {
   Atomic = 'atomic',
   Micro = 'micro',
@@ -25,11 +26,7 @@ export const FontSmallSizes = [
   FontSize.Reduced,
 ]
 
-export const FontNormalSizes = [
-  FontSize.Normal,
-  FontSize.Regular,
-  FontSize.Extra,
-]
+export const FontNormalSizes = [FontSize.Normal, FontSize.Regular, FontSize.Extra]
 
 export const FontMediumSizes = [FontSize.Medium, FontSize.Increased]
 

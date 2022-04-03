@@ -1,11 +1,10 @@
-import { Text } from 'figma-js'
-import { Strategy } from './Strategy'
-import {
-  FontSmallSizes,
-  FontNormalSizes,
-  FontMediumSizes,
-  FontLargeSizes,
-} from '../Constants'
+import { Text }            from 'figma-js'
+
+import { FontLargeSizes }  from '../Constants'
+import { FontMediumSizes } from '../Constants'
+import { FontNormalSizes } from '../Constants'
+import { FontSmallSizes }  from '../Constants'
+import { Strategy }        from './Strategy'
 
 export class SimpleMappingStrategy extends Strategy {
   fillSmallSizes(fontSizes) {
@@ -52,9 +51,7 @@ export class SimpleMappingStrategy extends Strategy {
     const stat = this.getStat(textNodes)
 
     const fontSizes = Array.from(stat.keys()).sort((a, b) => a - b)
-    const [normal] = [...fontSizes].sort(
-      (a, b) => (stat.get(b) || 0) - (stat.get(a) || 0)
-    )
+    const [normal] = [...fontSizes].sort((a, b) => (stat.get(b) || 0) - (stat.get(a) || 0))
 
     const normalIndex = fontSizes.indexOf(normal)
     const mediumIndex = normalIndex + FontNormalSizes.length

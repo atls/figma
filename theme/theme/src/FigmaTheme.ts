@@ -1,15 +1,15 @@
-import path from 'path'
-import prettier from 'prettier'
-import { promises as fs } from 'fs'
-import { FileResponse } from 'figma-js'
+import path                             from 'path'
+import prettier                         from 'prettier'
+import { FileResponse }                 from 'figma-js'
+import { promises as fs }               from 'fs'
+
 import { FigmaThemeFontSizesGenerator } from '@atls/figma-theme-font-sizes-generator'
 
-const generators = [
-  FigmaThemeFontSizesGenerator
-]
+const generators = [FigmaThemeFontSizesGenerator]
 
 export class FigmaTheme {
   file: FileResponse
+
   output: string
 
   constructor(file: FileResponse, output) {
@@ -34,8 +34,8 @@ export class FigmaTheme {
 
   async generate() {
     return Promise.all(
-      generators.map(async generator => {
-        const instance = new generator()
+      generators.map(async (Generator) => {
+        const instance = new Generator()
 
         const result = await Promise.resolve(instance.generate(this.file))
 

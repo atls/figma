@@ -41,7 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:theme/theme-cli"
       },
       {
-        "name": "@monstrs/figma-theme-colors-generator",
+        "name": "@atls/figma-theme-colors-generator",
         "reference": "workspace:theme/theme-colors-generator"
       },
       {
@@ -65,10 +65,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@atls/figma-file-loader", ["workspace:loaders/file-loader"]],
       ["@atls/figma-theme", ["workspace:theme/theme"]],
       ["@atls/figma-theme-cli", ["workspace:theme/theme-cli"]],
+      ["@atls/figma-theme-colors-generator", ["workspace:theme/theme-colors-generator"]],
       ["@atls/figma-theme-font-sizes-generator", ["workspace:theme/theme-font-sizes-generator"]],
       ["@atls/figma-theme-generator-common", ["workspace:theme/theme-generator-common"]],
       ["@atls/figma-utils", ["workspace:utils/utils"]],
-      ["@monstrs/figma-theme-colors-generator", ["workspace:theme/theme-colors-generator"]],
       ["figma", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -134,6 +134,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@atls/figma-assets", "workspace:assets/assets"],
             ["@atls/figma-file-loader", "workspace:loaders/file-loader"],
             ["@types/node", "npm:17.0.15"],
+            ["figma-js", "npm:1.14.0"],
             ["fs-extra", "npm:10.0.0"],
             ["node-fetch", "npm:3.2.0"]
           ],
@@ -172,6 +173,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@atls/figma-theme", "workspace:theme/theme"],
             ["@atls/figma-theme-font-sizes-generator", "workspace:theme/theme-font-sizes-generator"],
             ["@types/node", "npm:17.0.15"],
+            ["figma-js", "npm:1.14.0"],
             ["prettier", "npm:2.5.1"]
           ],
           "linkType": "SOFT",
@@ -184,10 +186,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@atls/figma-theme-cli", "workspace:theme/theme-cli"],
             ["@atls/figma-assets", "workspace:assets/assets"],
             ["@atls/figma-file-loader", "workspace:loaders/file-loader"],
+            ["@atls/figma-theme", "workspace:theme/theme"],
             ["@types/node", "npm:17.0.15"],
             ["commander", "npm:9.0.0"],
             ["figma-js", "npm:1.14.0"],
             ["npmlog", "npm:6.0.0"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@atls/figma-theme-colors-generator", [
+        ["workspace:theme/theme-colors-generator", {
+          "packageLocation": "./theme/theme-colors-generator/",
+          "packageDependencies": [
+            ["@atls/figma-theme-colors-generator", "workspace:theme/theme-colors-generator"],
+            ["@atls/figma-theme-generator-common", "workspace:theme/theme-generator-common"],
+            ["@atls/figma-utils", "workspace:utils/utils"],
+            ["@types/color-namer", "npm:1.3.0"],
+            ["@types/node", "npm:17.0.15"],
+            ["color-namer", "npm:1.4.0"],
+            ["figma-js", "npm:1.14.0"]
           ],
           "linkType": "SOFT",
         }]
@@ -315,19 +333,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@humanwhocodes/object-schema", "npm:1.2.1"]
           ],
           "linkType": "HARD",
-        }]
-      ]],
-      ["@monstrs/figma-theme-colors-generator", [
-        ["workspace:theme/theme-colors-generator", {
-          "packageLocation": "./theme/theme-colors-generator/",
-          "packageDependencies": [
-            ["@monstrs/figma-theme-colors-generator", "workspace:theme/theme-colors-generator"],
-            ["@atls/figma-utils", "workspace:utils/utils"],
-            ["@types/color-namer", "npm:1.3.0"],
-            ["@types/node", "npm:17.0.15"],
-            ["color-namer", "npm:1.4.0"]
-          ],
-          "linkType": "SOFT",
         }]
       ]],
       ["@nodelib/fs.scandir", [
