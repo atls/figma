@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 5
+  version: 6
   cacheKey: 8
 
 "@arcanis/slice-ansi@npm:^1.1.1":
@@ -14,22 +14,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atls/code-service@npm:^0.0.10":
-  version: 0.0.10
-  resolution: "@atls/code-service@npm:0.0.10"
+"@atls/code-service@npm:^0.0.13":
+  version: 0.0.13
+  resolution: "@atls/code-service@npm:0.0.13"
   dependencies:
     "@atls/config-typescript": 0.0.1
-    "@atls/webpack-proto-imports-loader": 0.0.6
-    "@atls/webpack-start-server-plugin": 0.0.4
-    "@yarnpkg/cli": ^3.2.0-rc.8
-    "@yarnpkg/core": ^3.2.0-rc.8
-    fast-glob: ^3.2.7
-    string-replace-loader: ^3.0.3
-    ts-loader: ^9.2.6
-    typescript: ^4.5.4
-    webpack: ^5.65.0
+    "@atls/webpack-proto-imports-loader": 0.0.8
+    "@atls/webpack-start-server-plugin": 0.0.5
+    "@yarnpkg/cli": ^3.2.0
+    "@yarnpkg/core": ^3.2.0
+    fast-glob: ^3.2.11
+    find-up: ^5.0.0
+    string-replace-loader: ^3.1.0
+    ts-loader: ^9.2.8
+    typescript: ^4.6.2
+    webpack: ^5.70.0
     webpack-chain: ^6.5.1
-  checksum: 5baa10082842f4c08391e63a728e6034619b10e58d4e1ad9a64ce41e3400dbd2c5e89aa9418ba6de624d383383ebb12e44943614d15976e23c438ca1f392c075
+  checksum: 3147b6f57736411c0c7cb38960a3dd22f771f08dc05f9c67fdc26038752a2138fa5316c1b55e09bb830b3e10ba6d7db2a36983ed4d2ac308b6de7c0bd632cecb
   languageName: node
   linkType: hard
 
@@ -81,6 +82,7 @@ __metadata:
     "@atls/figma-file-loader": "workspace:0.0.1"
     "@atls/figma-theme": "workspace:0.0.1"
     "@types/node": 17.0.15
+    "@yarnpkg/builder": ^3.2.0
     commander: ^9.0.0
     figma-js: ^1.14.0
     npmlog: ^6.0.0
@@ -142,22 +144,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@atls/webpack-proto-imports-loader@npm:0.0.6":
-  version: 0.0.6
-  resolution: "@atls/webpack-proto-imports-loader@npm:0.0.6"
+"@atls/webpack-proto-imports-loader@npm:0.0.8":
+  version: 0.0.8
+  resolution: "@atls/webpack-proto-imports-loader@npm:0.0.8"
   dependencies:
     file-loader: ^6.2.0
     protocol-buffers-schema: ^3.6.0
-  checksum: 0d2fad6ac8c8b5a0b7af4666ddc3f46c9a9d80465f7c6cdead065b5c5e94446991e13de6d83b04cc2e680e2025838d40d5730f60cb138ca10a7a8e94fcf1273a
+  checksum: 9333d6156425c42d62d4d9f2bdfdea4137dca99375de2820af10957b518f3906c4910e9721b2798a5804a41c5a75fc9bfc0a21e2280f5e07ba31ceab6635488c
   languageName: node
   linkType: hard
 
-"@atls/webpack-start-server-plugin@npm:0.0.4":
-  version: 0.0.4
-  resolution: "@atls/webpack-start-server-plugin@npm:0.0.4"
+"@atls/webpack-start-server-plugin@npm:0.0.5":
+  version: 0.0.5
+  resolution: "@atls/webpack-start-server-plugin@npm:0.0.5"
   dependencies:
-    webpack: ^5.65.0
-  checksum: ea7e37465d2583110c971dfc61a2d10189ce996df6dc9e053383e74bdf4fe5a57a086465569ee130e1422a656128ee4094516f45a93f3e8ee174ecb88ce5c632
+    webpack: ^5.70.0
+  checksum: 8ba7da73a5ee3059a9da999ca2de9a56be2d4e5b168dda3526cdad4b478b847e43bc6747e6faae5d1b29704416433ae0a10bccf8e82ed023034bad3253965c58
   languageName: node
   linkType: hard
 
@@ -288,7 +290,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint-scope@npm:^3.7.0":
+"@types/eslint-scope@npm:^3.7.3":
   version: 3.7.3
   resolution: "@types/eslint-scope@npm:3.7.3"
   dependencies:
@@ -318,10 +320,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/estree@npm:*, @types/estree@npm:^0.0.50":
+"@types/estree@npm:*":
   version: 0.0.50
   resolution: "@types/estree@npm:0.0.50"
   checksum: 9a2b6a4a8c117f34d08fbda5e8f69b1dfb109f7d149b60b00fd7a9fb6ac545c078bc590aa4ec2f0a256d680cf72c88b3b28b60c326ee38a7bc8ee1ee95624922
+  languageName: node
+  linkType: hard
+
+"@types/estree@npm:^0.0.51":
+  version: 0.0.51
+  resolution: "@types/estree@npm:0.0.51"
+  checksum: e56a3bcf759fd9185e992e7fdb3c6a5f81e8ff120e871641607581fb3728d16c811702a7d40fa5f869b7f7b4437ab6a87eb8d98ffafeee51e85bbe955932a189
   languageName: node
   linkType: hard
 
@@ -564,31 +573,50 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/cli@npm:^3.2.0-rc.8":
-  version: 3.2.0-rc.11
-  resolution: "@yarnpkg/cli@npm:3.2.0-rc.11"
+"@yarnpkg/builder@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@yarnpkg/builder@npm:3.2.0"
   dependencies:
-    "@yarnpkg/core": ^3.2.0-rc.11
-    "@yarnpkg/fslib": ^2.6.1-rc.6
-    "@yarnpkg/libzip": ^2.2.3-rc.6
-    "@yarnpkg/parsers": ^2.5.0-rc.9
-    "@yarnpkg/plugin-compat": ^3.1.2-rc.7
+    "@yarnpkg/cli": ^3.2.0
+    "@yarnpkg/core": ^3.2.0
+    "@yarnpkg/esbuild-plugin-pnp": ^2.0.1
+    "@yarnpkg/fslib": ^2.6.1
+    chalk: ^3.0.0
+    clipanion: ^3.2.0-rc.4
+    esbuild: "npm:esbuild-wasm@^0.11.20"
+    semver: ^7.1.2
+    tslib: ^1.13.0
+  bin:
+    builder: ./lib/cli.js
+  checksum: cfe5028bd43e9844e4e29d9a9e6c3bc7c87bd9c0ce06db9092d8ff5a4e8e6b0d0057ddf8edc5c214acb9ffddbc47a3dd4df125f1febebd5baa40844a8116a1ba
+  languageName: node
+  linkType: hard
+
+"@yarnpkg/cli@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@yarnpkg/cli@npm:3.2.0"
+  dependencies:
+    "@yarnpkg/core": ^3.2.0
+    "@yarnpkg/fslib": ^2.6.1
+    "@yarnpkg/libzip": ^2.2.3
+    "@yarnpkg/parsers": ^2.5.0
+    "@yarnpkg/plugin-compat": ^3.1.2
     "@yarnpkg/plugin-dlx": ^3.1.1
-    "@yarnpkg/plugin-essentials": ^3.2.0-rc.9
+    "@yarnpkg/plugin-essentials": ^3.2.0
     "@yarnpkg/plugin-file": ^2.3.0
-    "@yarnpkg/plugin-git": ^2.6.0-rc.11
+    "@yarnpkg/plugin-git": ^2.6.0
     "@yarnpkg/plugin-github": ^2.3.0
     "@yarnpkg/plugin-http": ^2.2.0
-    "@yarnpkg/plugin-init": ^3.1.1
+    "@yarnpkg/plugin-init": ^3.1.2
     "@yarnpkg/plugin-link": ^2.2.0
-    "@yarnpkg/plugin-nm": ^3.1.1-rc.11
-    "@yarnpkg/plugin-npm": ^2.7.0-rc.4
-    "@yarnpkg/plugin-npm-cli": ^3.2.0-rc.4
-    "@yarnpkg/plugin-pack": ^3.1.0
-    "@yarnpkg/plugin-patch": ^3.2.0-rc.2
-    "@yarnpkg/plugin-pnp": ^3.2.0-rc.1
-    "@yarnpkg/plugin-pnpm": ^1.1.0-rc.9
-    "@yarnpkg/shell": ^3.2.0-rc.9
+    "@yarnpkg/plugin-nm": ^3.1.1
+    "@yarnpkg/plugin-npm": ^2.7.0
+    "@yarnpkg/plugin-npm-cli": ^3.2.0
+    "@yarnpkg/plugin-pack": ^3.1.1
+    "@yarnpkg/plugin-patch": ^3.2.0
+    "@yarnpkg/plugin-pnp": ^3.2.0
+    "@yarnpkg/plugin-pnpm": ^1.1.0
+    "@yarnpkg/shell": ^3.2.0
     chalk: ^3.0.0
     ci-info: ^3.2.0
     clipanion: ^3.2.0-rc.4
@@ -597,24 +625,24 @@ __metadata:
     typanion: ^3.3.0
     yup: ^0.32.9
   peerDependencies:
-    "@yarnpkg/core": ^3.2.0-rc.11
-  checksum: c2acba5a23f4ae7eb4499fee4fdff19a1c6838d1cac4faf191b03c627f548c87130054918f10b2f5ed8378052c38a8c7c1a904c4a2e107d52b1d4b4ac5fe1903
+    "@yarnpkg/core": ^3.2.0
+  checksum: 2c469c5a4527c336eddb3df2f470f87cbf6fde8da82c947537cbd16c142b95f2b079e86b8780eaa9da6d6ab9d4a6b109cd36fa9c2c986ed0237c417d0ac3f666
   languageName: node
   linkType: hard
 
-"@yarnpkg/core@npm:^3.2.0-rc.11, @yarnpkg/core@npm:^3.2.0-rc.8":
-  version: 3.2.0-rc.11
-  resolution: "@yarnpkg/core@npm:3.2.0-rc.11"
+"@yarnpkg/core@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@yarnpkg/core@npm:3.2.0"
   dependencies:
     "@arcanis/slice-ansi": ^1.1.1
     "@types/semver": ^7.1.0
     "@types/treeify": ^1.0.0
-    "@yarnpkg/fslib": ^2.6.1-rc.6
+    "@yarnpkg/fslib": ^2.6.1
     "@yarnpkg/json-proxy": ^2.1.1
-    "@yarnpkg/libzip": ^2.2.3-rc.6
-    "@yarnpkg/parsers": ^2.5.0-rc.9
-    "@yarnpkg/pnp": ^3.1.1-rc.11
-    "@yarnpkg/shell": ^3.2.0-rc.9
+    "@yarnpkg/libzip": ^2.2.3
+    "@yarnpkg/parsers": ^2.5.0
+    "@yarnpkg/pnp": ^3.2.0
+    "@yarnpkg/shell": ^3.2.0
     camelcase: ^5.3.1
     chalk: ^3.0.0
     ci-info: ^3.2.0
@@ -628,7 +656,6 @@ __metadata:
     micromatch: ^4.0.2
     mkdirp: ^0.5.1
     p-limit: ^2.2.0
-    p-queue: ^6.0.0
     pluralize: ^7.0.0
     pretty-bytes: ^5.1.0
     semver: ^7.1.2
@@ -639,7 +666,18 @@ __metadata:
     treeify: ^1.1.0
     tslib: ^1.13.0
     tunnel: ^0.0.6
-  checksum: 228c369c79e4893113b15df8ba2242054814908d952aa4d148e601b18f7f141caf2b0c9aa33270dded2b4daeea2650ae7f40068627e626dce2d64f1664f49061
+  checksum: a56839f157dd8239ff61f72eb938d03981ceb74a651593a4f6a2df5176512308d65debf171c0883704952db6035482cec2d571abd23d05fbb60ff27c74220eac
+  languageName: node
+  linkType: hard
+
+"@yarnpkg/esbuild-plugin-pnp@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@yarnpkg/esbuild-plugin-pnp@npm:2.0.1"
+  dependencies:
+    tslib: ^1.13.0
+  peerDependencies:
+    esbuild: ">=0.10.0"
+  checksum: ff081f65e01d5720dc17faf4dee3b055ea81235344b32322e095eec8d8472b36109cc27e6bfd8463933acde00c9bdcab008df662db020dec7bdef25a75dc5aaf
   languageName: node
   linkType: hard
 
@@ -653,13 +691,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/fslib@npm:^2.6.1-rc.6":
-  version: 2.6.1-rc.6
-  resolution: "@yarnpkg/fslib@npm:2.6.1-rc.6"
+"@yarnpkg/fslib@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "@yarnpkg/fslib@npm:2.6.1"
   dependencies:
-    "@yarnpkg/libzip": ^2.2.3-rc.6
+    "@yarnpkg/libzip": ^2.2.3
     tslib: ^1.13.0
-  checksum: 44944436c650f48c8b278dfa85dc52fb2fc50d2a87dc756c34732e86f2ce9d9cf96bf8a625f17b09552c101b32f32aa33ac8c315c4a15df51b0c4afa4f7ea0ea
+  checksum: e3bbd796a1c586372807da07207230c89901519e53a991b95c070cae59f570ac9617368713e9e83e77c4507d602e21ce026cc15fc70eb171d3477c5bcbbbf60e
   languageName: node
   linkType: hard
 
@@ -683,43 +721,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/libzip@npm:^2.2.3-rc.6":
-  version: 2.2.3-rc.6
-  resolution: "@yarnpkg/libzip@npm:2.2.3-rc.6"
+"@yarnpkg/libzip@npm:^2.2.3":
+  version: 2.2.4
+  resolution: "@yarnpkg/libzip@npm:2.2.4"
   dependencies:
     "@types/emscripten": ^1.38.0
     tslib: ^1.13.0
-  checksum: b7661468214918f1f232851e576d17d0d36fc26355ceda34ef919cde6b58dc3afc87ed7ad935a82dd9788dc397e06d1461309e9adf53c54039bc10608845abd7
+  checksum: 974a286d4e7ff52bd924d56cb39492898a2306e95774362e4a3eb94690f180273a078243bf4044909e0fe29354552acc1cddd7d10d71ce332f7b1e1ff8eb54d9
   languageName: node
   linkType: hard
 
-"@yarnpkg/nm@npm:^3.0.1-rc.11":
-  version: 3.0.1-rc.11
-  resolution: "@yarnpkg/nm@npm:3.0.1-rc.11"
+"@yarnpkg/nm@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@yarnpkg/nm@npm:3.0.1"
   dependencies:
-    "@yarnpkg/core": ^3.2.0-rc.11
-    "@yarnpkg/fslib": ^2.6.1-rc.6
-  checksum: 73784781c2505abffb6c536aa5da470d7c836111b291b5499acb4aa3c0bbcc9350888b452a6e64a99967dfa30bdaf6a5caa39dbe432f6cf320bd05135e206dc6
+    "@yarnpkg/core": ^3.2.0
+    "@yarnpkg/fslib": ^2.6.1
+  checksum: bc39d07b4f2715bb114e3290d11cec71baadce2f2b4d0d0f3058eba154b62bf8a954fa57df4b9018dc5bdc12ab58e90822b6b67f8ed9fd13565b0b8acf56acd8
   languageName: node
   linkType: hard
 
-"@yarnpkg/parsers@npm:^2.5.0-rc.9":
-  version: 2.5.0-rc.9
-  resolution: "@yarnpkg/parsers@npm:2.5.0-rc.9"
+"@yarnpkg/parsers@npm:^2.5.0":
+  version: 2.5.0
+  resolution: "@yarnpkg/parsers@npm:2.5.0"
   dependencies:
     js-yaml: ^3.10.0
     tslib: ^1.13.0
-  checksum: fab2eb17b4c7fdc66c3e3ac0d7cb88a0a5349453c70b82219230e0ef643113044f25f836e8f54c68e22403847aff157462b461a32a3cf206af2d756dd88b5ff9
+  checksum: 02678b7b910eb653c27f0043ac5295c96f2547164959a76e529cad628c2dd48748d1eec2e5d0ee77f79c7d0536549477f203274ca0533e1b478a7f1e0689bb75
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-compat@npm:^3.1.2-rc.7":
-  version: 3.1.2-rc.7
-  resolution: "@yarnpkg/plugin-compat@npm:3.1.2-rc.7"
+"@yarnpkg/plugin-compat@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "@yarnpkg/plugin-compat@npm:3.1.2"
   peerDependencies:
-    "@yarnpkg/core": ^3.2.0-rc.11
-    "@yarnpkg/plugin-patch": ^3.2.0-rc.2
-  checksum: 9aacb55a55b742a05398cf870353c6df02658392dba47251f5ce56dc59f0a876bf46a105b1e70929b2209ed77b99b160b61c43f7f4d7bb673745dff3d8e0d3f3
+    "@yarnpkg/core": ^3.2.0
+    "@yarnpkg/plugin-patch": ^3.2.0
+  checksum: ee0261e4bb32313c0fa7527d7c90f55e12ee0def440c894749cbef6d02f9d369305c64027ef1efd7a9214212e0ddd4cd94731cdbf1cef267fb4522dfb3ed4ced
   languageName: node
   linkType: hard
 
@@ -738,13 +776,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-essentials@npm:^3.2.0-rc.9":
-  version: 3.2.0-rc.9
-  resolution: "@yarnpkg/plugin-essentials@npm:3.2.0-rc.9"
+"@yarnpkg/plugin-essentials@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@yarnpkg/plugin-essentials@npm:3.2.0"
   dependencies:
-    "@yarnpkg/fslib": ^2.6.1-rc.6
+    "@yarnpkg/fslib": ^2.6.1
     "@yarnpkg/json-proxy": ^2.1.1
-    "@yarnpkg/parsers": ^2.5.0-rc.9
+    "@yarnpkg/parsers": ^2.5.0
     ci-info: ^3.2.0
     clipanion: ^3.2.0-rc.4
     enquirer: ^2.3.6
@@ -754,10 +792,10 @@ __metadata:
     tslib: ^1.13.0
     typanion: ^3.3.0
   peerDependencies:
-    "@yarnpkg/cli": ^3.2.0-rc.11
-    "@yarnpkg/core": ^3.2.0-rc.11
-    "@yarnpkg/plugin-git": ^2.6.0-rc.11
-  checksum: 291bec53ee1a300c551748ad35931e5a5d2520ad1e7ac7ef0b7938044e5685c595d129e7f0d6042cc3fe18bd33eaac554febc9d9c575a828b478119cd2235acf
+    "@yarnpkg/cli": ^3.2.0
+    "@yarnpkg/core": ^3.2.0
+    "@yarnpkg/plugin-git": ^2.6.0
+  checksum: 64fc93ea0284f35c5f69959bab0208edab258889fa794ceb0627082546d53e3facd2a6020c92cffe925bce2599989ecbb0bb00c922e61d6cbb951e9c4cc9e420
   languageName: node
   linkType: hard
 
@@ -773,20 +811,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-git@npm:^2.6.0-rc.11":
-  version: 2.6.0-rc.11
-  resolution: "@yarnpkg/plugin-git@npm:2.6.0-rc.11"
+"@yarnpkg/plugin-git@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "@yarnpkg/plugin-git@npm:2.6.0"
   dependencies:
     "@types/semver": ^7.1.0
-    "@yarnpkg/fslib": ^2.6.1-rc.6
+    "@yarnpkg/fslib": ^2.6.1
     clipanion: ^3.2.0-rc.4
     git-url-parse: 11.1.2
     lodash: ^4.17.15
     semver: ^7.1.2
     tslib: ^1.13.0
   peerDependencies:
-    "@yarnpkg/core": ^3.2.0-rc.11
-  checksum: 61f9564de680c486f56aa92a67e4ab62a56d9eeebfce78f5520e86b973852874b129c5d13be577128887ca06e8a3d1c158a4452de8a16963b6b8fe8736274d5b
+    "@yarnpkg/core": ^3.2.0
+  checksum: 1c01840e76a31f397d1fcced1d49b407c87f09c4cc7626580c68682251712098b9506541111e658b1004b0ed540c87d8035ba0022bb9e7ad899eca8003f7d8e4
   languageName: node
   linkType: hard
 
@@ -815,18 +853,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-init@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@yarnpkg/plugin-init@npm:3.1.1"
+"@yarnpkg/plugin-init@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "@yarnpkg/plugin-init@npm:3.1.2"
   dependencies:
-    "@yarnpkg/fslib": ^2.6.0
-    clipanion: ^3.0.1
+    "@yarnpkg/fslib": ^2.6.1
+    clipanion: ^3.2.0-rc.4
     lodash: ^4.17.15
     tslib: ^1.13.0
   peerDependencies:
-    "@yarnpkg/cli": ^3.1.0
-    "@yarnpkg/core": ^3.1.0
-  checksum: 948d0c6edbb1854e4e0d48270d62ccc55ab71bf89f8a58ed678354c08b523edf523b079d652004c736ecadb657bbf9732a887a53ba77a8ee010f9a4572e2a8f1
+    "@yarnpkg/cli": ^3.2.0
+    "@yarnpkg/core": ^3.2.0
+  checksum: f339c65a89ae9731c4a1080cf2b035599bc178f24db548f75fd1d9a84b4b0a94b5465c8decec39f492b5607af5d42164e1f77c7cd53c96b4e44b6a71bb9b10a8
   languageName: node
   linkType: hard
 
@@ -842,126 +880,126 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-nm@npm:^3.1.1-rc.11":
-  version: 3.1.1-rc.11
-  resolution: "@yarnpkg/plugin-nm@npm:3.1.1-rc.11"
+"@yarnpkg/plugin-nm@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "@yarnpkg/plugin-nm@npm:3.1.1"
   dependencies:
-    "@yarnpkg/fslib": ^2.6.1-rc.6
-    "@yarnpkg/libzip": ^2.2.3-rc.6
-    "@yarnpkg/nm": ^3.0.1-rc.11
-    "@yarnpkg/parsers": ^2.5.0-rc.9
-    "@yarnpkg/plugin-pnp": ^3.2.0-rc.1
-    "@yarnpkg/pnp": ^3.1.1-rc.11
+    "@yarnpkg/fslib": ^2.6.1
+    "@yarnpkg/libzip": ^2.2.3
+    "@yarnpkg/nm": ^3.0.1
+    "@yarnpkg/parsers": ^2.5.0
+    "@yarnpkg/plugin-pnp": ^3.2.0
+    "@yarnpkg/pnp": ^3.2.0
     "@zkochan/cmd-shim": ^5.1.0
     clipanion: ^3.2.0-rc.4
     micromatch: ^4.0.2
     tslib: ^1.13.0
   peerDependencies:
-    "@yarnpkg/cli": ^3.2.0-rc.11
-    "@yarnpkg/core": ^3.2.0-rc.11
-  checksum: 8edaab62b405fcbabc42b2326e969025a21b92b06d7ce1cd14755110bbff92eb91f07ac828cbe0726cebae196c41f2874d34cb3f002dc09aea1f5dbcb4a68e43
+    "@yarnpkg/cli": ^3.2.0
+    "@yarnpkg/core": ^3.2.0
+  checksum: e5201b0c29a5edfe5de12fc64e6723f09ed97840c49b796600afe65a054ab0da0fca29cbb7c3409a0ccfeda66b72aad74b3b1e252fb6549513d2c01027e1e761
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-npm-cli@npm:^3.2.0-rc.4":
-  version: 3.2.0-rc.4
-  resolution: "@yarnpkg/plugin-npm-cli@npm:3.2.0-rc.4"
+"@yarnpkg/plugin-npm-cli@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@yarnpkg/plugin-npm-cli@npm:3.2.0"
   dependencies:
-    "@yarnpkg/fslib": ^2.6.1-rc.6
+    "@yarnpkg/fslib": ^2.6.1
     clipanion: ^3.2.0-rc.4
     enquirer: ^2.3.6
     semver: ^7.1.2
     tslib: ^1.13.0
     typanion: ^3.3.0
   peerDependencies:
-    "@yarnpkg/cli": ^3.2.0-rc.11
-    "@yarnpkg/core": ^3.2.0-rc.11
-    "@yarnpkg/plugin-npm": ^2.7.0-rc.4
-    "@yarnpkg/plugin-pack": ^3.1.0
-  checksum: 6c07d070dd345a389e1b886457f3c8cec676ef266a94682324124de47f5e3522f7372d3166dd756192fe3076a7b2ab98f29037b30cd2e35c280ddccd300d6985
+    "@yarnpkg/cli": ^3.2.0
+    "@yarnpkg/core": ^3.2.0
+    "@yarnpkg/plugin-npm": ^2.7.0
+    "@yarnpkg/plugin-pack": ^3.1.1
+  checksum: 9f2c4c4ca2c2cf3651db3dcd8ef827e6c558615294f39a10ca41dbaec090b8bdcc2598ae8f550eb5aa790c655a95d820fb083396b38b31f81ada43482b70e38c
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-npm@npm:^2.7.0-rc.4":
-  version: 2.7.0-rc.4
-  resolution: "@yarnpkg/plugin-npm@npm:2.7.0-rc.4"
+"@yarnpkg/plugin-npm@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "@yarnpkg/plugin-npm@npm:2.7.0"
   dependencies:
-    "@yarnpkg/fslib": ^2.6.1-rc.6
+    "@yarnpkg/fslib": ^2.6.1
     enquirer: ^2.3.6
     semver: ^7.1.2
     ssri: ^6.0.1
     tslib: ^1.13.0
   peerDependencies:
-    "@yarnpkg/core": ^3.2.0-rc.11
-    "@yarnpkg/plugin-pack": ^3.1.0
-  checksum: 86634db3977787a091e2287b62c3ff7316e882fec22fa241cac4fff3def7240220e9d0eae06b32f2d4fd7520952fcc13bd31a1c490cb568aee20baf1a1e2685e
+    "@yarnpkg/core": ^3.2.0
+    "@yarnpkg/plugin-pack": ^3.1.1
+  checksum: 67015281e6ed1fa22f58c10a1be3e64dc6d35d48b12adfe6edde8187aa433955f65074210ecea55d26cf718e2df0430b71192c9577fc0ccae786d7c7d3f62d98
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-pack@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@yarnpkg/plugin-pack@npm:3.1.0"
+"@yarnpkg/plugin-pack@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "@yarnpkg/plugin-pack@npm:3.1.1"
   dependencies:
-    "@yarnpkg/fslib": ^2.6.0
-    clipanion: ^3.0.1
+    "@yarnpkg/fslib": ^2.6.1
+    clipanion: ^3.2.0-rc.4
     micromatch: ^4.0.2
     tar-stream: ^2.0.1
     tslib: ^1.13.0
   peerDependencies:
-    "@yarnpkg/cli": ^3.1.0
-    "@yarnpkg/core": ^3.1.0
-  checksum: 4e58259e5aaed125b062f6f5a7c306abb62ff28e920a89b6e13a9c5f19a25a1fee338a82ade2df0b42a5edf1effc33e2adbb717f0f000cf88bb0e8643080b533
+    "@yarnpkg/cli": ^3.2.0
+    "@yarnpkg/core": ^3.2.0
+  checksum: 9a48b133e5e64a0956d40c8e701bbf4c197398dba6c20138a1f63896c6b74cd3301e0b1a629a8a4250c7f9d134fc2f2437e00b1ca1595b84d9d051548d73f9e1
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-patch@npm:^3.2.0-rc.2":
-  version: 3.2.0-rc.2
-  resolution: "@yarnpkg/plugin-patch@npm:3.2.0-rc.2"
+"@yarnpkg/plugin-patch@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@yarnpkg/plugin-patch@npm:3.2.0"
   dependencies:
-    "@yarnpkg/fslib": ^2.6.1-rc.6
-    "@yarnpkg/libzip": ^2.2.3-rc.6
+    "@yarnpkg/fslib": ^2.6.1
+    "@yarnpkg/libzip": ^2.2.3
     clipanion: ^3.2.0-rc.4
     tslib: ^1.13.0
   peerDependencies:
-    "@yarnpkg/cli": ^3.2.0-rc.11
-    "@yarnpkg/core": ^3.2.0-rc.11
-  checksum: e490392694def6b4e6bc31f462b711a13cf3e5721ab010a5ef9165983c1871ce2dbcef96368611b5750da621192688abdb0082ef8b6c9a6b2f0b4ae899d09d65
+    "@yarnpkg/cli": ^3.2.0
+    "@yarnpkg/core": ^3.2.0
+  checksum: aaaa036d37ba0ace262e0e08dc9450c9bdca9e618ced94e83bc00ca220eea92440029999a5a0a5ff6287901f5df5e3195db16c93fb4b05c19aabd93b0c564942
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-pnp@npm:^3.2.0-rc.1":
-  version: 3.2.0-rc.1
-  resolution: "@yarnpkg/plugin-pnp@npm:3.2.0-rc.1"
+"@yarnpkg/plugin-pnp@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@yarnpkg/plugin-pnp@npm:3.2.0"
   dependencies:
     "@types/semver": ^7.1.0
-    "@yarnpkg/fslib": ^2.6.1-rc.6
+    "@yarnpkg/fslib": ^2.6.1
     "@yarnpkg/plugin-stage": ^3.1.1
-    "@yarnpkg/pnp": ^3.1.1-rc.11
+    "@yarnpkg/pnp": ^3.2.0
     clipanion: ^3.2.0-rc.4
     micromatch: ^4.0.2
     semver: ^7.1.2
     tslib: ^1.13.0
   peerDependencies:
-    "@yarnpkg/cli": ^3.2.0-rc.11
-    "@yarnpkg/core": ^3.2.0-rc.11
-  checksum: f36257a9684be95c2fccf8128fd7a5c183c0785ff900aab79658f122ebb21ca93879d04b2d15f0383ea42fdb3ffd022cb8c9a2cbec9e098ded32733656c660f4
+    "@yarnpkg/cli": ^3.2.0
+    "@yarnpkg/core": ^3.2.0
+  checksum: 3815ad5ec8982e37dd755e8a310c653923955e5d0709dd4a28b0c2a899dc2f4a736201b346730be2bcc7fd4153935cacfc85b5801a73bd7c4e0483a055c996d3
   languageName: node
   linkType: hard
 
-"@yarnpkg/plugin-pnpm@npm:^1.1.0-rc.9":
-  version: 1.1.0-rc.9
-  resolution: "@yarnpkg/plugin-pnpm@npm:1.1.0-rc.9"
+"@yarnpkg/plugin-pnpm@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@yarnpkg/plugin-pnpm@npm:1.1.0"
   dependencies:
-    "@yarnpkg/fslib": ^2.6.1-rc.6
-    "@yarnpkg/plugin-pnp": ^3.2.0-rc.1
+    "@yarnpkg/fslib": ^2.6.1
+    "@yarnpkg/plugin-pnp": ^3.2.0
     "@yarnpkg/plugin-stage": ^3.1.1
     clipanion: ^3.2.0-rc.4
     p-limit: ^2.2.0
     tslib: ^1.13.0
   peerDependencies:
-    "@yarnpkg/cli": ^3.2.0-rc.11
-    "@yarnpkg/core": ^3.2.0-rc.11
-  checksum: 8c69b06c27097ad7d6c1337cd65e4f6548479897dba284388eb890c0998002ffb920f593a6c267334f973131246e12b02d954c7cda0227ccf99fdd042bfb5995
+    "@yarnpkg/cli": ^3.2.0
+    "@yarnpkg/core": ^3.2.0
+  checksum: 7f28e328ea452c0ab05ca9b97cb39d12bd98ce4be57f5f9f4ff3b6ca3595806a3acbe06e2a878647dceb8d1e1ddfcd1a85868da4c3b917b2d5d085c9afeaafdd
   languageName: node
   linkType: hard
 
@@ -979,22 +1017,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/pnp@npm:^3.1.1-rc.11":
-  version: 3.1.1-rc.11
-  resolution: "@yarnpkg/pnp@npm:3.1.1-rc.11"
+"@yarnpkg/pnp@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@yarnpkg/pnp@npm:3.2.0"
   dependencies:
     "@types/node": ^13.7.0
-    "@yarnpkg/fslib": ^2.6.1-rc.6
-  checksum: c4b93249b405b951c47c03596b666c5821c421b7af82edb915ee8c5ba22ab7c9fec8d4fcb3c74e0939555e9362fa50aa982ee49f58eb554f51d82ee414c806b7
+    "@yarnpkg/fslib": ^2.6.1
+  checksum: 5b99f89e774a0e98f6e86b9bdcd36eee4f9dc00b9b5983e8f6df95c3ecc196f5a030616edaaad7648f548d5b06fd7b201226e1205d64e61fe02657fea3860410
   languageName: node
   linkType: hard
 
-"@yarnpkg/shell@npm:^3.2.0-rc.9":
-  version: 3.2.0-rc.9
-  resolution: "@yarnpkg/shell@npm:3.2.0-rc.9"
+"@yarnpkg/shell@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "@yarnpkg/shell@npm:3.2.0"
   dependencies:
-    "@yarnpkg/fslib": ^2.6.1-rc.6
-    "@yarnpkg/parsers": ^2.5.0-rc.9
+    "@yarnpkg/fslib": ^2.6.1
+    "@yarnpkg/parsers": ^2.5.0
     chalk: ^3.0.0
     clipanion: ^3.2.0-rc.4
     cross-spawn: 7.0.3
@@ -1004,7 +1042,7 @@ __metadata:
     tslib: ^1.13.0
   bin:
     shell: ./lib/cli.js
-  checksum: c41a2bd154a2e706185463b2f08aad8e848bfc5018484120798f6b9ba07b083693717de65cd82103c9d598bc9b5928316f9c5840ece22bee5600dfd31af1b8f0
+  checksum: c1ec5f08a3512de538534492e895db631b4a92fdf907c605ba7c7ca60477a865ee796802b96de717fcdfa6ee820183f3d2bbd9962fe5ff302ab47b39fa93592f
   languageName: node
   linkType: hard
 
@@ -1036,7 +1074,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.4.1, acorn@npm:^8.7.0":
+"acorn@npm:^8.4.1, acorn@npm:^8.5.0, acorn@npm:^8.7.0":
   version: 8.7.0
   resolution: "acorn@npm:8.7.0"
   bin:
@@ -1605,13 +1643,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.0.0, enhanced-resolve@npm:^5.8.3":
+"enhanced-resolve@npm:^5.0.0":
   version: 5.8.3
   resolution: "enhanced-resolve@npm:5.8.3"
   dependencies:
     graceful-fs: ^4.2.4
     tapable: ^2.2.0
   checksum: d79fbe531106448b768bb0673fb623ec0202d7ee70373ab7d4f4745d5dfe0806f38c9db7e7da8c941288fe475ab3d538db3791fce522056eeea40ca398c9e287
+  languageName: node
+  linkType: hard
+
+"enhanced-resolve@npm:^5.9.2":
+  version: 5.9.2
+  resolution: "enhanced-resolve@npm:5.9.2"
+  dependencies:
+    graceful-fs: ^4.2.4
+    tapable: ^2.2.0
+  checksum: 792b7a01abb4ee4433b658c71f92d5948675938e0c03cad1732abe843b87395f15cb880ace4f819f78ead94163278283afc79b8be63c0eddca8ab45f7d8c515d
   languageName: node
   linkType: hard
 
@@ -1672,6 +1720,15 @@ __metadata:
     es6-iterator: ^2.0.3
     es6-symbol: ^3.1.1
   checksum: 19ca15f46d50948ce78c2da5f21fb5b1ef45addd4fe17b5df952ff1f2a3d6ce4781249bc73b90995257264be2a98b2ec749bb2aba0c14b5776a1154178f9c927
+  languageName: node
+  linkType: hard
+
+"esbuild@npm:esbuild-wasm@^0.11.20":
+  version: 0.11.23
+  resolution: "esbuild-wasm@npm:0.11.23"
+  bin:
+    esbuild: bin/esbuild
+  checksum: eafd3203667b777c3453538b1ace65ad1c95351da681c00d1d19413548b29ee5c42ab05766f69ea17ffc037acc67b3d2b7a22bb56dee746793934d91d979b0be
   languageName: node
   linkType: hard
 
@@ -1839,13 +1896,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eventemitter3@npm:^4.0.4":
-  version: 4.0.7
-  resolution: "eventemitter3@npm:4.0.7"
-  checksum: 1875311c42fcfe9c707b2712c32664a245629b42bb0a5a84439762dd0fd637fc54d078155ea83c2af9e0323c9ac13687e03cfba79b03af9f40c89b4960099374
-  languageName: node
-  linkType: hard
-
 "events@npm:^3.2.0":
   version: 3.3.0
   resolution: "events@npm:3.3.0"
@@ -1869,7 +1919,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.2, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
+"fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.2, fast-glob@npm:^3.2.9":
   version: 3.2.11
   resolution: "fast-glob@npm:3.2.11"
   dependencies:
@@ -1935,7 +1985,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "figma@workspace:."
   dependencies:
-    "@atls/code-service": ^0.0.10
+    "@atls/code-service": ^0.0.13
     "@types/eslint": ^8.4.1
     "@types/node": ^17.0.15
     eslint: ^8.8.0
@@ -1978,6 +2028,16 @@ __metadata:
   version: 1.1.0
   resolution: "filter-obj@npm:1.1.0"
   checksum: cf2104a7c45ff48e7f505b78a3991c8f7f30f28bd8106ef582721f321f1c6277f7751aacd5d83026cb079d9d5091082f588d14a72e7c5d720ece79118fa61e10
+  languageName: node
+  linkType: hard
+
+"find-up@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "find-up@npm:5.0.0"
+  dependencies:
+    locate-path: ^6.0.0
+    path-exists: ^4.0.0
+  checksum: 07955e357348f34660bde7920783204ff5a26ac2cafcaa28bace494027158a97b9f56faaf2d89a6106211a8174db650dd9f503f9c0d526b1202d5554a00b9095
   languageName: node
   linkType: hard
 
@@ -2537,6 +2597,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"locate-path@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "locate-path@npm:6.0.0"
+  dependencies:
+    p-locate: ^5.0.0
+  checksum: 72eb661788a0368c099a184c59d2fee760b3831c9c1c33955e8a19ae4a21b4116e53fa736dc086cdeb9fce9f7cc508f2f92d2d3aae516f133e16a2bb59a39f5a
+  languageName: node
+  linkType: hard
+
 "lodash-es@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash-es@npm:4.17.21"
@@ -2837,13 +2906,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-finally@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "p-finally@npm:1.0.0"
-  checksum: 93a654c53dc805dd5b5891bab16eb0ea46db8f66c4bfd99336ae929323b1af2b70a8b0654f8f1eae924b2b73d037031366d645f1fd18b3d30cbd15950cc4b1d4
-  languageName: node
-  linkType: hard
-
 "p-limit@npm:^2.2.0":
   version: 2.3.0
   resolution: "p-limit@npm:2.3.0"
@@ -2853,22 +2915,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-queue@npm:^6.0.0":
-  version: 6.6.2
-  resolution: "p-queue@npm:6.6.2"
+"p-limit@npm:^3.0.2":
+  version: 3.1.0
+  resolution: "p-limit@npm:3.1.0"
   dependencies:
-    eventemitter3: ^4.0.4
-    p-timeout: ^3.2.0
-  checksum: 832642fcc4ab6477b43e6d7c30209ab10952969ed211c6d6f2931be8a4f9935e3578c72e8cce053dc34f2eb6941a408a2c516a54904e989851a1a209cf19761c
+    yocto-queue: ^0.1.0
+  checksum: 7c3690c4dbf62ef625671e20b7bdf1cbc9534e83352a2780f165b0d3ceba21907e77ad63401708145ca4e25bfc51636588d89a8c0aeb715e6c37d1c066430360
   languageName: node
   linkType: hard
 
-"p-timeout@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "p-timeout@npm:3.2.0"
+"p-locate@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "p-locate@npm:5.0.0"
   dependencies:
-    p-finally: ^1.0.0
-  checksum: 3dd0eaa048780a6f23e5855df3dd45c7beacff1f820476c1d0d1bcd6648e3298752ba2c877aa1c92f6453c7dd23faaf13d9f5149fc14c0598a142e2c5e8d649c
+    p-limit: ^3.0.2
+  checksum: 1623088f36cf1cbca58e9b61c4e62bf0c60a07af5ae1ca99a720837356b5b6c5ba3eb1b2127e47a06865fee59dd0453cad7cc844cda9d5a62ac1a5a51b7c86d3
   languageName: node
   linkType: hard
 
@@ -2909,6 +2970,13 @@ __metadata:
     parse-path: ^4.0.0
     protocols: ^1.4.0
   checksum: 6b680d1fdfba15fc54106c1130540bf61a415bc3085351b8609a213b2fdf551c53ec8d32703d8ea9b6c5fbf2da92ee1593c99f682032512b15ce87f9013d2a39
+  languageName: node
+  linkType: hard
+
+"path-exists@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "path-exists@npm:4.0.0"
+  checksum: 505807199dfb7c50737b057dd8d351b82c033029ab94cb10a657609e00c1bc53b951cfdbccab8de04c5584d5eff31128ce6afd3db79281874a5ef2adbba55ed1
   languageName: node
   linkType: hard
 
@@ -3343,7 +3411,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"string-replace-loader@npm:^3.0.3":
+"string-replace-loader@npm:^3.1.0":
   version: 3.1.0
   resolution: "string-replace-loader@npm:3.1.0"
   dependencies:
@@ -3522,9 +3590,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-loader@npm:^9.2.6":
-  version: 9.2.6
-  resolution: "ts-loader@npm:9.2.6"
+"ts-loader@npm:^9.2.8":
+  version: 9.2.8
+  resolution: "ts-loader@npm:9.2.8"
   dependencies:
     chalk: ^4.1.0
     enhanced-resolve: ^5.0.0
@@ -3533,7 +3601,7 @@ __metadata:
   peerDependencies:
     typescript: "*"
     webpack: ^5.0.0
-  checksum: 309d8fb6348c0c3a7166d42c1238c585ede00f816155b24217dbca489406a72409395d7954bc5801ddb9ca71c71e7e0b2375dbc342337e0ab1a461944598a7fe
+  checksum: 3afd9a4cc1d46738ac3f2decc7dfa655e0183d4d2d48c7a113ea9f3ac313304f54be59252cde2ef04757c791e28cfcfc63323d3dd1f2f949485242c1ea4835e5
   languageName: node
   linkType: hard
 
@@ -3598,19 +3666,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.5.4":
-  version: 4.5.5
-  resolution: "typescript@npm:4.5.5"
+"typescript@npm:^4.6.2":
+  version: 4.6.3
+  resolution: "typescript@npm:4.6.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 506f4c919dc8aeaafa92068c997f1d213b9df4d9756d0fae1a1e7ab66b585ab3498050e236113a1c9e57ee08c21ec6814ca7a7f61378c058d79af50a4b1f5a5e
+  checksum: 255bb26c8cb846ca689dd1c3a56587af4f69055907aa2c154796ea28ee0dea871535b1c78f85a6212c77f2657843a269c3a742d09d81495b97b914bf7920415b
   languageName: node
   linkType: hard
 
 "typescript@patch:typescript@4.4.4#~builtin<compat/typescript>":
   version: 4.4.4
-  resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=de8f8a"
+  resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -3618,13 +3686,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>":
-  version: 4.5.5
-  resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=de8f8a"
+"typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
+  version: 4.6.3
+  resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 858c61fa63f7274ca4aaaffeced854d550bf416cff6e558c4884041b3311fb662f476f167cf5c9f8680c607239797e26a2ee0bcc6467fbc05bfcb218e1c6c671
+  checksum: 6bf45caf847062420592e711bc9c28bf5f9a9a7fa8245343b81493e4ededae33f1774009d1234d911422d1646a2c839f44e1a23ecb111b40a60ac2ea4c1482a8
   languageName: node
   linkType: hard
 
@@ -3685,19 +3753,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-sources@npm:^3.2.2":
+"webpack-sources@npm:^3.2.3":
   version: 3.2.3
   resolution: "webpack-sources@npm:3.2.3"
   checksum: 989e401b9fe3536529e2a99dac8c1bdc50e3a0a2c8669cbafad31271eadd994bc9405f88a3039cd2e29db5e6d9d0926ceb7a1a4e7409ece021fe79c37d9c4607
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.65.0":
-  version: 5.66.0
-  resolution: "webpack@npm:5.66.0"
+"webpack@npm:^5.70.0":
+  version: 5.71.0
+  resolution: "webpack@npm:5.71.0"
   dependencies:
-    "@types/eslint-scope": ^3.7.0
-    "@types/estree": ^0.0.50
+    "@types/eslint-scope": ^3.7.3
+    "@types/estree": ^0.0.51
     "@webassemblyjs/ast": 1.11.1
     "@webassemblyjs/wasm-edit": 1.11.1
     "@webassemblyjs/wasm-parser": 1.11.1
@@ -3705,7 +3773,7 @@ __metadata:
     acorn-import-assertions: ^1.7.6
     browserslist: ^4.14.5
     chrome-trace-event: ^1.0.2
-    enhanced-resolve: ^5.8.3
+    enhanced-resolve: ^5.9.2
     es-module-lexer: ^0.9.0
     eslint-scope: 5.1.1
     events: ^3.2.0
@@ -3719,13 +3787,13 @@ __metadata:
     tapable: ^2.1.1
     terser-webpack-plugin: ^5.1.3
     watchpack: ^2.3.1
-    webpack-sources: ^3.2.2
+    webpack-sources: ^3.2.3
   peerDependenciesMeta:
     webpack-cli:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 5a44664a840fd64c5383aa78847b205ae0b42b607f85ee1d6a568617a210c1b9caab1822bce40a89a3b5eb0f626a83fb5fe2055c638aa230897bf224030d28e8
+  checksum: 84b273a15180d45dafe4fc4a3ccccba2f72210f327a1af39713b3ef78148768afb0e18fa0cddaea4af5dd54ace199fbbdfcef9aec8da7e9c248f8b1b7cc413e1
   languageName: node
   linkType: hard
 
@@ -3767,6 +3835,13 @@ __metadata:
   version: 4.0.0
   resolution: "yallist@npm:4.0.0"
   checksum: 343617202af32df2a15a3be36a5a8c0c8545208f3d3dfbc6bb7c3e3b7e8c6f8e7485432e4f3b88da3031a6e20afa7c711eded32ddfb122896ac5d914e75848d5
+  languageName: node
+  linkType: hard
+
+"yocto-queue@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "yocto-queue@npm:0.1.0"
+  checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
   languageName: node
   linkType: hard
 

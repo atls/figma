@@ -9,7 +9,8 @@
   "scripts": {
     "build": "builder build plugin",
     "prepack": "yarn run build",
-    "postpack": "rm -rf dist"
+    "postpack": "rm -rf dist",
+    "figma-theme": "node bin/figma-theme-cli.js"
   },
   "dependencies": {
     "@atls/figma-assets": "workspace:0.0.1",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@types/node": "17.0.15",
+    "@yarnpkg/builder": "^3.2.0",
     "figma-js": "^1.14.0"
   },
   "publishConfig": {
