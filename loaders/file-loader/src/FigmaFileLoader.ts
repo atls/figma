@@ -1,5 +1,7 @@
-import path from 'path'
-import { Client, ClientInterface, FileResponse, Node } from 'figma-js'
+import { Client }          from 'figma-js'
+import { ClientInterface } from 'figma-js'
+import { FileResponse }    from 'figma-js'
+import { Node }            from 'figma-js'
 
 export class FigmaFileLoader {
   figma: ClientInterface
@@ -19,7 +21,7 @@ export class FigmaFileLoader {
   async loadDocument(fileId: string, documentId: string): Promise<Node> {
     const file = await this.load(fileId)
 
-    const node = file.document.children.find(doc => doc.id === documentId)
+    const node = file.document.children.find((doc) => doc.id === documentId)
 
     if (!node) {
       throw new Error(`Document with id ${documentId} not found.`)
