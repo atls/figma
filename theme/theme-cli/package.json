@@ -8,21 +8,21 @@
   ],
   "scripts": {
     "build": "builder build plugin",
+    "figma-theme": "node bin/figma-theme-cli.js",
     "prepack": "yarn run build",
-    "postpack": "rm -rf dist",
-    "figma-theme": "node bin/figma-theme-cli.js"
+    "postpack": "rm -rf dist"
   },
   "dependencies": {
     "@atls/figma-assets": "workspace:0.0.1",
     "@atls/figma-file-loader": "workspace:0.0.1",
     "@atls/figma-theme": "workspace:0.0.1",
-    "commander": "^9.0.0",
-    "npmlog": "^6.0.0"
+    "commander": "^9.4.0",
+    "npmlog": "^6.0.2"
   },
   "devDependencies": {
     "@types/node": "17.0.15",
-    "@yarnpkg/builder": "^3.2.0",
-    "figma-js": "^1.14.0"
+    "@yarnpkg/builder": "^4.0.0-rc.18",
+    "figma-js": "^1.16.0"
   },
   "publishConfig": {
     "access": "public"
