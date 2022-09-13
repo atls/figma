@@ -7,7 +7,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "builder build plugin",
+    "build": "yarn library build",
     "figma-theme": "node bin/figma-theme-cli.js",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
