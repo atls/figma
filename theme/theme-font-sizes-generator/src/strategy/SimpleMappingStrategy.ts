@@ -33,11 +33,13 @@ export class SimpleMappingStrategy extends Strategy {
     const reverseTheme = Object.entries(theme).reverse()
     const themeValues = Object.values(theme)
 
-    const newTheme = reverseTheme.reduce((result, [key, value], index) => {
-      result[key] = themeValues[index]
-
-      return result
-    }, {})
+    const newTheme = reverseTheme.reduce(
+      (result, [key, value], index) => ({
+        ...result,
+        [key]: themeValues[index],
+      }),
+      {}
+    )
 
     for (const [index, value] of fontSizes.entries()) {
       if (index === middle) {
