@@ -28,9 +28,9 @@ export enum FontSize {
   Giant = 'giant',
 }
 
-export const FontSizeNames = [FontSize.Default]
+export const FontSizeDefaultName = FontSize.Default
 
-export const groupNamesLessThanDefault = [
+export const groupNamesLessThanDefault: Array<string> = [
   FontSize.SemiTiny,
   FontSize.Tiny,
   FontSize.SemiSmall,
@@ -40,13 +40,13 @@ export const groupNamesLessThanDefault = [
   FontSize.SemiDefault,
 ]
 
-export const groupNamesGreaterThanDefault = [
-  FontSize.SemiIncreased,
-  FontSize.Increased,
-  FontSize.SemiLarge,
-  FontSize.Large,
-  FontSize.SemiHuge,
-  FontSize.Huge,
-  FontSize.SemiGiant,
+export const groupNamesGreaterThanDefault: Array<string> = [
   FontSize.Giant,
+  FontSize.SemiGiant,
+  FontSize.Huge,
+  FontSize.SemiHuge,
+  FontSize.Large,
+  FontSize.SemiLarge,
+  FontSize.Increased,
+  FontSize.SemiIncreased,
 ]
