@@ -8,7 +8,7 @@ import { groupNamesLessThanDefault }    from '../Constants'
 
 export class SimpleMappingStrategy extends Strategy {
   fillSizes(fontSizes) {
-    const theme = {}
+    const tempTheme = {}
 
     const middle = Math.floor(fontSizes.length / 2)
 
@@ -19,22 +19,22 @@ export class SimpleMappingStrategy extends Strategy {
     const groupGreater = [...groupNamesGreaterThanDefault]
 
     if (fontSizes.length === 1) {
-      theme[FontSizeDefaultName] = fontSizes
+      tempTheme[FontSizeDefaultName] = fontSizes
     }
 
     if (fontSizes.length > 1) {
       for (const value of less) {
         const nextGroupName = groupLess.pop()
 
-        theme[nextGroupName as string] = value
+        tempTheme[nextGroupName as string] = value
       }
     }
 
-    const reverseTheme = Object.entries(theme).reverse()
-    const themeValues = Object.values(theme)
+    const reversedKeysTheme = Object.keys(tempTheme).reverse()
+    const themeValues = Object.values(tempTheme)
 
-    const newTheme = reverseTheme.reduce(
-      (result, [key, value], index) => ({
+    const theme = reversedKeysTheme.reduce(
+      (result, key, index) => ({
         ...result,
         [key]: themeValues[index],
       }),
@@ -43,17 +43,17 @@ export class SimpleMappingStrategy extends Strategy {
 
     for (const [index, value] of fontSizes.entries()) {
       if (index === middle) {
-        newTheme[FontSizeDefaultName] = value
+        theme[FontSizeDefaultName] = value
       }
     }
 
     for (const value of greater) {
       const nextGroupName = groupGreater.pop()
 
-      newTheme[nextGroupName as string] = value
+      theme[nextGroupName as string] = value
     }
 
-    return newTheme
+    return theme
   }
 
   execute(textNodes: Text[] = []) {
