@@ -263,11 +263,11 @@ describe('font sizes generator', () => {
 
   it('should generate font sizes empty file', async () => {
     // @ts-ignore
-    const generator = new FigmaTheme(emptyFile, '')
+    const generator = new FigmaTheme(emptyFile, './theme/theme-font-sizes-generator/src/unit')
 
     await generator.generate()
 
-    const config = path.join(__dirname, '../../../fontSizes.ts')
+    const config = path.join(__dirname, '../unit/fontSizes.ts')
 
     const code = await readFileSync(config)
 
@@ -276,11 +276,11 @@ describe('font sizes generator', () => {
 
   it('should generate font sizes file', async () => {
     // @ts-ignore
-    const generator = new FigmaTheme(file, '')
+    const generator = new FigmaTheme(file, './theme/theme-font-sizes-generator/src/unit')
 
     await generator.generate()
 
-    const config = path.join(__dirname, '../../../fontSizes.ts')
+    const config = path.join(__dirname, '../unit/fontSizes.ts')
 
     const code = await readFileSync(config)
 
