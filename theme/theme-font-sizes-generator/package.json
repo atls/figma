@@ -12,6 +12,7 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
+    "@atls/figma-theme": "workspace:0.0.1",
     "@atls/figma-utils": "workspace:0.0.1"
   },
   "devDependencies": {

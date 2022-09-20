@@ -10,7 +10,10 @@
   ],
   "devDependencies": {
     "@atls/code-service": "^0.0.16",
+    "@atls/config-jest": "^0.0.5",
+    "@jest/core": "^29.0.3",
     "@types/eslint": "^8.4.6",
+    "@types/jest": "^29.0.3",
     "@types/node": "^17.0.15",
     "eslint": "^8.8.0",
     "husky": "8.0.1",

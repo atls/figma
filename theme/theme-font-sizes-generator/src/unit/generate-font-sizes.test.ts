@@ -1,0 +1,244 @@
+import path                             from 'path'
+import { readFileSync }                 from 'fs'
+
+import { FigmaTheme }                   from '@atls/figma-theme'
+
+import { FigmaThemeFontSizesGenerator } from '../FigmaThemeFontSizesGenerator'
+
+describe('font sizes generator', () => {
+  const file = {
+    document: {
+      children: [
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 12,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 13,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 15,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 16,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 13,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 18,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 20,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 28,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 31,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 32,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 36,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 40,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 44,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 48,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 60,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 64,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 72,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 74,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 80,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 84,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 94,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 103,
+          },
+        },
+        {
+          type: 'TEXT',
+          style: {
+            fontSize: 128,
+          },
+        },
+      ],
+    },
+  }
+
+  const expectedObj = {
+    content: `export const fontSizes = {
+    "small": {
+        "semiDefault": 12,
+        "default": 13
+    },
+    "normal": {
+        "reduced": 15,
+        "semiDefault": 16,
+        "default": 18,
+        "semiIncreased": 20
+    },
+    "medium": {
+        "semiReduced": 28,
+        "reduced": 31,
+        "semiDefault": 32,
+        "default": 36,
+        "semiIncreased": 40,
+        "increased": 44,
+        "semiLarge": 48
+    },
+    "large": {
+        "small": 60,
+        "semiReduced": 64,
+        "reduced": 72,
+        "semiDefault": 74,
+        "default": 80,
+        "semiIncreased": 84,
+        "increased": 94,
+        "semiLarge": 103,
+        "large": 128
+    }
+}`,
+    name: 'fontSizes',
+  }
+
+  const expectedCode = `export const fontSizes = {
+  small: {
+    semiDefault: 12,
+    default: 13,
+  },
+  normal: {
+    reduced: 15,
+    semiDefault: 16,
+    default: 18,
+    semiIncreased: 20,
+  },
+  medium: {
+    semiReduced: 28,
+    reduced: 31,
+    semiDefault: 32,
+    default: 36,
+    semiIncreased: 40,
+    increased: 44,
+    semiLarge: 48,
+  },
+  large: {
+    small: 60,
+    semiReduced: 64,
+    reduced: 72,
+    semiDefault: 74,
+    default: 80,
+    semiIncreased: 84,
+    increased: 94,
+    semiLarge: 103,
+    large: 128,
+  },
+};
+`
+
+  it('should generate an object with name and content', () => {
+    const generator = new FigmaThemeFontSizesGenerator()
+    // @ts-ignore
+    const generated = generator.generate(file)
+
+    expect(generated).toStrictEqual(expectedObj)
+  })
+
+  it('should generate font sizes file', async () => {
+    // @ts-ignore
+    const generator = new FigmaTheme(file, '')
+
+    await generator.generate()
+
+    const config = path.join(__dirname, '../../../fontSizes.ts')
+
+    const code = await readFileSync(config)
+
+    expect(Buffer.from(code).toString()).toBe(expectedCode)
+  })
+})
