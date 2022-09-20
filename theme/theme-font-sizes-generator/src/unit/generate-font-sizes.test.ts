@@ -151,6 +151,12 @@ describe('font sizes generator', () => {
     },
   }
 
+  const emptyFile = {
+    document: {
+      children: [],
+    },
+  }
+
   const expectedObj = {
     content: `export const fontSizes = {
     "small": {
@@ -221,12 +227,51 @@ describe('font sizes generator', () => {
 };
 `
 
+  const expectedEmptyObj = {
+    content: `export const fontSizes = {
+    "small": {},
+    "normal": {},
+    "medium": {},
+    "large": {}
+}`,
+    name: 'fontSizes',
+  }
+
+  const expectedEmptyFile = `export const fontSizes = {
+  small: {},
+  normal: {},
+  medium: {},
+  large: {},
+};
+`
+
   it('should generate an object with name and content', () => {
     const generator = new FigmaThemeFontSizesGenerator()
     // @ts-ignore
     const generated = generator.generate(file)
 
     expect(generated).toStrictEqual(expectedObj)
+  })
+
+  it('should generate an object with name and empty content', () => {
+    const generator = new FigmaThemeFontSizesGenerator()
+    // @ts-ignore
+    const generated = generator.generate(emptyFile)
+
+    expect(generated).toStrictEqual(expectedEmptyObj)
+  })
+
+  it('should generate font sizes empty file', async () => {
+    // @ts-ignore
+    const generator = new FigmaTheme(emptyFile, '')
+
+    await generator.generate()
+
+    const config = path.join(__dirname, '../../../fontSizes.ts')
+
+    const code = await readFileSync(config)
+
+    expect(Buffer.from(code).toString()).toBe(expectedEmptyFile)
   })
 
   it('should generate font sizes file', async () => {
