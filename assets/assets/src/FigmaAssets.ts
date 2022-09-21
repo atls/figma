@@ -1,13 +1,17 @@
-import path from 'path'
+import fs                  from 'fs-extra'
+import fetch               from 'node-fetch'
+import path                from 'path'
+import { Node }            from 'figma-js'
+
 import { FigmaFileLoader } from '@atls/figma-file-loader'
-import { Node } from 'figma-js'
-import fetch from 'node-fetch'
-import fs from 'fs-extra'
 
 export class FigmaAssets {
   fileId: string
+
   node: Node
+
   output: string
+
   client: FigmaFileLoader = new FigmaFileLoader()
 
   constructor(fileId: string, node: Node, output) {
@@ -23,7 +27,7 @@ export class FigmaAssets {
 
     await fs.ensureDir(path.dirname(filePath))
 
-    const response = await fetch(url)
+    const response: any = await fetch(url)
 
     if (response.status !== 200) {
       return
@@ -39,18 +43,18 @@ export class FigmaAssets {
     const items: any[] = []
 
     children
-      .filter(item => item.type === 'COMPONENT')
-      .forEach(item => {
+      .filter((item) => item.type === 'COMPONENT')
+      .forEach((item) => {
         items.push({ id: item.id, name: item.name })
       })
 
     const images: any = await this.client.fileImages(
       this.fileId,
-      items.map(item => item.id)
+      items.map((item) => item.id)
     )
 
     await Promise.all(
-      items.map(async item => {
+      items.map(async (item) => {
         if (images[item.id]) {
           await this.loadImage(item.name, images[item.id])
         }

@@ -6,20 +6,21 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
-    "build": "builder build plugin",
+    "build": "yarn library build",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },
   "dependencies": {
     "@atls/figma-file-loader": "workspace:0.0.1",
-    "fs-extra": "^8.0.1",
-    "node-fetch": "^2.6.0"
+    "figma-js": "1.16.0",
+    "fs-extra": "^10.1.0",
+    "node-fetch": "^3.2.10"
   },
   "devDependencies": {
-    "@types/node": "10.12.25"
+    "@types/node": "17.0.15"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "name": "@atls/figma-theme",
+  "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn library build",
+    "prepack": "yarn run build",
+    "postpack": "rm -rf dist"
+  },
+  "dependencies": {
+    "@atls/figma-theme-font-sizes-generator": "workspace:0.0.1",
+    "figma-js": "1.16.0",
+    "prettier": "^2.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.15"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

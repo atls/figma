@@ -1,0 +1,21 @@
+{
+  "name": "@atls/figma-theme-generator-common",
+  "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn library build",
+    "prepack": "yarn run build",
+    "postpack": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.15",
+    "figma-js": "^1.16.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

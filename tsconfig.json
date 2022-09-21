@@ -24,8 +24,5 @@
     "target": "es2019",
     "jsx": "react"
   },
-  "include": [
-    "loaders/**/*",
-    "assets/**/*"
-  ]
+  "include": ["loaders/**/*", "assets/**/*", "theme/**/*", "utils/**/*"]
 }
