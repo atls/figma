@@ -1,11 +1,12 @@
-import path                             from 'path'
-import prettier                         from 'prettier'
-import { FileResponse }                 from 'figma-js'
-import { promises as fs }               from 'fs'
+import path                               from 'path'
+import prettier                           from 'prettier'
+import { FileResponse }                   from 'figma-js'
+import { promises as fs }                 from 'fs'
 
-import { FigmaThemeFontSizesGenerator } from '@atls/figma-theme-font-sizes-generator'
+import { FigmaThemeFontSizesGenerator }   from '@atls/figma-theme-font-sizes-generator'
+import { FigmaThemeFontWeightsGenerator } from '@atls/figma-theme-font-weights-generator'
 
-const generators = [FigmaThemeFontSizesGenerator]
+const generators = [FigmaThemeFontSizesGenerator, FigmaThemeFontWeightsGenerator]
 
 export class FigmaTheme {
   file: FileResponse
