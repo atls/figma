@@ -1,5 +1,5 @@
 {
-  "name": "@atls/figma-theme",
+  "name": "@atls/figma-theme-font-weights-generator",
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
@@ -12,13 +12,13 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
-    "@atls/figma-theme-font-sizes-generator": "workspace:0.0.1",
-    "@atls/figma-theme-font-weights-generator": "workspace:0.0.1",
-    "figma-js": "1.16.0",
-    "prettier": "^2.7.1"
+    "@atls/figma-theme": "workspace:0.0.1",
+    "@atls/figma-utils": "workspace:0.0.1"
   },
   "devDependencies": {
-    "@types/node": "17.0.15"
+    "@atls/figma-theme-generator-common": "workspace:0.0.1",
+    "@types/node": "17.0.15",
+    "figma-js": "^1.16.0"
   },
   "publishConfig": {
     "access": "public"

@@ -1,4 +1,6 @@
 import path                             from 'path'
+import { existsSync }                   from 'fs'
+import { mkdirSync }                    from 'fs'
 import { readFileSync }                 from 'fs'
 
 import { FigmaTheme }                   from '@atls/figma-theme'
@@ -262,12 +264,17 @@ describe('font sizes generator', () => {
   })
 
   it('should generate font sizes empty file', async () => {
-    // @ts-ignore
-    const generator = new FigmaTheme(emptyFile, './theme/theme-font-sizes-generator/src/unit')
+    const generator = new FigmaTheme(
+      // @ts-ignore
+      emptyFile,
+      './theme/theme-font-sizes-generator/src/unit/generated'
+    )
+
+    if (!existsSync(`${__dirname}/generated`)) mkdirSync(`${__dirname}/generated`)
 
     await generator.generate()
 
-    const config = path.join(__dirname, '../unit/fontSizes.ts')
+    const config = path.join(__dirname, '/generated/fontSizes.ts')
 
     const code = await readFileSync(config)
 
@@ -276,11 +283,13 @@ describe('font sizes generator', () => {
 
   it('should generate font sizes file', async () => {
     // @ts-ignore
-    const generator = new FigmaTheme(file, './theme/theme-font-sizes-generator/src/unit')
+    const generator = new FigmaTheme(file, './theme/theme-font-sizes-generator/src/unit/generated')
+
+    if (!existsSync(`${__dirname}/generated`)) mkdirSync(`${__dirname}/generated`)
 
     await generator.generate()
 
-    const config = path.join(__dirname, '../unit/fontSizes.ts')
+    const config = path.join(__dirname, '/generated/fontSizes.ts')
 
     const code = await readFileSync(config)
 
