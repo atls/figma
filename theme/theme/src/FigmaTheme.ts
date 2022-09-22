@@ -5,8 +5,13 @@ import { promises as fs }                 from 'fs'
 
 import { FigmaThemeFontSizesGenerator }   from '@atls/figma-theme-font-sizes-generator'
 import { FigmaThemeFontWeightsGenerator } from '@atls/figma-theme-font-weights-generator'
+import { FigmaThemeFontsGenerator }       from '@atls/figma-theme-fonts-generator'
 
-const generators = [FigmaThemeFontSizesGenerator, FigmaThemeFontWeightsGenerator]
+const generators = [
+  FigmaThemeFontSizesGenerator,
+  FigmaThemeFontWeightsGenerator,
+  FigmaThemeFontsGenerator,
+]
 
 export class FigmaTheme {
   file: FileResponse

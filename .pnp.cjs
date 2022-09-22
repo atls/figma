@@ -53,6 +53,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:theme/theme-font-weights-generator"\
       },\
       {\
+        "name": "@atls/figma-theme-fonts-generator",\
+        "reference": "workspace:theme/theme-fonts-generator"\
+      },\
+      {\
         "name": "@atls/figma-theme-generator-common",\
         "reference": "workspace:theme/theme-generator-common"\
       },\
@@ -72,6 +76,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@atls/figma-theme-colors-generator", ["workspace:theme/theme-colors-generator"]],\
       ["@atls/figma-theme-font-sizes-generator", ["workspace:theme/theme-font-sizes-generator"]],\
       ["@atls/figma-theme-font-weights-generator", ["workspace:theme/theme-font-weights-generator"]],\
+      ["@atls/figma-theme-fonts-generator", ["workspace:theme/theme-fonts-generator"]],\
       ["@atls/figma-theme-generator-common", ["workspace:theme/theme-generator-common"]],\
       ["@atls/figma-utils", ["workspace:utils/utils"]],\
       ["figma", ["workspace:."]]\
@@ -356,6 +361,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@atls/figma-theme", "workspace:theme/theme"],\
             ["@atls/figma-theme-font-sizes-generator", "workspace:theme/theme-font-sizes-generator"],\
             ["@atls/figma-theme-font-weights-generator", "workspace:theme/theme-font-weights-generator"],\
+            ["@atls/figma-theme-fonts-generator", "workspace:theme/theme-fonts-generator"],\
             ["@types/node", "npm:17.0.15"],\
             ["figma-js", "npm:1.16.0"],\
             ["prettier", "npm:2.7.1"]\
@@ -414,6 +420,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./theme/theme-font-weights-generator/",\
           "packageDependencies": [\
             ["@atls/figma-theme-font-weights-generator", "workspace:theme/theme-font-weights-generator"],\
+            ["@atls/figma-theme", "workspace:theme/theme"],\
+            ["@atls/figma-theme-generator-common", "workspace:theme/theme-generator-common"],\
+            ["@atls/figma-utils", "workspace:utils/utils"],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@atls/figma-theme-fonts-generator", [\
+        ["workspace:theme/theme-fonts-generator", {\
+          "packageLocation": "./theme/theme-fonts-generator/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme-fonts-generator", "workspace:theme/theme-fonts-generator"],\
             ["@atls/figma-theme", "workspace:theme/theme"],\
             ["@atls/figma-theme-generator-common", "workspace:theme/theme-generator-common"],\
             ["@atls/figma-utils", "workspace:utils/utils"],\
