@@ -48,5 +48,4 @@ package.tgz
 .idea/workspace.xml
 
 # Generated files
-/theme/theme-font-sizes-generator/src/unit/generated
-/theme/theme-font-weights-generator/src/unit/generated
+generated/

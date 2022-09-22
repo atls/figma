@@ -7,16 +7,14 @@ logger.heading = 'figma-theme' as string
 ;(program as any)
   .option('-o, --output [output]', 'Output dir')
   .option('-v, --verbose', 'Verbose output')
-  // .arguments('<fileId>')
+  .arguments('<fileId>')
   .parse(process.argv)
 
 if ((program as any).verbose) {
   logger.level = 'verbose'
 }
 
-// const [fileId] = (program as any).args
-
-const fileId = 'rk2ELp7UFqqvYJgfC07o6W'
+const [fileId] = (program as any).args
 
 if (!fileId) {
   logger.error('Figma file id required.')
