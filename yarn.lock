@@ -333,6 +333,9 @@ __metadata:
     "@atls/figma-utils": "workspace:0.0.1"
     "@types/node": 17.0.15
     figma-js: ^1.16.0
+  peerDependencies:
+    "@atls/figma-theme-generator-common": "*"
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 
