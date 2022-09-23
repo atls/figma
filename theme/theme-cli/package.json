@@ -24,6 +24,9 @@
     "@yarnpkg/builder": "^4.0.0-rc.18",
     "figma-js": "^1.16.0"
   },
+  "peerDependencies": {
+    "figma-js": "*"
+  },
   "publishConfig": {
     "access": "public"
   }
