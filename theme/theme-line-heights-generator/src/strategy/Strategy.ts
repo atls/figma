@@ -7,9 +7,12 @@ export abstract class Strategy {
     const stat = new Map<string, number>()
 
     textNodes.forEach((node) => {
-      const { fontFamily } = node.style
+      const fontSize = Math.round(node.style.fontSize)
+      const lineHeight = Math.round(node.style.lineHeightPx)
 
-      stat.set(fontFamily, (stat.get(fontFamily) || 0) + 1)
+      const result = (lineHeight / fontSize).toFixed(1)
+
+      stat.set(result, (stat.get(result) || 0) + 1)
     })
 
     return stat

@@ -324,6 +324,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@atls/figma-theme-line-heights-generator@workspace:0.0.1, @atls/figma-theme-line-heights-generator@workspace:theme/theme-line-heights-generator":
+  version: 0.0.0-use.local
+  resolution: "@atls/figma-theme-line-heights-generator@workspace:theme/theme-line-heights-generator"
+  dependencies:
+    "@atls/figma-theme": "workspace:0.0.1"
+    "@atls/figma-theme-generator-common": "workspace:0.0.1"
+    "@atls/figma-utils": "workspace:0.0.1"
+    "@types/node": 17.0.15
+    figma-js: ^1.16.0
+  peerDependencies:
+    "@atls/figma-theme-generator-common": "*"
+    figma-js: "*"
+  languageName: unknown
+  linkType: soft
+
 "@atls/figma-theme@workspace:0.0.1, @atls/figma-theme@workspace:theme/theme":
   version: 0.0.0-use.local
   resolution: "@atls/figma-theme@workspace:theme/theme"
@@ -331,6 +346,7 @@ __metadata:
     "@atls/figma-theme-font-sizes-generator": "workspace:0.0.1"
     "@atls/figma-theme-font-weights-generator": "workspace:0.0.1"
     "@atls/figma-theme-fonts-generator": "workspace:0.0.1"
+    "@atls/figma-theme-line-heights-generator": "workspace:0.0.1"
     "@types/node": 17.0.15
     figma-js: 1.16.0
     prettier: ^2.7.1
