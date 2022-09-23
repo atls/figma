@@ -68,17 +68,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
-      ["@atls/figma-assets", ["workspace:assets/assets"]],\
+      ["@atls/figma-assets", ["virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#workspace:assets/assets", "workspace:assets/assets"]],\
       ["@atls/figma-assets-cli", ["workspace:assets/assets-cli"]],\
-      ["@atls/figma-file-loader", ["workspace:loaders/file-loader"]],\
-      ["@atls/figma-theme", ["workspace:theme/theme"]],\
+      ["@atls/figma-file-loader", ["virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader", "workspace:loaders/file-loader"]],\
+      ["@atls/figma-theme", ["virtual:a4c8add42022731fed1a8b2c9c2743e1c5eca536c6614240140c997f931ebd40478e3639c68f1673317050c0862dc2ca7e382e80a3001da44a05c899d8a8b4ca#workspace:theme/theme", "virtual:e43939466664f355b9a8c9d1e34822ea32e7f143a83a0dc628e414eb1dd1587fbc6f5f5595e4310e076437f7e224f422ab3eea7886f73200b44e6bf1bde6f4d3#workspace:theme/theme", "virtual:e572cf57d11da21f798e3379dcf10fdc4663de39667c7858bb4ea8abf4c729ab4cfccb81dadaaec270ab9b7dc60b93f48a646699361915132d5535b8026387eb#workspace:theme/theme", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme", "workspace:theme/theme"]],\
       ["@atls/figma-theme-cli", ["workspace:theme/theme-cli"]],\
       ["@atls/figma-theme-colors-generator", ["workspace:theme/theme-colors-generator"]],\
-      ["@atls/figma-theme-font-sizes-generator", ["workspace:theme/theme-font-sizes-generator"]],\
-      ["@atls/figma-theme-font-weights-generator", ["workspace:theme/theme-font-weights-generator"]],\
-      ["@atls/figma-theme-fonts-generator", ["workspace:theme/theme-fonts-generator"]],\
-      ["@atls/figma-theme-generator-common", ["workspace:theme/theme-generator-common"]],\
-      ["@atls/figma-utils", ["workspace:utils/utils"]],\
+      ["@atls/figma-theme-font-sizes-generator", ["virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-sizes-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-sizes-generator", "workspace:theme/theme-font-sizes-generator"]],\
+      ["@atls/figma-theme-font-weights-generator", ["virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-weights-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-weights-generator", "workspace:theme/theme-font-weights-generator"]],\
+      ["@atls/figma-theme-fonts-generator", ["virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-fonts-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-fonts-generator", "workspace:theme/theme-fonts-generator"]],\
+      ["@atls/figma-theme-generator-common", ["virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common", "workspace:theme/theme-generator-common"]],\
+      ["@atls/figma-utils", ["virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils", "workspace:utils/utils"]],\
       ["figma", ["workspace:."]]\
     ],\
     "fallbackPool": [\
@@ -316,11 +316,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@atls/figma-assets", [\
+        ["virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#workspace:assets/assets", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-assets-virtual-a4e68f69d0/1/assets/assets/",\
+          "packageDependencies": [\
+            ["@atls/figma-assets", "virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#workspace:assets/assets"],\
+            ["@atls/figma-file-loader", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader"],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"],\
+            ["fs-extra", "npm:10.1.0"],\
+            ["node-fetch", "npm:3.2.10"]\
+          ],\
+          "packagePeers": [\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["workspace:assets/assets", {\
           "packageLocation": "./assets/assets/",\
           "packageDependencies": [\
             ["@atls/figma-assets", "workspace:assets/assets"],\
-            ["@atls/figma-file-loader", "workspace:loaders/file-loader"],\
+            ["@atls/figma-file-loader", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader"],\
             ["@types/node", "npm:17.0.15"],\
             ["figma-js", "npm:1.16.0"],\
             ["fs-extra", "npm:10.1.0"],\
@@ -334,8 +351,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./assets/assets-cli/",\
           "packageDependencies": [\
             ["@atls/figma-assets-cli", "workspace:assets/assets-cli"],\
-            ["@atls/figma-assets", "workspace:assets/assets"],\
-            ["@atls/figma-file-loader", "workspace:loaders/file-loader"],\
+            ["@atls/figma-assets", "virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#workspace:assets/assets"],\
+            ["@atls/figma-file-loader", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader"],\
             ["@types/node", "npm:17.0.15"],\
             ["commander", "npm:9.4.0"],\
             ["figma-js", "npm:1.16.0"],\
@@ -345,6 +362,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@atls/figma-file-loader", [\
+        ["virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-file-loader-virtual-ccffebddf1/1/loaders/file-loader/",\
+          "packageDependencies": [\
+            ["@atls/figma-file-loader", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader"],\
+            ["@types/figma-js", null],\
+            ["figma-js", "npm:1.16.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["workspace:loaders/file-loader", {\
           "packageLocation": "./loaders/file-loader/",\
           "packageDependencies": [\
@@ -355,13 +385,85 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@atls/figma-theme", [\
+        ["virtual:a4c8add42022731fed1a8b2c9c2743e1c5eca536c6614240140c997f931ebd40478e3639c68f1673317050c0862dc2ca7e382e80a3001da44a05c899d8a8b4ca#workspace:theme/theme", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-theme-virtual-9c788beab1/1/theme/theme/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme", "virtual:a4c8add42022731fed1a8b2c9c2743e1c5eca536c6614240140c997f931ebd40478e3639c68f1673317050c0862dc2ca7e382e80a3001da44a05c899d8a8b4ca#workspace:theme/theme"],\
+            ["@atls/figma-theme-font-sizes-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-sizes-generator"],\
+            ["@atls/figma-theme-font-weights-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-weights-generator"],\
+            ["@atls/figma-theme-fonts-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-fonts-generator"],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"],\
+            ["prettier", "npm:2.7.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:e43939466664f355b9a8c9d1e34822ea32e7f143a83a0dc628e414eb1dd1587fbc6f5f5595e4310e076437f7e224f422ab3eea7886f73200b44e6bf1bde6f4d3#workspace:theme/theme", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-theme-virtual-8c8597318a/1/theme/theme/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme", "virtual:e43939466664f355b9a8c9d1e34822ea32e7f143a83a0dc628e414eb1dd1587fbc6f5f5595e4310e076437f7e224f422ab3eea7886f73200b44e6bf1bde6f4d3#workspace:theme/theme"],\
+            ["@atls/figma-theme-font-sizes-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-sizes-generator"],\
+            ["@atls/figma-theme-font-weights-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-weights-generator"],\
+            ["@atls/figma-theme-fonts-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-fonts-generator"],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"],\
+            ["prettier", "npm:2.7.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:e572cf57d11da21f798e3379dcf10fdc4663de39667c7858bb4ea8abf4c729ab4cfccb81dadaaec270ab9b7dc60b93f48a646699361915132d5535b8026387eb#workspace:theme/theme", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-theme-virtual-09c0dced21/1/theme/theme/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme", "virtual:e572cf57d11da21f798e3379dcf10fdc4663de39667c7858bb4ea8abf4c729ab4cfccb81dadaaec270ab9b7dc60b93f48a646699361915132d5535b8026387eb#workspace:theme/theme"],\
+            ["@atls/figma-theme-font-sizes-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-sizes-generator"],\
+            ["@atls/figma-theme-font-weights-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-weights-generator"],\
+            ["@atls/figma-theme-fonts-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-fonts-generator"],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"],\
+            ["prettier", "npm:2.7.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-theme-virtual-0ba58a4abf/1/theme/theme/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme"],\
+            ["@atls/figma-theme-font-sizes-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-sizes-generator"],\
+            ["@atls/figma-theme-font-weights-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-weights-generator"],\
+            ["@atls/figma-theme-fonts-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-fonts-generator"],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"],\
+            ["prettier", "npm:2.7.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["workspace:theme/theme", {\
           "packageLocation": "./theme/theme/",\
           "packageDependencies": [\
             ["@atls/figma-theme", "workspace:theme/theme"],\
-            ["@atls/figma-theme-font-sizes-generator", "workspace:theme/theme-font-sizes-generator"],\
-            ["@atls/figma-theme-font-weights-generator", "workspace:theme/theme-font-weights-generator"],\
-            ["@atls/figma-theme-fonts-generator", "workspace:theme/theme-fonts-generator"],\
+            ["@atls/figma-theme-font-sizes-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-sizes-generator"],\
+            ["@atls/figma-theme-font-weights-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-weights-generator"],\
+            ["@atls/figma-theme-fonts-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-fonts-generator"],\
             ["@types/node", "npm:17.0.15"],\
             ["figma-js", "npm:1.16.0"],\
             ["prettier", "npm:2.7.1"]\
@@ -374,9 +476,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./theme/theme-cli/",\
           "packageDependencies": [\
             ["@atls/figma-theme-cli", "workspace:theme/theme-cli"],\
-            ["@atls/figma-assets", "workspace:assets/assets"],\
-            ["@atls/figma-file-loader", "workspace:loaders/file-loader"],\
-            ["@atls/figma-theme", "workspace:theme/theme"],\
+            ["@atls/figma-assets", "virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#workspace:assets/assets"],\
+            ["@atls/figma-file-loader", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader"],\
+            ["@atls/figma-theme", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme"],\
             ["@types/node", "npm:17.0.15"],\
             ["@yarnpkg/builder", "npm:4.0.0-rc.18"],\
             ["commander", "npm:9.4.0"],\
@@ -391,8 +493,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./theme/theme-colors-generator/",\
           "packageDependencies": [\
             ["@atls/figma-theme-colors-generator", "workspace:theme/theme-colors-generator"],\
-            ["@atls/figma-theme-generator-common", "workspace:theme/theme-generator-common"],\
-            ["@atls/figma-utils", "workspace:utils/utils"],\
+            ["@atls/figma-theme-generator-common", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common"],\
+            ["@atls/figma-utils", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils"],\
             ["@types/color-namer", "npm:1.3.0"],\
             ["@types/node", "npm:17.0.15"],\
             ["color-namer", "npm:1.4.0"],\
@@ -402,13 +504,51 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@atls/figma-theme-font-sizes-generator", [\
+        ["virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-sizes-generator", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-theme-font-sizes-generator-virtual-d9f2b135b4/1/theme/theme-font-sizes-generator/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme-font-sizes-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-sizes-generator"],\
+            ["@atls/figma-theme", "virtual:e572cf57d11da21f798e3379dcf10fdc4663de39667c7858bb4ea8abf4c729ab4cfccb81dadaaec270ab9b7dc60b93f48a646699361915132d5535b8026387eb#workspace:theme/theme"],\
+            ["@atls/figma-theme-generator-common", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common"],\
+            ["@atls/figma-utils", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils"],\
+            ["@types/atls__figma-theme-generator-common", null],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/atls__figma-theme-generator-common",\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-sizes-generator", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-theme-font-sizes-generator-virtual-ebd2ac9110/1/theme/theme-font-sizes-generator/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme-font-sizes-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-sizes-generator"],\
+            ["@atls/figma-theme", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme"],\
+            ["@atls/figma-theme-generator-common", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common"],\
+            ["@atls/figma-utils", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils"],\
+            ["@types/atls__figma-theme-generator-common", null],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/atls__figma-theme-generator-common",\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["workspace:theme/theme-font-sizes-generator", {\
           "packageLocation": "./theme/theme-font-sizes-generator/",\
           "packageDependencies": [\
             ["@atls/figma-theme-font-sizes-generator", "workspace:theme/theme-font-sizes-generator"],\
-            ["@atls/figma-theme", "workspace:theme/theme"],\
-            ["@atls/figma-theme-generator-common", "workspace:theme/theme-generator-common"],\
-            ["@atls/figma-utils", "workspace:utils/utils"],\
+            ["@atls/figma-theme", "virtual:e572cf57d11da21f798e3379dcf10fdc4663de39667c7858bb4ea8abf4c729ab4cfccb81dadaaec270ab9b7dc60b93f48a646699361915132d5535b8026387eb#workspace:theme/theme"],\
+            ["@atls/figma-theme-generator-common", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common"],\
+            ["@atls/figma-utils", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils"],\
             ["@types/node", "npm:17.0.15"],\
             ["figma-js", "npm:1.16.0"]\
           ],\
@@ -416,13 +556,51 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@atls/figma-theme-font-weights-generator", [\
+        ["virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-weights-generator", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-theme-font-weights-generator-virtual-1d277abe16/1/theme/theme-font-weights-generator/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme-font-weights-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-font-weights-generator"],\
+            ["@atls/figma-theme", "virtual:e572cf57d11da21f798e3379dcf10fdc4663de39667c7858bb4ea8abf4c729ab4cfccb81dadaaec270ab9b7dc60b93f48a646699361915132d5535b8026387eb#workspace:theme/theme"],\
+            ["@atls/figma-theme-generator-common", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common"],\
+            ["@atls/figma-utils", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils"],\
+            ["@types/atls__figma-theme-generator-common", null],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/atls__figma-theme-generator-common",\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-weights-generator", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-theme-font-weights-generator-virtual-e2f02d16ad/1/theme/theme-font-weights-generator/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme-font-weights-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-weights-generator"],\
+            ["@atls/figma-theme", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme"],\
+            ["@atls/figma-theme-generator-common", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common"],\
+            ["@atls/figma-utils", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils"],\
+            ["@types/atls__figma-theme-generator-common", null],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/atls__figma-theme-generator-common",\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["workspace:theme/theme-font-weights-generator", {\
           "packageLocation": "./theme/theme-font-weights-generator/",\
           "packageDependencies": [\
             ["@atls/figma-theme-font-weights-generator", "workspace:theme/theme-font-weights-generator"],\
-            ["@atls/figma-theme", "workspace:theme/theme"],\
-            ["@atls/figma-theme-generator-common", "workspace:theme/theme-generator-common"],\
-            ["@atls/figma-utils", "workspace:utils/utils"],\
+            ["@atls/figma-theme", "virtual:e43939466664f355b9a8c9d1e34822ea32e7f143a83a0dc628e414eb1dd1587fbc6f5f5595e4310e076437f7e224f422ab3eea7886f73200b44e6bf1bde6f4d3#workspace:theme/theme"],\
+            ["@atls/figma-theme-generator-common", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common"],\
+            ["@atls/figma-utils", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils"],\
             ["@types/node", "npm:17.0.15"],\
             ["figma-js", "npm:1.16.0"]\
           ],\
@@ -430,13 +608,51 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@atls/figma-theme-fonts-generator", [\
+        ["virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-fonts-generator", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-theme-fonts-generator-virtual-40ba20ee03/1/theme/theme-fonts-generator/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme-fonts-generator", "virtual:09c0dced21d402c28e48add58ce3d22b1ca8041912301198060ef026f21b3c5f0304ccd97b7cf3ba3477e42a9a15915c30d41acc7971c71f6ab0fe6abdf7d20f#workspace:theme/theme-fonts-generator"],\
+            ["@atls/figma-theme", "virtual:e572cf57d11da21f798e3379dcf10fdc4663de39667c7858bb4ea8abf4c729ab4cfccb81dadaaec270ab9b7dc60b93f48a646699361915132d5535b8026387eb#workspace:theme/theme"],\
+            ["@atls/figma-theme-generator-common", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common"],\
+            ["@atls/figma-utils", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils"],\
+            ["@types/atls__figma-theme-generator-common", null],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/atls__figma-theme-generator-common",\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-fonts-generator", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-theme-fonts-generator-virtual-2da07f833a/1/theme/theme-fonts-generator/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme-fonts-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-fonts-generator"],\
+            ["@atls/figma-theme", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme"],\
+            ["@atls/figma-theme-generator-common", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common"],\
+            ["@atls/figma-utils", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils"],\
+            ["@types/atls__figma-theme-generator-common", null],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/atls__figma-theme-generator-common",\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["workspace:theme/theme-fonts-generator", {\
           "packageLocation": "./theme/theme-fonts-generator/",\
           "packageDependencies": [\
             ["@atls/figma-theme-fonts-generator", "workspace:theme/theme-fonts-generator"],\
-            ["@atls/figma-theme", "workspace:theme/theme"],\
-            ["@atls/figma-theme-generator-common", "workspace:theme/theme-generator-common"],\
-            ["@atls/figma-utils", "workspace:utils/utils"],\
+            ["@atls/figma-theme", "virtual:a4c8add42022731fed1a8b2c9c2743e1c5eca536c6614240140c997f931ebd40478e3639c68f1673317050c0862dc2ca7e382e80a3001da44a05c899d8a8b4ca#workspace:theme/theme"],\
+            ["@atls/figma-theme-generator-common", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common"],\
+            ["@atls/figma-utils", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils"],\
             ["@types/node", "npm:17.0.15"],\
             ["figma-js", "npm:1.16.0"]\
           ],\
@@ -444,6 +660,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@atls/figma-theme-generator-common", [\
+        ["virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-theme-generator-common-virtual-33f1a4f104/1/theme/theme-generator-common/",\
+          "packageDependencies": [\
+            ["@atls/figma-theme-generator-common", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:theme/theme-generator-common"],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["figma-js", "npm:1.16.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["workspace:theme/theme-generator-common", {\
           "packageLocation": "./theme/theme-generator-common/",\
           "packageDependencies": [\
@@ -455,6 +685,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@atls/figma-utils", [\
+        ["virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils", {\
+          "packageLocation": "./.yarn/__virtual__/@atls-figma-utils-virtual-39f3a4272d/1/utils/utils/",\
+          "packageDependencies": [\
+            ["@atls/figma-utils", "virtual:ebd2ac9110437be081ceaa332cb27eea5746592110492b3961285ec33886501a94f1e962be6c40deacc93bb28b5d81b8287c480aa34db4e3ac6735324190027a#workspace:utils/utils"],\
+            ["@types/color-namer", "npm:1.3.0"],\
+            ["@types/figma-js", null],\
+            ["@types/node", "npm:17.0.15"],\
+            ["color-namer", "npm:1.4.0"],\
+            ["figma-js", "npm:1.16.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/figma-js",\
+            "figma-js"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["workspace:utils/utils", {\
           "packageLocation": "./utils/utils/",\
           "packageDependencies": [\

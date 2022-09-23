@@ -206,6 +206,8 @@ __metadata:
     commander: ^9.4.0
     figma-js: ^1.16.0
     npmlog: ^6.0.2
+  peerDependencies:
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 
@@ -218,6 +220,8 @@ __metadata:
     figma-js: 1.16.0
     fs-extra: ^10.1.0
     node-fetch: ^3.2.10
+  peerDependencies:
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 
@@ -226,6 +230,8 @@ __metadata:
   resolution: "@atls/figma-file-loader@workspace:loaders/file-loader"
   dependencies:
     figma-js: ^1.16.0
+  peerDependencies:
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 
@@ -241,6 +247,8 @@ __metadata:
     commander: ^9.4.0
     figma-js: ^1.16.0
     npmlog: ^6.0.2
+  peerDependencies:
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 
@@ -254,6 +262,9 @@ __metadata:
     "@types/node": 17.0.15
     color-namer: ^1.4.0
     figma-js: 1.16.0
+  peerDependencies:
+    "@atls/figma-theme-generator-common": "*"
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 
@@ -266,6 +277,9 @@ __metadata:
     "@atls/figma-utils": "workspace:0.0.1"
     "@types/node": 17.0.15
     figma-js: ^1.16.0
+  peerDependencies:
+    "@atls/figma-theme-generator-common": "*"
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 
@@ -278,6 +292,9 @@ __metadata:
     "@atls/figma-utils": "workspace:0.0.1"
     "@types/node": 17.0.15
     figma-js: ^1.16.0
+  peerDependencies:
+    "@atls/figma-theme-generator-common": "*"
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 
@@ -290,6 +307,9 @@ __metadata:
     "@atls/figma-utils": "workspace:0.0.1"
     "@types/node": 17.0.15
     figma-js: ^1.16.0
+  peerDependencies:
+    "@atls/figma-theme-generator-common": "*"
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 
@@ -299,6 +319,8 @@ __metadata:
   dependencies:
     "@types/node": 17.0.15
     figma-js: ^1.16.0
+  peerDependencies:
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 
@@ -312,6 +334,8 @@ __metadata:
     "@types/node": 17.0.15
     figma-js: 1.16.0
     prettier: ^2.7.1
+  peerDependencies:
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 
@@ -323,6 +347,8 @@ __metadata:
     "@types/node": 17.0.15
     color-namer: ^1.4.0
     figma-js: ^1.16.0
+  peerDependencies:
+    figma-js: "*"
   languageName: unknown
   linkType: soft
 

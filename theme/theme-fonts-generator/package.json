@@ -20,6 +20,10 @@
     "@types/node": "17.0.15",
     "figma-js": "^1.16.0"
   },
+  "peerDependencies": {
+    "@atls/figma-theme-generator-common": "*",
+    "figma-js": "*"
+  },
   "publishConfig": {
     "access": "public"
   }

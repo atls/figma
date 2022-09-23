@@ -20,6 +20,9 @@
   "devDependencies": {
     "@types/node": "17.0.15"
   },
+  "peerDependencies": {
+    "figma-js": "*"
+  },
   "publishConfig": {
     "access": "public"
   }
