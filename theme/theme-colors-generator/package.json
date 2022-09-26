@@ -12,6 +12,7 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
+    "@atls/figma-theme": "workspace:0.0.1",
     "@atls/figma-theme-generator-common": "workspace:0.0.1",
     "@atls/figma-utils": "workspace:0.0.1",
     "color-namer": "^1.4.0"

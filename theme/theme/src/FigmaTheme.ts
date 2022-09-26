@@ -3,6 +3,7 @@ import prettier                           from 'prettier'
 import { FileResponse }                   from 'figma-js'
 import { promises as fs }                 from 'fs'
 
+import { FigmaThemeColorsGenerator }      from '@atls/figma-theme-colors-generator'
 import { FigmaThemeFontSizesGenerator }   from '@atls/figma-theme-font-sizes-generator'
 import { FigmaThemeFontWeightsGenerator } from '@atls/figma-theme-font-weights-generator'
 import { FigmaThemeFontsGenerator }       from '@atls/figma-theme-fonts-generator'
@@ -13,6 +14,7 @@ const generators = [
   FigmaThemeFontWeightsGenerator,
   FigmaThemeFontsGenerator,
   FigmaThemeLineHeightsGenerator,
+  FigmaThemeColorsGenerator,
 ]
 
 export class FigmaTheme {
