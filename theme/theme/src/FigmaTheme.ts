@@ -9,6 +9,7 @@ import { FigmaThemeFontWeightsGenerator } from '@atls/figma-theme-font-weights-g
 import { FigmaThemeFontsGenerator }       from '@atls/figma-theme-fonts-generator'
 import { FigmaThemeLineHeightsGenerator } from '@atls/figma-theme-line-heights-generator'
 import { FigmaThemeRadiiGenerator }       from '@atls/figma-theme-radii-generator'
+import { FigmaThemeShadowsGenerator }     from '@atls/figma-theme-shadows-generator'
 
 const generators = [
   FigmaThemeFontSizesGenerator,
@@ -17,6 +18,7 @@ const generators = [
   FigmaThemeLineHeightsGenerator,
   FigmaThemeColorsGenerator,
   FigmaThemeRadiiGenerator,
+  FigmaThemeShadowsGenerator,
 ]
 
 export class FigmaTheme {
