@@ -15,7 +15,7 @@ interface Shadow {
 }
 
 export class FigmaThemeShadowsGenerator extends FigmaThemeGenerator {
-  readonly name = 'radii'
+  readonly name = 'shadows'
 
   getShadows(nodes) {
     const shadows: Map<string, Shadow> = new Map()
@@ -51,7 +51,7 @@ export class FigmaThemeShadowsGenerator extends FigmaThemeGenerator {
     const values = this.getShadows(file.document.children)
 
     return {
-      name: 'shadows',
+      name: this.name,
       content: this.exportValuesTemplate('shadows', values),
     }
   }

@@ -29,7 +29,7 @@ export class FigmaThemeFontWeightsGenerator extends FigmaThemeGenerator {
     const values = strategy.execute(this.getFontWeights(file.document.children))
 
     return {
-      name: 'fontWeights',
+      name: this.name,
       content: this.exportValuesTemplate('fontWeights', values),
     }
   }
