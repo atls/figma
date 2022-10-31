@@ -29,7 +29,7 @@ export class FigmaThemeLineHeightsGenerator extends FigmaThemeGenerator {
     const values = strategy.execute(this.getFonts(file.document.children))
 
     return {
-      name: 'lineHeights',
+      name: this.name,
       content: this.exportValuesTemplate('lineHeights', values),
     }
   }

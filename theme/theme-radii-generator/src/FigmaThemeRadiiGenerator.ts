@@ -64,7 +64,7 @@ export class FigmaThemeRadiiGenerator extends FigmaThemeGenerator {
     const values = this.getRadii(file.document.children)
 
     return {
-      name: 'radii',
+      name: this.name,
       content: this.exportValuesTemplate('radii', values),
     }
   }

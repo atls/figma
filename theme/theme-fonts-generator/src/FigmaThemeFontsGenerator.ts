@@ -29,7 +29,7 @@ export class FigmaThemeFontsGenerator extends FigmaThemeGenerator {
     const values = strategy.execute(this.getFonts(file.document.children))
 
     return {
-      name: 'fonts',
+      name: this.name,
       content: this.exportValuesTemplate('fonts', values),
     }
   }

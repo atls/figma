@@ -40,7 +40,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
     const values = this.getColors(file.document.children)
 
     return {
-      name: 'colors',
+      name: this.name,
       content: this.exportValuesTemplate('colors', values),
     }
   }

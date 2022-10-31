@@ -29,7 +29,7 @@ export class FigmaThemeFontSizesGenerator extends FigmaThemeGenerator {
     const values = strategy.execute(this.getFontSizes(file.document.children))
 
     return {
-      name: 'fontSizes',
+      name: this.name,
       content: this.exportValuesTemplate('fontSizes', values),
     }
   }
