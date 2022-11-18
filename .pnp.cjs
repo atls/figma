@@ -623,6 +623,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/color-namer", "npm:1.3.0"],\
             ["@types/figma-js", null],\
             ["@types/node", "npm:17.0.15"],\
+            ["camelcase", "npm:7.0.0"],\
             ["color-namer", "npm:1.4.0"],\
             ["figma-js", "npm:1.16.0"]\
           ],\
@@ -644,6 +645,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/color-namer", "npm:1.3.0"],\
             ["@types/figma-js", null],\
             ["@types/node", "npm:17.0.15"],\
+            ["camelcase", "npm:7.0.0"],\
             ["color-namer", "npm:1.4.0"],\
             ["figma-js", "npm:1.16.0"]\
           ],\
@@ -663,6 +665,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
             ["@types/color-namer", "npm:1.3.0"],\
             ["@types/node", "npm:17.0.15"],\
+            ["camelcase", "npm:7.0.0"],\
             ["color-namer", "npm:1.4.0"],\
             ["figma-js", "npm:1.16.0"]\
           ],\
@@ -5257,6 +5260,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/camelcase-npm-6.3.0-e5e42a0d15-8c96818a90.zip/node_modules/camelcase/",\
           "packageDependencies": [\
             ["camelcase", "npm:6.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.0.0", {\
+          "packageLocation": "./.yarn/cache/camelcase-npm-7.0.0-5041fb20b5-162d59607b.zip/node_modules/camelcase/",\
+          "packageDependencies": [\
+            ["camelcase", "npm:7.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\

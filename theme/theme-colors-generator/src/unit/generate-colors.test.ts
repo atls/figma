@@ -59,18 +59,18 @@ describe('colors generator', () => {
 
   const expectedObj = {
     content: `export const colors = {
-    "pampas": "rgb(246, 241, 237)",
+    "pampas": "rgb(246, 242, 237)",
     "whitelinen": "rgb(241, 234, 226)",
-    "ironsidegray": "rgb(105, 103, 101)",
+    "dimgray": "rgb(105, 103, 102)",
     "woodsmoke": "rgb(18, 18, 19)"
 }`,
     name: 'colors',
   }
 
   const expectedCode = `export const colors = {
-  pampas: "rgb(246, 241, 237)",
+  pampas: "rgb(246, 242, 237)",
   whitelinen: "rgb(241, 234, 226)",
-  ironsidegray: "rgb(105, 103, 101)",
+  dimgray: "rgb(105, 103, 102)",
   woodsmoke: "rgb(18, 18, 19)",
 };
 `

@@ -5,7 +5,9 @@ export const isColor = (node: any): node is Color => node.r && node.g && node.b 
 
 export const toAverage = (node: Color) => ((node.r + node.g + node.b) / 3) * node.a
 
-export const normalizeChannel = (num: number) => Math.floor(num * 255)
+export const normalizeChannel = (num: number) => Math.round(num * 255)
+
+export const clearStringOfSpecialChars = (str: string) => str.replace(/[^a-zа-яё0-9]/gi, ' ')
 
 export const toColorString = (node: Color) => {
   const r = normalizeChannel(node.r)
@@ -17,6 +19,14 @@ export const toColorString = (node: Color) => {
   }
 
   return `rgba(${r}, ${g}, ${b}, ${node.a.toFixed(2)})`
+}
+
+export const toColorOpacityString = (node: Color, opacity: number) => {
+  const r = normalizeChannel(node.r)
+  const g = normalizeChannel(node.g)
+  const b = normalizeChannel(node.b)
+
+  return `rgba(${r}, ${g}, ${b}, ${opacity ? opacity.toFixed(2) : 1})`
 }
 
 const namespaces = ['basic', 'html', 'pantone', 'ntc', 'x11', 'roygbiv']
