@@ -7,6 +7,8 @@ export const toAverage = (node: Color) => ((node.r + node.g + node.b) / 3) * nod
 
 export const normalizeChannel = (num: number) => Math.round(num * 255)
 
+export const clearStringOfSpecialChars = (str: string) => str.replace(/[^a-zа-яё0-9]/gi, ' ')
+
 export const toColorString = (node: Color) => {
   const r = normalizeChannel(node.r)
   const g = normalizeChannel(node.g)

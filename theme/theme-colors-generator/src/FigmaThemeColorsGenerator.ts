@@ -1,7 +1,9 @@
+import camelCase                     from 'camelcase'
 import { FileResponse }              from 'figma-js'
 
 import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
 import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
+import { clearStringOfSpecialChars } from '@atls/figma-utils'
 import { isColor }                   from '@atls/figma-utils'
 import { toColorOpacityString }      from '@atls/figma-utils'
 import { toAverage }                 from '@atls/figma-utils'
@@ -14,19 +16,13 @@ import { ButtonState }               from './Interfaces'
 export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
   readonly name = 'colors'
 
-  formattedString(str: string): string {
-    const clearString = str.replace(/[^a-zа-яё0-9]/gi, ' ')
+  readonly buttonFrameId = 'Desktop/ Buttons'
 
-    return clearString
-      .split(' ')
-      .map((string, index) =>
-        index === 0
-          ? string.charAt(0).toLowerCase() + string.slice(1)
-          : string.charAt(0).toUpperCase() + string.slice(1))
-      .join('')
+  formatString(str: string): string {
+    return camelCase(clearStringOfSpecialChars(str), { pascalCase: false })
   }
 
-  convertColor(obj) {
+  getColor(obj) {
     if (obj.type === 'TEXT') return toColorString(obj.fills[0]?.color)
     if (obj.type === 'INSTANCE') return toColorString(obj.children[0].fills[0].color)
 
@@ -41,7 +37,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
     walk(nodes, (node) => {
       const { name } = node
 
-      if (name?.match('Desktop/ Buttons')) {
+      if (name?.match(this.buttonFrameId)) {
         const names = node.children.map((item) =>
           item.children?.map((buttonName) => buttonName.name))
 
@@ -56,7 +52,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
                 disabled: item.children[3] !== undefined ? item.children[3] : item.children[0],
               }
 
-              const fontColorDefault = this.convertColor(obj.default.children[0])
+              const fontColorDefault = this.getColor(obj.default.children[0])
               const backgroundColorDefault = toColorString(obj.default.backgroundColor)
               const borderColorDefault =
                 obj.default.strokes[0]?.color !== undefined
@@ -66,14 +62,14 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
                     )
                   : 'rgba(0, 0, 0, 0.00)'
 
-              const fontColorHover = this.convertColor(obj.hover.children[0])
+              const fontColorHover = this.getColor(obj.hover.children[0])
               const backgroundColorHover = toColorString(obj.hover.backgroundColor)
               const borderColorHover =
                 obj.hover.strokes[0]?.color !== undefined
                   ? toColorOpacityString(obj.hover.strokes[0].color, obj.hover.strokes[0]?.opacity)
                   : 'rgba(0, 0, 0, 0.00)'
 
-              const fontColorPressed = this.convertColor(obj.pressed.children[0])
+              const fontColorPressed = this.getColor(obj.pressed.children[0])
               const backgroundColorPressed = toColorString(obj.pressed.backgroundColor)
               const borderColorPressed =
                 obj.pressed.strokes[0]?.color !== undefined
@@ -83,7 +79,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
                     )
                   : 'rgba(0, 0, 0, 0.00)'
 
-              const fontColorDisabled = this.convertColor(obj.disabled.children[0])
+              const fontColorDisabled = this.getColor(obj.disabled.children[0])
               const backgroundColorDisabled = toColorString(obj.disabled.backgroundColor)
               const borderColorDisabled =
                 obj.disabled.strokes[0]?.color !== undefined
@@ -123,7 +119,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
 
         names.map((buttonItems: string[]) => {
           if (buttonItems !== undefined) {
-            const trimItem = buttonItems.map((buttonName) => this.formattedString(buttonName))
+            const trimItem = buttonItems.map((buttonName) => this.formatString(buttonName))
 
             buttonNames.push(...trimItem)
           }
