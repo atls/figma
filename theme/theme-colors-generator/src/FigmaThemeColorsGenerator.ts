@@ -16,7 +16,7 @@ import { ButtonState }               from './Interfaces'
 export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
   readonly name = 'colors'
 
-  readonly buttonFrameId = 'Desktop/ Buttons'
+  readonly buttonFrameId = 'Desktop / Buttons'
 
   formatString(str: string): string {
     return camelCase(clearStringOfSpecialChars(str), { pascalCase: false })
