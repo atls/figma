@@ -44,8 +44,7 @@ dist/
 
 package.tgz
 
-.idea/vcs.xml
-.idea/workspace.xml
+.idea
 
 # Generated files
 generated/
