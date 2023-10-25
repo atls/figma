@@ -217,10 +217,10 @@ __metadata:
   resolution: "@atls/figma-assets@workspace:assets/assets"
   dependencies:
     "@atls/figma-file-loader": "workspace:0.0.1"
-    "@types/node": "npm:17.0.15"
+    "@types/node": "npm:18.18.6"
     figma-js: "npm:1.16.0"
-    fs-extra: "npm:^10.1.0"
-    node-fetch: "npm:^3.2.10"
+    fs-extra: "npm:10.1.0"
+    node-fetch: "npm:3.2.10"
   peerDependencies:
     figma-js: "*"
   languageName: unknown
@@ -230,8 +230,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@atls/figma-file-loader@workspace:loaders/file-loader"
   dependencies:
-    "@types/node": "npm:17"
-    figma-js: "npm:^1.16.0"
+    "@types/node": "npm:18.18.6"
+    figma-js: "npm:1.16.0"
   peerDependencies:
     figma-js: "*"
   languageName: unknown
@@ -244,10 +244,10 @@ __metadata:
     "@atls/figma-assets": "workspace:0.0.1"
     "@atls/figma-file-loader": "workspace:0.0.1"
     "@atls/figma-theme": "workspace:0.0.1"
-    "@types/node": "npm:17.0.15"
+    "@types/node": "npm:18.18.6"
     "@yarnpkg/builder": "npm:^4.0.0-rc.18"
-    commander: "npm:^9.4.0"
-    figma-js: "npm:^1.16.0"
+    commander: "npm:9.5.0"
+    figma-js: "npm:1.16.0"
     npmlog: "npm:^6.0.2"
     ts-node: "npm:10.9.1"
     typescript: "npm:4.6.4"
@@ -263,10 +263,10 @@ __metadata:
     "@atls/figma-theme": "workspace:0.0.1"
     "@atls/figma-theme-generator-common": "workspace:0.0.1"
     "@atls/figma-utils": "workspace:0.0.1"
-    "@types/color-namer": "npm:^1.3.0"
-    "@types/node": "npm:17.0.15"
+    "@types/color-namer": "npm:1.3.2"
+    "@types/node": "npm:18.18.6"
     camelcase: "npm:6.3.0"
-    color-namer: "npm:^1.4.0"
+    color-namer: "npm:1.4.0"
     figma-js: "npm:1.16.0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
@@ -281,8 +281,8 @@ __metadata:
     "@atls/figma-theme": "workspace:0.0.1"
     "@atls/figma-theme-generator-common": "workspace:0.0.1"
     "@atls/figma-utils": "workspace:0.0.1"
-    "@types/node": "npm:17.0.15"
-    figma-js: "npm:^1.16.0"
+    "@types/node": "npm:18.18.6"
+    figma-js: "npm:1.16.0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -296,8 +296,8 @@ __metadata:
     "@atls/figma-theme": "workspace:0.0.1"
     "@atls/figma-theme-generator-common": "workspace:0.0.1"
     "@atls/figma-utils": "workspace:0.0.1"
-    "@types/node": "npm:17.0.15"
-    figma-js: "npm:^1.16.0"
+    "@types/node": "npm:18.18.6"
+    figma-js: "npm:1.16.0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -311,8 +311,8 @@ __metadata:
     "@atls/figma-theme": "workspace:0.0.1"
     "@atls/figma-theme-generator-common": "workspace:0.0.1"
     "@atls/figma-utils": "workspace:0.0.1"
-    "@types/node": "npm:17.0.15"
-    figma-js: "npm:^1.16.0"
+    "@types/node": "npm:18.18.6"
+    figma-js: "npm:1.16.0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -323,8 +323,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@atls/figma-theme-generator-common@workspace:theme/theme-generator-common"
   dependencies:
-    "@types/node": "npm:17.0.15"
-    figma-js: "npm:^1.16.0"
+    "@types/node": "npm:18.18.6"
+    figma-js: "npm:1.16.0"
   peerDependencies:
     figma-js: "*"
   languageName: unknown
@@ -337,8 +337,8 @@ __metadata:
     "@atls/figma-theme": "workspace:0.0.1"
     "@atls/figma-theme-generator-common": "workspace:0.0.1"
     "@atls/figma-utils": "workspace:0.0.1"
-    "@types/node": "npm:17.0.15"
-    figma-js: "npm:^1.16.0"
+    "@types/node": "npm:18.18.6"
+    figma-js: "npm:1.16.0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -352,8 +352,8 @@ __metadata:
     "@atls/figma-theme": "workspace:0.0.1"
     "@atls/figma-theme-generator-common": "workspace:0.0.1"
     "@atls/figma-utils": "workspace:0.0.1"
-    "@types/node": "npm:17.0.15"
-    figma-js: "npm:^1.16.0"
+    "@types/node": "npm:18.18.6"
+    figma-js: "npm:1.16.0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -367,8 +367,8 @@ __metadata:
     "@atls/figma-theme": "workspace:0.0.1"
     "@atls/figma-theme-generator-common": "workspace:0.0.1"
     "@atls/figma-utils": "workspace:0.0.1"
-    "@types/node": "npm:17.0.15"
-    figma-js: "npm:^1.16.0"
+    "@types/node": "npm:18.18.6"
+    figma-js: "npm:1.16.0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -386,9 +386,9 @@ __metadata:
     "@atls/figma-theme-line-heights-generator": "workspace:0.0.1"
     "@atls/figma-theme-radii-generator": "workspace:0.0.1"
     "@atls/figma-theme-shadows-generator": "workspace:0.0.1"
-    "@types/node": "npm:17.0.15"
+    "@types/node": "npm:18.18.6"
     figma-js: "npm:1.16.0"
-    prettier: "npm:^2.7.1"
+    prettier: "npm:2.7.1"
   peerDependencies:
     figma-js: "*"
   languageName: unknown
@@ -398,10 +398,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@atls/figma-utils@workspace:utils/utils"
   dependencies:
-    "@types/color-namer": "npm:^1.3.0"
-    "@types/node": "npm:17.0.15"
-    color-namer: "npm:^1.4.0"
-    figma-js: "npm:^1.16.0"
+    "@types/color-namer": "npm:1.3.2"
+    "@types/node": "npm:18.18.6"
+    color-namer: "npm:1.4.0"
+    figma-js: "npm:1.16.0"
   peerDependencies:
     figma-js: "*"
   languageName: unknown
@@ -1436,10 +1436,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/color-namer@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "@types/color-namer@npm:1.3.0"
-  checksum: c0d9c2f4832d6c60eb0401927dae2aaba3c2bce1b010597951c9108efcef42935e583d0bd7925acdeef17d395a0dc3b58e400b7f286885a888b270f03d2a876a
+"@types/color-namer@npm:1.3.2":
+  version: 1.3.2
+  resolution: "@types/color-namer@npm:1.3.2"
+  checksum: 6c8a4d80621f3f439ca6b87218ff89b40df30781c2ef6a1c8c49f38285d7924650892adfa8382f9814682462216dbf3167e84692016db27f7d666ac447d4fa9a
   languageName: node
   linkType: hard
 
@@ -1470,13 +1470,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:8.4.6":
-  version: 8.4.6
-  resolution: "@types/eslint@npm:8.4.6"
+"@types/eslint@npm:8.40.0":
+  version: 8.40.0
+  resolution: "@types/eslint@npm:8.40.0"
   dependencies:
     "@types/estree": "npm:*"
     "@types/json-schema": "npm:*"
-  checksum: ff4d7186671176c82d564ee4fa2e9b27aa2a8f558d36220c32ebcc1b965897cdf7e99a14cc59f29469406cb023d993962899d95851cf9455f8abb6af81b2fbfc
+  checksum: 64e7807d116fb55c95152443c32ebfcb66dcb8b71daf3be46b15ef1c07d0d6a3a63391ef8cd93a4ccc7e681995b713969db88bfd8082715874d835fce111f467
   languageName: node
   linkType: hard
 
@@ -3652,7 +3652,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-namer@npm:^1.4.0":
+"color-namer@npm:1.4.0":
   version: 1.4.0
   resolution: "color-namer@npm:1.4.0"
   dependencies:
@@ -3675,6 +3675,13 @@ __metadata:
   version: 7.2.0
   resolution: "commander@npm:7.2.0"
   checksum: 1270a98c752348d62803dd6214bba584a13e5c80e0d32d590740f26c534209882a93daf471697326ad80b3f4f0417df31aca7b127e01efee58fe883b47c1a492
+  languageName: node
+  linkType: hard
+
+"commander@npm:9.5.0":
+  version: 9.5.0
+  resolution: "commander@npm:9.5.0"
+  checksum: 1d09146ccb60400550629bcded4b72eeb100728207ecb2538dd827b19571dc16d3b0ee5da762d9bdbbe680ed5cca6658cac5bfce262b1b73eabe5ef8c15cdd9d
   languageName: node
   linkType: hard
 
@@ -4380,9 +4387,9 @@ __metadata:
     "@atls/code-service": "npm:0.0.23"
     "@atls/config-jest": "npm:0.0.6"
     "@jest/core": "npm:29.0.3"
-    "@types/eslint": "npm:8.4.6"
+    "@types/eslint": "npm:8.40.0"
     "@types/jest": "npm:29.0.3"
-    "@types/node": "npm:17.0.15"
+    "@types/node": "npm:18.18.6"
     eslint: "npm:8.8.0"
     husky: "npm:8.0.1"
     typescript: "npm:4.6.4"
@@ -4489,7 +4496,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^10.1.0":
+"fs-extra@npm:10.1.0":
   version: 10.1.0
   resolution: "fs-extra@npm:10.1.0"
   dependencies:
@@ -6136,7 +6143,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^3.2.10":
+"node-fetch@npm:3.2.10":
   version: 3.2.10
   resolution: "node-fetch@npm:3.2.10"
   dependencies:
@@ -6479,7 +6486,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.7.1":
+"prettier@npm:2.7.1":
   version: 2.7.1
   resolution: "prettier@npm:2.7.1"
   bin:

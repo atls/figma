@@ -99,7 +99,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/code-service", "npm:0.0.23"],\
           ["@atls/config-jest", "npm:0.0.6"],\
           ["@jest/core", "virtual:5a21c85c521a50b949d7433d59da4c91cbe6750c642c4041011e619be850dccb27b8528b913d3f71971e0ce097bbeebb0f23da2fdf1a2165d5d03c58c4d710eb#npm:29.0.3"],\
-          ["@types/eslint", "npm:8.4.6"],\
+          ["@types/eslint", "npm:8.40.0"],\
           ["@types/jest", "npm:29.0.3"],\
           ["@types/node", "npm:18.18.6"],\
           ["eslint", "npm:8.8.0"],\
@@ -600,7 +600,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme"],\
           ["@types/node", "npm:18.18.6"],\
           ["@yarnpkg/builder", "npm:4.0.0-rc.18"],\
-          ["commander", "npm:9.4.0"],\
+          ["commander", "npm:9.5.0"],\
           ["figma-js", "npm:1.16.0"],\
           ["npmlog", "npm:6.0.2"],\
           ["ts-node", "virtual:a9526061832803f8bc7fed186e9699b3bcb0fb7fb989d17328e56b61e9f17fd49895330e461073d51dd5dcbab09bf72a55678f1e398bacacdb001a56e84fd54f#npm:10.9.1"],\
@@ -618,7 +618,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
           ["@types/atls__figma-theme-generator-common", null],\
-          ["@types/color-namer", "npm:1.3.0"],\
+          ["@types/color-namer", "npm:1.3.2"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.6"],\
           ["camelcase", "npm:6.3.0"],\
@@ -640,7 +640,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
           ["@types/atls__figma-theme-generator-common", null],\
-          ["@types/color-namer", "npm:1.3.0"],\
+          ["@types/color-namer", "npm:1.3.2"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.6"],\
           ["camelcase", "npm:6.3.0"],\
@@ -661,7 +661,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme", "virtual:706686f742e36def113eed56e157de029f007fb049c91f11d93354f88791540409a80fc9020bfe5b77b1e8d5c9c85be7e09d2f22f03e3b499784a785725a88c4#workspace:theme/theme"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
-          ["@types/color-namer", "npm:1.3.0"],\
+          ["@types/color-namer", "npm:1.3.2"],\
           ["@types/node", "npm:18.18.6"],\
           ["camelcase", "npm:6.3.0"],\
           ["color-namer", "npm:1.4.0"],\
@@ -1012,7 +1012,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@atls-figma-utils-virtual-c2e0673260/1/utils/utils/",\
         "packageDependencies": [\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
-          ["@types/color-namer", "npm:1.3.0"],\
+          ["@types/color-namer", "npm:1.3.2"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.6"],\
           ["color-namer", "npm:1.4.0"],\
@@ -1028,7 +1028,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./utils/utils/",\
         "packageDependencies": [\
           ["@atls/figma-utils", "workspace:utils/utils"],\
-          ["@types/color-namer", "npm:1.3.0"],\
+          ["@types/color-namer", "npm:1.3.2"],\
           ["@types/node", "npm:18.18.6"],\
           ["color-namer", "npm:1.4.0"],\
           ["figma-js", "npm:1.16.0"]\
@@ -2531,10 +2531,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/color-namer", [\
-      ["npm:1.3.0", {\
-        "packageLocation": "./.yarn/cache/@types-color-namer-npm-1.3.0-36c93c7662-c0d9c2f483.zip/node_modules/@types/color-namer/",\
+      ["npm:1.3.2", {\
+        "packageLocation": "./.yarn/cache/@types-color-namer-npm-1.3.2-cd5dc64198-6c8a4d8062.zip/node_modules/@types/color-namer/",\
         "packageDependencies": [\
-          ["@types/color-namer", "npm:1.3.0"]\
+          ["@types/color-namer", "npm:1.3.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2558,10 +2558,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:8.4.6", {\
-        "packageLocation": "./.yarn/cache/@types-eslint-npm-8.4.6-a8726d8319-ff4d718667.zip/node_modules/@types/eslint/",\
+      ["npm:8.40.0", {\
+        "packageLocation": "./.yarn/cache/@types-eslint-npm-8.40.0-f83ac3705a-64e7807d11.zip/node_modules/@types/eslint/",\
         "packageDependencies": [\
-          ["@types/eslint", "npm:8.4.6"],\
+          ["@types/eslint", "npm:8.40.0"],\
           ["@types/estree", "npm:0.0.50"],\
           ["@types/json-schema", "npm:7.0.9"]\
         ],\
@@ -5797,6 +5797,13 @@ const RAW_RUNTIME_STATE =
           ["commander", "npm:9.4.0"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:9.5.0", {\
+        "packageLocation": "./.yarn/cache/commander-npm-9.5.0-993b3f2434-1d09146ccb.zip/node_modules/commander/",\
+        "packageDependencies": [\
+          ["commander", "npm:9.5.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["concat-map", [\
@@ -6601,7 +6608,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/code-service", "npm:0.0.23"],\
           ["@atls/config-jest", "npm:0.0.6"],\
           ["@jest/core", "virtual:5a21c85c521a50b949d7433d59da4c91cbe6750c642c4041011e619be850dccb27b8528b913d3f71971e0ce097bbeebb0f23da2fdf1a2165d5d03c58c4d710eb#npm:29.0.3"],\
-          ["@types/eslint", "npm:8.4.6"],\
+          ["@types/eslint", "npm:8.40.0"],\
           ["@types/jest", "npm:29.0.3"],\
           ["@types/node", "npm:18.18.6"],\
           ["eslint", "npm:8.8.0"],\
