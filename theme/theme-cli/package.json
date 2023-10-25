@@ -2,13 +2,13 @@
   "name": "@atls/figma-theme-cli",
   "version": "0.0.1",
   "license": "BSD-3-Clause",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "yarn library build",
-    "figma-theme": "FIGMA_TOKEN=figd_BGqX9t3pqc3rnEG1tsSV5hmtS69P-ipk_lXwKB36 node bin/figma-theme-cli.js",
+    "figma-theme": "FIGMA_TOKEN=figd_BGqX9t3pqc3rnEG1tsSV5hmtS69P-ipk_lXwKB36 node bin/figma-theme-cli.js JaYasAWWI7tvkTuMTfB514 -v",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },

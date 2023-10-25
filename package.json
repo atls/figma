@@ -3,7 +3,7 @@
   "private": true,
   "license": "BSD-3-Clause",
   "resolutions": {
-    "@types/node": "17.0.15"
+    "@types/node": "18"
   },
   "workspaces": [
     "loaders/*",
