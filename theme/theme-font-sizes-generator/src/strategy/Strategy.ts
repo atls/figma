@@ -7,7 +7,7 @@ export abstract class Strategy {
     const stat = new Map<number, number>()
 
     textNodes.forEach((node) => {
-      const fontSize = Math.round(node.style.fontSize)
+      const fontSize = Math.round(node.style?.fontSize)
 
       stat.set(fontSize, (stat.get(fontSize) || 0) + 1)
     })
