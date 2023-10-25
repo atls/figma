@@ -603,7 +603,8 @@ const RAW_RUNTIME_STATE =
           ["commander", "npm:9.4.0"],\
           ["figma-js", "npm:1.16.0"],\
           ["npmlog", "npm:6.0.2"],\
-          ["ts-node", "virtual:a9526061832803f8bc7fed186e9699b3bcb0fb7fb989d17328e56b61e9f17fd49895330e461073d51dd5dcbab09bf72a55678f1e398bacacdb001a56e84fd54f#npm:10.9.1"]\
+          ["ts-node", "virtual:a9526061832803f8bc7fed186e9699b3bcb0fb7fb989d17328e56b61e9f17fd49895330e461073d51dd5dcbab09bf72a55678f1e398bacacdb001a56e84fd54f#npm:10.9.1"],\
+          ["typescript", "patch:typescript@npm%3A4.6.4#optional!builtin<compat/typescript>::version=4.6.4&hash=5d3a66"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -620,7 +621,7 @@ const RAW_RUNTIME_STATE =
           ["@types/color-namer", "npm:1.3.0"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.6"],\
-          ["camelcase", "npm:7.0.0"],\
+          ["camelcase", "npm:6.3.0"],\
           ["color-namer", "npm:1.4.0"],\
           ["figma-js", "npm:1.16.0"]\
         ],\
@@ -642,7 +643,7 @@ const RAW_RUNTIME_STATE =
           ["@types/color-namer", "npm:1.3.0"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.6"],\
-          ["camelcase", "npm:7.0.0"],\
+          ["camelcase", "npm:6.3.0"],\
           ["color-namer", "npm:1.4.0"],\
           ["figma-js", "npm:1.16.0"]\
         ],\
@@ -662,7 +663,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
           ["@types/color-namer", "npm:1.3.0"],\
           ["@types/node", "npm:18.18.6"],\
-          ["camelcase", "npm:7.0.0"],\
+          ["camelcase", "npm:6.3.0"],\
           ["color-namer", "npm:1.4.0"],\
           ["figma-js", "npm:1.16.0"]\
         ],\
@@ -5460,13 +5461,6 @@ const RAW_RUNTIME_STATE =
           ["camelcase", "npm:6.3.0"]\
         ],\
         "linkType": "HARD"\
-      }],\
-      ["npm:7.0.0", {\
-        "packageLocation": "./.yarn/cache/camelcase-npm-7.0.0-5041fb20b5-c89f44ff54.zip/node_modules/camelcase/",\
-        "packageDependencies": [\
-          ["camelcase", "npm:7.0.0"]\
-        ],\
-        "linkType": "HARD"\
       }]\
     ]],\
     ["caniuse-lite", [\
@@ -10138,7 +10132,7 @@ const RAW_RUNTIME_STATE =
           ["create-require", "npm:1.1.1"],\
           ["diff", "npm:4.0.2"],\
           ["make-error", "npm:1.3.6"],\
-          ["typescript", null],\
+          ["typescript", "patch:typescript@npm%3A4.6.4#optional!builtin<compat/typescript>::version=4.6.4&hash=5d3a66"],\
           ["v8-compile-cache-lib", "npm:3.0.1"],\
           ["yn", "npm:3.1.1"]\
         ],\

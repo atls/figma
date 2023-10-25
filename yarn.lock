@@ -250,6 +250,7 @@ __metadata:
     figma-js: "npm:^1.16.0"
     npmlog: "npm:^6.0.2"
     ts-node: "npm:10.9.1"
+    typescript: "npm:4.6.4"
   peerDependencies:
     figma-js: "*"
   languageName: unknown
@@ -264,7 +265,7 @@ __metadata:
     "@atls/figma-utils": "workspace:0.0.1"
     "@types/color-namer": "npm:^1.3.0"
     "@types/node": "npm:17.0.15"
-    camelcase: "npm:^7.0.0"
+    camelcase: "npm:6.3.0"
     color-namer: "npm:^1.4.0"
     figma-js: "npm:1.16.0"
   peerDependencies:
@@ -3417,24 +3418,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"camelcase@npm:^5.3.1":
-  version: 5.3.1
-  resolution: "camelcase@npm:5.3.1"
-  checksum: 3875260be8f9761ab3870045b7c5c826f584070fe92f5c13a2800a84572d6edf16e6da01db01e135c6d080569fcd690bd2376bdabc3bc80a91da81d1b1c5e773
-  languageName: node
-  linkType: hard
-
-"camelcase@npm:^6.2.0":
+"camelcase@npm:6.3.0, camelcase@npm:^6.2.0":
   version: 6.3.0
   resolution: "camelcase@npm:6.3.0"
   checksum: 3c802157fc61af58194ed056d1830444ec1268a556bb90c7a3a729db481a897cbfdf86fb9db91b45b5e3b891183024e13bf26c866e8e5a37853ace6fa01b7be1
   languageName: node
   linkType: hard
 
-"camelcase@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "camelcase@npm:7.0.0"
-  checksum: c89f44ff54f622e43e3f7e88fd1de4d446a182349eb3cb17a5fe056251ce89d7312d798968933e4f84497c0e6bd1e8b61596971e65ca50c16b86ca32f593ea27
+"camelcase@npm:^5.3.1":
+  version: 5.3.1
+  resolution: "camelcase@npm:5.3.1"
+  checksum: 3875260be8f9761ab3870045b7c5c826f584070fe92f5c13a2800a84572d6edf16e6da01db01e135c6d080569fcd690bd2376bdabc3bc80a91da81d1b1c5e773
   languageName: node
   linkType: hard
 

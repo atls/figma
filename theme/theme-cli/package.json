@@ -2,13 +2,13 @@
   "name": "@atls/figma-theme-cli",
   "version": "0.0.1",
   "license": "BSD-3-Clause",
-  "main": "dist/index.js",
+  "main": "src/index.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "yarn library build",
-    "figma-theme": "FIGMA_TOKEN=figd_BGqX9t3pqc3rnEG1tsSV5hmtS69P-ipk_lXwKB36 node bin/figma-theme-cli.js JaYasAWWI7tvkTuMTfB514 -v",
+    "figma-theme": "FIGMA_TOKEN=figd_BGqX9t3pqc3rnEG1tsSV5hmtS69P-ipk_lXwKB36 ts-node bin/figma-theme-cli.ts JaYasAWWI7tvkTuMTfB514 -v",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },
@@ -23,7 +23,8 @@
     "@types/node": "17.0.15",
     "@yarnpkg/builder": "^4.0.0-rc.18",
     "figma-js": "^1.16.0",
-    "ts-node": "10.9.1"
+    "ts-node": "10.9.1",
+    "typescript": "4.6.4"
   },
   "peerDependencies": {
     "figma-js": "*"
