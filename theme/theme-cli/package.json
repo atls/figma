@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "yarn library build",
-    "figma-theme": "node bin/figma-theme-cli.js",
+    "figma-theme": "FIGMA_TOKEN=figd_BGqX9t3pqc3rnEG1tsSV5hmtS69P-ipk_lXwKB36 node bin/figma-theme-cli.js",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },
@@ -22,7 +22,8 @@
   "devDependencies": {
     "@types/node": "17.0.15",
     "@yarnpkg/builder": "^4.0.0-rc.18",
-    "figma-js": "^1.16.0"
+    "figma-js": "^1.16.0",
+    "ts-node": "10.9.1"
   },
   "peerDependencies": {
     "figma-js": "*"
