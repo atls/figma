@@ -1,4 +1,4 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
   - name: Конвенция
     url: https://github.com/atls/convention
@@ -6,5 +6,6 @@ contact_links:
   - name: Telegram
     url: https://t.me/atls_lab
     about: Складируем полезные статьи
-  - name: Discord
-    url: https://discord.gg/jmgjzSKgNg
+  - name: Сайт
+    url: https://atls.team
+    about: Сайт команды
