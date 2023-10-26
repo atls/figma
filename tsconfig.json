@@ -35,7 +35,7 @@
 
     "jsx": "react",
 
-    "outDir": "./dist",
+    "outDir": "./dist"
   },
   "exclude": [
     "integration",
@@ -46,5 +46,6 @@
     "src/**/*.stories.ts",
     "**/*/dist/**/*.d.ts",
     "integration/**/*.test.ts",
-  ],
+    "theme/theme-cli/theme"
+  ]
 }

@@ -35,7 +35,7 @@ export class FigmaTheme {
   async format(target, content) {
     const options = await prettier.resolveConfig(target)
 
-    return prettier.format(content, options)
+    return prettier.format(content, { ...options })
   }
 
   async write({ name, content }) {

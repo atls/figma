@@ -4,14 +4,15 @@
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
   "bin": {
-    "figma-theme": "dist/index.js"
+    "generate-theme": "dist/index.js"
   },
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "yarn library build",
-    "figma-theme": "FIGMA_TOKEN=figd_BGqX9t3pqc3rnEG1tsSV5hmtS69P-ipk_lXwKB36 ts-node bin/figma-theme-cli.ts 7nw0qsfWwSzRVl4B5WEwxt -v -o dist",
+    "build2": "tsc --project tsconfig.json",
+    "generate-theme": "ts-node src/index.ts -v",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },
@@ -20,19 +21,18 @@
     "@atls/figma-file-loader": "workspace:0.0.1",
     "@atls/figma-theme": "workspace:0.0.1",
     "commander": "9.5.0",
-    "npmlog": "^6.0.2"
+    "figma-js": "1.16.0",
+    "npmlog": "7.0.1"
   },
   "devDependencies": {
-    "@types/node": "18.18.6",
-    "@yarnpkg/builder": "^4.0.0-rc.18",
-    "figma-js": "1.16.0",
+    "@types/node": "18.18.7",
+    "@yarnpkg/builder": "4.0.0-rc.36",
     "ts-node": "10.9.1",
     "typescript": "4.6.4"
   },
-  "peerDependencies": {
-    "figma-js": "*"
-  },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
   }
 }

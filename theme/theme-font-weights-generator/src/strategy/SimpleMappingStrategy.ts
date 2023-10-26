@@ -8,7 +8,7 @@ export class SimpleMappingStrategy extends Strategy {
     return fontWeights.reduce((result, fontWeight) => {
       const fontWeightItem = FontWeights.filter((item) => item.value === fontWeight)[0]
 
-      if (fontWeight) return { ...result, [fontWeightItem.weight]: fontWeight }
+      if (fontWeight) return { ...result, [fontWeightItem?.weight]: fontWeight }
 
       return false
     }, {})
