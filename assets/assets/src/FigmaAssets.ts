@@ -40,6 +40,7 @@ export class FigmaAssets {
 
   async generate() {
     const { children } = this.node as any
+
     const items: any[] = []
 
     children

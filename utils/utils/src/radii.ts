@@ -91,7 +91,7 @@ export const toRadiiString = (node: number[]): { token: string; radius: string }
   }
 
   return {
-    radius: '',
     token: '',
+    radius: '',
   }
 }

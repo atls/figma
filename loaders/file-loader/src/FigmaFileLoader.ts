@@ -14,7 +14,6 @@ export class FigmaFileLoader {
 
   async load(fileId: string): Promise<FileResponse> {
     const { data } = await this.figma.file(fileId)
-
     return data
   }
 
@@ -26,7 +25,6 @@ export class FigmaFileLoader {
     if (!node) {
       throw new Error(`Document with id ${documentId} not found. Please try again`)
     }
-
     return node
   }
 
@@ -36,7 +34,6 @@ export class FigmaFileLoader {
       format: 'svg',
       scale: 1,
     })
-
     return data.images
   }
 }

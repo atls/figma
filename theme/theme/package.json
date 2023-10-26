@@ -12,13 +12,13 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
-    "@atls/figma-theme-colors-generator": "workspace:0.0.1",
-    "@atls/figma-theme-font-sizes-generator": "workspace:0.0.1",
-    "@atls/figma-theme-font-weights-generator": "workspace:0.0.1",
-    "@atls/figma-theme-fonts-generator": "workspace:0.0.1",
-    "@atls/figma-theme-line-heights-generator": "workspace:0.0.1",
-    "@atls/figma-theme-radii-generator": "workspace:0.0.1",
-    "@atls/figma-theme-shadows-generator": "workspace:0.0.1",
+    "@atls/figma-theme-colors-generator": "workspace:*",
+    "@atls/figma-theme-font-sizes-generator": "workspace:*",
+    "@atls/figma-theme-font-weights-generator": "workspace:*",
+    "@atls/figma-theme-fonts-generator": "workspace:*",
+    "@atls/figma-theme-line-heights-generator": "workspace:*",
+    "@atls/figma-theme-radii-generator": "workspace:*",
+    "@atls/figma-theme-shadows-generator": "workspace:*",
     "figma-js": "1.16.0",
     "prettier": "2.7.1"
   },
