@@ -12,10 +12,10 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
-    "@atls/figma-utils": "workspace:0.0.1"
+    "@atls/figma-utils": "workspace:*"
   },
   "devDependencies": {
-    "@atls/figma-theme-generator-common": "workspace:0.0.1",
+    "@atls/figma-theme-generator-common": "workspace:*",
     "@types/node": "18.18.7",
     "figma-js": "1.16.0"
   },

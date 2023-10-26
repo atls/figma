@@ -16,8 +16,8 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
-    "@atls/figma-file-loader": "workspace:0.0.1",
-    "@atls/figma-theme": "workspace:0.0.1",
+    "@atls/figma-file-loader": "workspace:*",
+    "@atls/figma-theme": "workspace:*",
     "commander": "9.5.0",
     "figma-js": "1.16.0",
     "npmlog": "7.0.1"
