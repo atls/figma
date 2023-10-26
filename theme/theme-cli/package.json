@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "yarn library build",
-    "generate-theme": "ts-node src/index.ts -v",
+    "generate-theme": "ts-node src/index.ts",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },
