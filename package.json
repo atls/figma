@@ -8,11 +8,11 @@
     "theme/*",
     "utils/*"
   ],
-  "resolutions": {
-    "@types/node": "18"
-  },
   "scripts": {
     "detect-circular": "madge . -c"
+  },
+  "resolutions": {
+    "@types/node": "18"
   },
   "devDependencies": {
     "@atls/code-service": "0.0.23",
