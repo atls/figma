@@ -7,7 +7,9 @@ export abstract class Strategy {
     const stat = new Map<string, number>()
 
     textNodes.forEach((node) => {
-      const { fontFamily } = node.style
+      const fontFamily = node.style?.fontFamily
+
+      if (!fontFamily) return
 
       stat.set(fontFamily, (stat.get(fontFamily) || 0) + 1)
     })

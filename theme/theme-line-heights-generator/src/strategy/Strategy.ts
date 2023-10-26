@@ -7,8 +7,10 @@ export abstract class Strategy {
     const stat = new Map<string, number>()
 
     textNodes.forEach((node) => {
-      const fontSize = Math.round(node.style.fontSize)
-      const lineHeight = Math.round(node.style.lineHeightPx)
+      const fontSize = Math.round(node.style?.fontSize)
+      const lineHeight = Math.round(node.style?.lineHeightPx)
+
+      if (!lineHeight) return
 
       const result = (lineHeight / fontSize).toFixed(1)
 

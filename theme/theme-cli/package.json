@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "license": "BSD-3-Clause",
   "main": "src/index.ts",
+  "bin": {
+    "generate-theme": "dist/index.js"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "yarn library build",
-    "figma-theme": "node bin/figma-theme-cli.js",
+    "generate-theme": "ts-node src/index.ts",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },
@@ -16,18 +19,19 @@
     "@atls/figma-assets": "workspace:0.0.1",
     "@atls/figma-file-loader": "workspace:0.0.1",
     "@atls/figma-theme": "workspace:0.0.1",
-    "commander": "^9.4.0",
-    "npmlog": "^6.0.2"
+    "commander": "9.5.0",
+    "figma-js": "1.16.0",
+    "npmlog": "7.0.1"
   },
   "devDependencies": {
-    "@types/node": "17.0.15",
-    "@yarnpkg/builder": "^4.0.0-rc.18",
-    "figma-js": "^1.16.0"
-  },
-  "peerDependencies": {
-    "figma-js": "*"
+    "@types/node": "18.18.7",
+    "@yarnpkg/builder": "4.0.0-rc.36",
+    "ts-node": "10.9.1",
+    "typescript": "4.6.4"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
   }
 }

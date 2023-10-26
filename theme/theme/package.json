@@ -20,15 +20,17 @@
     "@atls/figma-theme-radii-generator": "workspace:0.0.1",
     "@atls/figma-theme-shadows-generator": "workspace:0.0.1",
     "figma-js": "1.16.0",
-    "prettier": "^2.7.1"
+    "prettier": "2.7.1"
   },
   "devDependencies": {
-    "@types/node": "17.0.15"
+    "@types/node": "18.18.7"
   },
   "peerDependencies": {
     "figma-js": "*"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
   }
 }

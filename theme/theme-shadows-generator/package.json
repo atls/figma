@@ -17,14 +17,16 @@
   },
   "devDependencies": {
     "@atls/figma-theme-generator-common": "workspace:0.0.1",
-    "@types/node": "17.0.15",
-    "figma-js": "^1.16.0"
+    "@types/node": "18.18.7",
+    "figma-js": "1.16.0"
   },
   "peerDependencies": {
     "@atls/figma-theme-generator-common": "*",
     "figma-js": "*"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
   }
 }
