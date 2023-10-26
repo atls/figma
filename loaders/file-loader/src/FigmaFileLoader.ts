@@ -24,7 +24,7 @@ export class FigmaFileLoader {
     const node = file.document.children.find((doc) => doc.id === documentId)
 
     if (!node) {
-      throw new Error(`Document with id ${documentId} not found.`)
+      throw new Error(`Document with id ${documentId} not found. Please try again`)
     }
 
     return node

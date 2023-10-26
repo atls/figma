@@ -1,8 +1,8 @@
 import { FileResponse } from 'figma-js'
 
 export interface FigmaThemeGeneratorValues {
-  name: string
   content: string
+  name: string
 }
 
 export type FigmaThemeGeneratorResult =

@@ -55,9 +55,7 @@ export class FigmaAssets {
 
     await Promise.all(
       items.map(async (item) => {
-        if (images[item.id]) {
-          await this.loadImage(item.name, images[item.id])
-        }
+        if (images[item.id]) await this.loadImage(item.name, images[item.id])
       })
     )
   }
