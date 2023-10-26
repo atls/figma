@@ -4,8 +4,7 @@ import { mkdirSync }                 from 'fs'
 import { readFileSync }              from 'fs'
 
 import { FigmaTheme }                from '@atls/figma-theme'
-
-import { FigmaThemeColorsGenerator } from '../FigmaThemeColorsGenerator'
+import { FigmaThemeColorsGenerator } from '@atls/figma-theme-colors-generator'
 
 describe('colors generator', () => {
   const file = {

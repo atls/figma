@@ -3,9 +3,9 @@ import { readFileSync }             from 'fs'
 import { mkdirSync }                from 'fs'
 import { existsSync }               from 'fs'
 
-import { FigmaTheme }               from '@atls/figma-theme'
+import { FigmaThemeRadiiGenerator } from '@atls/figma-theme-radii-generator'
 
-import { FigmaThemeRadiiGenerator } from '../FigmaThemeRadiiGenerator'
+import { FigmaTheme }               from '../index'
 
 describe('radii generator', () => {
   const file = {

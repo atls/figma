@@ -3,9 +3,9 @@ import { readFileSync }             from 'fs'
 import { mkdirSync }                from 'fs'
 import { existsSync }               from 'fs'
 
-import { FigmaTheme }               from '@atls/figma-theme'
+import { FigmaThemeFontsGenerator } from '@atls/figma-theme-fonts-generator'
 
-import { FigmaThemeFontsGenerator } from '../FigmaThemeFontsGenerator'
+import { FigmaTheme }               from '../index'
 
 describe('fonts generator', () => {
   const file = {

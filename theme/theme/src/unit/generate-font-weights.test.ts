@@ -3,9 +3,9 @@ import { readFileSync }                   from 'fs'
 import { mkdirSync }                      from 'fs'
 import { existsSync }                     from 'fs'
 
-import { FigmaTheme }                     from '@atls/figma-theme'
+import { FigmaThemeFontWeightsGenerator } from '@atls/figma-theme-font-weights-generator'
 
-import { FigmaThemeFontWeightsGenerator } from '../FigmaThemeFontWeightsGenerator'
+import { FigmaTheme }                     from '../index'
 
 describe('font weights generator', () => {
   const file = {

@@ -3,9 +3,9 @@ import { readFileSync }               from 'fs'
 import { mkdirSync }                  from 'fs'
 import { existsSync }                 from 'fs'
 
-import { FigmaTheme }                 from '@atls/figma-theme'
+import { FigmaThemeShadowsGenerator } from '@atls/figma-theme-shadows-generator'
 
-import { FigmaThemeShadowsGenerator } from '../FigmaThemeShadowsGenerator'
+import { FigmaTheme }                 from '../index'
 
 describe('shadows generator', () => {
   const file = {

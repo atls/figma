@@ -3,9 +3,9 @@ import { existsSync }                     from 'fs'
 import { mkdirSync }                      from 'fs'
 import { readFileSync }                   from 'fs'
 
-import { FigmaTheme }                     from '@atls/figma-theme'
+import { FigmaThemeLineHeightsGenerator } from '@atls/figma-theme-line-heights-generator'
 
-import { FigmaThemeLineHeightsGenerator } from '../FigmaThemeLineHeightsGenerator'
+import { FigmaTheme }                     from '../index'
 
 describe('lineHeights generator', () => {
   const file = {
