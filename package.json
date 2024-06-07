@@ -26,5 +26,5 @@
     "madge": "6.1.0",
     "typescript": "4.6.4"
   },
-  "packageManager": "yarn@4.0.0"
+  "packageManager": "yarn@4.2.2"
 }
