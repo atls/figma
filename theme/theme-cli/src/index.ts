@@ -7,6 +7,7 @@ logger.heading = 'figma-theme' as string
 ;(program as any)
   .option('-o, --output [output]', 'Output dir')
   .option('-v, --verbose', 'Verbose output')
+  .option('--ignored-pages <ignoredPages>', 'Ignored pages', (value) => value.split(','))
   .arguments('<fileId>')
   .parse(process.argv)
 
@@ -15,6 +16,7 @@ if ((program as any).verbose) {
 }
 
 const [fileId] = (program as any).args
+const options = (program as any).opts()
 
 if (!fileId) {
   logger.error('Figma file id required.')
@@ -29,7 +31,7 @@ if (!fileId) {
     // eslint-disable-next-line dot-notation
     process.env['FIGMA_TOKEN'] = id
     readline.close()
-    run(fileId, (program as any).output)
+    run(fileId, (program as any).output, options.ignoredPages)
       .then(() => logger.info('Theme successful generated'))
       .catch((error) => logger.error(error.message))
   })
