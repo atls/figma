@@ -1,61 +1,90 @@
-import { Text }                  from 'figma-js'
+import { Text }                         from 'figma-js'
 
-import { Strategy }              from './Strategy'
-import { lineHeightSmallSizes }  from '../Constants'
-import { lineHeightMediumSizes } from '../Constants'
-import { lineHeightLargeSizes }  from '../Constants'
+import { Group }                        from '../Constants'
+import { LineHeightSizeDefaultName }    from '../Constants'
+import { Strategy }                     from './Strategy'
+import { groupNamesGreaterThanDefault } from '../Constants'
+import { groupNamesLessThanDefault }    from '../Constants'
 
 export class SimpleMappingStrategy extends Strategy {
-  fillSmallLineHeights(lineHeights) {
-    return lineHeights.reduce(
-      (result, lineHeight, index) => ({
-        ...result,
-        [lineHeightSmallSizes[index]]: Number(lineHeight),
-      }),
-      {}
-    )
-  }
+  fillSizes(lineHeights) {
+    const tempTheme = {}
 
-  fillMediumLineHeights(lineHeights) {
-    return lineHeights.reduce(
-      (result, lineHeight, index) => ({
-        ...result,
-        [lineHeightMediumSizes[index]]: Number(lineHeight),
-      }),
-      {}
-    )
-  }
+    const middle = Math.floor(lineHeights.length / 2)
 
-  fillLargeLineHeights(lineHeights) {
-    return lineHeights.reduce(
-      (result, lineHeight, index) => ({
+    const less = lineHeights.filter((_, index) => index < middle)
+    const greater = lineHeights.filter((_, index) => index > middle)
+
+    const groupLess = [...groupNamesLessThanDefault]
+    const groupGreater = [...groupNamesGreaterThanDefault]
+
+    if (lineHeights.length === 1) {
+      ;[tempTheme[LineHeightSizeDefaultName]] = lineHeights
+    }
+
+    if (lineHeights.length > 1) {
+      for (const value of less) {
+        const nextGroupName = groupLess.pop()
+
+        tempTheme[nextGroupName as string] = value
+      }
+    }
+
+    const reversedKeysTheme = Object.keys(tempTheme).reverse()
+    const themeValues = Object.values(tempTheme)
+
+    const theme = reversedKeysTheme.reduce(
+      (result, key, index) => ({
         ...result,
-        [lineHeightLargeSizes[index]]: Number(lineHeight),
+        [key]: themeValues[index],
       }),
       {}
     )
+
+    for (const [index, value] of lineHeights.entries()) {
+      if (index === middle) {
+        theme[LineHeightSizeDefaultName] = value
+      }
+    }
+
+    for (const value of greater) {
+      const nextGroupName = groupGreater.pop()
+
+      theme[nextGroupName as string] = value
+    }
+
+    return theme
   }
 
   execute(textNodes: Text[] = []) {
     const stat = this.getStat(textNodes)
 
-    const lineHeights = Array.from(stat.keys()).sort((a, b) => {
-      const x = a.split('.')
-      const y = b.split('.')
+    const lineHeights = Array.from(stat.keys()).sort((a, b) => parseFloat(a) - parseFloat(b))
 
-      return Number(x[0]) - Number(y[0]) || Number(x[1]) - Number(y[1])
-    })
+    const convertToNumber = (lineHeight) => parseFloat(lineHeight)
 
-    const smallLineHeights = lineHeights.filter((lineHeight) => Number(lineHeight) < 1)
-    const mediumLineHeights = lineHeights.filter(
-      (lineHeight) => Number(lineHeight) >= 1 && Number(lineHeight) < 2
+    const smallLineHeights = lineHeights.filter((lineHeight) => convertToNumber(lineHeight) < 1)
+    const normalLineHeights = lineHeights.filter(
+      (lineHeight) => convertToNumber(lineHeight) >= 1 && convertToNumber(lineHeight) < 1.5
     )
-    const largeLineHeights = lineHeights.filter((lineHeight) => Number(lineHeight) >= 2)
+    const mediumLineHeights = lineHeights.filter(
+      (lineHeight) => convertToNumber(lineHeight) >= 1.5 && convertToNumber(lineHeight) < 2
+    )
+    const largeLineHeights = lineHeights.filter((lineHeight) => convertToNumber(lineHeight) >= 2)
 
     return {
-      ...this.fillSmallLineHeights(smallLineHeights),
-      ...this.fillMediumLineHeights(mediumLineHeights),
-      ...this.fillLargeLineHeights(largeLineHeights),
+      [Group.SMALL]: {
+        ...this.fillSizes(smallLineHeights.map(convertToNumber)),
+      },
+      [Group.NORMAL]: {
+        ...this.fillSizes(normalLineHeights.map(convertToNumber)),
+      },
+      [Group.MEDIUM]: {
+        ...this.fillSizes(mediumLineHeights.map(convertToNumber)),
+      },
+      [Group.LARGE]: {
+        ...this.fillSizes(largeLineHeights.map(convertToNumber)),
+      },
     }
   }
 }

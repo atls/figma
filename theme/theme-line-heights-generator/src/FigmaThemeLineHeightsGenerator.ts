@@ -11,7 +11,7 @@ import { SimpleMappingStrategy }     from './strategy'
 export class FigmaThemeLineHeightsGenerator extends FigmaThemeGenerator {
   readonly name = 'lineHeights'
 
-  getFonts(nodes): Text[] {
+  getLineHeight(nodes): Text[] {
     const textNodes: Text[] = []
 
     walk(nodes, (node) => {
@@ -26,7 +26,7 @@ export class FigmaThemeLineHeightsGenerator extends FigmaThemeGenerator {
   generate(file: FileResponse): FigmaThemeGeneratorResult {
     const strategy = new SimpleMappingStrategy()
 
-    const values = strategy.execute(this.getFonts(file.document.children))
+    const values = strategy.execute(this.getLineHeight(file.document.children))
 
     return {
       name: this.name,
