@@ -19,7 +19,7 @@
     "@atls/figma-theme-line-heights-generator": "workspace:*",
     "@atls/figma-theme-radii-generator": "workspace:*",
     "@atls/figma-theme-shadows-generator": "workspace:*",
-    "figma-js": "1.16.0",
+    "figma-js": "1.16.1-0",
     "prettier": "2.7.1"
   },
   "devDependencies": {

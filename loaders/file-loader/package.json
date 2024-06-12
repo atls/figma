@@ -12,7 +12,7 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
-    "figma-js": "1.16.0"
+    "figma-js": "1.16.1-0"
   },
   "devDependencies": {
     "@types/node": "18.18.7"

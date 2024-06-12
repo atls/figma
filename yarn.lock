@@ -212,7 +212,7 @@ __metadata:
     "@atls/figma-file-loader": "workspace:*"
     "@types/node": "npm:18.18.7"
     commander: "npm:9.5.0"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
     npmlog: "npm:6.0.2"
   bin:
     generate-assets: dist/index.js
@@ -225,7 +225,7 @@ __metadata:
   dependencies:
     "@atls/figma-file-loader": "workspace:*"
     "@types/node": "npm:18.18.7"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
     fs-extra: "npm:10.1.0"
     node-fetch: "npm:2.7.0"
   peerDependencies:
@@ -238,7 +238,7 @@ __metadata:
   resolution: "@atls/figma-file-loader@workspace:loaders/file-loader"
   dependencies:
     "@types/node": "npm:18.18.7"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
   peerDependencies:
     figma-js: "*"
   languageName: unknown
@@ -253,10 +253,10 @@ __metadata:
     "@types/node": "npm:18.18.7"
     "@yarnpkg/builder": "npm:4.0.0-rc.36"
     commander: "npm:9.5.0"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
     npmlog: "npm:7.0.1"
-    ts-node: "npm:10.9.1"
-    typescript: "npm:4.6.4"
+    ts-node: "npm:10.9.2"
+    typescript: "npm:4.9.5"
   bin:
     generate-theme: dist/index.js
   languageName: unknown
@@ -268,11 +268,11 @@ __metadata:
   dependencies:
     "@atls/figma-theme-generator-common": "workspace:*"
     "@atls/figma-utils": "workspace:*"
-    "@types/color-namer": "npm:1.3.2"
+    "@types/color-namer": "npm:1.3.3"
     "@types/node": "npm:18.18.7"
     camelcase: "npm:6.3.0"
     color-namer: "npm:1.4.0"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -286,7 +286,7 @@ __metadata:
     "@atls/figma-theme-generator-common": "workspace:*"
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:18.18.7"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -300,7 +300,7 @@ __metadata:
     "@atls/figma-theme-generator-common": "workspace:*"
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:18.18.7"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -314,7 +314,7 @@ __metadata:
     "@atls/figma-theme-generator-common": "workspace:*"
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:18.18.7"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -326,7 +326,7 @@ __metadata:
   resolution: "@atls/figma-theme-generator-common@workspace:theme/theme-generator-common"
   dependencies:
     "@types/node": "npm:18.18.7"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
   peerDependencies:
     figma-js: "*"
   languageName: unknown
@@ -339,7 +339,7 @@ __metadata:
     "@atls/figma-theme-generator-common": "workspace:*"
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:18.18.7"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -353,7 +353,7 @@ __metadata:
     "@atls/figma-theme-generator-common": "workspace:*"
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:18.18.7"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -367,7 +367,7 @@ __metadata:
     "@atls/figma-theme-generator-common": "workspace:*"
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:18.18.7"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -386,7 +386,7 @@ __metadata:
     "@atls/figma-theme-radii-generator": "workspace:*"
     "@atls/figma-theme-shadows-generator": "workspace:*"
     "@types/node": "npm:18.18.7"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
     prettier: "npm:2.7.1"
   peerDependencies:
     figma-js: "*"
@@ -397,10 +397,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@atls/figma-utils@workspace:utils/utils"
   dependencies:
-    "@types/color-namer": "npm:1.3.2"
+    "@types/color-namer": "npm:1.3.3"
     "@types/node": "npm:18.18.7"
     color-namer: "npm:1.4.0"
-    figma-js: "npm:1.16.0"
+    figma-js: "npm:1.16.1-0"
   peerDependencies:
     figma-js: "*"
   languageName: unknown
@@ -1680,10 +1680,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/color-namer@npm:1.3.2":
-  version: 1.3.2
-  resolution: "@types/color-namer@npm:1.3.2"
-  checksum: 10/2d61d33dfc1ddb5efbdb75aeda36a9384adfc169dae0b8c4e4aa68fe466b5ed984eb17aef617261ddcd5e589007b8774555ce677ee879e46fb6064aa8d95f15b
+"@types/color-namer@npm:1.3.3":
+  version: 1.3.3
+  resolution: "@types/color-namer@npm:1.3.3"
+  checksum: 10/63fe9c2bc010f50137378f2463922cea4d55116d0d36b41dc3c05857d0eb73ad2c70f76230810703224f46fd995f5cf5416b76d84972bc2c0258b80a0260195e
   languageName: node
   linkType: hard
 
@@ -2968,6 +2968,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"asynckit@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "asynckit@npm:0.4.0"
+  checksum: 10/3ce727cbc78f69d6a4722517a58ee926c8c21083633b1d3fdf66fd688f6c127a53a592141bd4866f9b63240a86e9d8e974b13919450bd17fa33c2d22c4558ad8
+  languageName: node
+  linkType: hard
+
 "auto-bind@npm:4.0.0":
   version: 4.0.0
   resolution: "auto-bind@npm:4.0.0"
@@ -2975,12 +2982,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.21.1":
-  version: 0.21.4
-  resolution: "axios@npm:0.21.4"
+"axios@npm:^1.6.0":
+  version: 1.7.2
+  resolution: "axios@npm:1.7.2"
   dependencies:
-    follow-redirects: "npm:^1.14.0"
-  checksum: 10/da644592cb6f8f9f8c64fdabd7e1396d6769d7a4c1ea5f8ae8beb5c2eb90a823e3a574352b0b934ac62edc762c0f52647753dc54f7d07279127a7e5c4cd20272
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10/6ae80dda9736bb4762ce717f1a26ff997d94672d3a5799ad9941c24d4fb019c1dff45be8272f08d1975d7950bac281f3ba24aff5ecd49ef5a04d872ec428782f
   languageName: node
   linkType: hard
 
@@ -3540,6 +3549,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"combined-stream@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "combined-stream@npm:1.0.8"
+  dependencies:
+    delayed-stream: "npm:~1.0.0"
+  checksum: 10/2e969e637d05d09fa50b02d74c83a1186f6914aae89e6653b62595cc75a221464f884f55f231b8f4df7a49537fba60bdc0427acd2bf324c09a1dbb84837e36e4
+  languageName: node
+  linkType: hard
+
 "commander@npm:7.2.0, commander@npm:^7.2.0":
   version: 7.2.0
   resolution: "commander@npm:7.2.0"
@@ -3712,6 +3730,13 @@ __metadata:
   version: 2.0.1
   resolution: "defer-to-connect@npm:2.0.1"
   checksum: 10/8a9b50d2f25446c0bfefb55a48e90afd58f85b21bcf78e9207cd7b804354f6409032a1705c2491686e202e64fc05f147aa5aa45f9aa82627563f045937f5791b
+  languageName: node
+  linkType: hard
+
+"delayed-stream@npm:~1.0.0":
+  version: 1.0.0
+  resolution: "delayed-stream@npm:1.0.0"
+  checksum: 10/46fe6e83e2cb1d85ba50bd52803c68be9bd953282fa7096f51fc29edd5d67ff84ff753c51966061e5ba7cb5e47ef6d36a91924eddb7f3f3483b1c560f77a0020
   languageName: node
   linkType: hard
 
@@ -4487,12 +4512,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"figma-js@npm:1.16.0":
-  version: 1.16.0
-  resolution: "figma-js@npm:1.16.0"
+"figma-js@npm:1.16.1-0":
+  version: 1.16.1-0
+  resolution: "figma-js@npm:1.16.1-0"
   dependencies:
-    axios: "npm:^0.21.1"
-  checksum: 10/28f16ac8af8b12ecae6e2c92e3b7965011f8cd0e7da6dbc2b1be08c6162c9c7544bf69ed2555c8e60160859ded3a7cb1f8abaa2851feb5ca50f83809366fe814
+    axios: "npm:^1.6.0"
+  checksum: 10/281781a41755dac852102c1ebfd88558f44577c93af28e490f14680b05a13303399c073a5ceb0bee602c5f131149f11fffc8143fd86b1ffd1fed300f84e9e2f8
   languageName: node
   linkType: hard
 
@@ -4509,7 +4534,7 @@ __metadata:
     eslint: "npm:8.8.0"
     husky: "npm:8.0.1"
     madge: "npm:6.1.0"
-    typescript: "npm:4.6.4"
+    typescript: "npm:4.9.5"
   languageName: unknown
   linkType: soft
 
@@ -4611,13 +4636,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.0":
-  version: 1.15.3
-  resolution: "follow-redirects@npm:1.15.3"
+"follow-redirects@npm:^1.15.6":
+  version: 1.15.6
+  resolution: "follow-redirects@npm:1.15.6"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: 10/60d98693f4976892f8c654b16ef6d1803887a951898857ab0cdc009570b1c06314ad499505b7a040ac5b98144939f8597766e5e6a6859c0945d157b473aa6f5f
+  checksum: 10/70c7612c4cab18e546e36b991bbf8009a1a41cf85354afe04b113d1117569abf760269409cb3eb842d9f7b03d62826687086b081c566ea7b1e6613cf29030bf7
   languageName: node
   linkType: hard
 
@@ -4628,6 +4653,17 @@ __metadata:
     cross-spawn: "npm:^7.0.0"
     signal-exit: "npm:^4.0.1"
   checksum: 10/087edd44857d258c4f73ad84cb8df980826569656f2550c341b27adf5335354393eec24ea2fabd43a253233fb27cee177ebe46bd0b7ea129c77e87cb1e9936fb
+  languageName: node
+  linkType: hard
+
+"form-data@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "form-data@npm:4.0.0"
+  dependencies:
+    asynckit: "npm:^0.4.0"
+    combined-stream: "npm:^1.0.8"
+    mime-types: "npm:^2.1.12"
+  checksum: 10/7264aa760a8cf09482816d8300f1b6e2423de1b02bba612a136857413fdc96d7178298ced106817655facc6b89036c6e12ae31c9eb5bdc16aabf502ae8a5d805
   languageName: node
   linkType: hard
 
@@ -6658,7 +6694,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime-types@npm:^2.1.27":
+"mime-types@npm:^2.1.12, mime-types@npm:^2.1.27":
   version: 2.1.35
   resolution: "mime-types@npm:2.1.35"
   dependencies:
@@ -7455,6 +7491,13 @@ __metadata:
   version: 2.0.1
   resolution: "protocols@npm:2.0.1"
   checksum: 10/0cd08a55b9cb7cc96fed7a528255320428a7c86fd5f3f35965845285436433b7836178893168f80584efdf86391cd7c0a837b6f6bc5ddac3029c76be61118ba5
+  languageName: node
+  linkType: hard
+
+"proxy-from-env@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "proxy-from-env@npm:1.1.0"
+  checksum: 10/f0bb4a87cfd18f77bc2fba23ae49c3b378fb35143af16cc478171c623eebe181678f09439707ad80081d340d1593cd54a33a0113f3ccb3f4bc9451488780ee23
   languageName: node
   linkType: hard
 
@@ -8452,9 +8495,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-node@npm:10.9.1":
-  version: 10.9.1
-  resolution: "ts-node@npm:10.9.1"
+"ts-node@npm:10.9.2":
+  version: 10.9.2
+  resolution: "ts-node@npm:10.9.2"
   dependencies:
     "@cspotcode/source-map-support": "npm:^0.8.0"
     "@tsconfig/node10": "npm:^1.0.7"
@@ -8486,7 +8529,7 @@ __metadata:
     ts-node-script: dist/bin-script.js
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
-  checksum: 10/bee56d4dc96ccbafc99dfab7b73fbabc62abab2562af53cdea91c874a301b9d11e42bc33c0a032a6ed6d813dbdc9295ec73dde7b73ea4ebde02b0e22006f7e04
+  checksum: 10/a91a15b3c9f76ac462f006fa88b6bfa528130dcfb849dd7ef7f9d640832ab681e235b8a2bc58ecde42f72851cc1d5d4e22c901b0c11aa51001ea1d395074b794
   languageName: node
   linkType: hard
 
@@ -8609,6 +8652,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:4.9.5, typescript@npm:^4.0.0, typescript@npm:^4.6.2, typescript@npm:^4.9.5":
+  version: 4.9.5
+  resolution: "typescript@npm:4.9.5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/458f7220ab11e0fc191514cc41be1707645ec9a8c2d609448a448e18c522cef9646f58728f6811185a4c35613dacdf6c98cf8965c88b3541d0288c47291e4300
+  languageName: node
+  linkType: hard
+
 "typescript@npm:^3.9.10, typescript@npm:^3.9.7":
   version: 3.9.10
   resolution: "typescript@npm:3.9.10"
@@ -8616,16 +8669,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/f86a085eea24fdd665850c6be4dd69c7a71fe3d27ecc712be88cdc7a52d866f4f2416ad91c554df60f499dedcf288a24b3d8052e502833d8acc661a9d21bb98f
-  languageName: node
-  linkType: hard
-
-"typescript@npm:^4.0.0, typescript@npm:^4.6.2, typescript@npm:^4.9.5":
-  version: 4.9.5
-  resolution: "typescript@npm:4.9.5"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10/458f7220ab11e0fc191514cc41be1707645ec9a8c2d609448a448e18c522cef9646f58728f6811185a4c35613dacdf6c98cf8965c88b3541d0288c47291e4300
   languageName: node
   linkType: hard
 
@@ -8639,6 +8682,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^4.0.0#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^4.6.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^4.9.5#optional!builtin<compat/typescript>":
+  version: 4.9.5
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/5659316360b5cc2d6f5931b346401fa534107b68b60179cf14970e27978f0936c1d5c46f4b5b8175f8cba0430f522b3ce355b4b724c0ea36ce6c0347fab25afd
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@npm%3A^3.9.10#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^3.9.7#optional!builtin<compat/typescript>":
   version: 3.9.10
   resolution: "typescript@patch:typescript@npm%3A3.9.10#optional!builtin<compat/typescript>::version=3.9.10&hash=3bd3d3"
@@ -8646,16 +8699,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/77024c200e1f80d95185d5a973bcc4b0ecc12a77851390b1382e372195313769373a4b8b1642df4a8d4ae1df5911dcd9bde111cf6755eb4b6091f374e97c6dc5
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@npm%3A^4.0.0#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^4.6.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^4.9.5#optional!builtin<compat/typescript>":
-  version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10/5659316360b5cc2d6f5931b346401fa534107b68b60179cf14970e27978f0936c1d5c46f4b5b8175f8cba0430f522b3ce355b4b724c0ea36ce6c0347fab25afd
   languageName: node
   linkType: hard
 

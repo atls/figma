@@ -105,7 +105,7 @@ const RAW_RUNTIME_STATE =
           ["eslint", "npm:8.8.0"],\
           ["husky", "npm:8.0.1"],\
           ["madge", "virtual:5a21c85c521a50b949d7433d59da4c91cbe6750c642c4041011e619be850dccb27b8528b913d3f71971e0ce097bbeebb0f23da2fdf1a2165d5d03c58c4d710eb#npm:6.1.0"],\
-          ["typescript", "patch:typescript@npm%3A4.6.4#optional!builtin<compat/typescript>::version=4.6.4&hash=5d3a66"]\
+          ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -344,7 +344,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-file-loader", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"],\
+          ["figma-js", "npm:1.16.1-0"],\
           ["fs-extra", "npm:10.1.0"],\
           ["node-fetch", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#npm:2.7.0"]\
         ],\
@@ -360,7 +360,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-assets", "workspace:assets/assets"],\
           ["@atls/figma-file-loader", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader"],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"],\
+          ["figma-js", "npm:1.16.1-0"],\
           ["fs-extra", "npm:10.1.0"],\
           ["node-fetch", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#npm:2.7.0"]\
         ],\
@@ -376,7 +376,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-file-loader", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader"],\
           ["@types/node", "npm:18.18.7"],\
           ["commander", "npm:9.5.0"],\
-          ["figma-js", "npm:1.16.0"],\
+          ["figma-js", "npm:1.16.1-0"],\
           ["npmlog", "npm:6.0.2"]\
         ],\
         "linkType": "SOFT"\
@@ -389,7 +389,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-file-loader", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "packagePeers": [\
           "@types/figma-js",\
@@ -402,7 +402,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-file-loader", "workspace:loaders/file-loader"],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -421,7 +421,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-shadows-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-shadows-generator"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"],\
+          ["figma-js", "npm:1.16.1-0"],\
           ["prettier", "npm:2.7.1"]\
         ],\
         "packagePeers": [\
@@ -442,7 +442,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-radii-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-radii-generator"],\
           ["@atls/figma-theme-shadows-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-shadows-generator"],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"],\
+          ["figma-js", "npm:1.16.1-0"],\
           ["prettier", "npm:2.7.1"]\
         ],\
         "linkType": "SOFT"\
@@ -458,10 +458,10 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:18.18.7"],\
           ["@yarnpkg/builder", "npm:4.0.0-rc.36"],\
           ["commander", "npm:9.5.0"],\
-          ["figma-js", "npm:1.16.0"],\
+          ["figma-js", "npm:1.16.1-0"],\
           ["npmlog", "npm:7.0.1"],\
-          ["ts-node", "virtual:a9526061832803f8bc7fed186e9699b3bcb0fb7fb989d17328e56b61e9f17fd49895330e461073d51dd5dcbab09bf72a55678f1e398bacacdb001a56e84fd54f#npm:10.9.1"],\
-          ["typescript", "patch:typescript@npm%3A4.6.4#optional!builtin<compat/typescript>::version=4.6.4&hash=5d3a66"]\
+          ["ts-node", "virtual:a9526061832803f8bc7fed186e9699b3bcb0fb7fb989d17328e56b61e9f17fd49895330e461073d51dd5dcbab09bf72a55678f1e398bacacdb001a56e84fd54f#npm:10.9.2"],\
+          ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -474,12 +474,12 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
           ["@types/atls__figma-theme-generator-common", null],\
-          ["@types/color-namer", "npm:1.3.2"],\
+          ["@types/color-namer", "npm:1.3.3"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
           ["camelcase", "npm:6.3.0"],\
           ["color-namer", "npm:1.4.0"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "packagePeers": [\
           "@types/atls__figma-theme-generator-common",\
@@ -494,11 +494,11 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-colors-generator", "workspace:theme/theme-colors-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
-          ["@types/color-namer", "npm:1.3.2"],\
+          ["@types/color-namer", "npm:1.3.3"],\
           ["@types/node", "npm:18.18.7"],\
           ["camelcase", "npm:6.3.0"],\
           ["color-namer", "npm:1.4.0"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -513,7 +513,7 @@ const RAW_RUNTIME_STATE =
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "packagePeers": [\
           "@types/atls__figma-theme-generator-common",\
@@ -529,7 +529,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -544,7 +544,7 @@ const RAW_RUNTIME_STATE =
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "packagePeers": [\
           "@types/atls__figma-theme-generator-common",\
@@ -560,7 +560,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -575,7 +575,7 @@ const RAW_RUNTIME_STATE =
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "packagePeers": [\
           "@types/atls__figma-theme-generator-common",\
@@ -591,7 +591,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -603,7 +603,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "packagePeers": [\
           "@types/figma-js",\
@@ -616,7 +616,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-generator-common", "workspace:theme/theme-generator-common"],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -631,7 +631,7 @@ const RAW_RUNTIME_STATE =
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "packagePeers": [\
           "@types/atls__figma-theme-generator-common",\
@@ -647,7 +647,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -662,7 +662,7 @@ const RAW_RUNTIME_STATE =
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "packagePeers": [\
           "@types/atls__figma-theme-generator-common",\
@@ -678,7 +678,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -693,7 +693,7 @@ const RAW_RUNTIME_STATE =
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "packagePeers": [\
           "@types/atls__figma-theme-generator-common",\
@@ -709,7 +709,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -719,11 +719,11 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@atls-figma-utils-virtual-c2e0673260/1/utils/utils/",\
         "packageDependencies": [\
           ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
-          ["@types/color-namer", "npm:1.3.2"],\
+          ["@types/color-namer", "npm:1.3.3"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
           ["color-namer", "npm:1.4.0"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "packagePeers": [\
           "@types/figma-js",\
@@ -735,10 +735,10 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./utils/utils/",\
         "packageDependencies": [\
           ["@atls/figma-utils", "workspace:utils/utils"],\
-          ["@types/color-namer", "npm:1.3.2"],\
+          ["@types/color-namer", "npm:1.3.3"],\
           ["@types/node", "npm:18.18.7"],\
           ["color-namer", "npm:1.4.0"],\
-          ["figma-js", "npm:1.16.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -2498,10 +2498,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/color-namer", [\
-      ["npm:1.3.2", {\
-        "packageLocation": "./.yarn/cache/@types-color-namer-npm-1.3.2-cd5dc64198-2d61d33dfc.zip/node_modules/@types/color-namer/",\
+      ["npm:1.3.3", {\
+        "packageLocation": "./.yarn/cache/@types-color-namer-npm-1.3.3-1facf8c7c8-63fe9c2bc0.zip/node_modules/@types/color-namer/",\
         "packageDependencies": [\
-          ["@types/color-namer", "npm:1.3.2"]\
+          ["@types/color-namer", "npm:1.3.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4344,6 +4344,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["asynckit", [\
+      ["npm:0.4.0", {\
+        "packageLocation": "./.yarn/cache/asynckit-npm-0.4.0-c718858525-3ce727cbc7.zip/node_modules/asynckit/",\
+        "packageDependencies": [\
+          ["asynckit", "npm:0.4.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["auto-bind", [\
       ["npm:4.0.0", {\
         "packageLocation": "./.yarn/cache/auto-bind-npm-4.0.0-1cda90694b-00cad71cce.zip/node_modules/auto-bind/",\
@@ -4354,11 +4363,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["axios", [\
-      ["npm:0.21.4", {\
-        "packageLocation": "./.yarn/cache/axios-npm-0.21.4-e278873748-da644592cb.zip/node_modules/axios/",\
+      ["npm:1.7.2", {\
+        "packageLocation": "./.yarn/cache/axios-npm-1.7.2-c89264f6f7-6ae80dda97.zip/node_modules/axios/",\
         "packageDependencies": [\
-          ["axios", "npm:0.21.4"],\
-          ["follow-redirects", "virtual:e278873748b4e9d158db595d2f6cb0351c74052f52b53924aec4d9299e7b6babfb62aead374cf2f6e453bc8bea3b052380dc6b1137a162bbfc102bbb1c8cac42#npm:1.15.3"]\
+          ["axios", "npm:1.7.2"],\
+          ["follow-redirects", "virtual:c89264f6f79513b22a07db5e53adf77eba9e48634cf471fb55eb2e75d910809bbac48d9ce7a920c63c8ff2780624fff91866270d8acf614cbd0c4cb748a8b29a#npm:1.15.6"],\
+          ["form-data", "npm:4.0.0"],\
+          ["proxy-from-env", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5069,6 +5080,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["combined-stream", [\
+      ["npm:1.0.8", {\
+        "packageLocation": "./.yarn/cache/combined-stream-npm-1.0.8-dc14d4a63a-2e969e637d.zip/node_modules/combined-stream/",\
+        "packageDependencies": [\
+          ["combined-stream", "npm:1.0.8"],\
+          ["delayed-stream", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["commander", [\
       ["npm:2.20.3", {\
         "packageLocation": "./.yarn/cache/commander-npm-2.20.3-d8dcbaa39b-90c5b68986.zip/node_modules/commander/",\
@@ -5287,6 +5308,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/defer-to-connect-npm-2.0.1-9005cc8c60-8a9b50d2f2.zip/node_modules/defer-to-connect/",\
         "packageDependencies": [\
           ["defer-to-connect", "npm:2.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["delayed-stream", [\
+      ["npm:1.0.0", {\
+        "packageLocation": "./.yarn/cache/delayed-stream-npm-1.0.0-c5a4c4cc02-46fe6e83e2.zip/node_modules/delayed-stream/",\
+        "packageDependencies": [\
+          ["delayed-stream", "npm:1.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6151,17 +6181,17 @@ const RAW_RUNTIME_STATE =
           ["eslint", "npm:8.8.0"],\
           ["husky", "npm:8.0.1"],\
           ["madge", "virtual:5a21c85c521a50b949d7433d59da4c91cbe6750c642c4041011e619be850dccb27b8528b913d3f71971e0ce097bbeebb0f23da2fdf1a2165d5d03c58c4d710eb#npm:6.1.0"],\
-          ["typescript", "patch:typescript@npm%3A4.6.4#optional!builtin<compat/typescript>::version=4.6.4&hash=5d3a66"]\
+          ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"]\
         ],\
         "linkType": "SOFT"\
       }]\
     ]],\
     ["figma-js", [\
-      ["npm:1.16.0", {\
-        "packageLocation": "./.yarn/cache/figma-js-npm-1.16.0-fa57cc0f1c-28f16ac8af.zip/node_modules/figma-js/",\
+      ["npm:1.16.1-0", {\
+        "packageLocation": "./.yarn/cache/figma-js-npm-1.16.1-0-220f93d983-281781a417.zip/node_modules/figma-js/",\
         "packageDependencies": [\
-          ["figma-js", "npm:1.16.0"],\
-          ["axios", "npm:0.21.4"]\
+          ["figma-js", "npm:1.16.1-0"],\
+          ["axios", "npm:1.7.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6283,17 +6313,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["follow-redirects", [\
-      ["npm:1.15.3", {\
-        "packageLocation": "./.yarn/cache/follow-redirects-npm-1.15.3-ca69c47b72-60d98693f4.zip/node_modules/follow-redirects/",\
+      ["npm:1.15.6", {\
+        "packageLocation": "./.yarn/cache/follow-redirects-npm-1.15.6-50635fe51d-70c7612c4c.zip/node_modules/follow-redirects/",\
         "packageDependencies": [\
-          ["follow-redirects", "npm:1.15.3"]\
+          ["follow-redirects", "npm:1.15.6"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:e278873748b4e9d158db595d2f6cb0351c74052f52b53924aec4d9299e7b6babfb62aead374cf2f6e453bc8bea3b052380dc6b1137a162bbfc102bbb1c8cac42#npm:1.15.3", {\
-        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-d670508282/0/cache/follow-redirects-npm-1.15.3-ca69c47b72-60d98693f4.zip/node_modules/follow-redirects/",\
+      ["virtual:c89264f6f79513b22a07db5e53adf77eba9e48634cf471fb55eb2e75d910809bbac48d9ce7a920c63c8ff2780624fff91866270d8acf614cbd0c4cb748a8b29a#npm:1.15.6", {\
+        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-d6f128c480/0/cache/follow-redirects-npm-1.15.6-50635fe51d-70c7612c4c.zip/node_modules/follow-redirects/",\
         "packageDependencies": [\
-          ["follow-redirects", "virtual:e278873748b4e9d158db595d2f6cb0351c74052f52b53924aec4d9299e7b6babfb62aead374cf2f6e453bc8bea3b052380dc6b1137a162bbfc102bbb1c8cac42#npm:1.15.3"],\
+          ["follow-redirects", "virtual:c89264f6f79513b22a07db5e53adf77eba9e48634cf471fb55eb2e75d910809bbac48d9ce7a920c63c8ff2780624fff91866270d8acf614cbd0c4cb748a8b29a#npm:1.15.6"],\
           ["@types/debug", null],\
           ["debug", null]\
         ],\
@@ -6311,6 +6341,18 @@ const RAW_RUNTIME_STATE =
           ["foreground-child", "npm:3.1.1"],\
           ["cross-spawn", "npm:7.0.3"],\
           ["signal-exit", "npm:4.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["form-data", [\
+      ["npm:4.0.0", {\
+        "packageLocation": "./.yarn/cache/form-data-npm-4.0.0-916facec2d-7264aa760a.zip/node_modules/form-data/",\
+        "packageDependencies": [\
+          ["form-data", "npm:4.0.0"],\
+          ["asynckit", "npm:0.4.0"],\
+          ["combined-stream", "npm:1.0.8"],\
+          ["mime-types", "npm:2.1.35"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8483,7 +8525,7 @@ const RAW_RUNTIME_STATE =
           ["rc", "npm:1.2.8"],\
           ["stream-to-array", "npm:2.3.0"],\
           ["ts-graphviz", "npm:1.8.1"],\
-          ["typescript", "patch:typescript@npm%3A4.6.4#optional!builtin<compat/typescript>::version=4.6.4&hash=5d3a66"],\
+          ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"],\
           ["walkdir", "npm:0.4.1"]\
         ],\
         "packagePeers": [\
@@ -9473,6 +9515,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/protocols-npm-2.0.1-e2bc74d1c1-0cd08a55b9.zip/node_modules/protocols/",\
         "packageDependencies": [\
           ["protocols", "npm:2.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["proxy-from-env", [\
+      ["npm:1.1.0", {\
+        "packageLocation": "./.yarn/cache/proxy-from-env-npm-1.1.0-c13d07f26b-f0bb4a87cf.zip/node_modules/proxy-from-env/",\
+        "packageDependencies": [\
+          ["proxy-from-env", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -10631,17 +10682,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["ts-node", [\
-      ["npm:10.9.1", {\
-        "packageLocation": "./.yarn/cache/ts-node-npm-10.9.1-6c268be7f4-bee56d4dc9.zip/node_modules/ts-node/",\
+      ["npm:10.9.2", {\
+        "packageLocation": "./.yarn/cache/ts-node-npm-10.9.2-3f3890b9ac-a91a15b3c9.zip/node_modules/ts-node/",\
         "packageDependencies": [\
-          ["ts-node", "npm:10.9.1"]\
+          ["ts-node", "npm:10.9.2"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:a9526061832803f8bc7fed186e9699b3bcb0fb7fb989d17328e56b61e9f17fd49895330e461073d51dd5dcbab09bf72a55678f1e398bacacdb001a56e84fd54f#npm:10.9.1", {\
-        "packageLocation": "./.yarn/__virtual__/ts-node-virtual-ee11a816bb/0/cache/ts-node-npm-10.9.1-6c268be7f4-bee56d4dc9.zip/node_modules/ts-node/",\
+      ["virtual:a9526061832803f8bc7fed186e9699b3bcb0fb7fb989d17328e56b61e9f17fd49895330e461073d51dd5dcbab09bf72a55678f1e398bacacdb001a56e84fd54f#npm:10.9.2", {\
+        "packageLocation": "./.yarn/__virtual__/ts-node-virtual-1eb244db5c/0/cache/ts-node-npm-10.9.2-3f3890b9ac-a91a15b3c9.zip/node_modules/ts-node/",\
         "packageDependencies": [\
-          ["ts-node", "virtual:a9526061832803f8bc7fed186e9699b3bcb0fb7fb989d17328e56b61e9f17fd49895330e461073d51dd5dcbab09bf72a55678f1e398bacacdb001a56e84fd54f#npm:10.9.1"],\
+          ["ts-node", "virtual:a9526061832803f8bc7fed186e9699b3bcb0fb7fb989d17328e56b61e9f17fd49895330e461073d51dd5dcbab09bf72a55678f1e398bacacdb001a56e84fd54f#npm:10.9.2"],\
           ["@cspotcode/source-map-support", "npm:0.8.1"],\
           ["@swc/core", null],\
           ["@swc/wasm", null],\
@@ -10659,7 +10710,7 @@ const RAW_RUNTIME_STATE =
           ["create-require", "npm:1.1.1"],\
           ["diff", "npm:4.0.2"],\
           ["make-error", "npm:1.3.6"],\
-          ["typescript", "patch:typescript@npm%3A4.6.4#optional!builtin<compat/typescript>::version=4.6.4&hash=5d3a66"],\
+          ["typescript", "patch:typescript@npm%3A4.9.5#optional!builtin<compat/typescript>::version=4.9.5&hash=289587"],\
           ["v8-compile-cache-lib", "npm:3.0.1"],\
           ["yn", "npm:3.1.1"]\
         ],\

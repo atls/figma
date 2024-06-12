@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@atls/figma-file-loader": "workspace:*",
-    "figma-js": "1.16.0",
+    "figma-js": "1.16.1-0",
     "fs-extra": "10.1.0",
     "node-fetch": "2.7.0"
   },
