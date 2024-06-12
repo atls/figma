@@ -26,12 +26,20 @@ export class FigmaTheme {
 
   output: string
   ignoredPages: string[]
+  includedPages: string[]
 
-  constructor(file: FileResponse, output, ignoredPages: string[] = []) {
+  constructor(
+    file: FileResponse,
+    output,
+    ignoredPages: string[] = [],
+    includedPages: string[] = []
+  ) {
     this.file = file
 
     this.output = path.join(process.cwd(), output || 'theme')
+
     this.ignoredPages = ignoredPages
+    this.includedPages = includedPages
   }
 
   async format(target, content) {
@@ -49,13 +57,18 @@ export class FigmaTheme {
   }
 
   async generate() {
+    const filteredPages = this.file.document.children.filter((node) => {
+      const isCanvas = node.type === 'CANVAS'
+      const isNotIgnored = !this.ignoredPages.includes(node.id)
+      const isIncluded = this.includedPages.length === 0 || this.includedPages.includes(node.id)
+      return isCanvas && isNotIgnored && isIncluded
+    })
+
     const fileData = {
       ...this.file,
       document: {
         ...this.file.document,
-        children: this.file.document.children.filter(
-          (node) => node.type === 'CANVAS' && !this.ignoredPages.includes(node.id)
-        ),
+        children: filteredPages,
       },
     }
 
