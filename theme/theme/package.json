@@ -20,7 +20,7 @@
     "@atls/figma-theme-radii-generator": "workspace:*",
     "@atls/figma-theme-shadows-generator": "workspace:*",
     "figma-js": "1.16.1-0",
-    "prettier": "2.7.1"
+    "prettier": "2.8.8"
   },
   "devDependencies": {
     "@types/node": "18.18.7"

@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-shadow
 export enum Group {
   SMALL = 'small',
   NORMAL = 'normal',
@@ -6,7 +5,6 @@ export enum Group {
   LARGE = 'large',
 }
 
-// eslint-disable-next-line no-shadow
 export enum FontSize {
   SemiTiny = 'semiTiny',
   Tiny = 'tiny',

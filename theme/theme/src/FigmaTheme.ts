@@ -25,7 +25,9 @@ export class FigmaTheme {
   file: FileResponse
 
   output: string
+
   ignoredPages: string[]
+
   includedPages: string[]
 
   constructor(

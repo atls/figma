@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-shadow
 export enum LineHeightNames {
   MICRO = 'micro',
   EXTRA_MICRO = 'extraMicro',

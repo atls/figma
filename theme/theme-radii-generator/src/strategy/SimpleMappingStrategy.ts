@@ -1,8 +1,8 @@
-import { Group }                                                                                from '../Constants'
-import { RadiiSizeDefaultName }                                                          from '../Constants'
-import { groupNamesGreaterThanDefault }                            from '../Constants'
-import { groupNamesLessThanDefault } from '../Constants'
-import { Strategy }                                                                             from './Strategy'
+import { Group }                        from '../Constants'
+import { RadiiSizeDefaultName }         from '../Constants'
+import { Strategy }                     from './Strategy'
+import { groupNamesGreaterThanDefault } from '../Constants'
+import { groupNamesLessThanDefault }    from '../Constants'
 
 export class SimpleMappingStrategy extends Strategy {
   fillSizes(radii) {
@@ -17,7 +17,8 @@ export class SimpleMappingStrategy extends Strategy {
     const groupGreater = [...groupNamesGreaterThanDefault]
 
     if (radii.length === 1) {
-      tempTheme[RadiiSizeDefaultName] = radii[0]
+      const [firstRadius] = radii
+      tempTheme[RadiiSizeDefaultName] = firstRadius
     }
 
     if (radii.length > 1) {
