@@ -7,8 +7,10 @@ logger.heading = 'figma-theme' as string
 ;(program as any)
   .option('-o, --output [output]', 'Output dir')
   .option('-v, --verbose', 'Verbose output')
-  .option('--ignored-pages <ignoredPages>', 'Ignored pages', (value) => value.split(','))
-  .option('--included-pages <includedPages>', 'Included pages', (value) => value.split(','))
+  .option('--ignored-pages <ignoredPages>', 'Ignored pages', (value) =>
+    value.split(',').map((page) => page.replace('-', ':')))
+  .option('--included-pages <includedPages>', 'Included pages', (value) =>
+    value.split(',').map((page) => page.replace('-', ':')))
   .arguments('<fileId>')
   .parse(process.argv)
 
