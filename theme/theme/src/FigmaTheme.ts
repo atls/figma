@@ -1,6 +1,7 @@
 import path                               from 'path'
 import prettier                           from 'prettier'
 import { FileResponse }                   from 'figma-js'
+import { Node }             from 'figma-js'
 import { promises as fs }                 from 'fs'
 
 import { FigmaThemeColorsGenerator }      from '@atls/figma-theme-colors-generator'
@@ -10,6 +11,7 @@ import { FigmaThemeFontsGenerator }       from '@atls/figma-theme-fonts-generato
 import { FigmaThemeLineHeightsGenerator } from '@atls/figma-theme-line-heights-generator'
 import { FigmaThemeRadiiGenerator }       from '@atls/figma-theme-radii-generator'
 import { FigmaThemeShadowsGenerator }     from '@atls/figma-theme-shadows-generator'
+import { walk }                            from '@atls/figma-utils'
 
 const generators = [
   FigmaThemeFontSizesGenerator,
@@ -30,11 +32,14 @@ export class FigmaTheme {
 
   includedPages: string[]
 
+  prefix: string
+
   constructor(
     file: FileResponse,
     output,
     ignoredPages: string[] = [],
-    includedPages: string[] = []
+    includedPages: string[] = [],
+    prefix: string = ''
   ) {
     this.file = file
 
@@ -42,6 +47,7 @@ export class FigmaTheme {
 
     this.ignoredPages = ignoredPages
     this.includedPages = includedPages
+    this.prefix = prefix
   }
 
   async format(target, content) {
@@ -66,11 +72,15 @@ export class FigmaTheme {
       return isCanvas && isNotIgnored && isIncluded
     })
 
+    const componentNodes = this.prefix
+      ? this.getComponentsWithPrefix(filteredPages, this.prefix)
+      : filteredPages
+
     const fileData = {
       ...this.file,
       document: {
         ...this.file.document,
-        children: filteredPages,
+        children: componentNodes,
       },
     }
 
@@ -83,5 +93,15 @@ export class FigmaTheme {
         })
       })
     )
+  }
+
+  private getComponentsWithPrefix(nodes: Node[], prefix: string): Node[] {
+    const filteredNodes: Node[] = []
+    walk(nodes, (node) => {
+      if (node?.name?.startsWith(prefix)) {
+        filteredNodes.push(node)
+      }
+    })
+    return filteredNodes
   }
 }

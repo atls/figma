@@ -11,6 +11,7 @@ logger.heading = 'figma-theme' as string
     value.split(',').map((page) => page.replace('-', ':')))
   .option('--included-pages <includedPages>', 'Included pages', (value) =>
     value.split(',').map((page) => page.replace('-', ':')))
+  .option('--prefix <prefix>', 'Prefix for components')
   .arguments('<fileId>')
   .parse(process.argv)
 
@@ -34,7 +35,13 @@ if (!fileId) {
     // eslint-disable-next-line dot-notation
     process.env['FIGMA_TOKEN'] = id
     readline.close()
-    run(fileId, (program as any).output, options.ignoredPages, options.includedPages)
+    run(
+      fileId,
+      (program as any).output,
+      options.ignoredPages,
+      options.includedPages,
+      options.prefix
+    )
       .then(() => logger.info('Theme successful generated'))
       .catch((error) => logger.error(error.message))
   })

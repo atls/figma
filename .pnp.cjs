@@ -86,7 +86,7 @@ const RAW_RUNTIME_STATE =
     ["@atls/figma-theme-line-heights-generator", ["virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-line-heights-generator", "workspace:theme/theme-line-heights-generator"]],\
     ["@atls/figma-theme-radii-generator", ["virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-radii-generator", "workspace:theme/theme-radii-generator"]],\
     ["@atls/figma-theme-shadows-generator", ["virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-shadows-generator", "workspace:theme/theme-shadows-generator"]],\
-    ["@atls/figma-utils", ["virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils", "workspace:utils/utils"]],\
+    ["@atls/figma-utils", ["virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils", "workspace:utils/utils"]],\
     ["figma", ["workspace:."]]\
   ],\
   "fallbackPool": [\
@@ -410,6 +410,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-line-heights-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-line-heights-generator"],\
           ["@atls/figma-theme-radii-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-radii-generator"],\
           ["@atls/figma-theme-shadows-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-shadows-generator"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
           ["figma-js", "npm:1.16.1-0"],\
@@ -432,6 +433,7 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-theme-line-heights-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-line-heights-generator"],\
           ["@atls/figma-theme-radii-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-radii-generator"],\
           ["@atls/figma-theme-shadows-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-shadows-generator"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
           ["figma-js", "npm:1.16.1-0"],\
           ["prettier", "npm:2.8.8"]\
@@ -463,7 +465,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-colors-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-colors-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/color-namer", "npm:1.3.3"],\
           ["@types/figma-js", null],\
@@ -484,7 +486,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-colors-generator", "workspace:theme/theme-colors-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/color-namer", "npm:1.3.3"],\
           ["@types/node", "npm:18.18.7"],\
           ["camelcase", "npm:6.3.0"],\
@@ -500,7 +502,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-font-sizes-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-sizes-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
@@ -518,7 +520,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-font-sizes-generator", "workspace:theme/theme-font-sizes-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
           ["figma-js", "npm:1.16.1-0"]\
         ],\
@@ -531,7 +533,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-font-weights-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-font-weights-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
@@ -549,7 +551,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-font-weights-generator", "workspace:theme/theme-font-weights-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
           ["figma-js", "npm:1.16.1-0"]\
         ],\
@@ -562,7 +564,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-fonts-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-fonts-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
@@ -580,7 +582,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-fonts-generator", "workspace:theme/theme-fonts-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
           ["figma-js", "npm:1.16.1-0"]\
         ],\
@@ -618,7 +620,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-line-heights-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-line-heights-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
@@ -636,7 +638,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-line-heights-generator", "workspace:theme/theme-line-heights-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
           ["figma-js", "npm:1.16.1-0"]\
         ],\
@@ -649,7 +651,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-radii-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-radii-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
@@ -667,7 +669,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-radii-generator", "workspace:theme/theme-radii-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
           ["figma-js", "npm:1.16.1-0"]\
         ],\
@@ -680,7 +682,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-shadows-generator", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:theme/theme-shadows-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/atls__figma-theme-generator-common", null],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
@@ -698,7 +700,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@atls/figma-theme-shadows-generator", "workspace:theme/theme-shadows-generator"],\
           ["@atls/figma-theme-generator-common", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:theme/theme-generator-common"],\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/node", "npm:18.18.7"],\
           ["figma-js", "npm:1.16.1-0"]\
         ],\
@@ -706,10 +708,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@atls/figma-utils", [\
-      ["virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils", {\
-        "packageLocation": "./.yarn/__virtual__/@atls-figma-utils-virtual-c2e0673260/1/utils/utils/",\
+      ["virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils", {\
+        "packageLocation": "./.yarn/__virtual__/@atls-figma-utils-virtual-3ffffdc578/1/utils/utils/",\
         "packageDependencies": [\
-          ["@atls/figma-utils", "virtual:c3ee6353248c4eb229260f777545a6725efc53c8d80df27aa8eeeb5ffbdd7a07d23a9bc92d2241d6b72f855298b09e1e06b4dbc9712bc77b6befb7e376cff530#workspace:utils/utils"],\
+          ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/color-namer", "npm:1.3.3"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.18.7"],\
