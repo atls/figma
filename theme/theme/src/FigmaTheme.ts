@@ -84,13 +84,11 @@ export class FigmaTheme {
       },
     }
 
-    await Promise.all(
-      fileData.document.children.map(async () => {
-        generators.forEach(async (Generator) => {
-          const instance = new Generator()
-          const result = await Promise.resolve(instance.generate(fileData))
-          await this.write(result)
-        })
+    return Promise.all(
+      generators.map(async (Generator) => {
+        const instance = new Generator()
+        const result = await Promise.resolve(instance.generate(fileData))
+        await this.write(result)
       })
     )
   }
