@@ -1,7 +1,7 @@
 import path                               from 'path'
 import prettier                           from 'prettier'
 import { FileResponse }                   from 'figma-js'
-import { Node }             from 'figma-js'
+import { Node }                           from 'figma-js'
 import { promises as fs }                 from 'fs'
 
 import { FigmaThemeColorsGenerator }      from '@atls/figma-theme-colors-generator'
@@ -11,7 +11,7 @@ import { FigmaThemeFontsGenerator }       from '@atls/figma-theme-fonts-generato
 import { FigmaThemeLineHeightsGenerator } from '@atls/figma-theme-line-heights-generator'
 import { FigmaThemeRadiiGenerator }       from '@atls/figma-theme-radii-generator'
 import { FigmaThemeShadowsGenerator }     from '@atls/figma-theme-shadows-generator'
-import { walk }                            from '@atls/figma-utils'
+import { walk }                           from '@atls/figma-utils'
 
 const generators = [
   FigmaThemeFontSizesGenerator,
