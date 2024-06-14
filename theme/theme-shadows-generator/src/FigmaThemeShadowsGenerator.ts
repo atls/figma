@@ -6,7 +6,7 @@ import { toColorName }               from '@atls/figma-utils'
 import { toColorString }             from '@atls/figma-utils'
 import { walk }                      from '@atls/figma-utils'
 
-import { Shadow }                     from './interfaces.js'
+import { Shadow }                    from './interfaces.js'
 
 export class FigmaThemeShadowsGenerator extends FigmaThemeGenerator {
   readonly name = 'shadows'
