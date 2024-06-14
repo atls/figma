@@ -1,1 +1,1 @@
-export * from './FigmaThemeLineHeightsGenerator'
+export * from './FigmaThemeLineHeightsGenerator.js'

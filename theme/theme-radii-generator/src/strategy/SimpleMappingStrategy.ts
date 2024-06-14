@@ -1,8 +1,8 @@
-import { Group }                        from '../Constants'
-import { RadiiSizeDefaultName }         from '../Constants'
-import { Strategy }                     from './Strategy'
-import { groupNamesGreaterThanDefault } from '../Constants'
-import { groupNamesLessThanDefault }    from '../Constants'
+import { Group }                        from '../Constants.js'
+import { RadiiSizeDefaultName }         from '../Constants.js'
+import { Strategy }                     from './Strategy.js'
+import { groupNamesGreaterThanDefault } from '../Constants.js'
+import { groupNamesLessThanDefault }    from '../Constants.js'
 
 export class SimpleMappingStrategy extends Strategy {
   fillSizes(radii) {

@@ -6,7 +6,7 @@ import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
 import { isText }                    from '@atls/figma-utils'
 import { walk }                      from '@atls/figma-utils'
 
-import { SimpleMappingStrategy }     from './strategy'
+import { SimpleMappingStrategy }     from './strategy/index.js'
 
 export class FigmaThemeFontWeightsGenerator extends FigmaThemeGenerator {
   readonly name = 'fontWeights'

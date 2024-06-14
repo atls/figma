@@ -5,7 +5,7 @@ import { existsSync }               from 'fs'
 
 import { FigmaThemeFontsGenerator } from '@atls/figma-theme-fonts-generator'
 
-import { FigmaTheme }               from '../index'
+import { FigmaTheme }               from '../index.js'
 
 describe('fonts generator', () => {
   const file = {

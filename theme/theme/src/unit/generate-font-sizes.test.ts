@@ -5,7 +5,7 @@ import { readFileSync }                 from 'fs'
 
 import { FigmaThemeFontSizesGenerator } from '@atls/figma-theme-font-sizes-generator'
 
-import { FigmaTheme }                   from '../index'
+import { FigmaTheme }                   from '../index.js'
 
 describe('font sizes generator', () => {
   const file = {

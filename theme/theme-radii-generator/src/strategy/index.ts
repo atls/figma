@@ -1,2 +1,2 @@
-export * from './SimpleMappingStrategy'
-export * from './Strategy'
+export * from './SimpleMappingStrategy.js'
+export * from './Strategy.js'

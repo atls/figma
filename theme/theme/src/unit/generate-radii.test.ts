@@ -5,7 +5,7 @@ import { existsSync }               from 'fs'
 
 import { FigmaThemeRadiiGenerator } from '@atls/figma-theme-radii-generator'
 
-import { FigmaTheme }               from '../index'
+import { FigmaTheme }               from '../index.js'
 
 describe('radii generator', () => {
   const file = {

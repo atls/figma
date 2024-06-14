@@ -2,6 +2,7 @@
   "name": "@atls/figma-assets",
   "version": "0.0.3",
   "license": "BSD-3-Clause",
+  "type": "module",
   "main": "src/index.ts",
   "files": [
     "dist"

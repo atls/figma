@@ -11,8 +11,8 @@ import { toColorName }               from '@atls/figma-utils'
 import { toColorString }             from '@atls/figma-utils'
 import { walk }                      from '@atls/figma-utils'
 
-import { ButtonState }               from './Interfaces'
-import { InputState }                from './Interfaces'
+import { ButtonState }               from './Interfaces.js'
+import { InputState }                from './Interfaces.js'
 
 export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
   readonly name = 'colors'

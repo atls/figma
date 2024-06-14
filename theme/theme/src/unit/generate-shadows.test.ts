@@ -5,7 +5,7 @@ import { existsSync }                 from 'fs'
 
 import { FigmaThemeShadowsGenerator } from '@atls/figma-theme-shadows-generator'
 
-import { FigmaTheme }                 from '../index'
+import { FigmaTheme }                 from '../index.js'
 
 describe('shadows generator', () => {
   const file = {

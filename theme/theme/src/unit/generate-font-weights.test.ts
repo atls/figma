@@ -5,7 +5,7 @@ import { existsSync }                     from 'fs'
 
 import { FigmaThemeFontWeightsGenerator } from '@atls/figma-theme-font-weights-generator'
 
-import { FigmaTheme }                     from '../index'
+import { FigmaTheme }                     from '../index.js'
 
 describe('font weights generator', () => {
   const file = {

@@ -1,7 +1,7 @@
 import program from 'commander'
 import logger  from 'npmlog'
 
-import { run } from './run'
+import { run } from './run.js'
 
 logger.heading = 'figma-theme' as string
 ;(program as any)

@@ -1,1 +1,1 @@
-export * from './FigmaThemeShadowsGenerator'
+export * from './FigmaThemeShadowsGenerator.js'

@@ -2,6 +2,7 @@
   "name": "@atls/figma-assets-cli",
   "version": "0.0.3",
   "license": "BSD-3-Clause",
+  "type": "module",
   "main": "src/index.ts",
   "bin": {
     "generate-assets": "dist/index.js"

@@ -5,7 +5,7 @@ import { readFileSync }                   from 'fs'
 
 import { FigmaThemeLineHeightsGenerator } from '@atls/figma-theme-line-heights-generator'
 
-import { FigmaTheme }                     from '../index'
+import { FigmaTheme }                     from '../index.js'
 
 describe('lineHeights generator', () => {
   const file = {

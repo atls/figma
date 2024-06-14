@@ -1,10 +1,10 @@
 import { Text }                         from 'figma-js'
 
-import { FontSizeDefaultName }          from '../Constants'
-import { Group }                        from '../Constants'
-import { Strategy }                     from './Strategy'
-import { groupNamesGreaterThanDefault } from '../Constants'
-import { groupNamesLessThanDefault }    from '../Constants'
+import { FontSizeDefaultName }          from '../Constants.js'
+import { Group }                        from '../Constants.js'
+import { Strategy }                     from './Strategy.js'
+import { groupNamesGreaterThanDefault } from '../Constants.js'
+import { groupNamesLessThanDefault }    from '../Constants.js'
 
 export class SimpleMappingStrategy extends Strategy {
   fillSizes(fontSizes) {
