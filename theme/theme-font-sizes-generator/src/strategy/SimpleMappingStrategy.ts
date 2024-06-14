@@ -61,9 +61,9 @@ export class SimpleMappingStrategy extends Strategy {
 
     const fontSizes = Array.from(stat.keys()).sort((a, b) => a - b)
 
-    const smallSizes = fontSizes.filter((size) => size < 14)
-    const normalSizes = fontSizes.filter((size) => size < 24 && size > 14)
-    const mediumSizes = fontSizes.filter((size) => size < 50 && size > 24)
+    const smallSizes = fontSizes.filter((size) => size <= 14)
+    const normalSizes = fontSizes.filter((size) => size <= 24 && size > 14)
+    const mediumSizes = fontSizes.filter((size) => size <= 50 && size > 24)
     const largeSizes = fontSizes.filter((size) => size > 50)
 
     return {
