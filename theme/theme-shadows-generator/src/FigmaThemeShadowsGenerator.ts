@@ -6,13 +6,7 @@ import { toColorName }               from '@atls/figma-utils'
 import { toColorString }             from '@atls/figma-utils'
 import { walk }                      from '@atls/figma-utils'
 
-interface Shadow {
-  offsetX: number
-  offsetY: number
-  radius: number
-  spreadRadius?: number
-  color: string
-}
+import { Shadow }                     from './interfaces.js'
 
 export class FigmaThemeShadowsGenerator extends FigmaThemeGenerator {
   readonly name = 'shadows'
