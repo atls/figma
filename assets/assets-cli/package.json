@@ -24,7 +24,7 @@
     "npmlog": "6.0.2"
   },
   "devDependencies": {
-    "@types/node": "18.18.7"
+    "@types/node": "18.19.34"
   },
   "publishConfig": {
     "access": "public",

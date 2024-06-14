@@ -16,7 +16,7 @@
     "figma-js": "1.16.1-0"
   },
   "devDependencies": {
-    "@types/node": "18.18.7"
+    "@types/node": "18.19.34"
   },
   "peerDependencies": {
     "figma-js": "*"
