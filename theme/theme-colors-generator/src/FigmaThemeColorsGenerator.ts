@@ -34,7 +34,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
         ? toColorString(obj.children[0].fills[0].color)
         : 'rgba(0, 0, 0, 0.00)'
     }
-    return ''
+    return 'rgba(0, 0, 0, 0.00)'
   }
 
   getColors(nodes): any {
@@ -64,7 +64,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
               ? toColorString(state.backgroundColor)
               : 'rgba(0, 0, 0, 0.00)',
             font: this.getColor(state?.children?.find((child) => child?.type === 'TEXT')),
-            border: state?.strokes[0]?.color
+            border: state?.strokes?.[0]?.color
               ? toColorOpacityString(state.strokes[0].color, state.strokes[0]?.opacity)
               : 'rgba(0, 0, 0, 0.00)',
           })
@@ -103,7 +103,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
               ? toColorString(state.backgroundColor)
               : 'rgba(0, 0, 0, 0.00)',
             font: this.getColor(state?.children?.find((child) => child?.type === 'TEXT')),
-            border: state?.strokes[0]?.color
+            border: state?.strokes?.[0]?.color
               ? toColorOpacityString(state.strokes[0].color, state.strokes[0]?.opacity)
               : 'rgba(0, 0, 0, 0.00)',
           })
