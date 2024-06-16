@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "build": "yarn library build",
-    "generate-theme": "node --loader ts-node/esm src/index.ts",
+    "generate-theme": "ts-node src/index.ts",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },

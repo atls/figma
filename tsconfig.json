@@ -27,7 +27,6 @@
 
     "strict": true,
     "strictPropertyInitialization": false,
-
     "sourceMap": false,
 
     "module": "NodeNext",
@@ -47,5 +46,8 @@
     "**/*/dist/**/*.d.ts",
     "integration/**/*.test.ts",
     "theme/theme-cli/theme"
-  ]
+  ],
+  "ts-node": {
+    "esm": true
+  }
 }
