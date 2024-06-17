@@ -179,9 +179,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@atls/config-jest@npm:0.1.2":
-  version: 0.1.2
-  resolution: "@atls/config-jest@npm:0.1.2"
+"@atls/config-jest@npm:0.1.5":
+  version: 0.1.5
+  resolution: "@atls/config-jest@npm:0.1.5"
   dependencies:
     "@atls/config-typescript": "npm:0.0.11"
     "@atls/jest-static-stubs": "npm:0.0.3"
@@ -189,7 +189,7 @@ __metadata:
     "@monstrs/jest-resolver": "npm:0.3.3"
     "@swc/core": "npm:1.5.25"
     "@swc/jest": "npm:0.2.36"
-  checksum: 10/45a3e53f9f699e57fad1b97c8651f0c5862a8453f02c03c283e6b8b63f22271a8ea9acf25a09d99b04a3b738b81deefa4f662c7608d9f1dade706337e0b23324
+  checksum: 10/3c67215306806e0e8223049662d4323d38ba0ba929fe480c65d7eaab1d4b0b25d076d3661597e2f09704b0e1c527d9670f03e19cd6e67bfd18476e5b032013f8
   languageName: node
   linkType: hard
 
@@ -5186,7 +5186,7 @@ __metadata:
   resolution: "figma@workspace:."
   dependencies:
     "@atls/code-service": "npm:0.1.7"
-    "@atls/config-jest": "npm:0.1.2"
+    "@atls/config-jest": "npm:0.1.5"
     "@jest/core": "npm:29.7.0"
     "@types/eslint": "npm:8.56.10"
     "@types/jest": "npm:29.5.12"

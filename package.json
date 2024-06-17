@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@atls/code-service": "0.1.7",
-    "@atls/config-jest": "0.1.2",
+    "@atls/config-jest": "0.1.5",
     "@jest/core": "29.7.0",
     "@types/eslint": "8.56.10",
     "@types/jest": "29.5.12",
