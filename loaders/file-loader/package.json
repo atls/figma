@@ -12,11 +12,9 @@
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },
-  "dependencies": {
-    "figma-js": "1.16.1-0"
-  },
   "devDependencies": {
-    "@types/node": "18.19.34"
+    "@types/node": "18.19.34",
+    "figma-js": "1.16.1-0"
   },
   "peerDependencies": {
     "figma-js": "*"

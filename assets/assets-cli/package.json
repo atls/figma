@@ -19,9 +19,9 @@
   "dependencies": {
     "@atls/figma-assets": "workspace:*",
     "@atls/figma-file-loader": "workspace:*",
-    "commander": "9.5.0",
+    "commander": "12.1.0",
     "figma-js": "1.16.1-0",
-    "npmlog": "6.0.2"
+    "npmlog": "7.0.1"
   },
   "devDependencies": {
     "@types/node": "18.19.34"

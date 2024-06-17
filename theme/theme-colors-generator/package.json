@@ -15,7 +15,7 @@
   "dependencies": {
     "@atls/figma-theme-generator-common": "workspace:*",
     "@atls/figma-utils": "workspace:*",
-    "camelcase": "6.3.0",
+    "camelcase": "8.0.0",
     "color-namer": "1.4.0"
   },
   "devDependencies": {

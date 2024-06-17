@@ -47,6 +47,7 @@
     "integration/**/*.test.ts",
     "theme/theme-cli/theme"
   ],
+  "include": ["theme/**/*", "loaders/**/*", "assets/**/*", "utils/**/*"],
   "ts-node": {
     "esm": true
   }

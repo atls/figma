@@ -15,15 +15,15 @@
     "@types/node": "18"
   },
   "devDependencies": {
-    "@atls/code-service": "0.0.23",
+    "@atls/code-service": "0.1.7",
     "@atls/config-jest": "0.1.2",
-    "@jest/core": "29.0.3",
+    "@jest/core": "29.7.0",
     "@types/eslint": "8.56.10",
-    "@types/jest": "29.5.11",
+    "@types/jest": "29.5.12",
     "@types/node": "18.19.34",
     "eslint": "8.57.0",
-    "husky": "8.0.1",
-    "madge": "6.1.0",
+    "husky": "9.0.11",
+    "madge": "7.0.0",
     "typescript": "5.2.2"
   },
   "packageManager": "yarn@4.2.2"

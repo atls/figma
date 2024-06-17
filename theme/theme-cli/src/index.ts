@@ -1,5 +1,6 @@
-import program from 'commander'
+import { program } from 'commander'
 import logger  from 'npmlog'
+import { createInterface } from 'node:readline'
 
 import { run } from './run.js'
 
@@ -25,7 +26,7 @@ const options = (program as any).opts()
 if (!fileId) {
   logger.error('Figma file id required.')
 } else {
-  const readline = require('readline').createInterface({
+  const readline = createInterface({
     input: process.stdin,
     output: process.stdout,
   })
@@ -34,7 +35,9 @@ if (!fileId) {
     if (!id || id === '') throw Error('ID must not be empty')
     // eslint-disable-next-line dot-notation
     process.env['FIGMA_TOKEN'] = id
+
     readline.close()
+
     run(
       fileId,
       (program as any).output,
