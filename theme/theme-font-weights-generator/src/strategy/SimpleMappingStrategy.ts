@@ -1,7 +1,7 @@
 import { Text }        from 'figma-js'
 
-import { FontWeights } from '../Constants'
-import { Strategy }    from './Strategy'
+import { FontWeights } from '../Constants.js'
+import { Strategy }    from './Strategy.js'
 
 export class SimpleMappingStrategy extends Strategy {
   fillWeights(fontWeights) {

@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-shadow
 export enum FontWeightNames {
   THIN = 'thin',
   EXTRA_LIGHT = 'extraLight',

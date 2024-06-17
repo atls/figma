@@ -2,6 +2,7 @@
   "name": "@atls/figma-assets-cli",
   "version": "0.0.3",
   "license": "BSD-3-Clause",
+  "type": "module",
   "main": "src/index.ts",
   "bin": {
     "generate-assets": "dist/index.js"
@@ -18,12 +19,12 @@
   "dependencies": {
     "@atls/figma-assets": "workspace:*",
     "@atls/figma-file-loader": "workspace:*",
-    "commander": "9.5.0",
-    "figma-js": "1.16.0",
-    "npmlog": "6.0.2"
+    "commander": "12.1.0",
+    "figma-js": "1.16.1-0",
+    "npmlog": "7.0.1"
   },
   "devDependencies": {
-    "@types/node": "18.18.7"
+    "@types/node": "18.19.34"
   },
   "publishConfig": {
     "access": "public",

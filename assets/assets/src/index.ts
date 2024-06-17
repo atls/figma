@@ -1,1 +1,1 @@
-export * from './FigmaAssets'
+export * from './FigmaAssets.js'

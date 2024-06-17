@@ -1,1 +1,1 @@
-export * from './FigmaThemeColorsGenerator'
+export * from './FigmaThemeColorsGenerator.js'

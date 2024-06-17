@@ -6,12 +6,12 @@ import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
 import { isText }                    from '@atls/figma-utils'
 import { walk }                      from '@atls/figma-utils'
 
-import { SimpleMappingStrategy }     from './strategy'
+import { SimpleMappingStrategy }     from './strategy/index.js'
 
 export class FigmaThemeLineHeightsGenerator extends FigmaThemeGenerator {
   readonly name = 'lineHeights'
 
-  getFonts(nodes): Text[] {
+  getLineHeight(nodes): Text[] {
     const textNodes: Text[] = []
 
     walk(nodes, (node) => {
@@ -26,7 +26,7 @@ export class FigmaThemeLineHeightsGenerator extends FigmaThemeGenerator {
   generate(file: FileResponse): FigmaThemeGeneratorResult {
     const strategy = new SimpleMappingStrategy()
 
-    const values = strategy.execute(this.getFonts(file.document.children))
+    const values = strategy.execute(this.getLineHeight(file.document.children))
 
     return {
       name: this.name,

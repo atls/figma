@@ -1,1 +1,1 @@
-export * from './FigmaThemeRadiiGenerator'
+export * from './FigmaThemeRadiiGenerator.js'

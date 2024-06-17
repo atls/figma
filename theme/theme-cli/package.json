@@ -2,6 +2,7 @@
   "name": "@atls/figma-theme-cli",
   "version": "0.0.2",
   "license": "BSD-3-Clause",
+  "type": "module",
   "main": "src/index.ts",
   "bin": {
     "generate-theme": "dist/index.js"
@@ -11,22 +12,25 @@
   ],
   "scripts": {
     "build": "yarn library build",
-    "generate-theme": "ts-node src/index.ts",
+    "generate-theme": "ts-node-esm src/index.ts",
+    "generate-theme-new": "node --import @swc-node/register/esm-register src/index.ts",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },
   "dependencies": {
     "@atls/figma-file-loader": "workspace:*",
     "@atls/figma-theme": "workspace:*",
-    "commander": "9.5.0",
-    "figma-js": "1.16.0",
+    "commander": "12.1.0",
+    "figma-js": "1.16.1-0",
     "npmlog": "7.0.1"
   },
   "devDependencies": {
-    "@types/node": "18.18.7",
-    "@yarnpkg/builder": "4.0.0-rc.36",
-    "ts-node": "10.9.1",
-    "typescript": "4.6.4"
+    "@swc-node/register": "1.9.0",
+    "@swc/core": "1.6.1",
+    "@types/node": "18.19.34",
+    "@yarnpkg/builder": "4.1.1",
+    "ts-node": "10.9.2",
+    "typescript": "5.2.2"
   },
   "publishConfig": {
     "access": "public",

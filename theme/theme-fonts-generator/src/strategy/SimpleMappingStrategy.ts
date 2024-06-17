@@ -1,7 +1,7 @@
 import { Text }     from 'figma-js'
 
-import { Fonts }    from '../Constants'
-import { Strategy } from './Strategy'
+import { Fonts }    from '../Constants.js'
+import { Strategy } from './Strategy.js'
 
 export class SimpleMappingStrategy extends Strategy {
   fillFonts(fonts) {

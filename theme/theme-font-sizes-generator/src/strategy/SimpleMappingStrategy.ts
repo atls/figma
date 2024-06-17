@@ -1,10 +1,10 @@
 import { Text }                         from 'figma-js'
 
-import { FontSizeDefaultName }          from '../Constants'
-import { Group }                        from '../Constants'
-import { Strategy }                     from './Strategy'
-import { groupNamesGreaterThanDefault } from '../Constants'
-import { groupNamesLessThanDefault }    from '../Constants'
+import { FontSizeDefaultName }          from '../Constants.js'
+import { Group }                        from '../Constants.js'
+import { Strategy }                     from './Strategy.js'
+import { groupNamesGreaterThanDefault } from '../Constants.js'
+import { groupNamesLessThanDefault }    from '../Constants.js'
 
 export class SimpleMappingStrategy extends Strategy {
   fillSizes(fontSizes) {
@@ -61,9 +61,9 @@ export class SimpleMappingStrategy extends Strategy {
 
     const fontSizes = Array.from(stat.keys()).sort((a, b) => a - b)
 
-    const smallSizes = fontSizes.filter((size) => size < 14)
-    const normalSizes = fontSizes.filter((size) => size < 24 && size > 14)
-    const mediumSizes = fontSizes.filter((size) => size < 50 && size > 24)
+    const smallSizes = fontSizes.filter((size) => size <= 14)
+    const normalSizes = fontSizes.filter((size) => size <= 24 && size > 14)
+    const mediumSizes = fontSizes.filter((size) => size <= 50 && size > 24)
     const largeSizes = fontSizes.filter((size) => size > 50)
 
     return {

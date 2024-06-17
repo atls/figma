@@ -1,1 +1,1 @@
-export * from './FigmaTheme'
+export * from './FigmaTheme.js'

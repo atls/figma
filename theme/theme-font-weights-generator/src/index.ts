@@ -1,1 +1,1 @@
-export * from './FigmaThemeFontWeightsGenerator'
+export * from './FigmaThemeFontWeightsGenerator.js'

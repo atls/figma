@@ -1,1 +1,1 @@
-export * from './FigmaFileLoader'
+export * from './FigmaFileLoader.js'
