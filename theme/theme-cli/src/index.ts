@@ -1,8 +1,9 @@
-import { program } from 'commander'
-import logger  from 'npmlog'
 import { createInterface } from 'node:readline'
 
-import { run } from './run.js'
+import logger              from 'npmlog'
+import { program }         from 'commander'
+
+import { run }             from './run.js'
 
 logger.heading = 'figma-theme' as string
 ;(program as any)

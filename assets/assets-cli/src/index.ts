@@ -1,7 +1,7 @@
-import program from 'commander'
-import logger  from 'npmlog'
+import logger      from 'npmlog'
+import { program } from 'commander'
 
-import { run } from './run.js'
+import { run }     from './run.js'
 
 logger.heading = 'figma-assets' as string
 ;(program as any)

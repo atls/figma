@@ -15,8 +15,8 @@
   "dependencies": {
     "@atls/figma-theme-generator-common": "workspace:*",
     "@atls/figma-utils": "workspace:*",
-    "camelcase": "8.0.0",
-    "color-namer": "1.4.0"
+    "color-namer": "1.4.0",
+    "lodash.camelcase": "4.3.0"
   },
   "devDependencies": {
     "@types/color-namer": "1.3.3",

@@ -1,4 +1,4 @@
-import camelCase                     from 'camelcase'
+import camelCase                     from 'lodash.camelcase'
 import { FileResponse }              from 'figma-js'
 
 import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
