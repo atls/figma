@@ -475,9 +475,9 @@ const RAW_RUNTIME_STATE =
           ["@types/color-namer", "npm:1.3.3"],\
           ["@types/figma-js", null],\
           ["@types/node", "npm:18.19.34"],\
+          ["camelcase", "npm:8.0.0"],\
           ["color-namer", "npm:1.4.0"],\
-          ["figma-js", "npm:1.16.1-0"],\
-          ["lodash.camelcase", "npm:4.3.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "packagePeers": [\
           "@types/atls__figma-theme-generator-common",\
@@ -494,9 +494,9 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-utils", "virtual:110ecadd7cd0118d6c1cb51237279043a3b537909cb38e8afea9755c0b417513a97d716eff6d67a1e509fa203eaf7fce9b9165e9bc1d1314b1a7eb794e684bf7#workspace:utils/utils"],\
           ["@types/color-namer", "npm:1.3.3"],\
           ["@types/node", "npm:18.19.34"],\
+          ["camelcase", "npm:8.0.0"],\
           ["color-namer", "npm:1.4.0"],\
-          ["figma-js", "npm:1.16.1-0"],\
-          ["lodash.camelcase", "npm:4.3.0"]\
+          ["figma-js", "npm:1.16.1-0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -6066,6 +6066,13 @@ const RAW_RUNTIME_STATE =
           ["camelcase", "npm:6.3.0"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:8.0.0", {\
+        "packageLocation": "./.yarn/cache/camelcase-npm-8.0.0-a3fa03dcc3-6da7abe997.zip/node_modules/camelcase/",\
+        "packageDependencies": [\
+          ["camelcase", "npm:8.0.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["caniuse-lite", [\
@@ -9679,15 +9686,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/lodash-npm-4.17.21-6382451519-c08619c038.zip/node_modules/lodash/",\
         "packageDependencies": [\
           ["lodash", "npm:4.17.21"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["lodash.camelcase", [\
-      ["npm:4.3.0", {\
-        "packageLocation": "./.yarn/cache/lodash.camelcase-npm-4.3.0-bf268e3bf0-c301cc3793.zip/node_modules/lodash.camelcase/",\
-        "packageDependencies": [\
-          ["lodash.camelcase", "npm:4.3.0"]\
         ],\
         "linkType": "HARD"\
       }]\

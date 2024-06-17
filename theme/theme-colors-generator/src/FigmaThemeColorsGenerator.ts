@@ -1,5 +1,5 @@
-import camelCase                     from 'lodash.camelcase'
-import { FileResponse }              from 'figma-js'
+import camelCase        from 'camelcase'
+import { FileResponse } from 'figma-js'
 
 import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
 import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
