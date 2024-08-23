@@ -48,8 +48,8 @@ describe('FigmaThemeFontWeightsGenerator', () => {
     expect(result).toEqual({
       name: 'fontWeights',
       content: `export const fontWeights = {
-    "normal": 400,
-    "bold": 700
+    "normal": "400",
+    "bold": "700"
 }`,
     })
   })
@@ -66,9 +66,9 @@ describe('FigmaThemeFontWeightsGenerator', () => {
     const result = strategy.execute(textNodes)
 
     expect(result).toEqual({
-      light: 300,
-      medium: 500,
-      heavy: 900,
+      light: '300',
+      medium: '500',
+      heavy: '900',
     })
   })
 
