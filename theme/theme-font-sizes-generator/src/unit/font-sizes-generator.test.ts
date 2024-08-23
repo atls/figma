@@ -41,13 +41,8 @@ describe('FigmaThemeFontSizesGenerator', () => {
     expect(result).toEqual({
       name: 'fontSizes',
       content: `export const fontSizes = {
-    "small": {},
-    "normal": {
-        "semiDefault": 16,
-        "default": 24
-    },
-    "medium": {},
-    "large": {}
+    "normal.semiDefault": "16px",
+    "normal.default": "24px"
 }`,
     })
   })
@@ -64,16 +59,9 @@ describe('FigmaThemeFontSizesGenerator', () => {
     const result = strategy.execute(textNodes)
 
     expect(result).toEqual({
-      [Group.SMALL]: {
-        default: 14,
-      },
-      [Group.NORMAL]: {
-        default: 18,
-      },
-      [Group.MEDIUM]: {
-        default: 28,
-      },
-      [Group.LARGE]: {},
+      [`${Group.SMALL}.default`]: '14px',
+      [`${Group.NORMAL}.default`]: '18px',
+      [`${Group.MEDIUM}.default`]: '28px',
     })
   })
 
@@ -95,12 +83,7 @@ describe('FigmaThemeFontSizesGenerator', () => {
 
     expect(result).toEqual({
       name: 'fontSizes',
-      content: `export const fontSizes = {
-    "small": {},
-    "normal": {},
-    "medium": {},
-    "large": {}
-}`,
+      content: `export const fontSizes = {}`,
     })
   })
 })
