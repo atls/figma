@@ -1,0 +1,8 @@
+releases:
+  "@atls/figma-theme": patch
+  "@atls/figma-theme-cli": patch
+  "@atls/figma-theme-colors-generator": patch
+  "@atls/figma-theme-font-sizes-generator": patch
+  "@atls/figma-theme-font-weights-generator": patch
+  "@atls/figma-theme-line-heights-generator": patch
+  "@atls/figma-theme-radii-generator": patch
