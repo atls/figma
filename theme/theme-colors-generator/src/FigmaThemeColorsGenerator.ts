@@ -1,5 +1,5 @@
-import camelCase        from 'camelcase'
-import { FileResponse } from 'figma-js'
+import camelCase                     from 'camelcase'
+import { FileResponse }              from 'figma-js'
 
 import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
 import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
@@ -35,6 +35,24 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
         : 'rgba(0, 0, 0, 0.00)'
     }
     return 'rgba(0, 0, 0, 0.00)'
+  }
+
+  flattenObject(
+    object: Record<string, any>,
+    parentKey: string = '',
+    result: Record<string, any> = {}
+  ): Record<string, any> {
+    Object.entries(object).forEach(([key, value]) => {
+      const newKey = parentKey ? `${parentKey}.${key}` : key
+
+      if (typeof value === 'object' && value !== null) {
+        this.flattenObject(value, newKey, result)
+      } else {
+        Object.assign(result, { [newKey]: value })
+      }
+    })
+
+    return result
   }
 
   getColors(nodes): any {
@@ -144,29 +162,19 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
       )
 
     const buttonColorsResult = buttonNames.reduce(
-      (result, name, index) => ({
-        ...result,
-        [name]: buttonStates[index],
-      }),
+      (result, name, index) => ({ ...result, [name]: buttonStates[index] }),
       {}
     )
 
     const inputColorsResult = inputNames.reduce(
-      (result, name, index) => ({
-        ...result,
-        [name]: inputStates[index],
-      }),
+      (result, name, index) => ({ ...result, [name]: inputStates[index] }),
       {}
     )
 
     return {
       ...colorsResult,
-      ...(Object.keys(buttonColorsResult).length
-        ? {
-            button: { ...buttonColorsResult },
-          }
-        : {}),
-      ...(Object.keys(inputColorsResult).length ? { input: { ...inputColorsResult } } : {}),
+      ...this.flattenObject({ button: { ...buttonColorsResult } }),
+      ...this.flattenObject({ input: { ...inputColorsResult } }),
     }
   }
 

@@ -19,16 +19,10 @@ describe('FigmaThemeRadiiGenerator', () => {
     const radii = generator.getRadii(nodes)
 
     expect(radii).toEqual({
-      [Group.SMALL]: {
-        semiDefault: 2,
-        default: 3,
-        semiIncreased: 4,
-      },
-      [Group.NORMAL]: {
-        default: 5,
-      },
-      [Group.MEDIUM]: {},
-      [Group.LARGE]: {},
+      [`${Group.SMALL}.semiDefault`]: '2px',
+      [`${Group.SMALL}.default`]: '3px',
+      [`${Group.SMALL}.semiIncreased`]: '4px',
+      [`${Group.NORMAL}.default`]: '5px',
     })
   })
 
@@ -49,16 +43,10 @@ describe('FigmaThemeRadiiGenerator', () => {
     expect(result).toEqual({
       name: 'radii',
       content: `export const radii = {
-    "small": {
-        "semiDefault": 2,
-        "default": 3,
-        "semiIncreased": 4
-    },
-    "normal": {
-        "default": 5
-    },
-    "medium": {},
-    "large": {}
+    "small.semiDefault": "2px",
+    "small.default": "3px",
+    "small.semiIncreased": "4px",
+    "normal.default": "5px"
 }`,
     })
   })
@@ -77,19 +65,11 @@ describe('FigmaThemeRadiiGenerator', () => {
     const result = strategy.execute(nodes)
 
     expect(result).toEqual({
-      [Group.SMALL]: {
-        semiDefault: 2,
-        default: 3,
-      },
-      [Group.NORMAL]: {
-        default: 5,
-      },
-      [Group.MEDIUM]: {
-        default: 10,
-      },
-      [Group.LARGE]: {
-        default: 20,
-      },
+      [`${Group.SMALL}.semiDefault`]: '2px',
+      [`${Group.SMALL}.default`]: '3px',
+      [`${Group.NORMAL}.default`]: '5px',
+      [`${Group.MEDIUM}.default`]: '10px',
+      [`${Group.LARGE}.default`]: '20px',
     })
   })
 
@@ -98,12 +78,7 @@ describe('FigmaThemeRadiiGenerator', () => {
 
     const radii = generator.getRadii(nodes)
 
-    expect(radii).toEqual({
-      [Group.SMALL]: {},
-      [Group.NORMAL]: {},
-      [Group.MEDIUM]: {},
-      [Group.LARGE]: {},
-    })
+    expect(radii).toEqual({})
 
     const file = {
       document: {
@@ -116,12 +91,7 @@ describe('FigmaThemeRadiiGenerator', () => {
 
     expect(result).toEqual({
       name: 'radii',
-      content: `export const radii = {
-    "small": {},
-    "normal": {},
-    "medium": {},
-    "large": {}
-}`,
+      content: `export const radii = {}`,
     })
   })
 })

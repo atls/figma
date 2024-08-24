@@ -56,6 +56,13 @@ export class SimpleMappingStrategy extends Strategy {
     return theme
   }
 
+  convertToThemeValues(sizes: {}, group: Group) {
+    return Object.entries(sizes).reduce(
+      (object, [key, value]) => ({ ...object, [`${group}.${key}`]: String(value) }),
+      {}
+    )
+  }
+
   execute(textNodes: Text[] = []) {
     const stat = this.getStat(textNodes)
 
@@ -63,28 +70,27 @@ export class SimpleMappingStrategy extends Strategy {
 
     const convertToNumber = (lineHeight) => parseFloat(lineHeight)
 
-    const smallLineHeights = lineHeights.filter((lineHeight) => convertToNumber(lineHeight) < 1)
-    const normalLineHeights = lineHeights.filter(
-      (lineHeight) => convertToNumber(lineHeight) >= 1 && convertToNumber(lineHeight) < 1.5
-    )
-    const mediumLineHeights = lineHeights.filter(
-      (lineHeight) => convertToNumber(lineHeight) >= 1.5 && convertToNumber(lineHeight) < 2
-    )
-    const largeLineHeights = lineHeights.filter((lineHeight) => convertToNumber(lineHeight) >= 2)
+    const smallLineHeights = lineHeights
+      .filter((lineHeight) => convertToNumber(lineHeight) < 1)
+      .map(convertToNumber)
+
+    const normalLineHeights = lineHeights
+      .filter((lineHeight) => convertToNumber(lineHeight) >= 1 && convertToNumber(lineHeight) < 1.5)
+      .map(convertToNumber)
+
+    const mediumLineHeights = lineHeights
+      .filter((lineHeight) => convertToNumber(lineHeight) >= 1.5 && convertToNumber(lineHeight) < 2)
+      .map(convertToNumber)
+
+    const largeLineHeights = lineHeights
+      .filter((lineHeight) => convertToNumber(lineHeight) >= 2)
+      .map(convertToNumber)
 
     return {
-      [Group.SMALL]: {
-        ...this.fillSizes(smallLineHeights.map(convertToNumber)),
-      },
-      [Group.NORMAL]: {
-        ...this.fillSizes(normalLineHeights.map(convertToNumber)),
-      },
-      [Group.MEDIUM]: {
-        ...this.fillSizes(mediumLineHeights.map(convertToNumber)),
-      },
-      [Group.LARGE]: {
-        ...this.fillSizes(largeLineHeights.map(convertToNumber)),
-      },
+      ...this.convertToThemeValues(this.fillSizes(smallLineHeights), Group.SMALL),
+      ...this.convertToThemeValues(this.fillSizes(normalLineHeights), Group.NORMAL),
+      ...this.convertToThemeValues(this.fillSizes(mediumLineHeights), Group.MEDIUM),
+      ...this.convertToThemeValues(this.fillSizes(largeLineHeights), Group.LARGE),
     }
   }
 }

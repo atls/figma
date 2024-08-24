@@ -53,6 +53,13 @@ export class SimpleMappingStrategy extends Strategy {
     return theme
   }
 
+  convertToThemeValues(sizes: {}, group: Group) {
+    return Object.entries(sizes).reduce(
+      (object, [key, value]) => ({ ...object, [`${group}.${key}`]: `${value}px` }),
+      {}
+    )
+  }
+
   execute(nodes: any[] = []) {
     const stat = this.getStat(nodes)
 
@@ -64,18 +71,10 @@ export class SimpleMappingStrategy extends Strategy {
     const largeRadii = radii.filter((size) => size >= 20)
 
     return {
-      [Group.SMALL]: {
-        ...this.fillSizes(smallRadii),
-      },
-      [Group.NORMAL]: {
-        ...this.fillSizes(normalRadii),
-      },
-      [Group.MEDIUM]: {
-        ...this.fillSizes(mediumRadii),
-      },
-      [Group.LARGE]: {
-        ...this.fillSizes(largeRadii),
-      },
+      ...this.convertToThemeValues(this.fillSizes(smallRadii), Group.SMALL),
+      ...this.convertToThemeValues(this.fillSizes(normalRadii), Group.NORMAL),
+      ...this.convertToThemeValues(this.fillSizes(mediumRadii), Group.MEDIUM),
+      ...this.convertToThemeValues(this.fillSizes(largeRadii), Group.LARGE),
     }
   }
 }

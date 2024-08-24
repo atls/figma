@@ -41,12 +41,7 @@ describe('FigmaThemeLineHeightsGenerator', () => {
     expect(result).toEqual({
       name: 'lineHeights',
       content: `export const lineHeights = {
-    "small": {},
-    "normal": {},
-    "medium": {
-        "default": 1.5
-    },
-    "large": {}
+    "medium.default": "1.5"
 }`,
     })
   })
@@ -63,14 +58,8 @@ describe('FigmaThemeLineHeightsGenerator', () => {
     const result = strategy.execute(textNodes)
 
     expect(result).toEqual({
-      [Group.SMALL]: {},
-      [Group.NORMAL]: {
-        default: 1.3,
-      },
-      [Group.MEDIUM]: {
-        default: 1.5,
-      },
-      [Group.LARGE]: {},
+      [`${Group.NORMAL}.default`]: '1.3',
+      [`${Group.MEDIUM}.default`]: '1.5',
     })
   })
 
@@ -92,12 +81,7 @@ describe('FigmaThemeLineHeightsGenerator', () => {
 
     expect(result).toEqual({
       name: 'lineHeights',
-      content: `export const lineHeights = {
-    "small": {},
-    "normal": {},
-    "medium": {},
-    "large": {}
-}`,
+      content: `export const lineHeights = {}`,
     })
   })
 })

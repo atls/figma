@@ -56,6 +56,13 @@ export class SimpleMappingStrategy extends Strategy {
     return theme
   }
 
+  convertToThemeValues(sizes: {}, group: Group) {
+    return Object.entries(sizes).reduce(
+      (object, [key, value]) => ({ ...object, [`${group}.${key}`]: `${value}px` }),
+      {}
+    )
+  }
+
   execute(textNodes: Text[] = []) {
     const stat = this.getStat(textNodes)
 
@@ -67,18 +74,10 @@ export class SimpleMappingStrategy extends Strategy {
     const largeSizes = fontSizes.filter((size) => size > 50)
 
     return {
-      [Group.SMALL]: {
-        ...this.fillSizes(smallSizes),
-      },
-      [Group.NORMAL]: {
-        ...this.fillSizes(normalSizes),
-      },
-      [Group.MEDIUM]: {
-        ...this.fillSizes(mediumSizes),
-      },
-      [Group.LARGE]: {
-        ...this.fillSizes(largeSizes),
-      },
+      ...this.convertToThemeValues(this.fillSizes(smallSizes), Group.SMALL),
+      ...this.convertToThemeValues(this.fillSizes(normalSizes), Group.NORMAL),
+      ...this.convertToThemeValues(this.fillSizes(mediumSizes), Group.MEDIUM),
+      ...this.convertToThemeValues(this.fillSizes(largeSizes), Group.LARGE),
     }
   }
 }
