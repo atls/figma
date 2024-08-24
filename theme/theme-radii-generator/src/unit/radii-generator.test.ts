@@ -89,8 +89,6 @@ describe('FigmaThemeRadiiGenerator', () => {
     // @ts-ignore
     const result = generator.generate(file)
 
-    console.log({ result })
-
     expect(result).toEqual({
       name: 'radii',
       content: `export const radii = {}`,
