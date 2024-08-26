@@ -206,10 +206,16 @@ __metadata:
   dependencies:
     "@atls/figma-assets": "workspace:*"
     "@atls/figma-file-loader": "workspace:*"
+    "@swc-node/register": "npm:1.9.0"
+    "@swc/core": "npm:1.6.1"
     "@types/node": "npm:18.19.34"
+    "@types/npmlog": "npm:7.0.0"
+    "@yarnpkg/builder": "npm:4.1.1"
     commander: "npm:12.1.0"
     figma-js: "npm:1.16.1-0"
     npmlog: "npm:7.0.1"
+    ts-node: "npm:10.9.2"
+    typescript: "npm:5.2.2"
   bin:
     generate-assets: dist/index.js
   languageName: unknown
@@ -249,6 +255,7 @@ __metadata:
     "@swc-node/register": "npm:1.9.0"
     "@swc/core": "npm:1.6.1"
     "@types/node": "npm:18.19.34"
+    "@types/npmlog": "npm:7.0.0"
     "@yarnpkg/builder": "npm:4.1.1"
     commander: "npm:12.1.0"
     figma-js: "npm:1.16.1-0"
@@ -2277,6 +2284,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 10/5c8daed0c672e824c36d31312377fc4dddf3e91006fadad719527bb2bd710d4207193c1c7034da9d2d6cbc03da89d3693c86207f751540c18a7d38802040fbd9
+  languageName: node
+  linkType: hard
+
+"@types/npmlog@npm:7.0.0":
+  version: 7.0.0
+  resolution: "@types/npmlog@npm:7.0.0"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10/0fbddf3b9647fcdbd47fa5851ba55d05d9a25c5a6ca0029a2a25d3a69bbe966c5dd1dfe7e4f051af6294b59d457e931e524338a20e9cfeea90fd994f5779537a
   languageName: node
   linkType: hard
 

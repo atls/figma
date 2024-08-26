@@ -25,7 +25,7 @@ const [fileId] = (program as any).args
 const options = (program as any).opts()
 
 if (!fileId) {
-  logger.error('Figma file id required.')
+  logger.error('fileId', 'Figma file id required.')
 } else {
   const readline = createInterface({
     input: process.stdin,
@@ -46,7 +46,7 @@ if (!fileId) {
       options.includedPages,
       options.prefix
     )
-      .then(() => logger.info('Theme successful generated'))
-      .catch((error) => logger.error(error.message))
+      .then(() => logger.info('info', 'Theme successful generated'))
+      .catch((error) => logger.error('error', error.message))
   })
 }
