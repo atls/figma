@@ -1,8 +1,0 @@
-releases:
-  "@atls/figma-theme": major
-  "@atls/figma-theme-cli": major
-  "@atls/figma-theme-colors-generator": major
-  "@atls/figma-theme-font-sizes-generator": major
-  "@atls/figma-theme-font-weights-generator": major
-  "@atls/figma-theme-line-heights-generator": major
-  "@atls/figma-theme-radii-generator": major
