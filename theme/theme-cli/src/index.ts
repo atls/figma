@@ -14,6 +14,7 @@ logger.heading = 'figma-theme' as string
   .option('--included-pages <includedPages>', 'Included pages', (value) =>
     value.split(',').map((page) => page.replace('-', ':')))
   .option('--prefix <prefix>', 'Prefix for components')
+  .option('--method <method>', 'Method for components: default or secondary')
   .arguments('<fileId>')
   .parse(process.argv)
 
@@ -44,7 +45,8 @@ if (!fileId) {
       (program as any).output,
       options.ignoredPages,
       options.includedPages,
-      options.prefix
+      options.prefix,
+      options.method
     )
       .then(() => logger.info('info', 'Theme successful generated'))
       .catch((error) => logger.error('error', error.message))
