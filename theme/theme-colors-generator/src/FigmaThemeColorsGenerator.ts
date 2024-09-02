@@ -11,15 +11,18 @@ import { toColorName }               from '@atls/figma-utils'
 import { toColorString }             from '@atls/figma-utils'
 import { walk }                      from '@atls/figma-utils'
 
+import { INPUT_FIELD_KEY }           from './constants.js'
+import { STATE_KEY }                 from './constants.js'
+import { STYLE_KEY }                 from './constants.js'
+import { TEXT_KEY }                  from './constants.js'
+import { TYPE_KEY }                  from './constants.js'
 import { ButtonState }               from './Interfaces.js'
 import { InputState }                from './Interfaces.js'
+import { buttonFrameIds }            from './constants.js'
+import { inputFrameIds }             from './constants.js'
 
 export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
   readonly name = 'colors'
-
-  readonly buttonFrameId = 'Desktop / Buttons'
-
-  readonly inputFrameId = 'Desktop / Inputs'
 
   formatString(str: string): string {
     return camelCase(clearStringOfSpecialChars(str), { pascalCase: false })
@@ -27,7 +30,9 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
 
   getColor(obj): string {
     if (obj?.type === 'TEXT') {
-      return toColorString(obj.fills[0]?.color)
+      return obj.fills[0].opacity
+        ? toColorOpacityString(obj.fills[0]?.color, obj.fills[0].opacity)
+        : toColorString(obj.fills[0]?.color)
     }
     if (obj?.type === 'INSTANCE') {
       return obj.children[0].fills[0]?.color
@@ -35,6 +40,18 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
         : 'rgba(0, 0, 0, 0.00)'
     }
     return 'rgba(0, 0, 0, 0.00)'
+  }
+
+  getStateColors(state) {
+    return {
+      background: state?.backgroundColor
+        ? toColorString(state.backgroundColor)
+        : 'rgba(0, 0, 0, 0.00)',
+      font: this.getColor(state?.children?.find((child) => child?.type === 'TEXT')),
+      border: state?.strokes?.[0]?.color
+        ? toColorOpacityString(state.strokes[0].color, state.strokes[0]?.opacity)
+        : 'rgba(0, 0, 0, 0.00)',
+    }
   }
 
   flattenObject(
@@ -55,6 +72,81 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
     return result
   }
 
+  findPropertyValue(properties: string[], key: string) {
+    return properties.find((property) => property.startsWith(key))?.slice(key.length)
+  }
+
+  getColorsSecondary(nodes): any {
+    const colors = {}
+
+    const buttonStatesSet: Map<string, Partial<ButtonState>> = new Map()
+    const inputStatesSet: Map<string, Partial<InputState>> = new Map()
+
+    walk(nodes, (node) => {
+      if (buttonFrameIds.includes(node.name)) {
+        node.children.forEach((button) => {
+          const properties: string[] = button.name.split(',').map((name: string) => name.trim())
+
+          const style = this.findPropertyValue(properties, STYLE_KEY)
+          const state = this.findPropertyValue(properties, STATE_KEY)
+          const text = this.findPropertyValue(properties, TEXT_KEY)
+
+          if (!style || !state || !text || text === 'false') return
+
+          const buttonState = buttonStatesSet.get(this.formatString(style))
+
+          buttonStatesSet.set(this.formatString(style), {
+            ...buttonState,
+            [this.formatString(state)]: this.getStateColors(button.children[0]),
+          })
+        })
+      }
+
+      if (inputFrameIds.includes(node.name)) {
+        node.children.forEach((input) => {
+          const properties: string[] = input.name.split(',').map((name: string) => name.trim())
+
+          const type = this.findPropertyValue(properties, TYPE_KEY)
+          const state = this.findPropertyValue(properties, STATE_KEY)
+
+          if (!type || type !== 'Input' || !state) return
+
+          const inputState = inputStatesSet.get(this.formatString(type))
+
+          inputStatesSet.set(this.formatString(type), {
+            ...inputState,
+            [this.formatString(state)]: this.getStateColors(
+              input.children.find((item) => item.name === INPUT_FIELD_KEY)
+            ),
+          })
+        })
+      }
+
+      if (node.color && isColor(node.color)) {
+        const color = toColorString(node.color)
+        if (!colors[color]) {
+          colors[color] = node.color
+        }
+      }
+    })
+
+    const colorsResult = Object.keys(colors)
+      .sort((a, b) => toAverage(colors[b]) - toAverage(colors[a]))
+      .reduce(
+        (result, color) => ({
+          ...result,
+          [toColorName(color, Object.keys(result))]: color,
+        }),
+        {}
+      )
+
+    return {
+      ...colorsResult,
+      ...this.flattenObject({ button: { ...Object.fromEntries(buttonStatesSet) } }),
+      ...this.flattenObject({ input: { ...Object.fromEntries(inputStatesSet) } }),
+    }
+  }
+
   getColors(nodes): any {
     const colors = {}
     const buttonNames: string[] = []
@@ -63,9 +155,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
     const inputNames: string[] = []
 
     walk(nodes, (node) => {
-      const { name } = node
-
-      if (name?.match(this.buttonFrameId)) {
+      if (buttonFrameIds.includes(node.name)) {
         const names = node.children.map((buttonName) => buttonName.name)
 
         const buttons = node.children.map((item) => {
@@ -77,21 +167,11 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
             disabled: item.children[3] !== undefined ? item.children[3] : item.children[0],
           }
 
-          const getStateColors = (state) => ({
-            background: state?.backgroundColor
-              ? toColorString(state.backgroundColor)
-              : 'rgba(0, 0, 0, 0.00)',
-            font: this.getColor(state?.children?.find((child) => child?.type === 'TEXT')),
-            border: state?.strokes?.[0]?.color
-              ? toColorOpacityString(state.strokes[0].color, state.strokes[0]?.opacity)
-              : 'rgba(0, 0, 0, 0.00)',
-          })
-
           return {
-            default: getStateColors(obj.default),
-            hover: getStateColors(obj.hover),
-            pressed: getStateColors(obj.pressed),
-            disabled: getStateColors(obj.disabled),
+            default: this.getStateColors(obj.default),
+            hover: this.getStateColors(obj.hover),
+            pressed: this.getStateColors(obj.pressed),
+            disabled: this.getStateColors(obj.disabled),
           }
         })
 
@@ -103,7 +183,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
         })
       }
 
-      if (name?.match(this.inputFrameId)) {
+      if (inputFrameIds.includes(node.name)) {
         const names = node.children.map((inputName) => inputName.name)
 
         const inputs = node.children.map((item) => {
@@ -116,22 +196,12 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
             disabled: item.children[4] !== undefined ? item.children[4] : item.children[0],
           }
 
-          const getStateColors = (state) => ({
-            background: state?.backgroundColor
-              ? toColorString(state.backgroundColor)
-              : 'rgba(0, 0, 0, 0.00)',
-            font: this.getColor(state?.children?.find((child) => child?.type === 'TEXT')),
-            border: state?.strokes?.[0]?.color
-              ? toColorOpacityString(state.strokes[0].color, state.strokes[0]?.opacity)
-              : 'rgba(0, 0, 0, 0.00)',
-          })
-
           return {
-            default: getStateColors(obj.default),
-            active: getStateColors(obj.active),
-            error: getStateColors(obj.error),
-            focus: getStateColors(obj.focus),
-            disabled: getStateColors(obj.disabled),
+            default: this.getStateColors(obj.default),
+            active: this.getStateColors(obj.active),
+            error: this.getStateColors(obj.error),
+            focus: this.getStateColors(obj.focus),
+            disabled: this.getStateColors(obj.disabled),
           }
         })
 
@@ -179,7 +249,10 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
   }
 
   generate(file: FileResponse): FigmaThemeGeneratorResult {
-    const values = this.getColors(file.document.children)
+    const values =
+      this.method === 'secondary'
+        ? this.getColorsSecondary(file.document.children)
+        : this.getColors(file.document.children)
 
     return {
       name: this.name,
