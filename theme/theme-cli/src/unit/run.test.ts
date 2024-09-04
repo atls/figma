@@ -24,8 +24,9 @@ describe('run', () => {
     const ignoredPages = ['page1', 'page2']
     const includedPages = ['page3']
     const prefix = 'testPrefix'
+    const method = 'default'
 
-    await run(fileId, output, ignoredPages, includedPages, prefix)
+    await run(fileId, output, ignoredPages, includedPages, prefix, method)
 
     expect(mockLoad).toHaveBeenCalledWith(fileId)
     expect(FigmaTheme).toHaveBeenCalledWith(
@@ -50,8 +51,9 @@ describe('run', () => {
     const ignoredPages = ['page1', 'page2']
     const includedPages = ['page3']
     const prefix = 'testPrefix'
+    const method = 'default'
 
-    await expect(run(fileId, output, ignoredPages, includedPages, prefix)).rejects.toThrow(
+    await expect(run(fileId, output, ignoredPages, includedPages, prefix, method)).rejects.toThrow(
       'Test Error'
     )
   })
