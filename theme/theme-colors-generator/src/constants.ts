@@ -8,6 +8,6 @@ export const TEXT_KEY = 'Text='
 
 export const INPUT_FIELD_KEY = 'Field'
 
-export const buttonFrameIds = ['Desktop / Buttons', 'Pattern/Button']
+export const buttonFrameIds = ['Desktop / Buttons', 'Generator/Button']
 
-export const inputFrameIds = ['Desktop / Inputs', 'Pattern/Input']
+export const inputFrameIds = ['Desktop / Inputs', 'Generator/Input']

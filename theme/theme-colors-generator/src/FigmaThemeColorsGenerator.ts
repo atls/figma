@@ -50,7 +50,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
       font: this.getColor(state?.children?.find((child) => child?.type === 'TEXT')),
       border: state?.strokes?.[0]?.color
         ? toColorOpacityString(state.strokes[0].color, state.strokes[0]?.opacity)
-        : 'rgba(0, 0, 0, 0.00)',
+        : 'none',
     }
   }
 
@@ -109,7 +109,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
           const type = this.findPropertyValue(properties, TYPE_KEY)
           const state = this.findPropertyValue(properties, STATE_KEY)
 
-          if (!type || type !== 'Input' || !state) return
+          if (!type || !state) return
 
           const inputState = inputStatesSet.get(this.formatString(type))
 
