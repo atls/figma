@@ -34,7 +34,8 @@ describe('run', () => {
       output,
       ignoredPages,
       includedPages,
-      prefix
+      prefix,
+      method
     )
     expect(mockGenerate).toHaveBeenCalled()
   })
