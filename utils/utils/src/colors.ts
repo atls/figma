@@ -14,11 +14,7 @@ export const toColorString = (node: Color) => {
   const g = normalizeChannel(node.g)
   const b = normalizeChannel(node.b)
 
-  if (node.a === 1) {
-    return `rgb(${r}, ${g}, ${b})`
-  }
-
-  return `rgba(${r}, ${g}, ${b}, ${node.a.toFixed(2)})`
+  return `rgba(${r}, ${g}, ${b}, ${node.a === 1 ? 1 : node.a.toFixed(2)})`
 }
 
 export const toColorOpacityString = (node: Color, opacity: number) => {

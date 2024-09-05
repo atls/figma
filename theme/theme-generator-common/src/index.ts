@@ -10,6 +10,12 @@ export type FigmaThemeGeneratorResult =
   | Promise<FigmaThemeGeneratorValues>
 
 export abstract class FigmaThemeGenerator {
+  method: 'default' | 'secondary'
+
+  constructor(method: 'default' | 'secondary' = 'default') {
+    this.method = method
+  }
+
   exportValuesTemplate(name: string, values: any): string {
     return `export const ${name} = ${JSON.stringify(values, null, 4)}`
   }

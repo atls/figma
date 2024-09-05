@@ -14,6 +14,7 @@ logger.heading = 'figma-theme' as string
   .option('--included-pages <includedPages>', 'Included pages', (value) =>
     value.split(',').map((page) => page.replace('-', ':')))
   .option('--prefix <prefix>', 'Prefix for components')
+  .option('--method <method>', 'Method for components: default or secondary')
   .arguments('<fileId>')
   .parse(process.argv)
 
@@ -25,7 +26,7 @@ const [fileId] = (program as any).args
 const options = (program as any).opts()
 
 if (!fileId) {
-  logger.error('Figma file id required.')
+  logger.error('fileId', 'Figma file id required.')
 } else {
   const readline = createInterface({
     input: process.stdin,
@@ -44,9 +45,10 @@ if (!fileId) {
       (program as any).output,
       options.ignoredPages,
       options.includedPages,
-      options.prefix
+      options.prefix,
+      options.method
     )
-      .then(() => logger.info('Theme successful generated'))
-      .catch((error) => logger.error(error.message))
+      .then(() => logger.info('info', 'Theme successful generated'))
+      .catch((error) => logger.error('error', error.message))
   })
 }

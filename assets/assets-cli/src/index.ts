@@ -1,7 +1,9 @@
-import logger      from 'npmlog'
-import { program } from 'commander'
+import { createInterface } from 'node:readline'
 
-import { run }     from './run.js'
+import logger              from 'npmlog'
+import { program }         from 'commander'
+
+import { run }             from './run.js'
 
 logger.heading = 'figma-assets' as string
 ;(program as any)
@@ -17,11 +19,11 @@ if ((program as any).verbose) {
 const [fileId, documentId] = (program as any).args
 
 if (!fileId) {
-  logger.error('Figma file id required.')
+  logger.error('fileId', 'Figma file id required.')
 } else if (!documentId) {
-  logger.error('Figma document id required.')
+  logger.error('documentId', 'Figma document id required.')
 } else {
-  const readline = require('readline').createInterface({
+  const readline = createInterface({
     input: process.stdin,
     output: process.stdout,
   })
@@ -32,7 +34,7 @@ if (!fileId) {
     process.env['FIGMA_TOKEN'] = id
     readline.close()
     run(fileId, documentId, (program as any).output)
-      .then(() => logger.info('Assets successful generated'))
-      .catch((error) => logger.error(error.message))
+      .then(() => logger.info('run', 'Assets successful generated'))
+      .catch((error) => logger.error('error', error.message))
   })
 }

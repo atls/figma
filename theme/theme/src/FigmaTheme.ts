@@ -34,12 +34,15 @@ export class FigmaTheme {
 
   prefix: string
 
+  method: 'default' | 'secondary'
+
   constructor(
     file: FileResponse,
     output,
     ignoredPages: string[] = [],
     includedPages: string[] = [],
-    prefix: string = ''
+    prefix: string = '',
+    method: 'default' | 'secondary' = 'default'
   ) {
     this.file = file
 
@@ -48,6 +51,7 @@ export class FigmaTheme {
     this.ignoredPages = ignoredPages
     this.includedPages = includedPages
     this.prefix = prefix
+    this.method = method === 'secondary' ? method : 'default'
   }
 
   async format(target, content) {
@@ -86,7 +90,7 @@ export class FigmaTheme {
 
     return Promise.all(
       generators.map(async (Generator) => {
-        const instance = new Generator()
+        const instance = new Generator(this.method)
         const result = await Promise.resolve(instance.generate(fileData))
         await this.write(result)
       })
