@@ -5,6 +5,5 @@ on:
 
 jobs:
   check:
-    name: Checks
     uses: atls/shared/.github/workflows/checks.yaml@master
     permissions: write-all
