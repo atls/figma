@@ -1,0 +1,32 @@
+{
+  "name": "@atls/figma-theme-borders-generator",
+  "version": "1.0.0",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn library build",
+    "prepack": "yarn run build",
+    "postpack": "rm -rf dist"
+  },
+  "dependencies": {
+    "@atls/figma-utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@atls/figma-theme-generator-common": "workspace:*",
+    "@types/node": "18.19.34",
+    "figma-js": "1.16.1-0"
+  },
+  "peerDependencies": {
+    "@atls/figma-theme-generator-common": "*",
+    "figma-js": "*"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  }
+}

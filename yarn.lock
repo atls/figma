@@ -246,6 +246,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@atls/figma-theme-borders-generator@workspace:*, @atls/figma-theme-borders-generator@workspace:theme/theme-borders-generator":
+  version: 0.0.0-use.local
+  resolution: "@atls/figma-theme-borders-generator@workspace:theme/theme-borders-generator"
+  dependencies:
+    "@atls/figma-theme-generator-common": "workspace:*"
+    "@atls/figma-utils": "workspace:*"
+    "@types/node": "npm:18.19.34"
+    figma-js: "npm:1.16.1-0"
+  peerDependencies:
+    "@atls/figma-theme-generator-common": "*"
+    figma-js: "*"
+  languageName: unknown
+  linkType: soft
+
 "@atls/figma-theme-cli@workspace:theme/theme-cli":
   version: 0.0.0-use.local
   resolution: "@atls/figma-theme-cli@workspace:theme/theme-cli"
@@ -383,6 +397,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@atls/figma-theme@workspace:theme/theme"
   dependencies:
+    "@atls/figma-theme-borders-generator": "workspace:*"
     "@atls/figma-theme-colors-generator": "workspace:*"
     "@atls/figma-theme-font-sizes-generator": "workspace:*"
     "@atls/figma-theme-font-weights-generator": "workspace:*"
