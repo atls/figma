@@ -4,6 +4,7 @@ import { FileResponse }                   from 'figma-js'
 import { Node }                           from 'figma-js'
 import { promises as fs }                 from 'fs'
 
+import { FigmaThemeBordersGenerator }     from '@atls/figma-theme-borders-generator'
 import { FigmaThemeColorsGenerator }      from '@atls/figma-theme-colors-generator'
 import { FigmaThemeFontSizesGenerator }   from '@atls/figma-theme-font-sizes-generator'
 import { FigmaThemeFontWeightsGenerator } from '@atls/figma-theme-font-weights-generator'
@@ -14,11 +15,12 @@ import { FigmaThemeShadowsGenerator }     from '@atls/figma-theme-shadows-genera
 import { walk }                           from '@atls/figma-utils'
 
 const generators = [
+  FigmaThemeBordersGenerator,
+  FigmaThemeColorsGenerator,
   FigmaThemeFontSizesGenerator,
   FigmaThemeFontWeightsGenerator,
   FigmaThemeFontsGenerator,
   FigmaThemeLineHeightsGenerator,
-  FigmaThemeColorsGenerator,
   FigmaThemeRadiiGenerator,
   FigmaThemeShadowsGenerator,
 ]

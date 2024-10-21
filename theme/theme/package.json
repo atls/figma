@@ -13,6 +13,7 @@
     "postpack": "rm -rf dist"
   },
   "dependencies": {
+    "@atls/figma-theme-borders-generator": "workspace:*",
     "@atls/figma-theme-colors-generator": "workspace:*",
     "@atls/figma-theme-font-sizes-generator": "workspace:*",
     "@atls/figma-theme-font-weights-generator": "workspace:*",
