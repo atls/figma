@@ -246,6 +246,43 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@atls/figma-fragments-cli@workspace:fragments/fragments-cli":
+  version: 0.0.0-use.local
+  resolution: "@atls/figma-fragments-cli@workspace:fragments/fragments-cli"
+  dependencies:
+    "@atls/figma-file-loader": "workspace:*"
+    "@atls/figma-fragments-generator": "workspace:*"
+    "@swc-node/register": "npm:1.9.0"
+    "@swc/core": "npm:1.6.1"
+    "@types/node": "npm:18.19.34"
+    "@types/npmlog": "npm:7.0.0"
+    "@yarnpkg/builder": "npm:4.1.1"
+    commander: "npm:12.1.0"
+    figma-js: "npm:1.16.1-0"
+    npmlog: "npm:7.0.1"
+    prettier: "npm:2.8.8"
+    ts-node: "npm:10.9.2"
+    typescript: "npm:5.2.2"
+  bin:
+    generate-fragments: dist/index.js
+  languageName: unknown
+  linkType: soft
+
+"@atls/figma-fragments-generator@workspace:*, @atls/figma-fragments-generator@workspace:fragments/fragments-generator":
+  version: 0.0.0-use.local
+  resolution: "@atls/figma-fragments-generator@workspace:fragments/fragments-generator"
+  dependencies:
+    "@atls/figma-utils": "workspace:*"
+    "@types/node": "npm:18.19.34"
+    "@types/react": "npm:18.3.12"
+    figma-js: "npm:1.16.1-0"
+    pretty-format: "npm:29.7.0"
+    react: "npm:18.3.1"
+  peerDependencies:
+    figma-js: "*"
+  languageName: unknown
+  linkType: soft
+
 "@atls/figma-theme-borders-generator@workspace:*, @atls/figma-theme-borders-generator@workspace:theme/theme-borders-generator":
   version: 0.0.0-use.local
   resolution: "@atls/figma-theme-borders-generator@workspace:theme/theme-borders-generator"
@@ -2315,6 +2352,23 @@ __metadata:
   version: 2.7.3
   resolution: "@types/prettier@npm:2.7.3"
   checksum: 10/cda84c19acc3bf327545b1ce71114a7d08efbd67b5030b9e8277b347fa57b05178045f70debe1d363ff7efdae62f237260713aafc2d7217e06fc99b048a88497
+  languageName: node
+  linkType: hard
+
+"@types/prop-types@npm:*":
+  version: 15.7.13
+  resolution: "@types/prop-types@npm:15.7.13"
+  checksum: 10/8935cad87c683c665d09a055919d617fe951cb3b2d5c00544e3a913f861a2bd8d2145b51c9aa6d2457d19f3107ab40784c40205e757232f6a80cc8b1c815513c
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:18.3.12":
+  version: 18.3.12
+  resolution: "@types/react@npm:18.3.12"
+  dependencies:
+    "@types/prop-types": "npm:*"
+    csstype: "npm:^3.0.2"
+  checksum: 10/c9bbdfeacd5347d2240e0d2cb5336bc57dbc1b9ff557b6c4024b49df83419e4955553518169d3736039f1b62608e15b35762a6c03d49bd86e33add4b43b19033
   languageName: node
   linkType: hard
 
@@ -4405,6 +4459,13 @@ __metadata:
   bin:
     cssesc: bin/cssesc
   checksum: 10/0e161912c1306861d8f46e1883be1cbc8b1b2879f0f509287c0db71796e4ddfb97ac96bdfca38f77f452e2c10554e1bb5678c99b07a5cf947a12778f73e47e12
+  languageName: node
+  linkType: hard
+
+"csstype@npm:^3.0.2":
+  version: 3.1.3
+  resolution: "csstype@npm:3.1.3"
+  checksum: 10/f593cce41ff5ade23f44e77521e3a1bcc2c64107041e1bf6c3c32adc5187d0d60983292fda326154d20b01079e24931aa5b08e4467cc488b60bb1e7f6d478ade
   languageName: node
   linkType: hard
 
@@ -8124,6 +8185,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pretty-format@npm:29.7.0, pretty-format@npm:^29.0.0, pretty-format@npm:^29.7.0":
+  version: 29.7.0
+  resolution: "pretty-format@npm:29.7.0"
+  dependencies:
+    "@jest/schemas": "npm:^29.6.3"
+    ansi-styles: "npm:^5.0.0"
+    react-is: "npm:^18.0.0"
+  checksum: 10/dea96bc83c83cd91b2bfc55757b6b2747edcaac45b568e46de29deee80742f17bc76fe8898135a70d904f4928eafd8bb693cd1da4896e8bdd3c5e82cadf1d2bb
+  languageName: node
+  linkType: hard
+
 "pretty-format@npm:^28.1.3":
   version: 28.1.3
   resolution: "pretty-format@npm:28.1.3"
@@ -8133,17 +8205,6 @@ __metadata:
     ansi-styles: "npm:^5.0.0"
     react-is: "npm:^18.0.0"
   checksum: 10/26626d33e201388174a1ce352be46b8087f28184bf3684a88b2f7cf633e28419ffc664628eec261ba13b0f03748c3a6f85db063a2022f75a354c7b9e4e06526b
-  languageName: node
-  linkType: hard
-
-"pretty-format@npm:^29.0.0, pretty-format@npm:^29.7.0":
-  version: 29.7.0
-  resolution: "pretty-format@npm:29.7.0"
-  dependencies:
-    "@jest/schemas": "npm:^29.6.3"
-    ansi-styles: "npm:^5.0.0"
-    react-is: "npm:^18.0.0"
-  checksum: 10/dea96bc83c83cd91b2bfc55757b6b2747edcaac45b568e46de29deee80742f17bc76fe8898135a70d904f4928eafd8bb693cd1da4896e8bdd3c5e82cadf1d2bb
   languageName: node
   linkType: hard
 
@@ -8330,6 +8391,15 @@ __metadata:
   peerDependencies:
     react: ^17.0.2
   checksum: 10/7b9369a12e57859088aaef052abe03138ad8eefe67308bf8be6ef8f529be06276dc4977a4d665dc9b9e08188bd308b2a0d58dc181253c0205c98e03d7c0901b7
+  languageName: node
+  linkType: hard
+
+"react@npm:18.3.1":
+  version: 18.3.1
+  resolution: "react@npm:18.3.1"
+  dependencies:
+    loose-envify: "npm:^1.1.0"
+  checksum: 10/261137d3f3993eaa2368a83110466fc0e558bc2c7f7ae7ca52d94f03aac945f45146bd85e5f481044db1758a1dbb57879e2fcdd33924e2dde1bdc550ce73f7bf
   languageName: node
   linkType: hard
 
