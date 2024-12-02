@@ -1,0 +1,33 @@
+{
+  "name": "@atls/figma-fragments-generator",
+  "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn library build",
+    "prepack": "yarn run build",
+    "postpack": "rm -rf dist"
+  },
+  "dependencies": {
+    "@atls/figma-utils": "workspace:*",
+    "pretty-format": "29.7.0",
+    "react": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "18.19.34",
+    "@types/react": "18.3.12",
+    "figma-js": "1.16.1-0"
+  },
+  "peerDependencies": {
+    "figma-js": "*"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  }
+}
