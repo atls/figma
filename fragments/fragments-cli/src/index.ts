@@ -9,6 +9,7 @@ logger.heading = 'figma-fragments'
 
 program
   .option('-o, --output [output]', 'Output dir')
+  .option('-t, --theme <theme>', 'Path to theme file')
   .option('-v, --verbose', 'Verbose output')
   .option('-n, --node-id <nodeId>', 'Node id for generating')
   .arguments('<fileId>')
@@ -39,7 +40,7 @@ if (!fileId) {
 
   process.env['FIGMA_TOKEN'] = 'secret'
 
-  run(fileId, options.nodeId?.replace('-', ':'), options.output)
+  run(fileId, options.nodeId?.replace('-', ':'), options.output, options.theme)
     .then(() => logger.info('info', 'Fragments successful generated'))
     .catch((error) => logger.error('error', error.message))
 }
