@@ -20,6 +20,7 @@
   "dependencies": {
     "@atls/figma-file-loader": "workspace:*",
     "@atls/figma-fragments-generator": "workspace:*",
+    "@babel/standalone": "7.22.20",
     "commander": "12.1.0",
     "figma-js": "1.16.1-0",
     "npmlog": "7.0.1",
@@ -28,6 +29,8 @@
   "devDependencies": {
     "@swc-node/register": "1.9.0",
     "@swc/core": "1.6.1",
+    "@types/babel__core": "7.20.5",
+    "@types/babel__standalone": "7.1.7",
     "@types/node": "18.19.34",
     "@types/npmlog": "7.0.0",
     "@yarnpkg/builder": "4.1.1",
