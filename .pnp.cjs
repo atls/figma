@@ -429,8 +429,11 @@ const RAW_RUNTIME_STATE =
           ["@atls/figma-fragments-cli", "workspace:fragments/fragments-cli"],\
           ["@atls/figma-file-loader", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader"],\
           ["@atls/figma-fragments-generator", "virtual:8d41429ff8893e59f14f513f07558a38e34b88c9ebd315931533c77deb02f350ab58c2460ca0593e0c001f806cd97c2b081622cc990fdbc17fa6dbca612d2f7c#workspace:fragments/fragments-generator"],\
+          ["@babel/standalone", "npm:7.22.20"],\
           ["@swc-node/register", "virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#npm:1.9.0"],\
           ["@swc/core", "virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#npm:1.6.1"],\
+          ["@types/babel__core", "npm:7.20.5"],\
+          ["@types/babel__standalone", "npm:7.1.7"],\
           ["@types/node", "npm:18.19.34"],\
           ["@types/npmlog", "npm:7.0.0"],\
           ["@yarnpkg/builder", "npm:4.1.1"],\
@@ -1609,6 +1612,15 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@babel/runtime", "npm:7.23.2"],\
           ["regenerator-runtime", "npm:0.14.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@babel/standalone", [\
+      ["npm:7.22.20", {\
+        "packageLocation": "../.yarn/berry/cache/@babel-standalone-npm-7.22.20-674a6ef7e3-10.zip/node_modules/@babel/standalone/",\
+        "packageDependencies": [\
+          ["@babel/standalone", "npm:7.22.20"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3081,6 +3093,18 @@ const RAW_RUNTIME_STATE =
           ["@types/babel__traverse", "npm:7.20.3"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:7.20.5", {\
+        "packageLocation": "../.yarn/berry/cache/@types-babel__core-npm-7.20.5-4d95f75eab-10.zip/node_modules/@types/babel__core/",\
+        "packageDependencies": [\
+          ["@types/babel__core", "npm:7.20.5"],\
+          ["@babel/parser", "npm:7.24.7"],\
+          ["@babel/types", "npm:7.24.7"],\
+          ["@types/babel__generator", "npm:7.6.6"],\
+          ["@types/babel__template", "npm:7.4.3"],\
+          ["@types/babel__traverse", "npm:7.20.3"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@types/babel__generator", [\
@@ -3089,6 +3113,16 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@types/babel__generator", "npm:7.6.6"],\
           ["@babel/types", "npm:7.24.7"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/babel__standalone", [\
+      ["npm:7.1.7", {\
+        "packageLocation": "../.yarn/berry/cache/@types-babel__standalone-npm-7.1.7-b329c4f042-10.zip/node_modules/@types/babel__standalone/",\
+        "packageDependencies": [\
+          ["@types/babel__standalone", "npm:7.1.7"],\
+          ["@types/babel__core", "npm:7.20.5"]\
         ],\
         "linkType": "HARD"\
       }]\

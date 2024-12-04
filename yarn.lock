@@ -252,8 +252,11 @@ __metadata:
   dependencies:
     "@atls/figma-file-loader": "workspace:*"
     "@atls/figma-fragments-generator": "workspace:*"
+    "@babel/standalone": "npm:7.22.20"
     "@swc-node/register": "npm:1.9.0"
     "@swc/core": "npm:1.6.1"
+    "@types/babel__core": "npm:7.20.5"
+    "@types/babel__standalone": "npm:7.1.7"
     "@types/node": "npm:18.19.34"
     "@types/npmlog": "npm:7.0.0"
     "@yarnpkg/builder": "npm:4.1.1"
@@ -846,6 +849,13 @@ __metadata:
   dependencies:
     regenerator-runtime: "npm:^0.14.0"
   checksum: 10/abdcbdd590c7e31762e1bdab94dd466823c8bcedd3ff2fde85eeb94dac7cccaef151ac37c428bda7018ededd27c9a82b4dfeb621f978ad934232475a902f8e3a
+  languageName: node
+  linkType: hard
+
+"@babel/standalone@npm:7.22.20":
+  version: 7.22.20
+  resolution: "@babel/standalone@npm:7.22.20"
+  checksum: 10/accf19752fe94d24dddc9b7c3c7b800d83d49713c5116323c22a8f13bb136408274ae6c93a0304a29a5c42eef15d244da96f11a8cfbfb06d02055556efbcac45
   languageName: node
   linkType: hard
 
@@ -2162,6 +2172,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/babel__core@npm:7.20.5, @types/babel__core@npm:^7.1.0":
+  version: 7.20.5
+  resolution: "@types/babel__core@npm:7.20.5"
+  dependencies:
+    "@babel/parser": "npm:^7.20.7"
+    "@babel/types": "npm:^7.20.7"
+    "@types/babel__generator": "npm:*"
+    "@types/babel__template": "npm:*"
+    "@types/babel__traverse": "npm:*"
+  checksum: 10/c32838d280b5ab59d62557f9e331d3831f8e547ee10b4f85cb78753d97d521270cebfc73ce501e9fb27fe71884d1ba75e18658692c2f4117543f0fc4e3e118b3
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7.1.14":
   version: 7.20.3
   resolution: "@types/babel__core@npm:7.20.3"
@@ -2181,6 +2204,15 @@ __metadata:
   dependencies:
     "@babel/types": "npm:^7.0.0"
   checksum: 10/ebb134a52c283f5d842ba829e43a689967591a62abc963deac7c91b2866d7991fff8927542ce67d28b82da584e1ee9194a7b4373bee1ad643a1b08c1c463e837
+  languageName: node
+  linkType: hard
+
+"@types/babel__standalone@npm:7.1.7":
+  version: 7.1.7
+  resolution: "@types/babel__standalone@npm:7.1.7"
+  dependencies:
+    "@types/babel__core": "npm:^7.1.0"
+  checksum: 10/a19ab145c6079b8f85aa7724d0c0f72db2235d11d3ed98cc188b8c31515c5e9e2297de35c590b7c44efe9d46bc04111ce9fcb7d41765bea096b2cbf51a0df236
   languageName: node
   linkType: hard
 

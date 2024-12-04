@@ -21,8 +21,8 @@ export class FigmaThemeFragmentsGenerator {
     return textNodes
   }
 
-  generate(response: FileNodesResponse): string {
-    const strategy = new SimpleMappingStrategy()
+  generate(response: FileNodesResponse, theme: Record<string, Record<string, string>>): string {
+    const strategy = new SimpleMappingStrategy(theme)
 
     const textNodes = this.getTextNodes(response.nodes)
 
