@@ -21,13 +21,21 @@ export class FigmaThemeFragmentsGenerator {
     return textNodes
   }
 
+  createComponent(fragment: string): string {
+    return `
+      import React from 'react'
+      import { memo } from 'react'
+        
+      export const GeneratedFragment = memo(() => (${fragment}))`
+  }
+
   generate(response: FileNodesResponse, theme: Record<string, Record<string, string>>): string {
     const strategy = new SimpleMappingStrategy(theme)
 
     const textNodes = this.getTextNodes(response.nodes)
 
-    const component = strategy.execute(textNodes)
+    const fragment = strategy.execute(textNodes)
 
-    return component
+    return this.createComponent(fragment)
   }
 }
