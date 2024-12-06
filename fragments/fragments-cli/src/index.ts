@@ -40,7 +40,7 @@ if (!fileId) {
 
   process.env['FIGMA_TOKEN'] = 'secret'
 
-  run(fileId, options.nodeId?.replace('-', ':'), options.output, options.theme)
+  run(fileId, options.nodeId, options.output, options.theme)
     .then(() => logger.info('info', 'Fragments successful generated'))
     .catch((error) => logger.error('error', error.message))
 }

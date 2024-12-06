@@ -19,7 +19,7 @@ export class FigmaFileLoader {
   }
 
   async loadNode(fileId: string, nodeId: string): Promise<FileNodesResponse> {
-    const { data } = await this.figma.fileNodes(fileId, { ids: [nodeId] })
+    const { data } = await this.figma.fileNodes(fileId, { ids: [nodeId.replace('-', ':')] })
     return data
   }
 
