@@ -78,6 +78,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:theme/theme-shadows-generator"\
     },\
     {\
+      "name": "@atls/figma-file-utils",\
+      "reference": "workspace:utils/file"\
+    },\
+    {\
       "name": "@atls/figma-utils",\
       "reference": "workspace:utils/utils"\
     }\
@@ -88,6 +92,7 @@ const RAW_RUNTIME_STATE =
     ["@atls/figma-assets", ["virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#workspace:assets/assets", "workspace:assets/assets"]],\
     ["@atls/figma-assets-cli", ["workspace:assets/assets-cli"]],\
     ["@atls/figma-file-loader", ["virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader", "workspace:loaders/file-loader"]],\
+    ["@atls/figma-file-utils", ["workspace:utils/file"]],\
     ["@atls/figma-fragments-cli", ["workspace:fragments/fragments-cli"]],\
     ["@atls/figma-fragments-generator", ["virtual:8d41429ff8893e59f14f513f07558a38e34b88c9ebd315931533c77deb02f350ab58c2460ca0593e0c001f806cd97c2b081622cc990fdbc17fa6dbca612d2f7c#workspace:fragments/fragments-generator", "workspace:fragments/fragments-generator"]],\
     ["@atls/figma-theme", ["virtual:a9526061832803f8bc7fed186e9699b3bcb0fb7fb989d17328e56b61e9f17fd49895330e461073d51dd5dcbab09bf72a55678f1e398bacacdb001a56e84fd54f#workspace:theme/theme", "workspace:theme/theme"]],\
@@ -422,25 +427,36 @@ const RAW_RUNTIME_STATE =
         "linkType": "SOFT"\
       }]\
     ]],\
+    ["@atls/figma-file-utils", [\
+      ["workspace:utils/file", {\
+        "packageLocation": "./utils/file/",\
+        "packageDependencies": [\
+          ["@atls/figma-file-utils", "workspace:utils/file"],\
+          ["@babel/standalone", "npm:7.22.20"],\
+          ["@types/babel__core", "npm:7.20.5"],\
+          ["@types/babel__standalone", "npm:7.1.7"],\
+          ["@types/node", "npm:18.19.34"],\
+          ["prettier", "npm:2.8.8"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
     ["@atls/figma-fragments-cli", [\
       ["workspace:fragments/fragments-cli", {\
         "packageLocation": "./fragments/fragments-cli/",\
         "packageDependencies": [\
           ["@atls/figma-fragments-cli", "workspace:fragments/fragments-cli"],\
           ["@atls/figma-file-loader", "virtual:75728d86037c75604505b9c0fbfc0ce3edc9d369e1826ac0d2d661dfb48b9446ca5a5e54a2ca8ec969b4beb532afca4cf558bf306737b461fca84524ac2142e6#workspace:loaders/file-loader"],\
+          ["@atls/figma-file-utils", "workspace:utils/file"],\
           ["@atls/figma-fragments-generator", "virtual:8d41429ff8893e59f14f513f07558a38e34b88c9ebd315931533c77deb02f350ab58c2460ca0593e0c001f806cd97c2b081622cc990fdbc17fa6dbca612d2f7c#workspace:fragments/fragments-generator"],\
-          ["@babel/standalone", "npm:7.22.20"],\
           ["@swc-node/register", "virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#npm:1.9.0"],\
           ["@swc/core", "virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#npm:1.6.1"],\
-          ["@types/babel__core", "npm:7.20.5"],\
-          ["@types/babel__standalone", "npm:7.1.7"],\
           ["@types/node", "npm:18.19.34"],\
           ["@types/npmlog", "npm:7.0.0"],\
           ["@yarnpkg/builder", "npm:4.1.1"],\
           ["commander", "npm:12.1.0"],\
           ["figma-js", "npm:1.16.1-0"],\
           ["npmlog", "npm:7.0.1"],\
-          ["prettier", "npm:2.8.8"],\
           ["ts-node", "virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#npm:10.9.2"],\
           ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
         ],\

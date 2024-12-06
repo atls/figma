@@ -246,24 +246,33 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@atls/figma-file-utils@workspace:*, @atls/figma-file-utils@workspace:utils/file":
+  version: 0.0.0-use.local
+  resolution: "@atls/figma-file-utils@workspace:utils/file"
+  dependencies:
+    "@babel/standalone": "npm:7.22.20"
+    "@types/babel__core": "npm:7.20.5"
+    "@types/babel__standalone": "npm:7.1.7"
+    "@types/node": "npm:18.19.34"
+    prettier: "npm:2.8.8"
+  languageName: unknown
+  linkType: soft
+
 "@atls/figma-fragments-cli@workspace:fragments/fragments-cli":
   version: 0.0.0-use.local
   resolution: "@atls/figma-fragments-cli@workspace:fragments/fragments-cli"
   dependencies:
     "@atls/figma-file-loader": "workspace:*"
+    "@atls/figma-file-utils": "workspace:*"
     "@atls/figma-fragments-generator": "workspace:*"
-    "@babel/standalone": "npm:7.22.20"
     "@swc-node/register": "npm:1.9.0"
     "@swc/core": "npm:1.6.1"
-    "@types/babel__core": "npm:7.20.5"
-    "@types/babel__standalone": "npm:7.1.7"
     "@types/node": "npm:18.19.34"
     "@types/npmlog": "npm:7.0.0"
     "@yarnpkg/builder": "npm:4.1.1"
     commander: "npm:12.1.0"
     figma-js: "npm:1.16.1-0"
     npmlog: "npm:7.0.1"
-    prettier: "npm:2.8.8"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.2.2"
   bin:

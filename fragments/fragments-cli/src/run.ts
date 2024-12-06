@@ -1,42 +1,27 @@
-import { transform }                    from '@babel/standalone'
+import assert                           from 'node:assert'
 
-import path                             from 'path'
-import prettier                         from 'prettier'
-import { promises as fs }               from 'fs'
-import { readFileSync }                 from 'fs'
 import { join }                         from 'path'
 
 import { FigmaFileLoader }              from '@atls/figma-file-loader'
 import { FigmaThemeFragmentsGenerator } from '@atls/figma-fragments-generator'
+import { processFile }                  from '@atls/figma-file-utils'
+import { writeFile }                    from '@atls/figma-file-utils'
 
-const processFile = (filePath: string): any => {
-  const replacementsFile = readFileSync(filePath.replace('.js', '.ts')).toString('utf-8')
-  const { code } = transform(replacementsFile, {
-    presets: ['env'],
-    plugins: ['transform-modules-commonjs'],
-  })
+export const run = async (
+  fileId: string,
+  nodeId: string,
+  output: string,
+  themeFilePath: string
+) => {
+  const absoluteThemeFilePath = join(process.cwd(), themeFilePath)
+  const exports = processFile(absoluteThemeFilePath)
 
-  if (!code) throw Error('Could not read the file')
+  const theme = Object.values(exports)?.[0] as Record<string, Record<string, string>>
 
-  // eslint-disable-next-line no-eval, security/detect-eval-with-expression
-  const module = { exports: {} }
-  const exports = module.exports
-  const require = (modulePath) => {
-    const absolutePath = path.resolve(path.dirname(filePath), modulePath)
-    return processFile(absolutePath)
-  }
-  eval(`
-    (function(exports, module, require) {
-      ${code}
-    })(exports, module, require);
-  `)
-  return module.exports
-}
-
-export const run = async (fileId, nodeId, output, themeFilePath) => {
-  const theme: Record<string, Record<string, string>> = processFile(
-    join(process.cwd(), themeFilePath)
-  ).lightThemeTokens
+  assert.ok(
+    theme,
+    `Could not process the theme with path ${absoluteThemeFilePath}. Please try again`
+  )
 
   const loader = new FigmaFileLoader()
   const generator = new FigmaThemeFragmentsGenerator()
@@ -45,11 +30,5 @@ export const run = async (fileId, nodeId, output, themeFilePath) => {
 
   const component = generator.generate(response, theme)
 
-  const target = path.join(output, 'fragments.tsx')
-
-  const options = await prettier.resolveConfig(target)
-
-  const data = await prettier.format(component, { ...options })
-
-  await fs.writeFile(target, data)
+  await writeFile(output, 'fragments.tsx', component)
 }
