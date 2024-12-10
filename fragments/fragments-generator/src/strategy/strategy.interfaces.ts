@@ -1,7 +1,12 @@
 import { ReactElement } from 'react'
 
 export interface TreeElement {
-  childrenIds: string[]
+  childrenIds: Array<string>
   parentId: string | null
   element: ReactElement
+}
+
+export interface CreteFragmentResult {
+  fragment: string
+  imports: Array<string>
 }
