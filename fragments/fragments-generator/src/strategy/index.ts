@@ -1,1 +1,1 @@
-export * from './simple-mapping.strategy.js'
+export * from './create-fragment.strategy.js'

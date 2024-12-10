@@ -1,6 +1,6 @@
 import { FileNodesResponse }     from 'figma-js'
 
-import { SimpleMappingStrategy } from './strategy/index.js'
+import { CreateFragmentStrategy } from './strategy/index.js'
 
 export class FigmaThemeFragmentsGenerator {
   readonly name = 'fragments'
@@ -14,7 +14,7 @@ export class FigmaThemeFragmentsGenerator {
   }
 
   generate(response: FileNodesResponse, theme: Record<string, Record<string, string>>): string {
-    const strategy = new SimpleMappingStrategy(theme)
+    const strategy = new CreateFragmentStrategy(theme)
 
     const fragment = strategy.execute(response.nodes)
 
