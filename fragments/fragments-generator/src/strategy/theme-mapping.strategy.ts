@@ -112,6 +112,28 @@ export class ThemeMappingStrategy {
     return this.getValueKeyFromTheme('radii', borderRadiusPx) || borderRadiusPx
   }
 
+  getBorder(
+    strokes: readonly Paint[],
+    strokeWeight: FrameBase['strokeWeight']
+  ): string | undefined {
+    if (!strokes[0]) {
+      return undefined
+    }
+
+    const { type, color, opacity } = strokes[0]
+
+    if (!color || !strokeWeight) {
+      return undefined
+    }
+
+    const strokeType = String(type).toLowerCase()
+    const strokeColor = opacity ? toColorOpacityString(color, opacity) : toColorString(color)
+
+    const border = `${toPxString(strokeWeight)} ${strokeType} ${strokeColor}`
+
+    return this.getValueKeyFromTheme('borders', border) || border
+  }
+
   getPadding(padding: number | undefined): string | undefined {
     if (!padding) {
       return undefined

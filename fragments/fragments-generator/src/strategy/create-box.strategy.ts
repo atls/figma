@@ -23,6 +23,8 @@ export class CreateBoxStrategy extends ThemeMappingStrategy {
       paddingRight,
       paddingTop,
       cornerRadius,
+      strokes,
+      strokeWeight,
     } = node
 
     return createElement('Box', {
@@ -30,6 +32,7 @@ export class CreateBoxStrategy extends ThemeMappingStrategy {
       justifyContent: this.getJustifyContent(primaryAxisAlignItems),
       alignItems: this.getAlignItems(counterAxisAlignItems),
       gap: this.getGap(itemSpacing),
+      border: this.getBorder(strokes, strokeWeight),
       borderRadius: this.getBorderRadius(cornerRadius),
       ...this.getPaddings({ paddingBottom, paddingLeft, paddingRight, paddingTop }),
     })
