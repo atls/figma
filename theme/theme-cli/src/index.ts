@@ -13,8 +13,8 @@ logger.heading = 'figma-theme' as string
     value.split(',').map((page) => page.replace('-', ':')))
   .option('--included-pages <includedPages>', 'Included pages', (value) =>
     value.split(',').map((page) => page.replace('-', ':')))
-  .option('--prefix <prefix>', 'Prefix for components')
   .option('--method <method>', 'Method for components: default or secondary')
+  .option('--prefix <prefix>', 'Prefix for components')
   .arguments('<fileId>')
   .parse(process.argv)
 
