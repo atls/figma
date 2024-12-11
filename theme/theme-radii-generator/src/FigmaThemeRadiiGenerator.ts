@@ -1,7 +1,7 @@
 import { FileResponse }              from 'figma-js'
 
-import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
 import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
+import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
 
 import { SimpleMappingStrategy }     from './strategy/index.js'
 

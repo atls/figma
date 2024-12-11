@@ -1,7 +1,7 @@
 import path                               from 'path'
 import prettier                           from 'prettier'
-import { FileResponse }                   from 'figma-js'
 import { Node }                           from 'figma-js'
+import { FileResponse }                   from 'figma-js'
 import { promises as fs }                 from 'fs'
 
 import { FigmaThemeBordersGenerator }     from '@atls/figma-theme-borders-generator'
