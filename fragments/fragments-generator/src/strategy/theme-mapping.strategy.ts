@@ -102,6 +102,16 @@ export class ThemeMappingStrategy {
     return this.getValueKeyFromTheme('spaces', gapPx) || gapPx
   }
 
+  getBorderRadius(cornerRadius: FrameBase['cornerRadius']): string | undefined {
+    if (!cornerRadius) {
+      return undefined
+    }
+
+    const borderRadiusPx = toPxString(cornerRadius)
+
+    return this.getValueKeyFromTheme('radii', borderRadiusPx) || borderRadiusPx
+  }
+
   getPadding(padding: number | undefined): string | undefined {
     if (!padding) {
       return undefined
