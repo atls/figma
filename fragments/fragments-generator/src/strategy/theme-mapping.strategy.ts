@@ -134,6 +134,25 @@ export class ThemeMappingStrategy {
     return this.getValueKeyFromTheme('borders', border) || border
   }
 
+  getShadow(effects: readonly Effect[]): string | undefined {
+    const shadows: string[] = []
+
+    effects.forEach(({ type, radius, offset, color }) => {
+      if (['DROP_SHADOW', 'INNER_SHADOW'].includes(type) && offset && color) {
+        const offsetX = toPxString(offset.x)
+        const offsetY = toPxString(offset.y)
+        const blurRadius = toPxString(radius)
+        const colorString = toColorString(color)
+
+        const shadow = `${offsetX} ${offsetY} ${blurRadius} ${colorString}`
+
+        shadows.push(this.getValueKeyFromTheme('shadows', shadow) || shadow)
+      }
+    })
+
+    return shadows.join(', ')
+  }
+
   getPadding(padding: number | undefined): string | undefined {
     if (!padding) {
       return undefined
