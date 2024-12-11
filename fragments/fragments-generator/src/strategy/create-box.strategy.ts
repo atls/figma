@@ -25,6 +25,7 @@ export class CreateBoxStrategy extends ThemeMappingStrategy {
       cornerRadius,
       strokes,
       strokeWeight,
+      background,
       effects,
     } = node
 
@@ -32,6 +33,7 @@ export class CreateBoxStrategy extends ThemeMappingStrategy {
       flexDirection: this.getFlexDirection(layoutMode),
       justifyContent: this.getJustifyContent(primaryAxisAlignItems),
       alignItems: this.getAlignItems(counterAxisAlignItems),
+      background: this.getColor(background),
       gap: this.getGap(itemSpacing),
       border: this.getBorder(strokes, strokeWeight),
       borderRadius: this.getBorderRadius(cornerRadius),
