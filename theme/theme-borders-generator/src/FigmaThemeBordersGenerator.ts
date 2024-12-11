@@ -16,7 +16,7 @@ export class FigmaThemeBordersGenerator extends FigmaThemeGenerator {
     const borders: Map<string, Border> = new Map()
 
     walk(nodes, (node) => {
-      if (node.strokes?.length) {
+      if (Array.isArray(node.strokes) && node.strokes.length) {
         const weight = node.strokeWeight || 1
 
         node.strokes.forEach((stroke) => {

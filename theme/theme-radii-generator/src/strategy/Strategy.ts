@@ -12,7 +12,7 @@ export abstract class Strategy {
         stat.set(radius, (stat.get(radius) || 0) + 1)
       }
 
-      if (node.rectangleCornerRadii) {
+      if (node.rectangleCornerRadii && Array.isArray(node.rectangleCornerRadii)) {
         node.rectangleCornerRadii.forEach((radius) => {
           const roundedRadius = Math.round(radius)
           stat.set(roundedRadius, (stat.get(roundedRadius) || 0) + 1)
