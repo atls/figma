@@ -79,4 +79,79 @@ export class ThemeMappingStrategy {
   getFlexDirection(layoutMode: FrameBase['layoutMode']): string | undefined {
     return layoutMode === 'VERTICAL' ? 'column' : undefined
   }
+
+  getJustifyContent(primaryAxisAlignItems: FrameBase['primaryAxisAlignItems']): string | undefined {
+    if (primaryAxisAlignItems === 'SPACE_BETWEEN') {
+      return 'space-between'
+    }
+
+    return primaryAxisAlignItems === 'CENTER' ? 'center' : undefined
+  }
+
+  getAlignItems(counterAxisAlignItems: FrameBase['counterAxisAlignItems']): string | undefined {
+    return counterAxisAlignItems === 'CENTER' ? 'center' : undefined
+  }
+
+  getGap(itemSpacing: FrameBase['itemSpacing']): string | undefined {
+    if (!itemSpacing) {
+      return undefined
+    }
+
+    const gapPx = toPxString(itemSpacing)
+
+    return this.getValueKeyFromTheme('spaces', gapPx) || gapPx
+  }
+
+  getPadding(padding: number | undefined): string | undefined {
+    if (!padding) {
+      return undefined
+    }
+
+    const paddingPx = toPxString(padding)
+
+    return this.getValueKeyFromTheme('spaces', paddingPx) || paddingPx
+  }
+
+  getPaddings(paddings: Record<string, number | undefined>): Record<string, string> {
+    const { paddingTop, paddingBottom, paddingLeft, paddingRight } = paddings
+
+    const top = this.getPadding(paddingTop)
+    const bottom = this.getPadding(paddingBottom)
+    const left = this.getPadding(paddingLeft)
+    const right = this.getPadding(paddingRight)
+
+    const isSameValues = [top, bottom, left, right].every((value) => value && value === top)
+
+    if (isSameValues && top) {
+      return { padding: top }
+    }
+
+    const attributes: Record<string, string> = {}
+
+    if (top && bottom && top === bottom) {
+      attributes.paddingY = top
+    }
+
+    if (left && right && left === right) {
+      attributes.paddingX = left
+    }
+
+    if (top && !attributes.paddingY) {
+      attributes.paddingTop = top
+    }
+
+    if (bottom && !attributes.paddingY) {
+      attributes.paddingBottom = bottom
+    }
+
+    if (left && !attributes.paddingX) {
+      attributes.paddingLeft = left
+    }
+
+    if (right && !attributes.paddingX) {
+      attributes.paddingRight = right
+    }
+
+    return attributes
+  }
 }
