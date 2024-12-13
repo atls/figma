@@ -27,9 +27,12 @@ export class CreateBoxStrategy extends ThemeMappingStrategy {
       strokeWeight,
       background,
       effects,
+      absoluteBoundingBox,
     } = node
 
     return createElement('Box', {
+      width: absoluteBoundingBox.width ? `${absoluteBoundingBox.width}px` : undefined,
+      height: absoluteBoundingBox.height ? `${absoluteBoundingBox.height}px` : undefined,
       flexDirection: this.getFlexDirection(layoutMode),
       justifyContent: this.getJustifyContent(primaryAxisAlignItems),
       alignItems: this.getAlignItems(counterAxisAlignItems),
