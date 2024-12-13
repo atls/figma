@@ -67,13 +67,19 @@ export class ThemeMappingStrategy {
     return this.getValueKeyFromTheme('fontWeights', `${fontWeight}`) || fontWeight
   }
 
+  getTextAlign(textAlignHorizontal: TypeStyle['textAlignHorizontal']): string | undefined {
+    return textAlignHorizontal === 'LEFT' ? undefined : textAlignHorizontal.toLocaleLowerCase()
+  }
+
   getLineHeight(
     lineHeightPercentFontSize: TypeStyle['lineHeightPercentFontSize'],
-    lineHeightPx: TypeStyle['lineHeightPx']
-  ): string {
+    lineHeightPx?: TypeStyle['lineHeightPx']
+  ): string | undefined {
     const lineHeight = ((lineHeightPercentFontSize || 100) / 100)?.toFixed(1)
 
-    return this.getValueKeyFromTheme('lineHeights', lineHeight) || toPxString(lineHeightPx)
+    const lineHeightPxString = lineHeightPx ? toPxString(lineHeightPx) : undefined
+
+    return this.getValueKeyFromTheme('lineHeights', lineHeight) || lineHeightPxString
   }
 
   getFlexDirection(layoutMode: FrameBase['layoutMode']): string | undefined {
@@ -150,7 +156,7 @@ export class ThemeMappingStrategy {
       }
     })
 
-    return shadows.join(', ')
+    return shadows.length ? shadows.join(', ') : undefined
   }
 
   getPadding(padding: number | undefined): string | undefined {

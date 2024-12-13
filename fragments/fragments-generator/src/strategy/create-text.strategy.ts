@@ -12,13 +12,18 @@ export class CreateTextStrategy extends ThemeMappingStrategy {
   }
 
   private createAttributes(style: TypeStyle, fills: readonly Paint[]) {
-    const { fontSize, fontWeight, lineHeightPercentFontSize, lineHeightPx } = style
+    const fontSize = style?.fontSize || undefined
+    const fontWeight = style?.fontWeight || undefined
+    const lineHeightPercentFontSize = style?.lineHeightPercentFontSize || undefined
+    const lineHeightPx = style?.lineHeightPx || undefined
+    const textAlignHorizontal = style?.textAlignHorizontal || undefined
 
     return {
       color: this.getColor(fills),
-      fontSize: this.getFontSize(fontSize),
+      fontSize: fontSize ? this.getFontSize(fontSize) : undefined,
       fontWeight: this.getFontWeight(fontWeight),
       lineHeight: this.getLineHeight(lineHeightPercentFontSize, lineHeightPx),
+      textAlign: this.getTextAlign(textAlignHorizontal),
     }
   }
 
