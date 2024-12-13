@@ -29,7 +29,10 @@ export class CreateTextStrategy extends ThemeMappingStrategy {
   createElement(node: Text) {
     const { characters, style, fills } = node
 
-    const childrenElement = createElement('FormattedMessage', { defaultMessage: characters })
+    const childrenElement = createElement('FormattedMessage', {
+      id: characters?.replaceAll(' ', '_').toLowerCase() || 'text',
+      defaultMessage: characters,
+    })
 
     return createElement('Text', this.createAttributes(style, fills), childrenElement)
   }
