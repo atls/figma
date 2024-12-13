@@ -10,10 +10,12 @@ import { cloneElement }             from 'react'
 import { createElement }            from 'react'
 
 import { isFrame }                  from '@atls/figma-utils'
+import { isInstance }               from '@atls/figma-utils'
 import { isText }                   from '@atls/figma-utils'
 import { walk }                     from '@atls/figma-utils'
 
 import { CreateBoxStrategy }        from './create-box.strategy.js'
+import { CreateButtonStrategy }     from './create-button.strategy.js'
 import { CreateTextStrategy }       from './create-text.strategy.js'
 
 export class CreateFragmentStrategy {
@@ -21,10 +23,12 @@ export class CreateFragmentStrategy {
 
   private text: CreateTextStrategy
   private box: CreateBoxStrategy
+  private button: CreateButtonStrategy
 
   constructor(theme: Record<string, Record<string, string>>) {
     this.text = new CreateTextStrategy(theme)
     this.box = new CreateBoxStrategy(theme)
+    this.button = new CreateButtonStrategy()
   }
 
   private createFragmentElement(elements: TreeElement[]) {
@@ -65,6 +69,23 @@ export class CreateFragmentStrategy {
     const imports = new Set<string>()
 
     walk(nodes, (node) => {
+      if (isInstance(node)) {
+        if (node.name.includes('Button')) {
+          this.button.getImports().forEach((value) => imports.add(value))
+
+          const buttonChildren = node?.children.map((node) => node.id) || []
+          const buttonDeepChildren = isInstance(node.children[0])
+            ? node.children[0].children.map((node) => node.id) || []
+            : []
+
+          this.elements[node.id] = {
+            element: this.button.createElement(node),
+            childrenIds: [...buttonChildren, ...buttonDeepChildren],
+            parentId: this.findParentId(node.id),
+          }
+        }
+      }
+
       if (isText(node)) {
         this.text.getImports().forEach((value) => imports.add(value))
 
