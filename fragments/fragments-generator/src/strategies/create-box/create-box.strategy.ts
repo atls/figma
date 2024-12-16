@@ -1,7 +1,8 @@
-import { Frame }                from 'figma-js'
+import type { Frame }           from 'figma-js'
+
 import { createElement }        from 'react'
 
-import { ThemeMappingStrategy } from './theme-mapping.strategy.js'
+import { ThemeMappingStrategy } from '../theme-mapping/index.js'
 
 export class CreateBoxStrategy extends ThemeMappingStrategy {
   getImports() {

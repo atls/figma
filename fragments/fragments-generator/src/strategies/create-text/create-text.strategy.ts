@@ -4,7 +4,7 @@ import type { TypeStyle }       from 'figma-js'
 
 import { createElement }        from 'react'
 
-import { ThemeMappingStrategy } from './theme-mapping.strategy.js'
+import { ThemeMappingStrategy } from '../theme-mapping/index.js'
 
 export class CreateTextStrategy extends ThemeMappingStrategy {
   private createAttributes(style: TypeStyle, fills: readonly Paint[]) {

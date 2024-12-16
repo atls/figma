@@ -1,8 +1,9 @@
-import { Instance }            from 'figma-js'
+import type { Instance }       from 'figma-js'
+
 import { Fragment }            from 'react'
 import { createElement }       from 'react'
 
-import { ComponentProperties } from './strategy.interfaces.js'
+import { ComponentProperties } from '../strategies.interfaces.js'
 
 export class CreateButtonStrategy {
   getImports() {

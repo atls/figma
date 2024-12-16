@@ -1,12 +1,13 @@
-import { Instance }            from 'figma-js'
-import { Text }                from 'figma-js'
+import type { Instance }       from 'figma-js'
+import type { Text }           from 'figma-js'
+
 import { Fragment }            from 'react'
 import { createElement }       from 'react'
 
 import { isFrame }             from '@atls/figma-utils'
 import { isText }              from '@atls/figma-utils'
 
-import { ComponentProperties } from './strategy.interfaces.js'
+import { ComponentProperties } from '../strategies.interfaces.js'
 
 export class CreateInputStrategy {
   getImports() {

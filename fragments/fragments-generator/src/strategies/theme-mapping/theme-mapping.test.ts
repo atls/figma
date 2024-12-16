@@ -1,9 +1,9 @@
-import { Effect }               from 'figma-js'
-import { Paint }                from 'figma-js'
+import type { Effect }          from 'figma-js'
+import type { Paint }           from 'figma-js'
 
-import { THEME_KEY_PREFIX }     from '../strategy.constants.js'
-import { ThemeMappingStrategy } from '../theme-mapping.strategy.js'
-import { theme }                from './tests.constants.js'
+import { THEME_KEY_PREFIX }     from '../strategies.constants.js'
+import { ThemeMappingStrategy } from './theme-mapping.strategy.js'
+import { theme }                from '../strategies.constants.js'
 
 describe('ThemeMappingStrategy', () => {
   let strategy: ThemeMappingStrategy

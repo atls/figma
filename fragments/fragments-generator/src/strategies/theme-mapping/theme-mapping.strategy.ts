@@ -7,8 +7,8 @@ import { toColorOpacityString } from '@atls/figma-utils'
 import { toColorString }        from '@atls/figma-utils'
 import { toPxString }           from '@atls/figma-utils'
 
-import { THEME_KEY_PREFIX }     from './strategy.constants.js'
-import { colorsIgnorePatterns } from './strategy.constants.js'
+import { THEME_KEY_PREFIX }     from '../strategies.constants.js'
+import { colorsIgnorePatterns } from '../strategies.constants.js'
 
 export class ThemeMappingStrategy {
   private theme: Record<string, Record<string, string>> = {}
@@ -153,7 +153,7 @@ export class ThemeMappingStrategy {
   }
 
   getShadow(effects: readonly Effect[]): string | undefined {
-    const shadows: string[] = []
+    const shadows: Array<string> = []
 
     effects.forEach(({ type, radius, offset, color }) => {
       if (['DROP_SHADOW', 'INNER_SHADOW'].includes(type) && offset && color) {

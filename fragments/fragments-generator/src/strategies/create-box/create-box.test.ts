@@ -1,8 +1,9 @@
-import { Frame }             from 'figma-js'
+import type { Frame }        from 'figma-js'
+
 import { createElement }     from 'react'
 
-import { CreateBoxStrategy } from '../create-box.strategy.js'
-import { theme }             from './tests.constants.js'
+import { CreateBoxStrategy } from './create-box.strategy.js'
+import { theme }             from '../strategies.constants.js'
 
 jest.mock('react', () => ({
   createElement: jest.fn(),

@@ -1,8 +1,9 @@
-import { Text }               from 'figma-js'
+import type { Text }          from 'figma-js'
+
 import { createElement }      from 'react'
 
-import { CreateTextStrategy } from '../create-text.strategy.js'
-import { theme }              from './tests.constants.js'
+import { CreateTextStrategy } from './create-text.strategy.js'
+import { theme }              from '../strategies.constants.js'
 
 jest.mock('react', () => ({
   createElement: jest.fn(),

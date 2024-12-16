@@ -1,7 +1,7 @@
 import { Fragment }            from 'react'
 import { createElement }       from 'react'
 
-import { CreateInputStrategy } from '../create-input.strategy.js'
+import { CreateInputStrategy } from './create-input.strategy.js'
 
 jest.mock('react', () => ({
   createElement: jest.fn(),

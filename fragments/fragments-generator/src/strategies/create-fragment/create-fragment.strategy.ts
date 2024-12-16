@@ -1,5 +1,5 @@
-import type { CreteFragmentResult } from './strategy.interfaces.js'
-import type { TreeElement }         from './strategy.interfaces.js'
+import type { CreteFragmentResult } from '../strategies.interfaces.js'
+import type { TreeElement }         from '../strategies.interfaces.js'
 import type { FileNodesResponse }   from 'figma-js'
 import type { ReactElement }        from 'react'
 
@@ -14,10 +14,10 @@ import { isInstance }               from '@atls/figma-utils'
 import { isText }                   from '@atls/figma-utils'
 import { walk }                     from '@atls/figma-utils'
 
-import { CreateBoxStrategy }        from './create-box.strategy.js'
-import { CreateButtonStrategy }     from './create-button.strategy.js'
-import { CreateInputStrategy }      from './create-input.strategy.js'
-import { CreateTextStrategy }       from './create-text.strategy.js'
+import { CreateBoxStrategy }        from '../create-box/index.js'
+import { CreateButtonStrategy }     from '../create-button/index.js'
+import { CreateInputStrategy }      from '../create-input/index.js'
+import { CreateTextStrategy }       from '../create-text/index.js'
 
 export class CreateFragmentStrategy {
   private elements: Record<string, TreeElement> = {}
@@ -37,7 +37,7 @@ export class CreateFragmentStrategy {
     this.input = new CreateInputStrategy()
   }
 
-  private createFragmentElement(elements: TreeElement[]) {
+  private createFragmentElement(elements: Array<TreeElement>) {
     if (elements.length <= 1) {
       return this.createElementsTree(elements[0])
     }

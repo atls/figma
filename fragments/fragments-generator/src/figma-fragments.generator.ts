@@ -1,6 +1,6 @@
 import { FileNodesResponse }      from 'figma-js'
 
-import { CreateFragmentStrategy } from './strategy/index.js'
+import { CreateFragmentStrategy } from './strategies/index.js'
 
 export class FigmaThemeFragmentsGenerator {
   readonly name = 'fragments'

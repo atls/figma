@@ -1,3 +1,7 @@
+export const THEME_KEY_PREFIX = '$'
+
+export const colorsIgnorePatterns = ['button', 'input']
+
 export const theme = {
   colors: {
     white: 'rgba(255, 255, 255, 1)',
