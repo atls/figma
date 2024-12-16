@@ -16,13 +16,15 @@ export const processFile = (filePath: string): any => {
   assert.ok(code, `Could not process the code with path ${filePath}. Please try again`)
 
   const module = { exports: {} }
-  const exports = module.exports
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { exports } = module
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const require = (modulePath: string): any => {
     const absolutePath = path.resolve(path.dirname(filePath), modulePath)
     return processFile(absolutePath)
   }
 
-  // eslint-disable-next-line no-eval, security/detect-eval-with-expression
+  // eslint-disable-next-line no-eval
   eval(`
     (function(exports, module, require) {
       ${code}
