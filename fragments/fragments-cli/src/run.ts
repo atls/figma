@@ -1,6 +1,5 @@
-import assert                           from 'node:assert'
-
-import { join }                         from 'path'
+import assert                           from 'node:assert/strict'
+import { join }                         from 'node:path'
 
 import { FigmaFileLoader }              from '@atls/figma-file-loader'
 import { FigmaThemeFragmentsGenerator } from '@atls/figma-fragments-generator'

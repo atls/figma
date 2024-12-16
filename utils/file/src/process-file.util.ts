@@ -1,9 +1,8 @@
-import assert           from 'node:assert'
+import assert           from 'node:assert/strict'
+import { readFileSync } from 'node:fs'
+import path             from 'node:path'
 
 import { transform }    from '@babel/standalone'
-
-import path             from 'path'
-import { readFileSync } from 'fs'
 
 export const processFile = (filePath: string): any => {
   const file = readFileSync(filePath.replace('.js', '.ts')).toString('utf-8')

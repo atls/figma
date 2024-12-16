@@ -1,6 +1,7 @@
-import path         from 'path'
+import { promises } from 'node:fs'
+import path         from 'node:path'
+
 import prettier     from 'prettier'
-import { promises } from 'fs'
 
 export const writeFile = async (filePath: string, name: string, content: string): Promise<void> => {
   const target = path.join(filePath, name)
