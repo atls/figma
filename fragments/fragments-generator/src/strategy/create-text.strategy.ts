@@ -7,10 +7,6 @@ import { createElement }        from 'react'
 import { ThemeMappingStrategy } from './theme-mapping.strategy.js'
 
 export class CreateTextStrategy extends ThemeMappingStrategy {
-  constructor(theme: Record<string, Record<string, string>>) {
-    super(theme)
-  }
-
   private createAttributes(style: TypeStyle, fills: readonly Paint[]) {
     const fontSize = style?.fontSize || undefined
     const fontWeight = style?.fontWeight || undefined
