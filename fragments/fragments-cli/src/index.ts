@@ -1,11 +1,17 @@
 import { createInterface } from 'node:readline'
 
-import logger              from 'npmlog'
 import { program }         from 'commander'
+import { pino }            from 'pino'
 
 import { run }             from './run.js'
 
-logger.heading = 'figma-fragments'
+const logger = pino({
+  name: 'figma-fragments',
+  level: 'info',
+  transport: {
+    target: 'pino-pretty',
+  },
+})
 
 program
   .option('-o, --output [output]', 'Output dir')
@@ -19,7 +25,7 @@ const fileId = program.args.at(0)
 const options = program.opts()
 
 if (options.verbose) {
-  logger.level = 'verbose'
+  logger.level = 'debug'
 }
 
 if (!fileId) {
@@ -31,14 +37,18 @@ if (!fileId) {
   })
 
   readline.question(`Enter your Figma access token:\n`, (id) => {
-    if (!id || id === '') throw Error('ID must not be empty')
+    if (!id) {
+      logger.error('ID must not be empty')
+      readline.close()
+      return
+    }
     // eslint-disable-next-line dot-notation
     process.env['FIGMA_TOKEN'] = id
 
     readline.close()
 
     run(fileId, options.nodeId, options.output, options.theme)
-      .then(() => logger.info('info', 'Fragments successful generated'))
-      .catch((error) => logger.error('error', error))
+      .then(() => logger.info('Fragments successful generated'))
+      .catch((error) => logger.error(error, 'Error generating fragments'))
   })
 }
