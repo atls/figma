@@ -18,6 +18,7 @@ program
   .option('-t, --theme <theme>', 'Path to theme file')
   .option('-v, --verbose', 'Verbose output')
   .option('-n, --node-id <nodeId>', 'Node id for generating')
+  .option('--name <name>', 'The name of the generated fragment')
   .arguments('<fileId>')
   .parse(process.argv)
 
@@ -47,7 +48,7 @@ if (!fileId) {
 
     readline.close()
 
-    run(fileId, options.nodeId, options.output, options.theme)
+    run(fileId, options.nodeId, options.output, options.theme, options.name)
       .then(() => logger.info('Fragments successful generated'))
       .catch((error) => logger.error(error, 'Error generating fragments'))
   })

@@ -271,6 +271,7 @@ __metadata:
     "@yarnpkg/builder": "npm:4.1.1"
     commander: "npm:12.1.0"
     figma-js: "npm:1.16.1-0"
+    kebab-case: "npm:2.0.1"
     pino: "npm:9.5.0"
     pino-pretty: "npm:13.0.0"
     ts-node: "npm:10.9.2"
@@ -7256,6 +7257,13 @@ __metadata:
     graceful-fs:
       optional: true
   checksum: 10/03014769e7dc77d4cf05fa0b534907270b60890085dd5e4d60a382ff09328580651da0b8b4cdf44d91e4c8ae64d91791d965f05707beff000ed494a38b6fec85
+  languageName: node
+  linkType: hard
+
+"kebab-case@npm:2.0.1":
+  version: 2.0.1
+  resolution: "kebab-case@npm:2.0.1"
+  checksum: 10/dcfae8fad06e481a98a542c96cafef8f6e0c3a896f127ed6e05310f202588bea73971d1d620ebd48be6e93cee04230c9ccb97f0f1ed8ad01b3ac8ba1f2c3509d
   languageName: node
   linkType: hard
 

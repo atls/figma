@@ -25,6 +25,7 @@
     "@atls/figma-fragments-generator": "workspace:*",
     "commander": "12.1.0",
     "figma-js": "1.16.1-0",
+    "kebab-case": "2.0.1",
     "pino": "9.5.0",
     "pino-pretty": "13.0.0"
   },

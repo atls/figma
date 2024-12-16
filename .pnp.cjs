@@ -455,6 +455,7 @@ const RAW_RUNTIME_STATE =
           ["@yarnpkg/builder", "npm:4.1.1"],\
           ["commander", "npm:12.1.0"],\
           ["figma-js", "npm:1.16.1-0"],\
+          ["kebab-case", "npm:2.0.1"],\
           ["pino", "npm:9.5.0"],\
           ["pino-pretty", "npm:13.0.0"],\
           ["ts-node", "virtual:63996f181b49e19025c5dcecfbb3d817b3bcc13460e0f9e0c2bce2e464d78fa9e18ed9b6d33bd212a0aec2ce50e61aadce49fae9bb9fe09e311ab0ae3bd8b92b#npm:10.9.2"],\
@@ -9852,6 +9853,15 @@ const RAW_RUNTIME_STATE =
           ["jsonfile", "npm:6.1.0"],\
           ["graceful-fs", "npm:4.2.11"],\
           ["universalify", "npm:2.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["kebab-case", [\
+      ["npm:2.0.1", {\
+        "packageLocation": "../.yarn/berry/cache/kebab-case-npm-2.0.1-f8a6727ebb-10.zip/node_modules/kebab-case/",\
+        "packageDependencies": [\
+          ["kebab-case", "npm:2.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\

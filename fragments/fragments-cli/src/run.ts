@@ -1,6 +1,8 @@
 import assert                           from 'node:assert/strict'
 import { join }                         from 'node:path'
 
+import kebabCase                        from 'kebab-case'
+
 import { FigmaFileLoader }              from '@atls/figma-file-loader'
 import { FigmaThemeFragmentsGenerator } from '@atls/figma-fragments-generator'
 import { processFile }                  from '@atls/figma-file-utils'
@@ -10,7 +12,8 @@ export const run = async (
   fileId: string,
   nodeId: string,
   output: string,
-  themeFilePath: string
+  themeFilePath: string,
+  name: string = 'GeneratedFragment'
 ) => {
   const absoluteThemeFilePath = join(process.cwd(), themeFilePath)
   const exports = processFile(absoluteThemeFilePath)
@@ -27,7 +30,9 @@ export const run = async (
 
   const response = await loader.loadNode(fileId, nodeId)
 
-  const component = generator.generate(response, theme)
+  const component = generator.generate(response, theme, name)
 
-  await writeFile(output, 'fragments.tsx', component)
+  const fileName = `${kebabCase(name, false)}.component.tsx`
+
+  await writeFile(output, fileName, component)
 }
