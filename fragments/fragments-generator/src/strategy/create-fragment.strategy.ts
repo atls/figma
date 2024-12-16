@@ -16,19 +16,25 @@ import { walk }                     from '@atls/figma-utils'
 
 import { CreateBoxStrategy }        from './create-box.strategy.js'
 import { CreateButtonStrategy }     from './create-button.strategy.js'
+import { CreateInputStrategy }      from './create-input.strategy.js'
 import { CreateTextStrategy }       from './create-text.strategy.js'
 
 export class CreateFragmentStrategy {
   private elements: Record<string, TreeElement> = {}
 
   private text: CreateTextStrategy
+
   private box: CreateBoxStrategy
+
   private button: CreateButtonStrategy
+
+  private input: CreateInputStrategy
 
   constructor(theme: Record<string, Record<string, string>>) {
     this.text = new CreateTextStrategy(theme)
     this.box = new CreateBoxStrategy(theme)
     this.button = new CreateButtonStrategy()
+    this.input = new CreateInputStrategy()
   }
 
   private createFragmentElement(elements: TreeElement[]) {
@@ -67,20 +73,35 @@ export class CreateFragmentStrategy {
 
   execute(nodes: FileNodesResponse['nodes']): CreteFragmentResult {
     const imports = new Set<string>()
+    const ignoreNodes = new Set<string>()
 
     walk(nodes, (node) => {
+      if (ignoreNodes.has(node.id)) {
+        return
+      }
+
       if (isInstance(node)) {
-        if (node.name.includes('Button')) {
+        if (node.name.toLowerCase().includes('button')) {
           this.button.getImports().forEach((value) => imports.add(value))
 
-          const buttonChildren = node?.children.map((node) => node.id) || []
-          const buttonDeepChildren = isInstance(node.children[0])
-            ? node.children[0].children.map((node) => node.id) || []
-            : []
+          const buttonChildren = new Set<string>()
+          walk(node?.children, (child) => buttonChildren.add(child.id))
 
           this.elements[node.id] = {
             element: this.button.createElement(node),
-            childrenIds: [...buttonChildren, ...buttonDeepChildren],
+            childrenIds: Array.from(buttonChildren),
+            parentId: this.findParentId(node.id),
+          }
+        }
+
+        if (node.name.toLowerCase().includes('input')) {
+          this.input.getImports().forEach((value) => imports.add(value))
+
+          walk(node?.children, (child) => ignoreNodes.add(child.id))
+
+          this.elements[node.id] = {
+            element: this.input.createElement(node),
+            childrenIds: [],
             parentId: this.findParentId(node.id),
           }
         }
@@ -101,7 +122,7 @@ export class CreateFragmentStrategy {
 
         this.elements[node.id] = {
           element: this.box.createElement(node),
-          childrenIds: node?.children.map((node) => node.id) || [],
+          childrenIds: node?.children.map((child) => child.id) || [],
           parentId: this.findParentId(node.id),
         }
       }
