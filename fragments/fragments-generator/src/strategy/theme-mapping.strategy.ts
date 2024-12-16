@@ -21,7 +21,7 @@ export class ThemeMappingStrategy {
     const vars = this.theme[themeKey]
 
     if (!vars) {
-      return
+      return undefined
     }
 
     const valueKey = Object.entries(vars).find(([key, value]) => {
@@ -68,7 +68,16 @@ export class ThemeMappingStrategy {
   }
 
   getTextAlign(textAlignHorizontal: TypeStyle['textAlignHorizontal']): string | undefined {
-    return textAlignHorizontal === 'LEFT' ? undefined : textAlignHorizontal.toLocaleLowerCase()
+    switch (textAlignHorizontal) {
+      case 'RIGHT':
+        return 'right'
+      case 'CENTER':
+        return 'center'
+      case 'JUSTIFIED':
+        return 'justify'
+      default:
+        return undefined
+    }
   }
 
   getLineHeight(
@@ -87,11 +96,14 @@ export class ThemeMappingStrategy {
   }
 
   getJustifyContent(primaryAxisAlignItems: FrameBase['primaryAxisAlignItems']): string | undefined {
-    if (primaryAxisAlignItems === 'SPACE_BETWEEN') {
-      return 'space-between'
+    switch (primaryAxisAlignItems) {
+      case 'SPACE_BETWEEN':
+        return 'space-between'
+      case 'CENTER':
+        return 'center'
+      default:
+        return undefined
     }
-
-    return primaryAxisAlignItems === 'CENTER' ? 'center' : undefined
   }
 
   getAlignItems(counterAxisAlignItems: FrameBase['counterAxisAlignItems']): string | undefined {
