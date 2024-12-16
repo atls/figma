@@ -4,10 +4,6 @@ import { createElement }        from 'react'
 import { ThemeMappingStrategy } from './theme-mapping.strategy.js'
 
 export class CreateBoxStrategy extends ThemeMappingStrategy {
-  constructor(theme: Record<string, Record<string, string>>) {
-    super(theme)
-  }
-
   getImports() {
     return [`import { Box } from '@ui/layout'`]
   }
