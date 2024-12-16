@@ -15,8 +15,7 @@
   ],
   "scripts": {
     "build": "yarn library build",
-    "generate-fragments": "ts-node-esm src/index.ts",
-    "generate-fragments-new": "node --import @swc-node/register/esm-register src/index.ts",
+    "generate-fragments": "node --import @swc-node/register/esm-register src/index.ts",
     "prepack": "yarn run build",
     "postpack": "rm -rf dist"
   },
