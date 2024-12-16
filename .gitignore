@@ -50,5 +50,4 @@ package.tgz
 generated/
 
 # VS Code
-.yarn/sdks
 .vscode
