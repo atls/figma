@@ -7,10 +7,12 @@ import { run }             from './run.js'
 
 const logger = pino({
   name: 'figma-fragments',
-  level: 'info',
+  level: process.env.LOG_LEVEL ?? 'debug',
   transport: {
     target: 'pino-pretty',
+    options: { colorize: true, translateTime: 'SYS:standard' },
   },
+  base: undefined,
 })
 
 program
