@@ -50,6 +50,25 @@ ID = SHoss54mn2SZLnI0e3OiJj
 
 Первым промптом с вас спросят Access Token.
 
+## Генератор фрагментов
+
+Пакет `@atls/figma-fragments-cli` является энтрипоинтом по созданию фрагментов. Для создание `<Box>` фрагмента из дизайна берутся ноды c типом `FRAME`, для `<Text>` с типом `TEXT`, `<Button>` и `<Input>` с типом `INSTANCE` с условием, что в название ноды есть имя создаваемого фрагмента, например `Pattern/Button`.
+
+Пререквизиты:
+
+- ID файла Figma. Можно найти в ссылке на любой объект внутри файла Figma, например:
+  https://www.figma.com/file/SHoss54mn2SZLnI0e3OiJj/...
+- Node ID фрагмента Figma можно найти в сёрч параметрах ссылки
+- Access Token от
+  Figma. [Инструкция тут](https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens)
+  . Токену необходимы доступы
+  к чтению `File content` и `Dev resources`
+
+Необходимо запустить
+скрипт `generate-fragments` с первым аргументом - ID файла Figma, из которого будет браться темаЮ, и обязательными опциями, просмотр всех `--help`.
+
+Первым промптом с вас спросят Access Token.
+
 ## Архив
 
 <details>

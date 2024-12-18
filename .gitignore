@@ -48,3 +48,6 @@ package.tgz
 
 # Generated files
 generated/
+
+# VS Code
+.vscode

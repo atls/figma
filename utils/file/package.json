@@ -1,0 +1,29 @@
+{
+  "name": "@atls/figma-file-utils",
+  "version": "0.0.4",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn library build",
+    "prepack": "yarn run build",
+    "postpack": "rm -rf dist"
+  },
+  "dependencies": {
+    "@babel/standalone": "7.22.20",
+    "prettier": "2.8.8"
+  },
+  "devDependencies": {
+    "@types/babel__core": "7.20.5",
+    "@types/babel__standalone": "7.1.7",
+    "@types/node": "18.19.34"
+  },
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts"
+  }
+}
