@@ -1,7 +1,7 @@
 import { createInterface } from 'node:readline'
 
-import logger              from 'npmlog'
 import { program }         from 'commander'
+import logger              from 'npmlog'
 
 import { run }             from './run.js'
 
