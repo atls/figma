@@ -19,7 +19,7 @@
     "node-fetch": "3.3.2"
   },
   "devDependencies": {
-    "@types/node": "18.19.34"
+    "@types/node": "22.10.2"
   },
   "peerDependencies": {
     "figma-js": "*"
