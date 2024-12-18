@@ -11,7 +11,10 @@ export class FigmaThemeFragmentsGenerator {
       import { memo } from 'react'
       ${imports?.join('\n')}
         
-      export const ${name} = memo(() => (${fragment}))`
+      export const ${name} = memo(() => (${fragment}))
+      
+      ${name}.displayName = '${name}'
+      `
   }
 
   generate(
