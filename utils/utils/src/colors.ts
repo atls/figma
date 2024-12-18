@@ -1,5 +1,5 @@
-import namer     from 'color-namer'
 import { Color } from 'figma-js'
+import namer     from 'color-namer'
 
 export const isColor = (node: any): node is Color => node.r && node.g && node.b && node.a
 
