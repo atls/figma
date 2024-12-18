@@ -5,8 +5,8 @@ import kebabCase                        from 'kebab-case'
 
 import { FigmaFileLoader }              from '@atls/figma-file-loader'
 import { FigmaThemeFragmentsGenerator } from '@atls/figma-fragments-generator'
-import { processFile }                  from '@atls/figma-file-utils'
 import { writeFile }                    from '@atls/figma-file-utils'
+import { processFile }                  from '@atls/figma-file-utils'
 
 export const run = async (
   fileId: string,
