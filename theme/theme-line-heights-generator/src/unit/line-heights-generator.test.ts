@@ -1,3 +1,7 @@
+import type { FileResponse }              from 'figma-js'
+import type { Node }                      from 'figma-js'
+import type { Text }                      from 'figma-js'
+
 import { Group }                          from '../Constants.js'
 import { FigmaThemeLineHeightsGenerator } from '../FigmaThemeLineHeightsGenerator.js'
 import { SimpleMappingStrategy }          from '../strategy/index.js'
@@ -16,7 +20,7 @@ describe('FigmaThemeLineHeightsGenerator', () => {
       { type: 'TEXT', style: { fontSize: 16, lineHeightPx: 24 } },
     ]
 
-    const textNodes = generator.getLineHeight(nodes)
+    const textNodes = generator.getLineHeight(nodes as never as ReadonlyArray<Node>)
 
     expect(textNodes).toEqual([
       { type: 'TEXT', style: { fontSize: 14, lineHeightPx: 21 } },
@@ -35,8 +39,7 @@ describe('FigmaThemeLineHeightsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as never as FileResponse)
 
     expect(result).toEqual({
       name: 'lineHeights',
@@ -54,8 +57,7 @@ describe('FigmaThemeLineHeightsGenerator', () => {
       { type: 'TEXT', style: { fontSize: 16, lineHeightPx: 24 } },
     ]
 
-    // @ts-ignore
-    const result = strategy.execute(textNodes)
+    const result = strategy.execute(textNodes as never as Array<Text>)
 
     expect(result).toEqual({
       [`${Group.NORMAL}.default`]: '1.3',
@@ -66,7 +68,7 @@ describe('FigmaThemeLineHeightsGenerator', () => {
   it('should return empty object if no text nodes found', () => {
     const nodes = [{ type: 'RECTANGLE' }, { type: 'CIRCLE' }]
 
-    const textNodes = generator.getLineHeight(nodes)
+    const textNodes = generator.getLineHeight(nodes as never as ReadonlyArray<Node>)
 
     expect(textNodes).toEqual([])
 
@@ -76,8 +78,7 @@ describe('FigmaThemeLineHeightsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as never as FileResponse)
 
     expect(result).toEqual({
       name: 'lineHeights',

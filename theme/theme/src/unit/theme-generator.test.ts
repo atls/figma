@@ -1,10 +1,11 @@
-import { FileResponse }   from 'figma-js'
-import { Node }           from 'figma-js'
-import { promises as fs } from 'fs'
-import path               from 'path'
-import prettier           from 'prettier'
+import type { FileResponse } from 'figma-js'
+import type { Node }         from 'figma-js'
 
-import { FigmaTheme }     from '../FigmaTheme.js'
+import { promises as fs }    from 'fs'
+import path                  from 'path'
+import prettier              from 'prettier'
+
+import { FigmaTheme }        from '../FigmaTheme.js'
 
 jest.mock('fs', () => ({
   promises: {
@@ -14,6 +15,7 @@ jest.mock('fs', () => ({
 
 jest.mock('prettier', () => ({
   resolveConfig: jest.fn().mockResolvedValue({}),
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   format: jest.fn((content, options) => content),
 }))
 
@@ -93,7 +95,7 @@ describe('FigmaTheme', () => {
     const prefix = 'prefix-'
     theme = new FigmaTheme(mockFileResponse, outputPath, [], [], prefix)
 
-    const nodes: Node[] = [
+    const nodes: Array<Node> = [
       {
         id: '1',
         name: 'prefix-Component-1',

@@ -1,3 +1,5 @@
+import type { Instance }        from 'figma-js'
+
 import { Fragment }             from 'react'
 import { createElement }        from 'react'
 
@@ -26,9 +28,9 @@ describe('CreateButtonStrategy', () => {
         componentProperties: {
           Style: { value: 'Primary' },
         },
-      } as any
+      }
 
-      strategy.createElement(node)
+      strategy.createElement(node as never as Instance)
 
       expect(createElement).toHaveBeenCalledWith('Button', {
         variant: 'primary',
@@ -36,9 +38,9 @@ describe('CreateButtonStrategy', () => {
     })
 
     it('creates a Fragment element when componentProperties are missing', () => {
-      const node = {} as any
+      const node = {}
 
-      strategy.createElement(node)
+      strategy.createElement(node as Instance)
 
       expect(createElement).toHaveBeenCalledWith(Fragment)
     })
@@ -46,9 +48,9 @@ describe('CreateButtonStrategy', () => {
     it('creates a Fragment element when Style is not defined in componentProperties', () => {
       const node = {
         componentProperties: {},
-      } as any
+      }
 
-      strategy.createElement(node)
+      strategy.createElement(node as never as Instance)
 
       expect(createElement).toHaveBeenCalledWith(Fragment)
     })

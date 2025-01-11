@@ -1,6 +1,8 @@
 import type { Effect }          from 'figma-js'
 import type { Paint }           from 'figma-js'
 
+import { describe }             from 'node:test'
+
 import { THEME_KEY_PREFIX }     from '../strategies.constants.js'
 import { ThemeMappingStrategy } from './theme-mapping.strategy.js'
 import { theme }                from '../strategies.constants.js'
@@ -28,7 +30,7 @@ describe('ThemeMappingStrategy', () => {
 
   describe('getColor', () => {
     it('returns the color key from the theme when opacity is provided', () => {
-      const fills: Paint[] = [
+      const fills: Array<Paint> = [
         { color: { r: 1, g: 1, b: 1, a: 1 }, blendMode: 'COLOR', type: 'SOLID' },
       ]
 
@@ -136,7 +138,7 @@ describe('ThemeMappingStrategy', () => {
 
   describe('getBorder', () => {
     it('returns the border value with weight, type, and color', () => {
-      const strokes: Paint[] = [
+      const strokes: Array<Paint> = [
         { color: { r: 1, g: 1, b: 1, a: 1 }, blendMode: 'COLOR', type: 'SOLID', opacity: 0.1 },
       ]
 
@@ -150,7 +152,7 @@ describe('ThemeMappingStrategy', () => {
 
   describe('getShadow', () => {
     it('returns the shadow value for DROP_SHADOW effects', () => {
-      const effects: Effect[] = [
+      const effects: Array<Effect> = [
         {
           type: 'DROP_SHADOW',
           radius: 1,

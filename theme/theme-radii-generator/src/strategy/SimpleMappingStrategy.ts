@@ -1,3 +1,5 @@
+import type { Node }                    from 'figma-js'
+
 import { Group }                        from '../Constants.js'
 import { RadiiSizeDefaultName }         from '../Constants.js'
 import { Strategy }                     from './Strategy.js'
@@ -5,8 +7,8 @@ import { groupNamesGreaterThanDefault } from '../Constants.js'
 import { groupNamesLessThanDefault }    from '../Constants.js'
 
 export class SimpleMappingStrategy extends Strategy {
-  fillSizes(radii) {
-    const tempTheme = {}
+  fillSizes(radii: Array<number>): object {
+    const tempTheme: Record<string, number> = {}
 
     const middle = Math.floor(radii.length / 2)
 
@@ -24,14 +26,17 @@ export class SimpleMappingStrategy extends Strategy {
     if (radii.length > 1) {
       for (const value of less) {
         const nextGroupName = groupLess.pop()
-        tempTheme[nextGroupName as string] = value
+
+        if (nextGroupName) {
+          tempTheme[nextGroupName] = value
+        }
       }
     }
 
     const reversedKeysTheme = Object.keys(tempTheme).reverse()
     const themeValues = Object.values(tempTheme)
 
-    const theme = reversedKeysTheme.reduce(
+    const theme: Record<string, unknown> = reversedKeysTheme.reduce(
       (result, key, index) => ({
         ...result,
         [key]: themeValues[index],
@@ -47,20 +52,23 @@ export class SimpleMappingStrategy extends Strategy {
 
     for (const value of greater) {
       const nextGroupName = groupGreater.pop()
-      theme[nextGroupName as string] = value
+
+      if (nextGroupName) {
+        theme[nextGroupName] = value
+      }
     }
 
     return theme
   }
 
-  convertToThemeValues(sizes: {}, group: Group) {
+  convertToThemeValues(sizes: {}, group: Group): object {
     return Object.entries(sizes).reduce(
-      (object, [key, value]) => ({ ...object, [`${group}.${key}`]: `${value}px` }),
+      (object, [key, value]) => ({ ...object, [`${group}.${key}`]: `${String(value)}px` }),
       {}
     )
   }
 
-  execute(nodes: any[] = []) {
+  execute(nodes: ReadonlyArray<Node> = []): object {
     const stat = this.getStat(nodes)
 
     const radii = Array.from(stat.keys()).sort((a, b) => a - b)

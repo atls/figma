@@ -1,10 +1,10 @@
-import { Text }        from 'figma-js'
+import type { Text }   from 'figma-js'
 
 import { FontWeights } from '../Constants.js'
 import { Strategy }    from './Strategy.js'
 
 export class SimpleMappingStrategy extends Strategy {
-  fillWeights(fontWeights) {
+  fillWeights(fontWeights: Array<number>): object {
     return fontWeights.reduce((result, fontWeight) => {
       const fontWeightItem = FontWeights.filter((item) => item.value === fontWeight)[0]
 
@@ -14,7 +14,7 @@ export class SimpleMappingStrategy extends Strategy {
     }, {})
   }
 
-  execute(textNodes: Text[] = []) {
+  execute(textNodes: Array<Text> = []): object {
     const stat = this.getStat(textNodes)
 
     const fontWeights = Array.from(stat.keys()).sort((a, b) => a - b)

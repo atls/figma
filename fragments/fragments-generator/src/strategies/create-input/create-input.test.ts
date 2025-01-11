@@ -1,3 +1,5 @@
+import type { Instance }       from 'figma-js'
+
 import { Fragment }            from 'react'
 import { createElement }       from 'react'
 
@@ -34,9 +36,9 @@ describe('CreateInputStrategy', () => {
             children: [{ type: 'TEXT', characters: 'Test text' }],
           },
         ],
-      } as any
+      }
 
-      strategy.createElement(node)
+      strategy.createElement(node as unknown as Instance)
 
       expect(createElement).toHaveBeenCalledWith('Input', {
         variant: 'primary',
@@ -50,9 +52,9 @@ describe('CreateInputStrategy', () => {
           Type: { value: 'Primary' },
         },
         children: [],
-      } as any
+      }
 
-      strategy.createElement(node)
+      strategy.createElement(node as unknown as Instance)
 
       expect(createElement).toHaveBeenCalledWith('Input', {
         variant: 'primary',
@@ -61,9 +63,9 @@ describe('CreateInputStrategy', () => {
     })
 
     it('creates a Fragment element when componentProperties are missing', () => {
-      const node = {} as any
+      const node = {}
 
-      strategy.createElement(node)
+      strategy.createElement(node as Instance)
 
       expect(createElement).toHaveBeenCalledWith(Fragment)
     })

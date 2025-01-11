@@ -1,14 +1,15 @@
-import { FileResponse }              from 'figma-js'
+import type { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
+import type { FileResponse }              from 'figma-js'
+import type { Node }                      from 'figma-js'
 
-import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
-import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
+import { FigmaThemeGenerator }            from '@atls/figma-theme-generator-common'
 
-import { SimpleMappingStrategy }     from './strategy/index.js'
+import { SimpleMappingStrategy }          from './strategy/index.js'
 
 export class FigmaThemeRadiiGenerator extends FigmaThemeGenerator {
   readonly name = 'radii'
 
-  getRadii(nodes) {
+  getRadii(nodes: ReadonlyArray<Node>): object {
     const strategy = new SimpleMappingStrategy()
 
     return strategy.execute(nodes)

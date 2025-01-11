@@ -1,10 +1,10 @@
-import { Text }     from 'figma-js'
+import type { Text } from 'figma-js'
 
-import { Fonts }    from '../Constants.js'
-import { Strategy } from './Strategy.js'
+import { Fonts }     from '../Constants.js'
+import { Strategy }  from './Strategy.js'
 
 export class SimpleMappingStrategy extends Strategy {
-  fillFonts(fonts) {
+  fillFonts(fonts: Array<string>): object {
     return fonts.reduce(
       (result, font, index) => ({
         ...result,
@@ -14,7 +14,7 @@ export class SimpleMappingStrategy extends Strategy {
     )
   }
 
-  execute(textNodes: Text[] = []) {
+  execute(textNodes: Array<Text> = []): object {
     const stat = this.getStat(textNodes)
 
     const sortedFonts = Array.from(stat.entries())

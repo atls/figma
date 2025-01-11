@@ -5,18 +5,20 @@ import logger              from 'npmlog'
 
 import { run }             from './run.js'
 
-logger.heading = 'figma-assets' as string
-;(program as any)
+logger.heading = 'figma-assets'
+program
   .option('-o, --output [output]', 'Output dir')
   .option('-v, --verbose', 'Verbose output')
   .arguments('<fileId> <documentId>')
   .parse(process.argv)
 
-if ((program as any).verbose) {
+const fileId = program.args.at(0)
+const documentId = program.args.at(1)
+const options = program.opts()
+
+if (options.verbose) {
   logger.level = 'verbose'
 }
-
-const [fileId, documentId] = (program as any).args
 
 if (!fileId) {
   logger.error('fileId', 'Figma file id required.')
@@ -32,9 +34,16 @@ if (!fileId) {
     if (!id || id === '') throw Error('ID must not be empty')
     // eslint-disable-next-line dot-notation
     process.env['FIGMA_TOKEN'] = id
+
     readline.close()
-    run(fileId, documentId, (program as any).output)
-      .then(() => logger.info('run', 'Assets successful generated'))
-      .catch((error) => logger.error('error', error.message))
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    run(fileId, documentId, options.output)
+      .then((): void => {
+        logger.info('run', 'Assets successful generated')
+      })
+      .catch((error): void => {
+        logger.error('error', error.message)
+      })
   })
 }

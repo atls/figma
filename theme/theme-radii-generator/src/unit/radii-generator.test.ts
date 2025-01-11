@@ -1,3 +1,6 @@
+import type { FileResponse }        from 'figma-js'
+import type { Node }                from 'figma-js'
+
 import { Group }                    from '../Constants.js'
 import { FigmaThemeRadiiGenerator } from '../FigmaThemeRadiiGenerator.js'
 import { SimpleMappingStrategy }    from '../strategy/index.js'
@@ -16,7 +19,7 @@ describe('FigmaThemeRadiiGenerator', () => {
       { type: 'TEXT', style: { fontSize: 16 } },
     ]
 
-    const radii = generator.getRadii(nodes)
+    const radii = generator.getRadii(nodes as never as ReadonlyArray<Node>)
 
     expect(radii).toEqual({
       [`${Group.SMALL}.semiDefault`]: '2px',
@@ -37,8 +40,7 @@ describe('FigmaThemeRadiiGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as never as FileResponse)
 
     expect(result).toEqual({
       name: 'radii',
@@ -61,8 +63,7 @@ describe('FigmaThemeRadiiGenerator', () => {
       { cornerRadius: 20 },
     ]
 
-    // @ts-ignore
-    const result = strategy.execute(nodes)
+    const result = strategy.execute(nodes as never as ReadonlyArray<Node>)
 
     expect(result).toEqual({
       [`${Group.SMALL}.semiDefault`]: '2px',
@@ -76,7 +77,7 @@ describe('FigmaThemeRadiiGenerator', () => {
   it('should return empty object if no nodes with radii found', () => {
     const nodes = [{ type: 'TEXT', style: { fontSize: 16 } }]
 
-    const radii = generator.getRadii(nodes)
+    const radii = generator.getRadii(nodes as never as ReadonlyArray<Node>)
 
     expect(radii).toEqual({})
 
@@ -86,8 +87,7 @@ describe('FigmaThemeRadiiGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as never as FileResponse)
 
     expect(result).toEqual({
       name: 'radii',

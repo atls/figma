@@ -1,3 +1,7 @@
+import type { FileResponse }            from 'figma-js'
+import type { Text }                    from 'figma-js'
+import type { Node }                    from 'figma-js'
+
 import { Group }                        from '../Constants.js'
 import { FigmaThemeFontSizesGenerator } from '../FigmaThemeFontSizesGenerator.js'
 import { SimpleMappingStrategy }        from '../strategy/index.js'
@@ -16,7 +20,7 @@ describe('FigmaThemeFontSizesGenerator', () => {
       { type: 'TEXT', style: { fontSize: 24 } },
     ]
 
-    const textNodes = generator.getFontSizes(nodes)
+    const textNodes = generator.getFontSizes(nodes as never as ReadonlyArray<Node>)
 
     expect(textNodes).toEqual([
       { type: 'TEXT', style: { fontSize: 16 } },
@@ -35,8 +39,7 @@ describe('FigmaThemeFontSizesGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'fontSizes',
@@ -55,8 +58,7 @@ describe('FigmaThemeFontSizesGenerator', () => {
       { type: 'TEXT', style: { fontSize: 28 } },
     ]
 
-    // @ts-ignore
-    const result = strategy.execute(textNodes)
+    const result = strategy.execute(textNodes as unknown as Array<Text>)
 
     expect(result).toEqual({
       [`${Group.SMALL}.default`]: '14px',
@@ -68,7 +70,7 @@ describe('FigmaThemeFontSizesGenerator', () => {
   it('should return empty object if no text nodes found', () => {
     const nodes = [{ type: 'RECTANGLE' }, { type: 'CIRCLE' }]
 
-    const textNodes = generator.getFontSizes(nodes)
+    const textNodes = generator.getFontSizes(nodes as never as ReadonlyArray<Node>)
 
     expect(textNodes).toEqual([])
 
@@ -78,8 +80,7 @@ describe('FigmaThemeFontSizesGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'fontSizes',
