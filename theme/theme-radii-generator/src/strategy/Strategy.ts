@@ -1,19 +1,23 @@
-import { walk } from '@atls/figma-utils'
+import type { Node } from 'figma-js'
+
+import { walk }      from '@atls/figma-utils'
 
 export abstract class Strategy {
-  abstract execute(radii: number[]): any
-
-  getStat(nodes: any[]): Map<number, number> {
+  getStat(nodes: ReadonlyArray<Node>): Map<number, number> {
     const stat = new Map<number, number>()
 
-    walk(nodes, (node) => {
-      if (node.cornerRadius) {
+    walk(nodes, (node: Node) => {
+      if ('cornerRadius' in node && node.cornerRadius) {
         const radius = Math.round(node.cornerRadius)
         stat.set(radius, (stat.get(radius) || 0) + 1)
       }
 
-      if (node.rectangleCornerRadii) {
-        node.rectangleCornerRadii.forEach((radius) => {
+      if (
+        'rectangleCornerRadii' in node &&
+        node.rectangleCornerRadii &&
+        Array.isArray(node.rectangleCornerRadii)
+      ) {
+        node.rectangleCornerRadii?.forEach((radius: number) => {
           const roundedRadius = Math.round(radius)
           stat.set(roundedRadius, (stat.get(roundedRadius) || 0) + 1)
         })
@@ -22,4 +26,6 @@ export abstract class Strategy {
 
     return stat
   }
+
+  abstract execute(radii: ReadonlyArray<Node>): object
 }

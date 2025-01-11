@@ -1,4 +1,4 @@
-import { FileResponse } from 'figma-js'
+import type { FileResponse } from 'figma-js'
 
 export interface FigmaThemeGeneratorValues {
   name: string
@@ -16,7 +16,7 @@ export abstract class FigmaThemeGenerator {
     this.method = method
   }
 
-  exportValuesTemplate(name: string, values: any): string {
+  exportValuesTemplate(name: string, values: object): string {
     return `export const ${name} = ${JSON.stringify(values, null, 4)}`
   }
 

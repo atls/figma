@@ -1,9 +1,7 @@
-import { Text } from 'figma-js'
+import type { Text } from 'figma-js'
 
 export abstract class Strategy {
-  abstract execute(textNodes: Text[]): any
-
-  getStat(textNodes: Text[]): Map<string, number> {
+  getStat(textNodes: Array<Text>): Map<string, number> {
     const stat = new Map<string, number>()
 
     textNodes.forEach((node) => {
@@ -16,4 +14,6 @@ export abstract class Strategy {
 
     return stat
   }
+
+  abstract execute(textNodes: Array<Text>): object
 }
