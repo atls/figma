@@ -1,4 +1,5 @@
-import { Node }            from 'figma-js'
+import type { Node }       from 'figma-js'
+
 import fs                  from 'fs-extra'
 import fetch               from 'node-fetch'
 import path                from 'path'
@@ -14,20 +15,20 @@ export class FigmaAssets {
 
   client: FigmaFileLoader = new FigmaFileLoader()
 
-  constructor(fileId: string, node: Node, output) {
+  constructor(fileId: string, node: Node, output: string = 'assets') {
     this.fileId = fileId
     this.node = node
 
-    this.output = path.join(process.cwd(), output || 'assets')
+    this.output = path.join(process.cwd(), output)
   }
 
-  async loadImage(name, url) {
+  async loadImage(name: string, url: string): Promise<void> {
     const fileName = `${name.replace(/ /g, '-').replace(/_/g, '-')}.svg`
     const filePath = path.join(this.output, fileName)
 
     await fs.ensureDir(path.dirname(filePath))
 
-    const response: any = await fetch(url)
+    const response = await fetch(url)
 
     if (response.status !== 200) {
       return
@@ -35,13 +36,17 @@ export class FigmaAssets {
 
     const file = fs.createWriteStream(filePath)
 
-    response.body.pipe(file)
+    response.body?.pipe(file)
   }
 
-  async generate() {
-    const { children } = this.node as any
+  async generate(): Promise<void> {
+    if (!('children' in this.node)) {
+      return
+    }
 
-    const items: any[] = []
+    const { children } = this.node
+
+    const items: Array<{ id: string; name: string }> = []
 
     children
       .filter((item) => item.type === 'COMPONENT')
@@ -49,7 +54,7 @@ export class FigmaAssets {
         items.push({ id: item.id, name: item.name })
       })
 
-    const images: any = await this.client.fileImages(
+    const images = await this.client.fileImages(
       this.fileId,
       items.map((item) => item.id)
     )

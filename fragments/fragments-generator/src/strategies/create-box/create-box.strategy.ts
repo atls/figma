@@ -1,15 +1,16 @@
 import type { Frame }           from 'figma-js'
+import type { ReactElement }    from 'react'
 
 import { createElement }        from 'react'
 
 import { ThemeMappingStrategy } from '../theme-mapping/index.js'
 
 export class CreateBoxStrategy extends ThemeMappingStrategy {
-  getImports() {
+  getImports(): Array<string> {
     return [`import { Box } from '@ui/layout'`]
   }
 
-  createElement(node: Frame) {
+  createElement(node: Frame): ReactElement {
     const {
       layoutMode,
       itemSpacing,

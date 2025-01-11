@@ -1,5 +1,7 @@
-import { Node }                           from 'figma-js'
-import { FileResponse }                   from 'figma-js'
+import type { FigmaThemeGeneratorValues } from '@atls/figma-theme-generator-common'
+import type { FileResponse }              from 'figma-js'
+import type { Node }                      from 'figma-js'
+
 import { promises as fs }                 from 'fs'
 import path                               from 'path'
 import prettier                           from 'prettier'
@@ -30,9 +32,9 @@ export class FigmaTheme {
 
   output: string
 
-  ignoredPages: string[]
+  ignoredPages: Array<string>
 
-  includedPages: string[]
+  includedPages: Array<string>
 
   prefix: string
 
@@ -40,15 +42,15 @@ export class FigmaTheme {
 
   constructor(
     file: FileResponse,
-    output,
-    ignoredPages: string[] = [],
-    includedPages: string[] = [],
+    output: string = 'theme',
+    ignoredPages: Array<string> = [],
+    includedPages: Array<string> = [],
     prefix: string = '',
     method: 'default' | 'secondary' = 'default'
   ) {
     this.file = file
 
-    this.output = path.join(process.cwd(), output || 'theme')
+    this.output = path.join(process.cwd(), output)
 
     this.ignoredPages = ignoredPages
     this.includedPages = includedPages
@@ -56,13 +58,13 @@ export class FigmaTheme {
     this.method = method === 'secondary' ? method : 'default'
   }
 
-  async format(target, content) {
+  async format(target: string, content: string): Promise<string> {
     const options = await prettier.resolveConfig(target)
 
     return prettier.format(content, { ...options })
   }
 
-  async write({ name, content }) {
+  async write({ name, content }: FigmaThemeGeneratorValues): Promise<void> {
     const target = path.join(this.output, `${name}.ts`)
 
     const data = await this.format(target, content)
@@ -70,7 +72,7 @@ export class FigmaTheme {
     await fs.writeFile(target, data)
   }
 
-  async generate() {
+  async generate(): Promise<Array<void>> {
     const filteredPages = this.file.document.children.filter((node) => {
       const isCanvas = node.type === 'CANVAS'
       const isNotIgnored = !this.ignoredPages.includes(node.id)
@@ -99,9 +101,9 @@ export class FigmaTheme {
     )
   }
 
-  private getComponentsWithPrefix(nodes: Node[], prefix: string): Node[] {
-    const filteredNodes: Node[] = []
-    walk(nodes, (node) => {
+  private getComponentsWithPrefix(nodes: Array<Node>, prefix: string): Array<Node> {
+    const filteredNodes: Array<Node> = []
+    walk(nodes, (node: Node) => {
       if (node?.name?.startsWith(prefix)) {
         filteredNodes.push(node)
       }

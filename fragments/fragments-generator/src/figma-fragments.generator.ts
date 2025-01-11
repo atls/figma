@@ -1,4 +1,4 @@
-import { FileNodesResponse }      from 'figma-js'
+import type { FileNodesResponse } from 'figma-js'
 
 import { CreateFragmentStrategy } from './strategies/index.js'
 

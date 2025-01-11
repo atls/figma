@@ -1,20 +1,20 @@
-import type { Instance }       from 'figma-js'
-import type { Text }           from 'figma-js'
+import type { Instance }            from 'figma-js'
+import type { ReactElement }        from 'react'
 
-import { Fragment }            from 'react'
-import { createElement }       from 'react'
+import type { ComponentProperties } from '../strategies.interfaces.js'
 
-import { isFrame }             from '@atls/figma-utils'
-import { isText }              from '@atls/figma-utils'
+import { Fragment }                 from 'react'
+import { createElement }            from 'react'
 
-import { ComponentProperties } from '../strategies.interfaces.js'
+import { isFrame }                  from '@atls/figma-utils'
+import { isText }                   from '@atls/figma-utils'
 
 export class CreateInputStrategy {
-  getImports() {
+  getImports(): Array<string> {
     return [`import { Input } from '@ui/input'`]
   }
 
-  createElement(node: Instance) {
+  createElement(node: Instance): ReactElement {
     if ('componentProperties' in node) {
       const type = (node.componentProperties as ComponentProperties).Type
       const field = node.children.find((child) => child.name?.toLocaleLowerCase() === 'field')
@@ -22,9 +22,9 @@ export class CreateInputStrategy {
       let placeholder: string | undefined
 
       if (field && isFrame(field)) {
-        const textNode = field.children.find((child) => isText(child)) as Text | undefined
+        const textNode = field.children.find((child) => isText(child))
 
-        placeholder = textNode ? textNode.characters : undefined
+        placeholder = textNode && isText(textNode) ? textNode.characters : undefined
       }
 
       return createElement('Input', {

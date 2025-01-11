@@ -1,7 +1,10 @@
+import type { FileNodesResponse }   from 'figma-js'
+import type { Node }                from 'figma-js'
+import type { Attributes }          from 'react'
+import type { ReactElement }        from 'react'
+
 import type { CreteFragmentResult } from '../strategies.interfaces.js'
 import type { TreeElement }         from '../strategies.interfaces.js'
-import type { FileNodesResponse }   from 'figma-js'
-import type { ReactElement }        from 'react'
 
 import { Fragment }                 from 'react'
 import { plugins }                  from 'pretty-format'
@@ -37,45 +40,11 @@ export class CreateFragmentStrategy {
     this.input = new CreateInputStrategy()
   }
 
-  private createFragmentElement(elements: Array<TreeElement>) {
-    if (elements.length <= 1) {
-      return this.createElementsTree(elements[0])
-    }
-
-    return createElement(
-      Fragment,
-      null,
-      elements.map((node) => this.createElementsTree(node))
-    )
-  }
-
-  private createElementsTree(rootElement: TreeElement): ReactElement {
-    if (!rootElement.childrenIds.length) {
-      return rootElement.element
-    }
-
-    const element = cloneElement(
-      rootElement.element,
-      rootElement.element.props,
-      rootElement.childrenIds.map((id) =>
-        this.elements[id] ? this.createElementsTree(this.elements[id]) : null)
-    )
-
-    return element
-  }
-
-  private findParentId(childrenId: string) {
-    const parentId = Object.entries(this.elements).find((element) =>
-      element[1].childrenIds.includes(childrenId))?.[0]
-
-    return parentId || null
-  }
-
   execute(nodes: FileNodesResponse['nodes']): CreteFragmentResult {
     const imports = new Set<string>()
     const ignoreNodes = new Set<string>()
 
-    walk(nodes, (node) => {
+    walk(nodes, (node: Node) => {
       if (ignoreNodes.has(node.id)) {
         return
       }
@@ -85,7 +54,7 @@ export class CreateFragmentStrategy {
           this.button.getImports().forEach((value) => imports.add(value))
 
           const buttonChildren = new Set<string>()
-          walk(node?.children, (child) => buttonChildren.add(child.id))
+          walk(node?.children, (child: Node) => buttonChildren.add(child.id))
 
           this.elements[node.id] = {
             element: this.button.createElement(node),
@@ -97,7 +66,7 @@ export class CreateFragmentStrategy {
         if (node.name.toLowerCase().includes('input')) {
           this.input.getImports().forEach((value) => imports.add(value))
 
-          walk(node?.children, (child) => ignoreNodes.add(child.id))
+          walk(node?.children, (child: Node) => ignoreNodes.add(child.id))
 
           this.elements[node.id] = {
             element: this.input.createElement(node),
@@ -139,5 +108,39 @@ export class CreateFragmentStrategy {
       fragment,
       imports: Array.from(imports),
     }
+  }
+
+  private createFragmentElement(elements: Array<TreeElement>): ReactElement {
+    if (elements.length <= 1) {
+      return this.createElementsTree(elements[0])
+    }
+
+    return createElement(
+      Fragment,
+      null,
+      elements.map((node) => this.createElementsTree(node))
+    )
+  }
+
+  private createElementsTree(rootElement: TreeElement): ReactElement {
+    if (!rootElement.childrenIds.length) {
+      return rootElement.element
+    }
+
+    const element = cloneElement(
+      rootElement.element,
+      rootElement.element.props as Partial<Attributes> | undefined,
+      rootElement.childrenIds.map((id) =>
+        this.elements[id] ? this.createElementsTree(this.elements[id]) : null)
+    )
+
+    return element
+  }
+
+  private findParentId(childrenId: string): string | null {
+    const parentId = Object.entries(this.elements).find((element) =>
+      element[1].childrenIds.includes(childrenId))?.[0]
+
+    return parentId || null
   }
 }

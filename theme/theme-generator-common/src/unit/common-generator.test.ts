@@ -1,7 +1,8 @@
-import { FileResponse }              from 'figma-js'
+import type { FileResponse }              from 'figma-js'
 
-import { FigmaThemeGenerator }       from '../index.js'
-import { FigmaThemeGeneratorResult } from '../index.js'
+import type { FigmaThemeGeneratorResult } from '../index.js'
+
+import { FigmaThemeGenerator }            from '../index.js'
 
 class TestGenerator extends FigmaThemeGenerator {
   generate(file: FileResponse): FigmaThemeGeneratorResult {

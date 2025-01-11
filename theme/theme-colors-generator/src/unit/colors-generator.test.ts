@@ -1,3 +1,5 @@
+import type { FileResponse }         from 'figma-js'
+
 import { FigmaThemeColorsGenerator } from '../FigmaThemeColorsGenerator.js'
 
 describe('FigmaThemeColorsGenerator', () => {
@@ -43,8 +45,7 @@ describe('FigmaThemeColorsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'colors',
@@ -101,8 +102,7 @@ describe('FigmaThemeColorsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'colors',
@@ -142,8 +142,7 @@ describe('FigmaThemeColorsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'colors',

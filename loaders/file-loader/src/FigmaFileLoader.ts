@@ -1,8 +1,10 @@
-import { Client }            from 'figma-js'
-import { ClientInterface }   from 'figma-js'
-import { FileResponse }      from 'figma-js'
-import { FileNodesResponse } from 'figma-js'
-import { Node }              from 'figma-js'
+import type { ClientInterface }   from 'figma-js'
+import type { FileImageResponse } from 'figma-js'
+import type { FileResponse }      from 'figma-js'
+import type { FileNodesResponse } from 'figma-js'
+import type { Node }              from 'figma-js'
+
+import { Client }                 from 'figma-js'
 
 export class FigmaFileLoader {
   figma: ClientInterface
@@ -34,7 +36,7 @@ export class FigmaFileLoader {
     return node
   }
 
-  async fileImages(fileId: string, itemIds: string[]) {
+  async fileImages(fileId: string, itemIds: Array<string>): Promise<FileImageResponse['images']> {
     const { data } = await this.figma.fileImages(fileId, {
       ids: itemIds,
       format: 'svg',

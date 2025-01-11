@@ -1,4 +1,4 @@
-export const toRadiiString = (node: number[]): { token: string; radius: string } => {
+export const toRadiiString = (node: Array<number>): { token: string; radius: string } => {
   const topLeft = node.at(0)
   const topRight = node.at(1)
   const bottomLeft = node.at(2)

@@ -1,25 +1,27 @@
-import { FileResponse }              from 'figma-js'
+import type { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
+import type { FileResponse }              from 'figma-js'
+import type { Paint }                     from 'figma-js'
+import type { Node }                      from 'figma-js'
 
-import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
-import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
-import { toColorName }               from '@atls/figma-utils'
-import { toColorString }             from '@atls/figma-utils'
-import { toColorOpacityString }      from '@atls/figma-utils'
-import { walk }                      from '@atls/figma-utils'
+import type { Border }                    from './interfaces.js'
 
-import { Border }                    from './interfaces.js'
+import { FigmaThemeGenerator }            from '@atls/figma-theme-generator-common'
+import { toColorName }                    from '@atls/figma-utils'
+import { toColorOpacityString }           from '@atls/figma-utils'
+import { toColorString }                  from '@atls/figma-utils'
+import { walk }                           from '@atls/figma-utils'
 
 export class FigmaThemeBordersGenerator extends FigmaThemeGenerator {
   readonly name = 'borders'
 
-  getBorders(nodes) {
+  getBorders(nodes: ReadonlyArray<Node>): object {
     const borders: Map<string, Border> = new Map()
 
-    walk(nodes, (node) => {
-      if (Array.isArray(node.strokes) && node.strokes.length) {
-        const weight = node.strokeWeight || 1
+    walk(nodes, (node: Node) => {
+      if ('strokes' in node && Array.isArray(node.strokes) && node.strokes?.length) {
+        const weight = node.strokeWeight.toString() || '1'
 
-        node.strokes.forEach((stroke) => {
+        node.strokes.forEach((stroke: Paint) => {
           if (!stroke.type || !stroke.color) {
             return
           }
