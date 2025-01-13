@@ -18,7 +18,8 @@
   "devDependencies": {
     "@atls/figma-theme-generator-common": "workspace:*",
     "@types/node": "22.10.2",
-    "figma-js": "1.16.1-0"
+    "figma-js": "1.16.1-0",
+    "playwright": "1.49.1"
   },
   "peerDependencies": {
     "@atls/figma-theme-generator-common": "*",

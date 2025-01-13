@@ -1,7 +1,7 @@
 import type { Frame }           from 'figma-js'
 import type { ReactElement }    from 'react'
 
-import { createElement }        from 'react'
+import React                    from 'react'
 
 import { ThemeMappingStrategy } from '../theme-mapping/index.js'
 
@@ -28,7 +28,7 @@ export class CreateBoxStrategy extends ThemeMappingStrategy {
       absoluteBoundingBox,
     } = node
 
-    return createElement('Box', {
+    return React.createElement('Box', {
       width: absoluteBoundingBox.width ? `${absoluteBoundingBox.width}px` : undefined,
       height: absoluteBoundingBox.height ? `${absoluteBoundingBox.height}px` : undefined,
       flexDirection: this.getFlexDirection(layoutMode),

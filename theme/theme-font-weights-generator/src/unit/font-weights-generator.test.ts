@@ -2,6 +2,12 @@ import type { FileResponse }              from 'figma-js'
 import type { Text }                      from 'figma-js'
 import type { Node }                      from 'figma-js'
 
+import { describe }                       from 'node:test'
+import { beforeEach }                     from 'node:test'
+import { it }                             from 'node:test'
+
+import { expect }                         from 'playwright/test'
+
 import { FigmaThemeFontWeightsGenerator } from '../FigmaThemeFontWeightsGenerator.js'
 import { SimpleMappingStrategy }          from '../strategy/index.js'
 

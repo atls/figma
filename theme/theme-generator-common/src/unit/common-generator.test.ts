@@ -2,6 +2,12 @@ import type { FileResponse }              from 'figma-js'
 
 import type { FigmaThemeGeneratorResult } from '../index.js'
 
+import { describe }                       from 'node:test'
+import { beforeEach }                     from 'node:test'
+import { it }                             from 'node:test'
+
+import { expect }                         from 'playwright/test'
+
 import { FigmaThemeGenerator }            from '../index.js'
 
 class TestGenerator extends FigmaThemeGenerator {

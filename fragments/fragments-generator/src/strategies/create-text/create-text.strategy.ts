@@ -3,7 +3,7 @@ import type { Text }            from 'figma-js'
 import type { TypeStyle }       from 'figma-js'
 import type { ReactElement }    from 'react'
 
-import { createElement }        from 'react'
+import React                    from 'react'
 
 import { ThemeMappingStrategy } from '../theme-mapping/index.js'
 
@@ -15,12 +15,12 @@ export class CreateTextStrategy extends ThemeMappingStrategy {
   createElement(node: Text): ReactElement {
     const { characters, style, fills } = node
 
-    const childrenElement = createElement('FormattedMessage', {
+    const childrenElement = React.createElement('FormattedMessage', {
       id: characters?.replaceAll(' ', '_').toLowerCase() || 'text',
       defaultMessage: characters,
     })
 
-    return createElement('Text', this.createAttributes(style, fills), childrenElement)
+    return React.createElement('Text', this.createAttributes(style, fills), childrenElement)
   }
 
   private createAttributes(

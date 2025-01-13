@@ -319,7 +319,9 @@ __metadata:
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:22.10.2"
     "@types/react": "npm:18.3.12"
+    "@types/sinon": "npm:17.0.3"
     figma-js: "npm:1.16.1-0"
+    playwright: "npm:1.49.1"
     pretty-format: "npm:29.7.0"
     react: "npm:18.3.1"
   peerDependencies:
@@ -335,6 +337,7 @@ __metadata:
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:22.10.2"
     figma-js: "npm:1.16.1-0"
+    playwright: "npm:1.49.1"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -355,6 +358,7 @@ __metadata:
     commander: "npm:12.1.0"
     figma-js: "npm:1.16.1-0"
     npmlog: "npm:7.0.1"
+    playwright: "npm:1.49.1"
     ts-node: "npm:10.9.2"
     typescript: "npm:5.5.4"
   bin:
@@ -373,6 +377,7 @@ __metadata:
     camelcase: "npm:8.0.0"
     color-namer: "npm:1.4.0"
     figma-js: "npm:1.16.1-0"
+    playwright: "npm:1.49.1"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -387,6 +392,7 @@ __metadata:
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:22.10.2"
     figma-js: "npm:1.16.1-0"
+    playwright: "npm:1.49.1"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -401,6 +407,7 @@ __metadata:
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:22.10.2"
     figma-js: "npm:1.16.1-0"
+    playwright: "npm:1.49.1"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -415,6 +422,7 @@ __metadata:
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:22.10.2"
     figma-js: "npm:1.16.1-0"
+    playwright: "npm:1.49.1"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -427,6 +435,7 @@ __metadata:
   dependencies:
     "@types/node": "npm:22.10.2"
     figma-js: "npm:1.16.1-0"
+    playwright: "npm:1.49.1"
   peerDependencies:
     figma-js: "*"
   languageName: unknown
@@ -440,6 +449,7 @@ __metadata:
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:22.10.2"
     figma-js: "npm:1.16.1-0"
+    playwright: "npm:1.49.1"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -454,6 +464,7 @@ __metadata:
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:22.10.2"
     figma-js: "npm:1.16.1-0"
+    playwright: "npm:1.49.1"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -468,6 +479,7 @@ __metadata:
     "@atls/figma-utils": "workspace:*"
     "@types/node": "npm:22.10.2"
     figma-js: "npm:1.16.1-0"
+    playwright: "npm:1.49.1"
   peerDependencies:
     "@atls/figma-theme-generator-common": "*"
     figma-js: "*"
@@ -491,6 +503,7 @@ __metadata:
     "@types/node": "npm:22.10.2"
     "@types/prettier": "npm:2.7.3"
     figma-js: "npm:1.16.1-0"
+    playwright: "npm:1.49.1"
     prettier: "npm:2.8.8"
   peerDependencies:
     figma-js: "*"
@@ -3269,6 +3282,22 @@ __metadata:
   version: 7.5.4
   resolution: "@types/semver@npm:7.5.4"
   checksum: 10/e99c3edc8d64f56abcd891b9e44a45c4ae3cab551c8af5aa67b5df2b49e5fd03f74aac9da71fd5357a50a08d5deb95014516956b15b407052e07f25c7a4a606e
+  languageName: node
+  linkType: hard
+
+"@types/sinon@npm:17.0.3":
+  version: 17.0.3
+  resolution: "@types/sinon@npm:17.0.3"
+  dependencies:
+    "@types/sinonjs__fake-timers": "npm:*"
+  checksum: 10/3f82b4a477c0c57fa4f4f4fb7585cb72c2a65a7e41e5271b54edca296c8dc242c2d8e709de7a8f16af8693c87cb3ad9d96981069ae683f7197a1134892035833
+  languageName: node
+  linkType: hard
+
+"@types/sinonjs__fake-timers@npm:*":
+  version: 8.1.5
+  resolution: "@types/sinonjs__fake-timers@npm:8.1.5"
+  checksum: 10/3a0b285fcb8e1eca435266faa27ffff206608b69041022a42857274e44d9305822e85af5e7a43a9fae78d2ab7dc0fcb49f3ae3bda1fa81f0203064dbf5afd4f6
   languageName: node
   linkType: hard
 
@@ -7257,12 +7286,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fsevents@npm:2.3.2":
+  version: 2.3.2
+  resolution: "fsevents@npm:2.3.2"
+  dependencies:
+    node-gyp: "npm:latest"
+  checksum: 10/6b5b6f5692372446ff81cf9501c76e3e0459a4852b3b5f1fc72c103198c125a6b8c72f5f166bdd76ffb2fca261e7f6ee5565daf80dca6e571e55bcc589cc1256
+  conditions: os=darwin
+  languageName: node
+  linkType: hard
+
 "fsevents@npm:^2.3.2, fsevents@npm:~2.3.2, fsevents@npm:~2.3.3":
   version: 2.3.3
   resolution: "fsevents@npm:2.3.3"
   dependencies:
     node-gyp: "npm:latest"
   checksum: 10/4c1ade961ded57cdbfbb5cac5106ec17bc8bccd62e16343c569a0ceeca83b9dfef87550b4dc5cbb89642da412b20c5071f304c8c464b80415446e8e155a038c0
+  conditions: os=darwin
+  languageName: node
+  linkType: hard
+
+"fsevents@patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>":
+  version: 2.3.2
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
+  dependencies:
+    node-gyp: "npm:latest"
   conditions: os=darwin
   languageName: node
   linkType: hard
@@ -10509,6 +10557,30 @@ __metadata:
     mlly: "npm:^1.7.2"
     pathe: "npm:^1.1.2"
   checksum: 10/d61f4b7a2351b55b22f1d08f5f9b4236928d5660886131cc0e11576362e2b3bfcb54084bb4a0ba79147b707a27dcae87444a86e731113e152ffd3b6155ce5a5a
+  languageName: node
+  linkType: hard
+
+"playwright-core@npm:1.49.1":
+  version: 1.49.1
+  resolution: "playwright-core@npm:1.49.1"
+  bin:
+    playwright-core: cli.js
+  checksum: 10/baa39a53024ec7744708410f2b952ac3aa2e1a6d311dabfa303523712848eba142fce5c20f1b2ed2a66fbd9a415d22ea8642b0f70423360aaebd4b41c47d364e
+  languageName: node
+  linkType: hard
+
+"playwright@npm:1.49.1":
+  version: 1.49.1
+  resolution: "playwright@npm:1.49.1"
+  dependencies:
+    fsevents: "npm:2.3.2"
+    playwright-core: "npm:1.49.1"
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    playwright: cli.js
+  checksum: 10/49fb063f4a107b8090f66d2d351ebd51fbb66843a8f95a161fa0c0e0b5156515961e75cc10f4249f61b9d2af51f762dda505c62b096d8f61cd47d1ff73ab39d2
   languageName: node
   linkType: hard
 

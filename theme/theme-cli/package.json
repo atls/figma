@@ -30,6 +30,7 @@
     "@types/node": "22.10.2",
     "@types/npmlog": "7.0.0",
     "@yarnpkg/builder": "4.1.1",
+    "playwright": "1.49.1",
     "ts-node": "10.9.2",
     "typescript": "5.5.4"
   },

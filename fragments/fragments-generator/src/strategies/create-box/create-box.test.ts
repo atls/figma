@@ -1,13 +1,15 @@
 import type { Frame }        from 'figma-js'
 
-import { createElement }     from 'react'
+import { describe }          from 'node:test'
+import { beforeEach }        from 'node:test'
+import { it }                from 'node:test'
+import { mock }              from 'node:test'
+
+import { expect }            from 'playwright/test'
+import React                 from 'react'
 
 import { CreateBoxStrategy } from './create-box.strategy.js'
 import { theme }             from '../strategies.constants.js'
-
-jest.mock('react', () => ({
-  createElement: jest.fn(),
-}))
 
 describe('CreateBoxStrategy', () => {
   let strategy: CreateBoxStrategy
@@ -51,21 +53,28 @@ describe('CreateBoxStrategy', () => {
         absoluteBoundingBox: { x: 0, y: 0, width: 300, height: 100 },
       }
 
+      const mockCreateElement = mock.fn()
+      mock.method(React, 'createElement', mockCreateElement)
+
       strategy.createElement(mockNode as Frame)
 
-      expect(createElement).toHaveBeenCalledWith('Box', {
-        width: '300px',
-        height: '100px',
-        flexDirection: undefined,
-        justifyContent: 'center',
-        alignItems: 'center',
-        background: '$white',
-        gap: '$medium',
-        border: '1px solid rgba(255, 255, 255, 0.80)',
-        borderRadius: '4px',
-        boxShadow: '2px 2px 4px rgba(255, 255, 255, 1)',
-        padding: '10px',
-      })
+      expect(mockCreateElement.mock.callCount()).toEqual(1)
+      expect(mockCreateElement.mock.calls[0].arguments).toEqual([
+        'Box',
+        {
+          width: '300px',
+          height: '100px',
+          flexDirection: undefined,
+          justifyContent: 'center',
+          alignItems: 'center',
+          background: '$white',
+          gap: '$medium',
+          border: '1px solid rgba(255, 255, 255, 0.80)',
+          borderRadius: '4px',
+          boxShadow: '2px 2px 4px rgba(255, 255, 255, 1)',
+          padding: '10px',
+        },
+      ])
     })
 
     it('handles missing node properties gracefully', () => {
@@ -86,20 +95,27 @@ describe('CreateBoxStrategy', () => {
         absoluteBoundingBox: { x: 0, y: 0, width: 300, height: 100 },
       }
 
+      const mockCreateElement = mock.fn()
+      mock.method(React, 'createElement', mockCreateElement)
+
       strategy.createElement(mockNode as Frame)
 
-      expect(createElement).toHaveBeenCalledWith('Box', {
-        width: '300px',
-        height: '100px',
-        flexDirection: undefined,
-        justifyContent: undefined,
-        alignItems: undefined,
-        background: undefined,
-        gap: undefined,
-        border: undefined,
-        borderRadius: undefined,
-        boxShadow: undefined,
-      })
+      expect(mockCreateElement.mock.callCount()).toEqual(1)
+      expect(mockCreateElement.mock.calls[0].arguments).toEqual([
+        'Box',
+        {
+          width: '300px',
+          height: '100px',
+          flexDirection: undefined,
+          justifyContent: undefined,
+          alignItems: undefined,
+          background: undefined,
+          gap: undefined,
+          border: undefined,
+          borderRadius: undefined,
+          boxShadow: undefined,
+        },
+      ])
     })
   })
 })

@@ -1,6 +1,12 @@
 import type { FileResponse }        from 'figma-js'
 import type { Node }                from 'figma-js'
 
+import { describe }                 from 'node:test'
+import { beforeEach }               from 'node:test'
+import { it }                       from 'node:test'
+
+import { expect }                   from 'playwright/test'
+
 import { Group }                    from '../Constants.js'
 import { FigmaThemeRadiiGenerator } from '../FigmaThemeRadiiGenerator.js'
 import { SimpleMappingStrategy }    from '../strategy/index.js'
