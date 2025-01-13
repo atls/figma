@@ -19,7 +19,7 @@ export class FigmaThemeBordersGenerator extends FigmaThemeGenerator {
 
     walk(nodes, (node: Node) => {
       if ('strokes' in node && Array.isArray(node.strokes) && node.strokes?.length) {
-        const weight = node.strokeWeight.toString() || '1'
+        const weight = node.strokeWeight?.toString() || '1'
 
         node.strokes.forEach((stroke: Paint) => {
           if (!stroke.type || !stroke.color) {
