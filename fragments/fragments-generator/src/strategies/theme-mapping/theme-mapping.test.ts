@@ -2,6 +2,10 @@ import type { Effect }          from 'figma-js'
 import type { Paint }           from 'figma-js'
 
 import { describe }             from 'node:test'
+import { beforeEach }           from 'node:test'
+import { it }                   from 'node:test'
+
+import { expect }               from 'playwright/test'
 
 import { THEME_KEY_PREFIX }     from '../strategies.constants.js'
 import { ThemeMappingStrategy } from './theme-mapping.strategy.js'

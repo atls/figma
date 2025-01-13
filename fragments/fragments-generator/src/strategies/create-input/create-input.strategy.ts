@@ -4,7 +4,7 @@ import type { ReactElement }        from 'react'
 import type { ComponentProperties } from '../strategies.interfaces.js'
 
 import { Fragment }                 from 'react'
-import { createElement }            from 'react'
+import React                        from 'react'
 
 import { isFrame }                  from '@atls/figma-utils'
 import { isText }                   from '@atls/figma-utils'
@@ -27,12 +27,12 @@ export class CreateInputStrategy {
         placeholder = textNode && isText(textNode) ? textNode.characters : undefined
       }
 
-      return createElement('Input', {
+      return React.createElement('Input', {
         variant: type?.value.toString().toLocaleLowerCase(),
         placeholder,
       })
     }
 
-    return createElement(Fragment)
+    return React.createElement(Fragment)
   }
 }

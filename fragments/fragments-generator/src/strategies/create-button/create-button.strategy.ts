@@ -4,7 +4,7 @@ import type { ReactElement }        from 'react'
 import type { ComponentProperties } from '../strategies.interfaces.js'
 
 import { Fragment }                 from 'react'
-import { createElement }            from 'react'
+import React                        from 'react'
 
 export class CreateButtonStrategy {
   getImports(): Array<string> {
@@ -12,12 +12,16 @@ export class CreateButtonStrategy {
   }
 
   createElement(node: Instance): ReactElement {
-    if ('componentProperties' in node) {
-      const style = (node.componentProperties as ComponentProperties).Style
-
-      return createElement('Button', { variant: style?.value.toString().toLocaleLowerCase() })
+    if (!('componentProperties' in node)) {
+      return React.createElement(Fragment)
     }
 
-    return createElement(Fragment)
+    const style = (node.componentProperties as ComponentProperties).Style
+
+    if (!style) {
+      return React.createElement(Fragment)
+    }
+
+    return React.createElement('Button', { variant: style?.value.toString().toLocaleLowerCase() })
   }
 }
