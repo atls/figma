@@ -50,8 +50,13 @@ if (!fileId) {
 
     readline.close()
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     run(fileId, options.nodeId, options.output, options.theme, options.name)
-      .then(() => logger.info('Fragments successful generated'))
-      .catch((error) => logger.error(error, 'Error generating fragments'))
+      .then((): void => {
+        logger.info('Fragments successful generated')
+      })
+      .catch((error): void => {
+        logger.error(error, 'Error generating fragments')
+      })
   })
 }

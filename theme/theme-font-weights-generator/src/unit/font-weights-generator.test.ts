@@ -1,3 +1,13 @@
+import type { FileResponse }              from 'figma-js'
+import type { Text }                      from 'figma-js'
+import type { Node }                      from 'figma-js'
+
+import { describe }                       from 'node:test'
+import { beforeEach }                     from 'node:test'
+import { it }                             from 'node:test'
+
+import { expect }                         from 'playwright/test'
+
 import { FigmaThemeFontWeightsGenerator } from '../FigmaThemeFontWeightsGenerator.js'
 import { SimpleMappingStrategy }          from '../strategy/index.js'
 
@@ -15,7 +25,7 @@ describe('FigmaThemeFontWeightsGenerator', () => {
       { type: 'TEXT', style: { fontWeight: 700 } },
     ]
 
-    const textNodes = generator.getFontWeights(nodes)
+    const textNodes = generator.getFontWeights(nodes as unknown as ReadonlyArray<Node>)
 
     expect(textNodes).toEqual([
       { type: 'TEXT', style: { fontWeight: 400 } },
@@ -42,8 +52,7 @@ describe('FigmaThemeFontWeightsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'fontWeights',
@@ -62,8 +71,7 @@ describe('FigmaThemeFontWeightsGenerator', () => {
       { type: 'TEXT', style: { fontWeight: 900 } },
     ]
 
-    // @ts-ignore
-    const result = strategy.execute(textNodes)
+    const result = strategy.execute(textNodes as unknown as Array<Text>)
 
     expect(result).toEqual({
       light: '300',
@@ -75,7 +83,7 @@ describe('FigmaThemeFontWeightsGenerator', () => {
   it('should return empty object if no text nodes found', () => {
     const nodes = [{ type: 'RECTANGLE' }, { type: 'CIRCLE' }]
 
-    const textNodes = generator.getFontWeights(nodes)
+    const textNodes = generator.getFontWeights(nodes as unknown as ReadonlyArray<Node>)
 
     expect(textNodes).toEqual([])
 
@@ -85,8 +93,7 @@ describe('FigmaThemeFontWeightsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'fontWeights',

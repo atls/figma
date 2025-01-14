@@ -1,3 +1,13 @@
+import type { FileResponse }        from 'figma-js'
+import type { Text }                from 'figma-js'
+import type { Node }                from 'figma-js'
+
+import { describe }                 from 'node:test'
+import { beforeEach }               from 'node:test'
+import { it }                       from 'node:test'
+
+import { expect }                   from 'playwright/test'
+
 import { FigmaThemeFontsGenerator } from '../FigmaThemeFontsGenerator.js'
 import { SimpleMappingStrategy }    from '../strategy/index.js'
 
@@ -15,7 +25,7 @@ describe('FigmaThemeFontsGenerator', () => {
       { type: 'TEXT', style: { fontFamily: 'Helvetica' } },
     ]
 
-    const textNodes = generator.getFonts(nodes)
+    const textNodes = generator.getFonts(nodes as never as ReadonlyArray<Node>)
 
     expect(textNodes).toEqual([
       { type: 'TEXT', style: { fontFamily: 'Arial' } },
@@ -42,8 +52,7 @@ describe('FigmaThemeFontsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as never as FileResponse)
 
     expect(result).toEqual({
       name: 'fonts',
@@ -67,8 +76,7 @@ describe('FigmaThemeFontsGenerator', () => {
       { type: 'TEXT', style: { fontFamily: 'Helvetica' } },
     ]
 
-    // @ts-ignore
-    const result = strategy.execute(textNodes)
+    const result = strategy.execute(textNodes as Array<Text>)
 
     expect(result).toEqual({
       primary: 'Helvetica',
@@ -79,7 +87,7 @@ describe('FigmaThemeFontsGenerator', () => {
   it('should return empty object if no text nodes found', () => {
     const nodes = [{ type: 'RECTANGLE' }, { type: 'CIRCLE' }]
 
-    const textNodes = generator.getFonts(nodes)
+    const textNodes = generator.getFonts(nodes as never as ReadonlyArray<Node>)
 
     expect(textNodes).toEqual([])
 
@@ -89,8 +97,7 @@ describe('FigmaThemeFontsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as never as FileResponse)
 
     expect(result).toEqual({
       name: 'fonts',

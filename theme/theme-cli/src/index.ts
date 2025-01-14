@@ -1,12 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+
 import { createInterface } from 'node:readline'
 
-import logger              from 'npmlog'
 import { program }         from 'commander'
+import logger              from 'npmlog'
 
 import { run }             from './run.js'
 
-logger.heading = 'figma-theme' as string
-;(program as any)
+logger.heading = 'figma-theme'
+program
   .option('-o, --output [output]', 'Output dir')
   .option('-v, --verbose', 'Verbose output')
   .option('--ignored-pages <ignoredPages>', 'Ignored pages', (value) =>
@@ -18,12 +20,12 @@ logger.heading = 'figma-theme' as string
   .arguments('<fileId>')
   .parse(process.argv)
 
-if ((program as any).verbose) {
+const fileId = program.args.at(0)
+const options = program.opts()
+
+if (options.verbose) {
   logger.level = 'verbose'
 }
-
-const [fileId] = (program as any).args
-const options = (program as any).opts()
 
 if (!fileId) {
   logger.error('fileId', 'Figma file id required.')
@@ -42,13 +44,17 @@ if (!fileId) {
 
     run(
       fileId,
-      (program as any).output,
+      options.output,
       options.ignoredPages,
       options.includedPages,
       options.prefix,
       options.method
     )
-      .then(() => logger.info('info', 'Theme successful generated'))
-      .catch((error) => logger.error('error', error.message))
+      .then((): void => {
+        logger.info('info', 'Theme successful generated')
+      })
+      .catch((error): void => {
+        logger.error('error', error.message)
+      })
   })
 }

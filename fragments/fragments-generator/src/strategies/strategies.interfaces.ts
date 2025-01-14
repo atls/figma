@@ -12,7 +12,7 @@ export interface CreteFragmentResult {
 }
 
 export interface ComponentProperty {
-  type: 'COMPONENT' | 'COMPONENT_SET'
+  type: 'COMPONENT_SET' | 'COMPONENT'
   value: boolean | string
 }
 

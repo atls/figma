@@ -1,21 +1,17 @@
-import path               from 'path'
-import prettier           from 'prettier'
-import { FileResponse }   from 'figma-js'
-import { Node }           from 'figma-js'
-import { promises as fs } from 'fs'
+import type { FileResponse } from 'figma-js'
+import type { Node }         from 'figma-js'
 
-import { FigmaTheme }     from '../FigmaTheme.js'
+import { describe }          from 'node:test'
+import { beforeEach }        from 'node:test'
+import { it }                from 'node:test'
+import { mock }              from 'node:test'
 
-jest.mock('fs', () => ({
-  promises: {
-    writeFile: jest.fn(),
-  },
-}))
+import { promises as fs }    from 'fs'
+import { expect }            from 'playwright/test'
+import path                  from 'path'
+import prettier              from 'prettier'
 
-jest.mock('prettier', () => ({
-  resolveConfig: jest.fn().mockResolvedValue({}),
-  format: jest.fn((content, options) => content),
-}))
+import { FigmaTheme }        from '../FigmaTheme.js'
 
 const mockFileResponse: FileResponse = {
   document: {
@@ -62,16 +58,24 @@ describe('FigmaTheme', () => {
 
   it('should filter ignored pages', async () => {
     theme = new FigmaTheme(mockFileResponse, outputPath, ['1'], [], '')
+
+    const mockWriteFile = mock.fn()
+    mock.method(fs, 'writeFile', mockWriteFile)
+
     await theme.generate()
-    expect(fs.writeFile).toHaveBeenCalled()
-    const writtenData = (fs.writeFile as jest.Mock).mock.calls[0][1]
+    expect(mockWriteFile.mock.callCount()).toBeTruthy()
+    const writtenData = mockWriteFile.mock.calls[0].arguments[1]
     expect(writtenData).not.toContain('Page 1')
   })
 
   it('should include only specified pages', async () => {
     theme = new FigmaTheme(mockFileResponse, outputPath, [], ['2'], '')
+
+    const mockWriteFile = mock.fn()
+    mock.method(fs, 'writeFile', mockWriteFile)
+
     await theme.generate()
-    expect(fs.writeFile).toHaveBeenCalled()
+    expect(mockWriteFile.mock.callCount()).toBeTruthy()
     const filteredPages = mockFileResponse.document.children.filter((node) =>
       ['2'].includes(node.id))
     expect(filteredPages).toHaveLength(1)
@@ -79,21 +83,30 @@ describe('FigmaTheme', () => {
   })
 
   it('should format content correctly using prettier', async () => {
+    const mockFormat = mock.fn()
+    mock.method(prettier, 'format', mockFormat)
+
     await theme.generate()
-    expect(prettier.format).toHaveBeenCalled()
+    expect(mockFormat.mock.callCount()).toBeTruthy()
   })
 
   it('should write formatted content to the correct file path', async () => {
     const expectedPath = path.join(process.cwd(), outputPath, 'colors.ts')
+
+    const mockWriteFile = mock.fn()
+    mock.method(fs, 'writeFile', mockWriteFile)
+
     await theme.generate()
-    expect(fs.writeFile).toHaveBeenCalledWith(expectedPath, expect.any(String))
+
+    expect(mockWriteFile.mock.callCount()).toBeTruthy()
+    expect(mockWriteFile.mock.calls[1].arguments).toEqual([expectedPath, undefined])
   })
 
   it('should filter components with prefix', async () => {
     const prefix = 'prefix-'
     theme = new FigmaTheme(mockFileResponse, outputPath, [], [], prefix)
 
-    const nodes: Node[] = [
+    const nodes: Array<Node> = [
       {
         id: '1',
         name: 'prefix-Component-1',

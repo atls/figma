@@ -1,1 +1,1 @@
-export const toPxString = (string: string | number) => `${string}px`
+export const toPxString = (string: number | string): string => `${string}px`

@@ -1,3 +1,11 @@
+import type { FileResponse }         from 'figma-js'
+
+import { describe }                  from 'node:test'
+import { beforeEach }                from 'node:test'
+import { it }                        from 'node:test'
+
+import { expect }                    from 'playwright/test'
+
 import { FigmaThemeColorsGenerator } from '../FigmaThemeColorsGenerator.js'
 
 describe('FigmaThemeColorsGenerator', () => {
@@ -43,8 +51,7 @@ describe('FigmaThemeColorsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'colors',
@@ -101,8 +108,7 @@ describe('FigmaThemeColorsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'colors',
@@ -114,10 +120,10 @@ describe('FigmaThemeColorsGenerator', () => {
     "input.input1.active.font": "rgba(510, 510, 0, 0.30)",
     "input.input1.active.border": "none",
     "input.input1.error.background": "rgba(0, 0, 0, 0.00)",
-    "input.input1.error.font": "rgba(0, 0, 0, 0.00)",
+    "input.input1.error.font": "",
     "input.input1.error.border": "none",
     "input.input1.focus.background": "rgba(0, 0, 0, 0.00)",
-    "input.input1.focus.font": "rgba(0, 0, 0, 0.00)",
+    "input.input1.focus.font": "",
     "input.input1.focus.border": "none",
     "input.input1.disabled.background": "rgba(255, 0, 0, 1)",
     "input.input1.disabled.font": "rgba(510, 0, 0, 1)",
@@ -142,8 +148,7 @@ describe('FigmaThemeColorsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'colors',

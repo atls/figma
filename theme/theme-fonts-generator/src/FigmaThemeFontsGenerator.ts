@@ -1,20 +1,21 @@
-import { FileResponse }              from 'figma-js'
-import { Text }                      from 'figma-js'
+import type { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
+import type { FileResponse }              from 'figma-js'
+import type { Text }                      from 'figma-js'
+import type { Node }                      from 'figma-js'
 
-import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
-import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
-import { isText }                    from '@atls/figma-utils'
-import { walk }                      from '@atls/figma-utils'
+import { FigmaThemeGenerator }            from '@atls/figma-theme-generator-common'
+import { isText }                         from '@atls/figma-utils'
+import { walk }                           from '@atls/figma-utils'
 
-import { SimpleMappingStrategy }     from './strategy/index.js'
+import { SimpleMappingStrategy }          from './strategy/index.js'
 
 export class FigmaThemeFontsGenerator extends FigmaThemeGenerator {
   readonly name = 'fonts'
 
-  getFonts(nodes): Text[] {
-    const textNodes: Text[] = []
+  getFonts(nodes: ReadonlyArray<Node>): Array<Text> {
+    const textNodes: Array<Text> = []
 
-    walk(nodes, (node) => {
+    walk(nodes, (node: Node) => {
       if (isText(node)) {
         textNodes.push(node)
       }

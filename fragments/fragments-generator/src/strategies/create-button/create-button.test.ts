@@ -1,11 +1,15 @@
+import type { Instance }        from 'figma-js'
+
+import { describe }             from 'node:test'
+import { beforeEach }           from 'node:test'
+import { it }                   from 'node:test'
+import { mock }                 from 'node:test'
+
 import { Fragment }             from 'react'
-import { createElement }        from 'react'
+import { expect }               from 'playwright/test'
+import React                    from 'react'
 
 import { CreateButtonStrategy } from './create-button.strategy.js'
-
-jest.mock('react', () => ({
-  createElement: jest.fn(),
-}))
 
 describe('CreateButtonStrategy', () => {
   let strategy: CreateButtonStrategy
@@ -26,31 +30,41 @@ describe('CreateButtonStrategy', () => {
         componentProperties: {
           Style: { value: 'Primary' },
         },
-      } as any
+      }
 
-      strategy.createElement(node)
+      const mockCreateElement = mock.fn()
+      mock.method(React, 'createElement', mockCreateElement)
 
-      expect(createElement).toHaveBeenCalledWith('Button', {
-        variant: 'primary',
-      })
+      strategy.createElement(node as never as Instance)
+
+      expect(mockCreateElement.mock.callCount()).toEqual(1)
+      expect(mockCreateElement.mock.calls[0].arguments).toEqual(['Button', { variant: 'primary' }])
     })
 
     it('creates a Fragment element when componentProperties are missing', () => {
-      const node = {} as any
+      const node = {}
 
-      strategy.createElement(node)
+      const mockCreateElement = mock.fn()
+      mock.method(React, 'createElement', mockCreateElement)
 
-      expect(createElement).toHaveBeenCalledWith(Fragment)
+      strategy.createElement(node as Instance)
+
+      expect(mockCreateElement.mock.callCount()).toEqual(1)
+      expect(mockCreateElement.mock.calls[0].arguments).toEqual([Fragment])
     })
 
     it('creates a Fragment element when Style is not defined in componentProperties', () => {
       const node = {
         componentProperties: {},
-      } as any
+      }
 
-      strategy.createElement(node)
+      const mockCreateElement = mock.fn()
+      mock.method(React, 'createElement', mockCreateElement)
 
-      expect(createElement).toHaveBeenCalledWith(Fragment)
+      strategy.createElement(node as never as Instance)
+
+      expect(mockCreateElement.mock.callCount()).toEqual(1)
+      expect(mockCreateElement.mock.calls[0].arguments).toEqual([Fragment])
     })
   })
 })

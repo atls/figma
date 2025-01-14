@@ -1,18 +1,21 @@
+import type { Instance }       from 'figma-js'
+
+import { describe }            from 'node:test'
+import { beforeEach }          from 'node:test'
+import { it }                  from 'node:test'
+import { mock }                from 'node:test'
+
 import { Fragment }            from 'react'
-import { createElement }       from 'react'
+import { expect }              from 'playwright/test'
+import React                   from 'react'
 
 import { CreateInputStrategy } from './create-input.strategy.js'
-
-jest.mock('react', () => ({
-  createElement: jest.fn(),
-}))
 
 describe('CreateInputStrategy', () => {
   let strategy: CreateInputStrategy
 
   beforeEach(() => {
     strategy = new CreateInputStrategy()
-    jest.clearAllMocks()
   })
 
   describe('getImports', () => {
@@ -34,14 +37,18 @@ describe('CreateInputStrategy', () => {
             children: [{ type: 'TEXT', characters: 'Test text' }],
           },
         ],
-      } as any
+      }
 
-      strategy.createElement(node)
+      const mockCreateElement = mock.fn()
+      mock.method(React, 'createElement', mockCreateElement)
 
-      expect(createElement).toHaveBeenCalledWith('Input', {
-        variant: 'primary',
-        placeholder: 'Test text',
-      })
+      strategy.createElement(node as unknown as Instance)
+
+      expect(mockCreateElement.mock.callCount()).toEqual(1)
+      expect(mockCreateElement.mock.calls[0].arguments).toEqual([
+        'Input',
+        { variant: 'primary', placeholder: 'Test text' },
+      ])
     })
 
     it('creates an Input element without a placeholder when no valid field is found', () => {
@@ -50,22 +57,30 @@ describe('CreateInputStrategy', () => {
           Type: { value: 'Primary' },
         },
         children: [],
-      } as any
+      }
 
-      strategy.createElement(node)
+      const mockCreateElement = mock.fn()
+      mock.method(React, 'createElement', mockCreateElement)
 
-      expect(createElement).toHaveBeenCalledWith('Input', {
-        variant: 'primary',
-        placeholder: undefined,
-      })
+      strategy.createElement(node as unknown as Instance)
+
+      expect(mockCreateElement.mock.callCount()).toEqual(1)
+      expect(mockCreateElement.mock.calls[0].arguments).toEqual([
+        'Input',
+        { variant: 'primary', placeholder: undefined },
+      ])
     })
 
     it('creates a Fragment element when componentProperties are missing', () => {
-      const node = {} as any
+      const node = {}
 
-      strategy.createElement(node)
+      const mockCreateElement = mock.fn()
+      mock.method(React, 'createElement', mockCreateElement)
 
-      expect(createElement).toHaveBeenCalledWith(Fragment)
+      strategy.createElement(node as Instance)
+
+      expect(mockCreateElement.mock.callCount()).toEqual(1)
+      expect(mockCreateElement.mock.calls[0].arguments).toEqual([Fragment])
     })
   })
 })

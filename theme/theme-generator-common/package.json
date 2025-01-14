@@ -13,8 +13,9 @@
     "postpack": "rm -rf dist"
   },
   "devDependencies": {
-    "@types/node": "18.19.34",
-    "figma-js": "1.16.1-0"
+    "@types/node": "22.10.2",
+    "figma-js": "1.16.1-0",
+    "playwright": "1.49.1"
   },
   "peerDependencies": {
     "figma-js": "*"

@@ -1,3 +1,12 @@
+import type { FileResponse }          from 'figma-js'
+import type { Node }                  from 'figma-js'
+
+import { describe }                   from 'node:test'
+import { beforeEach }                 from 'node:test'
+import { it }                         from 'node:test'
+
+import { expect }                     from 'playwright/test'
+
 import { FigmaThemeBordersGenerator } from '../FigmaThemeBordersGenerator.js'
 
 describe('FigmaThemeBordersGenerator', () => {
@@ -42,7 +51,7 @@ describe('FigmaThemeBordersGenerator', () => {
   ]
 
   it('should correctly identify and return borders', () => {
-    const borders = generator.getBorders(nodes)
+    const borders = generator.getBorders(nodes as never as ReadonlyArray<Node>)
 
     expect(borders).toEqual({
       black: '1px solid rgba(0, 0, 0, 1)',
@@ -58,8 +67,7 @@ describe('FigmaThemeBordersGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'borders',
@@ -74,7 +82,7 @@ describe('FigmaThemeBordersGenerator', () => {
   it('should return empty object if no borders found', () => {
     const borderlessNodes = [{ type: 'TEXT', style: { fontSize: 20 } }]
 
-    const borders = generator.getBorders(borderlessNodes)
+    const borders = generator.getBorders(borderlessNodes as never as ReadonlyArray<Node>)
 
     expect(borders).toEqual({})
 
@@ -84,8 +92,7 @@ describe('FigmaThemeBordersGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as unknown as FileResponse)
 
     expect(result).toEqual({
       name: 'borders',

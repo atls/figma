@@ -1,13 +1,15 @@
 import type { Text }          from 'figma-js'
 
-import { createElement }      from 'react'
+import { describe }           from 'node:test'
+import { beforeEach }         from 'node:test'
+import { it }                 from 'node:test'
+import { mock }               from 'node:test'
+
+import { expect }             from 'playwright/test'
+import React                  from 'react'
 
 import { CreateTextStrategy } from './create-text.strategy.js'
 import { theme }              from '../strategies.constants.js'
-
-jest.mock('react', () => ({
-  createElement: jest.fn(),
-}))
 
 describe('CreateTextStrategy', () => {
   let strategy: CreateTextStrategy
@@ -36,34 +38,30 @@ describe('CreateTextStrategy', () => {
           lineHeightPx: 16,
           textAlignHorizontal: 'RIGHT',
         },
-        fills: [
-          { type: 'SOLID', color: { r: 1, g: 1, b: 1, a: 1 }, opacity: 1, blendMode: 'COLOR' },
-        ],
+        fills: [{ color: { r: 1, g: 1, b: 1, a: 1 }, blendMode: 'COLOR', type: 'SOLID' }],
       }
-      jest.spyOn(strategy, 'getColor').mockReturnValue('$white')
-      jest.spyOn(strategy, 'getFontSize').mockReturnValue('$small')
-      jest.spyOn(strategy, 'getFontWeight').mockReturnValue('$regular')
-      jest.spyOn(strategy, 'getLineHeight').mockReturnValue('16px')
-      jest.spyOn(strategy, 'getTextAlign').mockReturnValue('right')
+
+      const mockCreateElement = mock.fn()
+      mock.method(React, 'createElement', mockCreateElement)
 
       strategy.createElement(node as never as Text)
 
-      expect(createElement).toHaveBeenCalledWith('FormattedMessage', {
-        id: 'test_text',
-        defaultMessage: 'Test text',
-      })
-
-      expect(createElement).toHaveBeenLastCalledWith(
+      expect(mockCreateElement.mock.callCount()).toEqual(2)
+      expect(mockCreateElement.mock.calls[0].arguments).toEqual([
+        'FormattedMessage',
+        { id: 'test_text', defaultMessage: 'Test text' },
+      ])
+      expect(mockCreateElement.mock.calls[1].arguments).toEqual([
         'Text',
         {
           color: '$white',
           fontSize: '$small',
           fontWeight: '$regular',
-          lineHeight: '16px',
+          lineHeight: '$normal',
           textAlign: 'right',
         },
-        undefined
-      )
+        undefined,
+      ])
     })
 
     it('handles missing characters gracefully', () => {
@@ -73,14 +71,17 @@ describe('CreateTextStrategy', () => {
         fills: [],
       }
 
+      const mockCreateElement = mock.fn()
+      mock.method(React, 'createElement', mockCreateElement)
+
       strategy.createElement(node as never as Text)
 
-      expect(createElement).toHaveBeenCalledWith('FormattedMessage', {
-        id: 'text',
-        defaultMessage: undefined,
-      })
-
-      expect(createElement).toHaveBeenCalledWith(
+      expect(mockCreateElement.mock.callCount()).toEqual(2)
+      expect(mockCreateElement.mock.calls[0].arguments).toEqual([
+        'FormattedMessage',
+        { id: 'text', defaultMessage: undefined },
+      ])
+      expect(mockCreateElement.mock.calls[1].arguments).toEqual([
         'Text',
         {
           color: undefined,
@@ -89,8 +90,8 @@ describe('CreateTextStrategy', () => {
           lineHeight: undefined,
           textAlign: undefined,
         },
-        undefined
-      )
+        undefined,
+      ])
     })
   })
 })

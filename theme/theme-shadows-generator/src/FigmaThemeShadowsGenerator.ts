@@ -1,31 +1,33 @@
-import { FileResponse }              from 'figma-js'
+import type { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
+import type { FileResponse }              from 'figma-js'
+import type { Node }                      from 'figma-js'
+import type { Color }                     from 'figma-js'
 
-import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
-import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
-import { toColorName }               from '@atls/figma-utils'
-import { toColorString }             from '@atls/figma-utils'
-import { walk }                      from '@atls/figma-utils'
+import type { Shadow }                    from './interfaces.js'
 
-import { Shadow }                    from './interfaces.js'
+import { FigmaThemeGenerator }            from '@atls/figma-theme-generator-common'
+import { toColorName }                    from '@atls/figma-utils'
+import { toColorString }                  from '@atls/figma-utils'
+import { walk }                           from '@atls/figma-utils'
 
 export class FigmaThemeShadowsGenerator extends FigmaThemeGenerator {
   readonly name = 'shadows'
 
-  getShadows(nodes) {
+  getShadows(nodes: ReadonlyArray<Node>): object {
     const shadows: Map<string, Shadow> = new Map()
 
     walk(nodes, (node) => {
       if (node.type === 'DROP_SHADOW' || node.type === 'INNER_SHADOW') {
         const id = `${node.offset.x}px ${node.offset.y}px ${node.radius}px ${
           node.spread ? `${node.spread}px` : ''
-        }${node.spread ? ' ' : ''}${toColorString(node.color)}`
+        }${node.spread ? ' ' : ''}${toColorString(node.color as Color)}`
 
         shadows.set(id, {
           offsetX: node.offset.x,
           offsetY: node.offset.y,
           radius: node.radius,
           spreadRadius: node.spread,
-          color: toColorString(node.color),
+          color: toColorString(node.color as Color),
         })
       }
     })

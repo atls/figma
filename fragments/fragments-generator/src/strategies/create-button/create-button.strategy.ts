@@ -1,22 +1,27 @@
-import type { Instance }       from 'figma-js'
+import type { Instance }            from 'figma-js'
+import type { ReactElement }        from 'react'
 
-import { Fragment }            from 'react'
-import { createElement }       from 'react'
+import type { ComponentProperties } from '../strategies.interfaces.js'
 
-import { ComponentProperties } from '../strategies.interfaces.js'
+import { Fragment }                 from 'react'
+import React                        from 'react'
 
 export class CreateButtonStrategy {
-  getImports() {
+  getImports(): Array<string> {
     return [`import { Button } from '@ui/button'`]
   }
 
-  createElement(node: Instance) {
-    if ('componentProperties' in node) {
-      const style = (node.componentProperties as ComponentProperties).Style
-
-      return createElement('Button', { variant: style?.value.toString().toLocaleLowerCase() })
+  createElement(node: Instance): ReactElement {
+    if (!('componentProperties' in node)) {
+      return React.createElement(Fragment)
     }
 
-    return createElement(Fragment)
+    const style = (node.componentProperties as ComponentProperties).Style
+
+    if (!style) {
+      return React.createElement(Fragment)
+    }
+
+    return React.createElement('Button', { variant: style?.value.toString().toLocaleLowerCase() })
   }
 }

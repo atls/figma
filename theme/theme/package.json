@@ -18,6 +18,7 @@
     "@atls/figma-theme-font-sizes-generator": "workspace:*",
     "@atls/figma-theme-font-weights-generator": "workspace:*",
     "@atls/figma-theme-fonts-generator": "workspace:*",
+    "@atls/figma-theme-generator-common": "workspace:*",
     "@atls/figma-theme-line-heights-generator": "workspace:*",
     "@atls/figma-theme-radii-generator": "workspace:*",
     "@atls/figma-theme-shadows-generator": "workspace:*",
@@ -26,7 +27,9 @@
     "prettier": "2.8.8"
   },
   "devDependencies": {
-    "@types/node": "18.19.34"
+    "@types/node": "22.10.2",
+    "@types/prettier": "2.7.3",
+    "playwright": "1.49.1"
   },
   "peerDependencies": {
     "figma-js": "*"

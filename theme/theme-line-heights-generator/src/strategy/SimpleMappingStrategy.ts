@@ -1,4 +1,4 @@
-import { Text }                         from 'figma-js'
+import type { Text }                    from 'figma-js'
 
 import { Group }                        from '../Constants.js'
 import { LineHeightSizeDefaultName }    from '../Constants.js'
@@ -7,8 +7,8 @@ import { groupNamesGreaterThanDefault } from '../Constants.js'
 import { groupNamesLessThanDefault }    from '../Constants.js'
 
 export class SimpleMappingStrategy extends Strategy {
-  fillSizes(lineHeights) {
-    const tempTheme = {}
+  fillSizes(lineHeights: Array<number>): {} {
+    const tempTheme: Record<string, unknown> = {}
 
     const middle = Math.floor(lineHeights.length / 2)
 
@@ -26,14 +26,16 @@ export class SimpleMappingStrategy extends Strategy {
       for (const value of less) {
         const nextGroupName = groupLess.pop()
 
-        tempTheme[nextGroupName as string] = value
+        if (nextGroupName) {
+          tempTheme[nextGroupName] = value
+        }
       }
     }
 
     const reversedKeysTheme = Object.keys(tempTheme).reverse()
     const themeValues = Object.values(tempTheme)
 
-    const theme = reversedKeysTheme.reduce(
+    const theme: Record<string, unknown> = reversedKeysTheme.reduce(
       (result, key, index) => ({
         ...result,
         [key]: themeValues[index],
@@ -50,41 +52,41 @@ export class SimpleMappingStrategy extends Strategy {
     for (const value of greater) {
       const nextGroupName = groupGreater.pop()
 
-      theme[nextGroupName as string] = value
+      if (nextGroupName) {
+        theme[nextGroupName] = value
+      }
     }
 
     return theme
   }
 
-  convertToThemeValues(sizes: {}, group: Group) {
+  convertToThemeValues(sizes: {}, group: Group): {} {
     return Object.entries(sizes).reduce(
       (object, [key, value]) => ({ ...object, [`${group}.${key}`]: String(value) }),
       {}
     )
   }
 
-  execute(textNodes: Text[] = []) {
+  execute(textNodes: Array<Text> = []): {} {
     const stat = this.getStat(textNodes)
 
     const lineHeights = Array.from(stat.keys()).sort((a, b) => parseFloat(a) - parseFloat(b))
 
-    const convertToNumber = (lineHeight) => parseFloat(lineHeight)
-
     const smallLineHeights = lineHeights
-      .filter((lineHeight) => convertToNumber(lineHeight) < 1)
-      .map(convertToNumber)
+      .filter((lineHeight) => parseFloat(lineHeight) < 1)
+      .map(parseFloat)
 
     const normalLineHeights = lineHeights
-      .filter((lineHeight) => convertToNumber(lineHeight) >= 1 && convertToNumber(lineHeight) < 1.5)
-      .map(convertToNumber)
+      .filter((lineHeight) => parseFloat(lineHeight) >= 1 && parseFloat(lineHeight) < 1.5)
+      .map(parseFloat)
 
     const mediumLineHeights = lineHeights
-      .filter((lineHeight) => convertToNumber(lineHeight) >= 1.5 && convertToNumber(lineHeight) < 2)
-      .map(convertToNumber)
+      .filter((lineHeight) => parseFloat(lineHeight) >= 1.5 && parseFloat(lineHeight) < 2)
+      .map(parseFloat)
 
     const largeLineHeights = lineHeights
-      .filter((lineHeight) => convertToNumber(lineHeight) >= 2)
-      .map(convertToNumber)
+      .filter((lineHeight) => parseFloat(lineHeight) >= 2)
+      .map(parseFloat)
 
     return {
       ...this.convertToThemeValues(this.fillSizes(smallLineHeights), Group.SMALL),

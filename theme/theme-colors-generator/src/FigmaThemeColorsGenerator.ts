@@ -1,25 +1,32 @@
-import camelCase                     from 'camelcase'
-import { FileResponse }              from 'figma-js'
+import type { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
+import type { FileResponse }              from 'figma-js'
+import type { Node }                      from 'figma-js'
+import type { Color }                     from 'figma-js'
 
-import { FigmaThemeGenerator }       from '@atls/figma-theme-generator-common'
-import { FigmaThemeGeneratorResult } from '@atls/figma-theme-generator-common'
-import { clearStringOfSpecialChars } from '@atls/figma-utils'
-import { isColor }                   from '@atls/figma-utils'
-import { toColorOpacityString }      from '@atls/figma-utils'
-import { toAverage }                 from '@atls/figma-utils'
-import { toColorName }               from '@atls/figma-utils'
-import { toColorString }             from '@atls/figma-utils'
-import { walk }                      from '@atls/figma-utils'
+import type { ButtonState }               from './Interfaces.js'
+import type { InputState }                from './Interfaces.js'
+import type { StateColors }               from './Interfaces.js'
 
-import { INPUT_FIELD_KEY }           from './constants.js'
-import { STATE_KEY }                 from './constants.js'
-import { STYLE_KEY }                 from './constants.js'
-import { TEXT_KEY }                  from './constants.js'
-import { TYPE_KEY }                  from './constants.js'
-import { ButtonState }               from './Interfaces.js'
-import { InputState }                from './Interfaces.js'
-import { buttonFrameIds }            from './constants.js'
-import { inputFrameIds }             from './constants.js'
+import camelCase                          from 'camelcase'
+
+import { FigmaThemeGenerator }            from '@atls/figma-theme-generator-common'
+import { clearStringOfSpecialChars }      from '@atls/figma-utils'
+import { isText }                         from '@atls/figma-utils'
+import { isInstance }                     from '@atls/figma-utils'
+import { isColor }                        from '@atls/figma-utils'
+import { toColorOpacityString }           from '@atls/figma-utils'
+import { toAverage }                      from '@atls/figma-utils'
+import { toColorName }                    from '@atls/figma-utils'
+import { toColorString }                  from '@atls/figma-utils'
+import { walk }                           from '@atls/figma-utils'
+
+import { INPUT_FIELD_KEY }                from './constants.js'
+import { STATE_KEY }                      from './constants.js'
+import { STYLE_KEY }                      from './constants.js'
+import { TEXT_KEY }                       from './constants.js'
+import { TYPE_KEY }                       from './constants.js'
+import { buttonFrameIds }                 from './constants.js'
+import { inputFrameIds }                  from './constants.js'
 
 export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
   readonly name = 'colors'
@@ -28,13 +35,13 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
     return camelCase(clearStringOfSpecialChars(str), { pascalCase: false })
   }
 
-  getColor(obj): string {
-    if (obj?.type === 'TEXT') {
+  getColor(obj: Node): string {
+    if (isText(obj) && obj.fills[0].color) {
       return obj.fills[0].opacity
-        ? toColorOpacityString(obj.fills[0]?.color, obj.fills[0].opacity)
+        ? toColorOpacityString(obj.fills[0].color, obj.fills[0].opacity)
         : toColorString(obj.fills[0]?.color)
     }
-    if (obj?.type === 'INSTANCE') {
+    if (isInstance(obj) && 'fills' in obj.children[0]) {
       return obj.children[0].fills[0]?.color
         ? toColorString(obj.children[0].fills[0].color)
         : 'rgba(0, 0, 0, 0.00)'
@@ -42,28 +49,37 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
     return 'rgba(0, 0, 0, 0.00)'
   }
 
-  getStateColors(state) {
-    return {
-      background: state?.backgroundColor
-        ? toColorString(state.backgroundColor)
-        : 'rgba(0, 0, 0, 0.00)',
-      font: this.getColor(state?.children?.find((child) => child?.type === 'TEXT')),
-      border: state?.strokes?.[0]?.color
-        ? toColorOpacityString(state.strokes[0].color, state.strokes[0]?.opacity)
-        : 'none',
+  getStateColors(state: Node | undefined): StateColors {
+    let background = 'rgba(0, 0, 0, 0.00)'
+    let font = ''
+    let border = 'none'
+
+    if (!state) {
+      return { background, font, border }
     }
+
+    if ('backgroundColor' in state && state.backgroundColor) {
+      background = toColorString(state.backgroundColor)
+    }
+
+    if ('children' in state) {
+      const text = state.children.find((child) => isText(child))
+      font = text ? this.getColor(text) : font
+    }
+
+    if ('strokes' in state && state.strokes?.[0]?.color) {
+      border = toColorOpacityString(state.strokes[0].color, state.strokes[0]?.opacity || 1)
+    }
+
+    return { background, font, border }
   }
 
-  flattenObject(
-    object: Record<string, any>,
-    parentKey: string = '',
-    result: Record<string, any> = {}
-  ): Record<string, any> {
+  flattenObject(object: object, parentKey: string = '', result: object = {}): object {
     Object.entries(object).forEach(([key, value]) => {
       const newKey = parentKey ? `${parentKey}.${key}` : key
 
       if (typeof value === 'object' && value !== null) {
-        this.flattenObject(value, newKey, result)
+        this.flattenObject(value as object, newKey, result)
       } else {
         Object.assign(result, { [newKey]: value })
       }
@@ -72,26 +88,30 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
     return result
   }
 
-  findPropertyValue(properties: string[], key: string) {
+  findPropertyValue(properties: Array<string>, key: string): string | undefined {
     return properties.find((property) => property.startsWith(key))?.slice(key.length)
   }
 
-  getColorsSecondary(nodes): any {
-    const colors = {}
+  getColorsSecondary(nodes: ReadonlyArray<Node>): object {
+    const colors: Record<string, Color> = {}
 
     const buttonStatesSet: Map<string, Partial<ButtonState>> = new Map()
     const inputStatesSet: Map<string, Partial<InputState>> = new Map()
 
-    walk(nodes, (node) => {
-      if (buttonFrameIds.includes(node.name)) {
+    walk(nodes, (node: Node) => {
+      if (buttonFrameIds.includes(node.name) && 'children' in node) {
         node.children.forEach((button) => {
-          const properties: string[] = button.name.split(',').map((name: string) => name.trim())
+          const properties: Array<string> = button.name
+            .split(',')
+            .map((name: string) => name.trim())
 
           const style = this.findPropertyValue(properties, STYLE_KEY)
           const state = this.findPropertyValue(properties, STATE_KEY)
           const text = this.findPropertyValue(properties, TEXT_KEY)
 
-          if (!style || !state || !text || text === 'false') return
+          if (!('children' in button) || !style || !state || !text || text === 'false') {
+            return
+          }
 
           const buttonState = buttonStatesSet.get(this.formatString(style))
 
@@ -102,27 +122,28 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
         })
       }
 
-      if (inputFrameIds.includes(node.name)) {
+      if (inputFrameIds.includes(node.name) && 'children' in node) {
         node.children.forEach((input) => {
-          const properties: string[] = input.name.split(',').map((name: string) => name.trim())
+          const properties: Array<string> = input.name.split(',').map((name: string) => name.trim())
 
           const type = this.findPropertyValue(properties, TYPE_KEY)
           const state = this.findPropertyValue(properties, STATE_KEY)
 
-          if (!type || !state) return
+          if (!('children' in input) || !type || !state) {
+            return
+          }
 
           const inputState = inputStatesSet.get(this.formatString(type))
+          const inputField = input.children.find((item) => item.name === INPUT_FIELD_KEY)
 
           inputStatesSet.set(this.formatString(type), {
             ...inputState,
-            [this.formatString(state)]: this.getStateColors(
-              input.children.find((item) => item.name === INPUT_FIELD_KEY)
-            ),
+            [this.formatString(state)]: this.getStateColors(inputField),
           })
         })
       }
 
-      if (node.color && isColor(node.color)) {
+      if ('color' in node && node.color && isColor(node.color)) {
         const color = toColorString(node.color)
         if (!colors[color]) {
           colors[color] = node.color
@@ -147,18 +168,22 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
     }
   }
 
-  getColors(nodes): any {
-    const colors = {}
-    const buttonNames: string[] = []
-    const buttonStates: ButtonState[] = []
-    const inputStates: InputState[] = []
-    const inputNames: string[] = []
+  getColors(nodes: ReadonlyArray<Node>): object {
+    const colors: Record<string, Color> = {}
+    const buttonNames: Array<string> = []
+    const buttonStates: Array<ButtonState> = []
+    const inputStates: Array<InputState> = []
+    const inputNames: Array<string> = []
 
-    walk(nodes, (node) => {
-      if (buttonFrameIds.includes(node.name)) {
+    walk(nodes, (node: Node) => {
+      if (buttonFrameIds.includes(node.name) && 'children' in node) {
         const names = node.children.map((buttonName) => buttonName.name)
 
-        const buttons = node.children.map((item) => {
+        node.children.forEach((item) => {
+          if (!('children' in item)) {
+            return
+          }
+
           const obj = {
             name: item.name,
             default: item.children[0],
@@ -167,15 +192,14 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
             disabled: item.children[3] !== undefined ? item.children[3] : item.children[0],
           }
 
-          return {
+          buttonStates.push({
             default: this.getStateColors(obj.default),
             hover: this.getStateColors(obj.hover),
             pressed: this.getStateColors(obj.pressed),
             disabled: this.getStateColors(obj.disabled),
-          }
+          })
         })
 
-        buttonStates.push(...buttons)
         names.forEach((buttonName: string) => {
           if (buttonName) {
             buttonNames.push(this.formatString(buttonName))
@@ -183,10 +207,14 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
         })
       }
 
-      if (inputFrameIds.includes(node.name)) {
+      if (inputFrameIds.includes(node.name) && 'children' in node) {
         const names = node.children.map((inputName) => inputName.name)
 
-        const inputs = node.children.map((item) => {
+        node.children.forEach((item) => {
+          if (!('children' in item)) {
+            return
+          }
+
           const obj = {
             name: item.name,
             default: item.children[0],
@@ -196,16 +224,15 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
             disabled: item.children[4] !== undefined ? item.children[4] : item.children[0],
           }
 
-          return {
+          inputStates.push({
             default: this.getStateColors(obj.default),
             active: this.getStateColors(obj.active),
             error: this.getStateColors(obj.error),
             focus: this.getStateColors(obj.focus),
             disabled: this.getStateColors(obj.disabled),
-          }
+          })
         })
 
-        inputStates.push(...inputs)
         names.forEach((inputName: string) => {
           if (inputName) {
             inputNames.push(this.formatString(inputName))
@@ -213,7 +240,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
         })
       }
 
-      if (node.color && isColor(node.color)) {
+      if ('color' in node && node.color && isColor(node.color)) {
         const color = toColorString(node.color)
         if (!colors[color]) {
           colors[color] = node.color

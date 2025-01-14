@@ -14,7 +14,7 @@ export const run = async (
   output: string,
   themeFilePath: string,
   name: string = 'GeneratedFragment'
-) => {
+): Promise<void> => {
   const absoluteThemeFilePath = join(process.cwd(), themeFilePath)
   const exports = processFile(absoluteThemeFilePath)
 

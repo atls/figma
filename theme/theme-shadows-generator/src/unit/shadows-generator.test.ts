@@ -1,3 +1,12 @@
+import type { FileResponse }          from 'figma-js'
+import type { Node }                  from 'figma-js'
+
+import { describe }                   from 'node:test'
+import { beforeEach }                 from 'node:test'
+import { it }                         from 'node:test'
+
+import { expect }                     from 'playwright/test'
+
 import { FigmaThemeShadowsGenerator } from '../FigmaThemeShadowsGenerator.js'
 
 describe('FigmaThemeShadowsGenerator', () => {
@@ -28,7 +37,7 @@ describe('FigmaThemeShadowsGenerator', () => {
       },
     ]
 
-    const shadows = generator.getShadows(nodes)
+    const shadows = generator.getShadows(nodes as never as ReadonlyArray<Node>)
 
     expect(shadows).toEqual({
       red: '10px 20px 15px 5px rgba(255, 0, 0, 0.50)',
@@ -57,8 +66,7 @@ describe('FigmaThemeShadowsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as never as FileResponse)
 
     expect(result).toEqual({
       name: 'shadows',
@@ -72,7 +80,7 @@ describe('FigmaThemeShadowsGenerator', () => {
   it('should return empty object if no shadows found', () => {
     const nodes = [{ type: 'TEXT', style: { fontSize: 16 } }]
 
-    const shadows = generator.getShadows(nodes)
+    const shadows = generator.getShadows(nodes as never as ReadonlyArray<Node>)
 
     expect(shadows).toEqual({})
 
@@ -82,8 +90,7 @@ describe('FigmaThemeShadowsGenerator', () => {
       },
     }
 
-    // @ts-ignore
-    const result = generator.generate(file)
+    const result = generator.generate(file as never as FileResponse)
 
     expect(result).toEqual({
       name: 'shadows',

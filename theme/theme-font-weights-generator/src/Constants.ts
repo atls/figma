@@ -15,7 +15,7 @@ interface FontWeight {
   value: number
 }
 
-export const FontWeights: FontWeight[] = [
+export const FontWeights: Array<FontWeight> = [
   { weight: FontWeightNames.THIN, value: 100 },
   { weight: FontWeightNames.EXTRA_LIGHT, value: 200 },
   { weight: FontWeightNames.LIGHT, value: 300 },

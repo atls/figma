@@ -35,7 +35,7 @@ export class ThemeMappingStrategy {
     return valueKey ? `${THEME_KEY_PREFIX}${valueKey}` : undefined
   }
 
-  getColor(fills: readonly Paint[]): string | undefined {
+  getColor(fills: ReadonlyArray<Paint>): string | undefined {
     if (!fills[0]) {
       return undefined
     }
@@ -63,7 +63,7 @@ export class ThemeMappingStrategy {
     return this.getValueKeyFromTheme('fontSizes', fontSizePx) || fontSizePx
   }
 
-  getFontWeight(fontWeight: TypeStyle['fontWeight']): string | TypeStyle['fontWeight'] {
+  getFontWeight(fontWeight: TypeStyle['fontWeight']): TypeStyle['fontWeight'] | string {
     return this.getValueKeyFromTheme('fontWeights', `${fontWeight}`) || fontWeight
   }
 
@@ -131,7 +131,7 @@ export class ThemeMappingStrategy {
   }
 
   getBorder(
-    strokes: readonly Paint[],
+    strokes: ReadonlyArray<Paint>,
     strokeWeight: FrameBase['strokeWeight']
   ): string | undefined {
     if (!strokes[0]) {
@@ -152,7 +152,7 @@ export class ThemeMappingStrategy {
     return this.getValueKeyFromTheme('borders', border) || border
   }
 
-  getShadow(effects: readonly Effect[]): string | undefined {
+  getShadow(effects: ReadonlyArray<Effect>): string | undefined {
     const shadows: Array<string> = []
 
     effects.forEach(({ type, radius, offset, color }) => {
