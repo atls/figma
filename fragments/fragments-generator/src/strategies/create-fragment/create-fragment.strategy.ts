@@ -19,6 +19,7 @@ import { walk }                     from '@atls/figma-utils'
 
 import { CreateBoxStrategy }        from '../create-box/index.js'
 import { CreateButtonStrategy }     from '../create-button/index.js'
+import { CreateIconStrategy }       from '../create-icon/index.js'
 import { CreateInputStrategy }      from '../create-input/index.js'
 import { CreateTextStrategy }       from '../create-text/index.js'
 
@@ -29,15 +30,16 @@ export class CreateFragmentStrategy {
 
   private box: CreateBoxStrategy
 
-  private button: CreateButtonStrategy
+  private icon: CreateIconStrategy
 
-  private input: CreateInputStrategy
+  private button = new CreateButtonStrategy()
+
+  private input = new CreateInputStrategy()
 
   constructor(theme: Record<string, Record<string, string>>) {
     this.text = new CreateTextStrategy(theme)
     this.box = new CreateBoxStrategy(theme)
-    this.button = new CreateButtonStrategy()
-    this.input = new CreateInputStrategy()
+    this.icon = new CreateIconStrategy(theme)
   }
 
   execute(nodes: FileNodesResponse['nodes']): CreteFragmentResult {
@@ -49,8 +51,19 @@ export class CreateFragmentStrategy {
         return
       }
 
-      if (isInstance(node)) {
-        if (node.name.toLowerCase().includes('button')) {
+      if (isIcon(node)) {
+        walk(node?.children, (child: Node) => ignoreNodes.add(child.id))
+
+        this.elements[node.id] = {
+          element: this.icon.createElement(node),
+          childrenIds: [],
+          parentId: this.findParentId(node.id),
+        }
+
+        this.icon.getImports().forEach((value) => imports.add(value))
+      }
+
+      if (isButton(node)) {
           this.button.getImports().forEach((value) => imports.add(value))
 
           const buttonChildren = new Set<string>()
