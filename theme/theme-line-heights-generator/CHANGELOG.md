@@ -1,3 +1,15 @@
+
+
+## [2.0.4](https://github.com/atls/figma/compare/@atls/figma-theme-line-heights-generator@2.0.3...@atls/figma-theme-line-heights-generator@2.0.4) (2025-01-15)
+
+
+### Features
+
+
+* **figma:** icons fragment generator ([#49](https://github.com/atls/figma/issues/49)) ([6a9da16](https://github.com/atls/figma/commit/6a9da16b8312ff8a5ea2cb2d46f506f8927b0e3c))
+
+
+
 ## 2.0.3 (2025-01-14)
 
 ### Bug Fixes

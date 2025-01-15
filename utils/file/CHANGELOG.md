@@ -1,3 +1,15 @@
+
+
+## [0.0.6](https://github.com/atls/figma/compare/@atls/figma-file-utils@0.0.6...@atls/figma-file-utils@0.0.6) (2025-01-15)
+
+
+### Features
+
+
+* **figma:** icons fragment generator ([#49](https://github.com/atls/figma/issues/49)) ([6a9da16](https://github.com/atls/figma/commit/6a9da16b8312ff8a5ea2cb2d46f506f8927b0e3c))
+
+
+
 ## 0.0.6 (2025-01-14)
 
 ### Features
