@@ -525,6 +525,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:22.10.2"],\
           ["@types/react", "npm:18.3.12"],\
           ["@types/sinon", "npm:17.0.3"],\
+          ["camelcase", "npm:8.0.0"],\
           ["figma-js", "npm:1.16.1-0"],\
           ["playwright", "npm:1.49.1"],\
           ["pretty-format", "npm:29.7.0"],\
@@ -544,6 +545,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:22.10.2"],\
           ["@types/react", "npm:18.3.12"],\
           ["@types/sinon", "npm:17.0.3"],\
+          ["camelcase", "npm:8.0.0"],\
           ["figma-js", "npm:1.16.1-0"],\
           ["playwright", "npm:1.49.1"],\
           ["pretty-format", "npm:29.7.0"],\

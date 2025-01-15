@@ -13,14 +13,17 @@ import { cloneElement }             from 'react'
 import { createElement }            from 'react'
 
 import { isFrame }                  from '@atls/figma-utils'
-import { isInstance }               from '@atls/figma-utils'
 import { isText }                   from '@atls/figma-utils'
 import { walk }                     from '@atls/figma-utils'
 
 import { CreateBoxStrategy }        from '../create-box/index.js'
 import { CreateButtonStrategy }     from '../create-button/index.js'
+import { CreateIconStrategy }       from '../create-icon/index.js'
 import { CreateInputStrategy }      from '../create-input/index.js'
 import { CreateTextStrategy }       from '../create-text/index.js'
+import { isButton }                 from './create-fragment.utils.js'
+import { isIcon }                   from './create-fragment.utils.js'
+import { isInput }                  from './create-fragment.utils.js'
 
 export class CreateFragmentStrategy {
   private elements: Record<string, TreeElement> = {}
@@ -29,15 +32,16 @@ export class CreateFragmentStrategy {
 
   private box: CreateBoxStrategy
 
-  private button: CreateButtonStrategy
+  private icon: CreateIconStrategy
 
-  private input: CreateInputStrategy
+  private button = new CreateButtonStrategy()
+
+  private input = new CreateInputStrategy()
 
   constructor(theme: Record<string, Record<string, string>>) {
     this.text = new CreateTextStrategy(theme)
     this.box = new CreateBoxStrategy(theme)
-    this.button = new CreateButtonStrategy()
-    this.input = new CreateInputStrategy()
+    this.icon = new CreateIconStrategy(theme)
   }
 
   execute(nodes: FileNodesResponse['nodes']): CreteFragmentResult {
@@ -49,30 +53,40 @@ export class CreateFragmentStrategy {
         return
       }
 
-      if (isInstance(node)) {
-        if (node.name.toLowerCase().includes('button')) {
-          this.button.getImports().forEach((value) => imports.add(value))
+      if (isIcon(node)) {
+        walk(node?.children, (child: Node) => ignoreNodes.add(child.id))
 
-          const buttonChildren = new Set<string>()
-          walk(node?.children, (child: Node) => buttonChildren.add(child.id))
-
-          this.elements[node.id] = {
-            element: this.button.createElement(node),
-            childrenIds: Array.from(buttonChildren),
-            parentId: this.findParentId(node.id),
-          }
+        this.elements[node.id] = {
+          element: this.icon.createElement(node),
+          childrenIds: [],
+          parentId: this.findParentId(node.id),
         }
 
-        if (node.name.toLowerCase().includes('input')) {
-          this.input.getImports().forEach((value) => imports.add(value))
+        this.icon.getImports().forEach((value) => imports.add(value))
+      }
 
-          walk(node?.children, (child: Node) => ignoreNodes.add(child.id))
+      if (isButton(node)) {
+        this.button.getImports().forEach((value) => imports.add(value))
 
-          this.elements[node.id] = {
-            element: this.input.createElement(node),
-            childrenIds: [],
-            parentId: this.findParentId(node.id),
-          }
+        const buttonChildren = new Set<string>()
+        walk(node?.children, (child: Node) => buttonChildren.add(child.id))
+
+        this.elements[node.id] = {
+          element: this.button.createElement(node),
+          childrenIds: Array.from(buttonChildren),
+          parentId: this.findParentId(node.id),
+        }
+      }
+
+      if (isInput(node)) {
+        this.input.getImports().forEach((value) => imports.add(value))
+
+        walk(node?.children, (child: Node) => ignoreNodes.add(child.id))
+
+        this.elements[node.id] = {
+          element: this.input.createElement(node),
+          childrenIds: [],
+          parentId: this.findParentId(node.id),
         }
       }
 
@@ -111,7 +125,11 @@ export class CreateFragmentStrategy {
   }
 
   private createFragmentElement(elements: Array<TreeElement>): ReactElement {
-    if (elements.length <= 1) {
+    if (elements.length === 0) {
+      return createElement(Fragment)
+    }
+
+    if (elements.length === 1) {
       return this.createElementsTree(elements[0])
     }
 
