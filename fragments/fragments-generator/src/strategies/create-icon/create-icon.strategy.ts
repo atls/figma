@@ -34,6 +34,8 @@ export class CreateIconStrategy extends ThemeMappingStrategy {
   }
 
   private createIconName(nodeName: string): string {
-    return `${camelcase(nodeName, { pascalCase: true }).replace('50+', 'FiftyPlus')}Icon`
+    const legalName = nodeName.replace(/[/\\?%*:|"<>]/g, '-')
+
+    return `${camelcase(legalName, { pascalCase: true }).replace('50+', 'FiftyPlus')}Icon`
   }
 }
