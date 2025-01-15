@@ -22,8 +22,8 @@ export class CreateIconStrategy extends ThemeMappingStrategy {
 
     return React.createElement(this.iconName, {
       color: fills ? this.getColor(fills) : undefined,
-      width: absoluteBoundingBox.width ? `${absoluteBoundingBox.width}px` : undefined,
-      height: absoluteBoundingBox.height ? `${absoluteBoundingBox.height}px` : undefined,
+      width: this.getSize(absoluteBoundingBox.width),
+      height: this.getSize(absoluteBoundingBox.height),
     })
   }
 

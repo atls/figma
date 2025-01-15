@@ -110,6 +110,16 @@ export class ThemeMappingStrategy {
     return counterAxisAlignItems === 'CENTER' ? 'center' : undefined
   }
 
+  getSize(size: number | undefined): string | undefined {
+    if (!size && size !== 0) {
+      return undefined
+    }
+
+    const parsedSize = !Number.isInteger(size) ? size.toFixed(1) : size
+
+    return toPxString(parsedSize)
+  }
+
   getGap(itemSpacing: FrameBase['itemSpacing']): string | undefined {
     if (!itemSpacing) {
       return undefined

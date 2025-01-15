@@ -116,6 +116,19 @@ describe('ThemeMappingStrategy', () => {
     })
   })
 
+  describe('getSize', () => {
+    it('returns the size value', () => {
+      expect(strategy.getSize(0)).toBe('0px')
+      expect(strategy.getSize(16)).toBe('16px')
+      expect(strategy.getSize(16.2)).toBe('16.2px')
+      expect(strategy.getSize(16.200032)).toBe('16.2px')
+    })
+
+    it('returns undefined when no size is provided', () => {
+      expect(strategy.getSize(undefined)).toBeUndefined()
+    })
+  })
+
   describe('getGap', () => {
     it('returns the gap value from the theme', () => {
       expect(strategy.getGap(parseInt(theme.spaces.small, 10))).toBe(`${THEME_KEY_PREFIX}small`)
