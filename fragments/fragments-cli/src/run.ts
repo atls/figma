@@ -28,9 +28,10 @@ export const run = async (
   const loader = new FigmaFileLoader()
   const generator = new FigmaThemeFragmentsGenerator()
 
-  const response = await loader.loadNode(fileId, nodeId)
+  const fileResponse = await loader.loadNode(fileId, nodeId)
+  const images = await loader.fileImageFills(fileId)
 
-  const component = generator.generate(response, theme, name)
+  const component = generator.generate(fileResponse, theme, images, name)
 
   const fileName = `${kebabCase(name, false)}.component.tsx`
 

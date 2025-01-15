@@ -11,6 +11,7 @@ import { plugins }                  from 'pretty-format'
 import { format }                   from 'pretty-format'
 import { cloneElement }             from 'react'
 import { createElement }            from 'react'
+import { v4 as uuid }               from 'uuid'
 
 import { isFrame }                  from '@atls/figma-utils'
 import { isText }                   from '@atls/figma-utils'
@@ -19,9 +20,11 @@ import { walk }                     from '@atls/figma-utils'
 import { CreateBoxStrategy }        from '../create-box/index.js'
 import { CreateButtonStrategy }     from '../create-button/index.js'
 import { CreateIconStrategy }       from '../create-icon/index.js'
+import { CreateImageStrategy }      from '../create-image/index.js'
 import { CreateInputStrategy }      from '../create-input/index.js'
 import { CreateTextStrategy }       from '../create-text/index.js'
 import { isButton }                 from './create-fragment.utils.js'
+import { nodeHasImage }             from './create-fragment.utils.js'
 import { isIcon }                   from './create-fragment.utils.js'
 import { isInput }                  from './create-fragment.utils.js'
 
@@ -34,14 +37,17 @@ export class CreateFragmentStrategy {
 
   private icon: CreateIconStrategy
 
+  private image: CreateImageStrategy
+
   private button = new CreateButtonStrategy()
 
   private input = new CreateInputStrategy()
 
-  constructor(theme: Record<string, Record<string, string>>) {
+  constructor(theme: Record<string, Record<string, string>>, images: Record<string, string>) {
     this.text = new CreateTextStrategy(theme)
     this.box = new CreateBoxStrategy(theme)
     this.icon = new CreateIconStrategy(theme)
+    this.image = new CreateImageStrategy(images)
   }
 
   execute(nodes: FileNodesResponse['nodes']): CreteFragmentResult {
@@ -108,6 +114,26 @@ export class CreateFragmentStrategy {
           childrenIds: node?.children.map((child) => child.id) || [],
           parentId: this.findParentId(node.id),
         }
+      }
+
+      if (nodeHasImage(node)) {
+        this.image.getImports().forEach((value) => imports.add(value))
+
+        const imageElements = this.image.createElements(node.background, node.name)
+
+        imageElements.forEach((element) => {
+          const elementId = uuid()
+
+          const parentElement = this.elements[node.id]
+
+          parentElement?.childrenIds.push(elementId)
+
+          this.elements[elementId] = {
+            element,
+            childrenIds: [],
+            parentId: parentElement ? node.id : null,
+          }
+        })
       }
     })
 

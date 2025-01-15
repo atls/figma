@@ -529,7 +529,8 @@ const RAW_RUNTIME_STATE =
           ["figma-js", "npm:1.16.1-0"],\
           ["playwright", "npm:1.49.1"],\
           ["pretty-format", "npm:29.7.0"],\
-          ["react", "npm:18.3.1"]\
+          ["react", "npm:18.3.1"],\
+          ["uuid", "npm:11.0.5"]\
         ],\
         "packagePeers": [\
           "@types/figma-js",\
@@ -549,7 +550,8 @@ const RAW_RUNTIME_STATE =
           ["figma-js", "npm:1.16.1-0"],\
           ["playwright", "npm:1.49.1"],\
           ["pretty-format", "npm:29.7.0"],\
-          ["react", "npm:18.3.1"]\
+          ["react", "npm:18.3.1"],\
+          ["uuid", "npm:11.0.5"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -15488,6 +15490,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../.yarn/berry/cache/util-deprecate-npm-1.0.2-e3fe1a219c-10.zip/node_modules/util-deprecate/",\
         "packageDependencies": [\
           ["util-deprecate", "npm:1.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["uuid", [\
+      ["npm:11.0.5", {\
+        "packageLocation": "../.yarn/berry/cache/uuid-npm-11.0.5-685b7c1023-10.zip/node_modules/uuid/",\
+        "packageDependencies": [\
+          ["uuid", "npm:11.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
