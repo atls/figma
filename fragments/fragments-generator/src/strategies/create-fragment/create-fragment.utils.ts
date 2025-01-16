@@ -16,6 +16,9 @@ export const isButton = (node: Node): node is Instance =>
 export const isInput = (node: Node): node is Instance =>
   isInstance(node) && node.name.toLowerCase().includes('input')
 
+export const isLink = (node: Node): node is Instance =>
+  isInstance(node) && node.name.toLowerCase().includes('link')
+
 export const nodeHasImage = (
   node: Node
 ): node is Component | ComponentSet | Frame | Group | Instance =>

@@ -22,8 +22,10 @@ import { CreateButtonStrategy }     from '../create-button/index.js'
 import { CreateIconStrategy }       from '../create-icon/index.js'
 import { CreateImageStrategy }      from '../create-image/index.js'
 import { CreateInputStrategy }      from '../create-input/index.js'
+import { CreateLinkStrategy }       from '../create-link/index.js'
 import { CreateTextStrategy }       from '../create-text/index.js'
 import { isButton }                 from './create-fragment.utils.js'
+import { isLink }                   from './create-fragment.utils.js'
 import { nodeHasImage }             from './create-fragment.utils.js'
 import { isIcon }                   from './create-fragment.utils.js'
 import { isInput }                  from './create-fragment.utils.js'
@@ -42,6 +44,8 @@ export class CreateFragmentStrategy {
   private button = new CreateButtonStrategy()
 
   private input = new CreateInputStrategy()
+
+  private link = new CreateLinkStrategy()
 
   constructor(theme: Record<string, Record<string, string>>, images: Record<string, string>) {
     this.text = new CreateTextStrategy(theme)
@@ -96,6 +100,16 @@ export class CreateFragmentStrategy {
         }
       }
 
+      if (isLink(node)) {
+        this.link.getImports().forEach((value) => imports.add(value))
+
+        this.elements[node.id] = {
+          element: this.link.createElement(node),
+          childrenIds: node?.children.map((child) => child.id) || [],
+          parentId: this.findParentId(node.id),
+        }
+      }
+
       if (isText(node)) {
         this.text.getImports().forEach((value) => imports.add(value))
 
@@ -124,14 +138,16 @@ export class CreateFragmentStrategy {
         imageElements.forEach((element) => {
           const elementId = uuid()
 
-          const parentElement = this.elements[node.id]
+          const parentId = this.elements[node.id] ? node.id : this.findParentId(node.id)
+
+          const parentElement = this.elements[node.id] || this.elements[parentId || '']
 
           parentElement?.childrenIds.push(elementId)
 
           this.elements[elementId] = {
             element,
             childrenIds: [],
-            parentId: parentElement ? node.id : null,
+            parentId: parentElement ? parentId : null,
           }
         })
       }
