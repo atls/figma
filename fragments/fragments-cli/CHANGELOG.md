@@ -1,5 +1,12 @@
 
 
+## [0.0.8](https://github.com/atls/figma/compare/@atls/figma-fragments-cli@0.0.6...@atls/figma-fragments-cli@0.0.8) (2025-01-17)
+
+
+
+
+
+
 ## [0.0.6](https://github.com/atls/figma/compare/@atls/figma-fragments-cli@0.0.5...@atls/figma-fragments-cli@0.0.6) (2025-01-17)
 
 

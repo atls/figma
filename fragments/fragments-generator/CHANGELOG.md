@@ -1,5 +1,12 @@
 
 
+## [0.2.1](https://github.com/atls/figma/compare/@atls/figma-fragments-generator@0.2.0...@atls/figma-fragments-generator@0.2.1) (2025-01-17)
+
+
+
+
+
+
 # [0.2.0](https://github.com/atls/figma/compare/@atls/figma-fragments-generator@0.1.0...@atls/figma-fragments-generator@0.2.0) (2025-01-17)
 
 
