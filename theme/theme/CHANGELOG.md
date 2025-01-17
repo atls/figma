@@ -1,3 +1,15 @@
+
+
+## [2.0.10](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.9...@atls/figma-theme@2.0.10) (2025-01-17)
+
+
+### Features
+
+
+* **figma:** link and image fragment generator ([#50](https://github.com/atls/figma/issues/50)) ([5c7bf01](https://github.com/atls/figma/commit/5c7bf013046f44d038a763f9ee2d8ad263c2a69f))
+
+
+
 ## [2.0.9](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.8...@atls/figma-theme@2.0.9) (2025-01-15)
 
 ### Features

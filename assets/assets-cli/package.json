@@ -1,6 +1,6 @@
 {
   "name": "@atls/figma-assets-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "BSD-3-Clause",
   "type": "module",
   "main": "src/index.ts",
