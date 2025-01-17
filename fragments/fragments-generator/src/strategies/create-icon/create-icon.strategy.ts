@@ -22,8 +22,8 @@ export class CreateIconStrategy extends ThemeMappingStrategy {
 
     return React.createElement(this.iconName, {
       color: fills ? this.getColor(fills) : undefined,
-      width: absoluteBoundingBox.width ? `${absoluteBoundingBox.width}px` : undefined,
-      height: absoluteBoundingBox.height ? `${absoluteBoundingBox.height}px` : undefined,
+      width: this.getSize(absoluteBoundingBox.width),
+      height: this.getSize(absoluteBoundingBox.height),
     })
   }
 
@@ -34,6 +34,8 @@ export class CreateIconStrategy extends ThemeMappingStrategy {
   }
 
   private createIconName(nodeName: string): string {
-    return `${camelcase(nodeName, { pascalCase: true }).replace('50+', 'FiftyPlus')}Icon`
+    const legalName = nodeName.replace(/[/\\?%*:|"<>]/g, '-')
+
+    return `${camelcase(legalName, { pascalCase: true }).replace('50+', 'FiftyPlus')}Icon`
   }
 }

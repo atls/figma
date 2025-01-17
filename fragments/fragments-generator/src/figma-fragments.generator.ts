@@ -20,9 +20,10 @@ export class FigmaThemeFragmentsGenerator {
   generate(
     response: FileNodesResponse,
     theme: Record<string, Record<string, string>>,
+    images: Record<string, string>,
     name: string
   ): string {
-    const strategy = new CreateFragmentStrategy(theme)
+    const strategy = new CreateFragmentStrategy(theme, images)
 
     const { fragment, imports } = strategy.execute(response.nodes)
 

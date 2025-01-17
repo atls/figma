@@ -29,8 +29,8 @@ export class CreateBoxStrategy extends ThemeMappingStrategy {
     } = node
 
     return React.createElement('Box', {
-      width: absoluteBoundingBox.width ? `${absoluteBoundingBox.width}px` : undefined,
-      height: absoluteBoundingBox.height ? `${absoluteBoundingBox.height}px` : undefined,
+      width: this.getSize(absoluteBoundingBox.width),
+      height: this.getSize(absoluteBoundingBox.height),
       flexDirection: this.getFlexDirection(layoutMode),
       justifyContent: this.getJustifyContent(primaryAxisAlignItems),
       alignItems: this.getAlignItems(counterAxisAlignItems),
