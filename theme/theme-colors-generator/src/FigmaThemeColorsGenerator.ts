@@ -114,10 +114,14 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
           }
 
           const buttonState = buttonStatesSet.get(this.formatString(style))
+          const formattedStyle = this.formatString(style)
+          const formattedState = this.formatString(state)
 
-          buttonStatesSet.set(this.formatString(style), {
+          if (buttonState && buttonState[formattedState]) return
+
+          buttonStatesSet.set(formattedStyle, {
             ...buttonState,
-            [this.formatString(state)]: this.getStateColors(button.children[0]),
+            [formattedState]: this.getStateColors(button),
           })
         })
       }
@@ -133,12 +137,16 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
             return
           }
 
-          const inputState = inputStatesSet.get(this.formatString(type))
-          const inputField = input.children.find((item) => item.name === INPUT_FIELD_KEY)
+          const formattedType = this.formatString(type)
+          const formattedState = this.formatString(state)
 
-          inputStatesSet.set(this.formatString(type), {
+          const inputState = inputStatesSet.get(formattedType)
+          const inputField = input.children.find((item) => item.name === INPUT_FIELD_KEY)
+          if (!inputField) return
+
+          inputStatesSet.set(formattedType, {
             ...inputState,
-            [this.formatString(state)]: this.getStateColors(inputField),
+            [formattedState]: this.getStateColors(inputField),
           })
         })
       }
