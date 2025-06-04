@@ -1,5 +1,17 @@
 
 
+## [2.0.4](https://github.com/atls/figma/compare/@atls/figma-theme-colors-generator@2.0.3...@atls/figma-theme-colors-generator@2.0.4) (2025-06-04)
+
+
+### Features
+
+
+* **figma-theme-colors-generator:** dont update style prop ([b71a094](https://github.com/atls/figma/commit/b71a094316a2860680b974a8680f2c28ae650aea))
+
+
+
+
+
 ## [2.0.3](https://github.com/atls/figma/compare/@atls/figma-theme-colors-generator@2.0.2...@atls/figma-theme-colors-generator@2.0.3) (2025-01-17)
 
 
