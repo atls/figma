@@ -115,9 +115,9 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
 
           const buttonState = buttonStatesSet.get(this.formatString(style))
           const formattedStyle = this.formatString(style)
-          const formattedState = this.formatString(state)
+          const formattedState = this.formatString(state) as keyof typeof buttonState
 
-          if (buttonState && buttonState[formattedState]) return
+          if (buttonState?.[formattedState]) return
 
           buttonStatesSet.set(formattedStyle, {
             ...buttonState,
