@@ -1,10 +1,28 @@
+
+
+## [0.0.9](https://github.com/atls/figma/compare/@atls/figma-fragments-cli@0.0.8...@atls/figma-fragments-cli@0.0.9) (2025-06-05)
+
+
+
+
+
+
 ## [0.0.8](https://github.com/atls/figma/compare/@atls/figma-fragments-cli@0.0.6...@atls/figma-fragments-cli@0.0.8) (2025-01-17)
+
+
+
+
+
 
 ## [0.0.6](https://github.com/atls/figma/compare/@atls/figma-fragments-cli@0.0.5...@atls/figma-fragments-cli@0.0.6) (2025-01-17)
 
+
 ### Features
 
-- **figma:** link and image fragment generator ([#50](https://github.com/atls/figma/issues/50)) ([5c7bf01](https://github.com/atls/figma/commit/5c7bf013046f44d038a763f9ee2d8ad263c2a69f))
+
+* **figma:** link and image fragment generator ([#50](https://github.com/atls/figma/issues/50)) ([5c7bf01](https://github.com/atls/figma/commit/5c7bf013046f44d038a763f9ee2d8ad263c2a69f))
+
+
 
 ## [0.0.5](https://github.com/atls/figma/compare/@atls/figma-fragments-cli@0.0.4...@atls/figma-fragments-cli@0.0.5) (2025-01-15)
 
