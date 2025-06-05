@@ -1,5 +1,12 @@
 
 
+## [1.0.6](https://github.com/atls/figma/compare/@atls/figma-theme-fonts-generator@1.0.5...@atls/figma-theme-fonts-generator@1.0.6) (2025-06-05)
+
+
+
+
+
+
 ## [1.0.5](https://github.com/atls/figma/compare/@atls/figma-theme-fonts-generator@1.0.4...@atls/figma-theme-fonts-generator@1.0.5) (2025-06-05)
 
 

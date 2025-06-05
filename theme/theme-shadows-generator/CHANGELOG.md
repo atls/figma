@@ -1,5 +1,12 @@
 
 
+## [1.0.7](https://github.com/atls/figma/compare/@atls/figma-theme-shadows-generator@1.0.6...@atls/figma-theme-shadows-generator@1.0.7) (2025-06-05)
+
+
+
+
+
+
 ## [1.0.6](https://github.com/atls/figma/compare/@atls/figma-theme-shadows-generator@1.0.5...@atls/figma-theme-shadows-generator@1.0.6) (2025-06-05)
 
 

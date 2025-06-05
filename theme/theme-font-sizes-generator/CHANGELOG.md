@@ -1,5 +1,12 @@
 
 
+## [2.0.6](https://github.com/atls/figma/compare/@atls/figma-theme-font-sizes-generator@2.0.5...@atls/figma-theme-font-sizes-generator@2.0.6) (2025-06-05)
+
+
+
+
+
+
 ## [2.0.5](https://github.com/atls/figma/compare/@atls/figma-theme-font-sizes-generator@2.0.4...@atls/figma-theme-font-sizes-generator@2.0.5) (2025-06-05)
 
 
