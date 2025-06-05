@@ -1,21 +1,10 @@
-
-
 ## [2.0.8](https://github.com/atls/figma/compare/@atls/figma-theme-cli@2.0.8...@atls/figma-theme-cli@2.0.8) (2025-06-04)
-
-
-
-
-
 
 ## [2.0.8](https://github.com/atls/figma/compare/@atls/figma-theme-cli@2.0.7...@atls/figma-theme-cli@2.0.8) (2025-01-17)
 
-
 ### Features
 
-
-* **figma:** link and image fragment generator ([#50](https://github.com/atls/figma/issues/50)) ([5c7bf01](https://github.com/atls/figma/commit/5c7bf013046f44d038a763f9ee2d8ad263c2a69f))
-
-
+- **figma:** link and image fragment generator ([#50](https://github.com/atls/figma/issues/50)) ([5c7bf01](https://github.com/atls/figma/commit/5c7bf013046f44d038a763f9ee2d8ad263c2a69f))
 
 ## [2.0.7](https://github.com/atls/figma/compare/@atls/figma-theme-cli@2.0.6...@atls/figma-theme-cli@2.0.7) (2025-01-15)
 
