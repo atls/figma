@@ -14,8 +14,8 @@ on:
 jobs:
   publish:
     # if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
-    uses: atls/shared/.github/workflows/publish.yaml@master
-    # uses: atls/shared/.github/workflows/publish.yaml@feat/force-npm
+    # uses: atls/shared/.github/workflows/publish.yaml@master
+    uses: atls/shared/.github/workflows/publish.yaml@feat/force-npm
     permissions: write-all
     with:
       appId: ${{ vars.ATLANTIS_SUPER_BOT_APP_ID }}
