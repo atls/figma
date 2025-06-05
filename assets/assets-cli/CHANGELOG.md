@@ -1,5 +1,12 @@
 
 
+## [1.0.5](https://github.com/atls/figma/compare/@atls/figma-assets-cli@1.0.4...@atls/figma-assets-cli@1.0.5) (2025-06-05)
+
+
+
+
+
+
 ## [1.0.4](https://github.com/atls/figma/compare/@atls/figma-assets-cli@1.0.3...@atls/figma-assets-cli@1.0.4) (2025-01-17)
 
 

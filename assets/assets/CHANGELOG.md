@@ -1,5 +1,12 @@
 
 
+## [1.0.4](https://github.com/atls/figma/compare/@atls/figma-assets@1.0.4...@atls/figma-assets@1.0.4) (2025-06-05)
+
+
+
+
+
+
 ## [1.0.4](https://github.com/atls/figma/compare/@atls/figma-assets@1.0.2...@atls/figma-assets@1.0.4) (2025-01-17)
 
 
