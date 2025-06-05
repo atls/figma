@@ -7,6 +7,13 @@
 
 
 
+## [2.0.4](https://github.com/atls/figma/compare/@atls/figma-theme-colors-generator@2.0.4...@atls/figma-theme-colors-generator@2.0.4) (2025-06-05)
+
+
+
+
+
+
 ## [2.0.4](https://github.com/atls/figma/compare/@atls/figma-theme-colors-generator@2.0.3...@atls/figma-theme-colors-generator@2.0.4) (2025-06-04)
 
 

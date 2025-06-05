@@ -7,6 +7,13 @@
 
 
 
+## [1.0.2](https://github.com/atls/figma/compare/@atls/figma-file-loader@1.0.2...@atls/figma-file-loader@1.0.2) (2025-06-05)
+
+
+
+
+
+
 ## [1.0.2](https://github.com/atls/figma/compare/@atls/figma-file-loader@1.0.1...@atls/figma-file-loader@1.0.2) (2025-01-17)
 
 

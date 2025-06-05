@@ -1,5 +1,12 @@
 
 
+## [2.0.7](https://github.com/atls/figma/compare/@atls/figma-theme-line-heights-generator@2.0.6...@atls/figma-theme-line-heights-generator@2.0.7) (2025-06-05)
+
+
+
+
+
+
 ## [2.0.6](https://github.com/atls/figma/compare/@atls/figma-theme-line-heights-generator@2.0.5...@atls/figma-theme-line-heights-generator@2.0.6) (2025-06-05)
 
 
