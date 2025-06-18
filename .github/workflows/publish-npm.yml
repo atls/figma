@@ -1,18 +1,22 @@
 name: Publish to registry
 
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - master
-    paths-ignore:
-      - '.github/**'
+  pull_request
+  # workflow_dispatch:
+  # pull_request:
+  # types:
+  #   - closed
+  # branches:
+  #   - master
+  # paths-ignore:
+  #   - '.github/**'
 
 jobs:
   publish:
-    if: github.event.pull_request.merged == true
-    uses: atls/shared/.github/workflows/publish.yaml@master
+    # if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    # if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    # uses: atls/shared/.github/workflows/publish.yaml@master
+    uses: atls/shared/.github/workflows/publish.yaml@feat/force-npm
     permissions: write-all
     with:
       appId: ${{ vars.ATLANTIS_SUPER_BOT_APP_ID }}

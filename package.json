@@ -13,7 +13,7 @@
     "detect-circular": "madge . -c"
   },
   "devDependencies": {
-    "@atls/code-runtime": "2.1.2",
+    "@atls/code-runtime": "2.1.9",
     "@atls/config-jest": "1.1.1",
     "@jest/core": "29.7.0",
     "@types/jest": "29.5.12",
@@ -23,5 +23,5 @@
     "prettier": "2.8.3",
     "typescript": "5.5.4"
   },
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.9.2"
 }
