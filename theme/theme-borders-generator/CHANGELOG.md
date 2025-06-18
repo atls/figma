@@ -7,6 +7,13 @@
 
 
 
+## [1.0.7](https://github.com/atls/figma/compare/@atls/figma-theme-borders-generator@1.0.7...@atls/figma-theme-borders-generator@1.0.7) (2025-06-18)
+
+
+
+
+
+
 ## [1.0.7](https://github.com/atls/figma/compare/@atls/figma-theme-borders-generator@1.0.7...@atls/figma-theme-borders-generator@1.0.7) (2025-06-05)
 
 

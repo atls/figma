@@ -7,6 +7,13 @@
 
 
 
+## [1.0.2](https://github.com/atls/figma/compare/@atls/figma-theme-generator-common@1.0.2...@atls/figma-theme-generator-common@1.0.2) (2025-06-18)
+
+
+
+
+
+
 ## [1.0.2](https://github.com/atls/figma/compare/@atls/figma-theme-generator-common@1.0.2...@atls/figma-theme-generator-common@1.0.2) (2025-06-05)
 
 

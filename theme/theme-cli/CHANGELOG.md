@@ -1,5 +1,12 @@
 
 
+## [2.0.13](https://github.com/atls/figma/compare/@atls/figma-theme-cli@2.0.13...@atls/figma-theme-cli@2.0.13) (2025-06-18)
+
+
+
+
+
+
 ## [2.0.12](https://github.com/atls/figma/compare/@atls/figma-theme-cli@2.0.11...@atls/figma-theme-cli@2.0.12) (2025-06-18)
 
 
