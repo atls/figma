@@ -1,0 +1,17 @@
+export const colors = {
+  white: "rgba(255, 255, 255, 1)",
+  romance: "rgba(255, 255, 255, 0.87)",
+  spunpearl: "rgba(172, 173, 185, 1)",
+  royalblue: "rgba(112, 134, 253, 1)",
+  blueviolet: "rgba(151, 71, 255, 1)",
+  blue: "rgba(87, 111, 240, 1)",
+  indigo: "rgba(79, 97, 196, 1)",
+  toryblue: "rgba(67, 83, 169, 1)",
+  comet: "rgba(91, 92, 112, 1)",
+  midgray: "rgba(91, 92, 112, 0.87)",
+  biscay: "rgba(55, 55, 105, 1)",
+  downriver: "rgba(30, 43, 93, 1)",
+  luckypoint: "rgba(15, 15, 95, 1)",
+  stratos: "rgba(15, 15, 75, 1)",
+  deepcove: "rgba(5, 12, 62, 1)",
+};
