@@ -1,5 +1,12 @@
 
 
+## [0.0.11](https://github.com/atls/figma/compare/@atls/figma-utils@0.0.10...@atls/figma-utils@0.0.11) (2025-06-18)
+
+
+
+
+
+
 ## [0.0.10](https://github.com/atls/figma/compare/@atls/figma-utils@0.0.9...@atls/figma-utils@0.0.10) (2025-06-05)
 
 

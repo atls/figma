@@ -1,5 +1,12 @@
 
 
+## [2.0.6](https://github.com/atls/figma/compare/@atls/figma-theme-radii-generator@2.0.6...@atls/figma-theme-radii-generator@2.0.6) (2025-06-18)
+
+
+
+
+
+
 ## [2.0.6](https://github.com/atls/figma/compare/@atls/figma-theme-radii-generator@2.0.6...@atls/figma-theme-radii-generator@2.0.6) (2025-06-05)
 
 
