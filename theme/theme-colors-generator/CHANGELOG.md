@@ -1,5 +1,24 @@
 
 
+## [2.0.4](https://github.com/atls/figma/compare/@atls/figma-theme-colors-generator@2.0.4...@atls/figma-theme-colors-generator@2.0.4) (2025-06-18)
+
+
+### Bug Fixes
+
+
+* **figma-theme-colors-generator:** type error ([e192b53](https://github.com/atls/figma/commit/e192b53161b52b9e6e70cce4a33174b67b361ce0))
+
+
+
+
+
+## [2.0.4](https://github.com/atls/figma/compare/@atls/figma-theme-colors-generator@2.0.4...@atls/figma-theme-colors-generator@2.0.4) (2025-06-18)
+
+
+
+
+
+
 ## [2.0.4](https://github.com/atls/figma/compare/@atls/figma-theme-colors-generator@2.0.4...@atls/figma-theme-colors-generator@2.0.4) (2025-06-05)
 
 

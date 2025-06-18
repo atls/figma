@@ -1,5 +1,19 @@
 
 
+## [2.0.3](https://github.com/atls/figma/compare/@atls/figma-theme-font-weights-generator@2.0.3...@atls/figma-theme-font-weights-generator@2.0.3) (2025-06-18)
+
+
+
+
+
+
+## [2.0.3](https://github.com/atls/figma/compare/@atls/figma-theme-font-weights-generator@2.0.3...@atls/figma-theme-font-weights-generator@2.0.3) (2025-06-18)
+
+
+
+
+
+
 ## [2.0.3](https://github.com/atls/figma/compare/@atls/figma-theme-font-weights-generator@2.0.3...@atls/figma-theme-font-weights-generator@2.0.3) (2025-06-05)
 
 

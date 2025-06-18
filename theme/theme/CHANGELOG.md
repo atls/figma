@@ -1,5 +1,19 @@
 
 
+## [2.0.15](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.15...@atls/figma-theme@2.0.15) (2025-06-18)
+
+
+
+
+
+
+## [2.0.14](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.13...@atls/figma-theme@2.0.14) (2025-06-18)
+
+
+
+
+
+
 ## [2.0.13](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.13...@atls/figma-theme@2.0.13) (2025-06-18)
 
 
