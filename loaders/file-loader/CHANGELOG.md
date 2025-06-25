@@ -1,5 +1,17 @@
 
 
+## [1.0.2](https://github.com/atls/figma/compare/@atls/figma-file-loader@1.0.2...@atls/figma-file-loader@1.0.2) (2025-06-25)
+
+
+### Bug Fixes
+
+
+* **assets:** deep node search ([ca8518a](https://github.com/atls/figma/commit/ca8518a4da78af0fd8793c0453c7b81f24b57af7))
+
+
+
+
+
 ## [1.0.2](https://github.com/atls/figma/compare/@atls/figma-file-loader@1.0.2...@atls/figma-file-loader@1.0.2) (2025-06-18)
 
 
