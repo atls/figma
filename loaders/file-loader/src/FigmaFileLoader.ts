@@ -7,6 +7,8 @@ import type { Node }                   from 'figma-js'
 
 import { Client }                      from 'figma-js'
 
+import { walk }                        from '@atls/figma-utils'
+
 export class FigmaFileLoader {
   figma: ClientInterface
 
@@ -29,12 +31,18 @@ export class FigmaFileLoader {
   async loadDocument(fileId: string, documentId: string): Promise<Node> {
     const file = await this.load(fileId)
 
-    const node = file.document.children.find((doc) => doc.id === documentId)
+    let documentNode: Node | undefined
 
-    if (!node) {
+    walk(file.document, (node) => {
+      if (node.id === documentId) {
+        documentNode = node
+      }
+    })
+
+    if (!documentNode) {
       throw new Error(`Document with id ${documentId} not found. Please try again`)
     }
-    return node
+    return documentNode
   }
 
   async fileImages(fileId: string, itemIds: Array<string>): Promise<FileImageResponse['images']> {
