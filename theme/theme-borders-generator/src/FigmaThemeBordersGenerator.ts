@@ -23,11 +23,13 @@ export class FigmaThemeBordersGenerator extends FigmaThemeGenerator {
         const weight = strokeWeight?.toString() || '1'
 
         node.strokes.forEach((stroke: Paint) => {
-          if (!stroke.color) {
+          const { type: paintType } = stroke as Partial<Paint>
+
+          if (!paintType || !stroke.color) {
             return
           }
 
-          const type = String(stroke.type).toLowerCase()
+          const type = String(paintType).toLowerCase()
           const color = stroke.opacity
             ? toColorOpacityString(stroke.color, stroke.opacity)
             : toColorString(stroke.color)

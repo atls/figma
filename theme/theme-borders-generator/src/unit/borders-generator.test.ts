@@ -99,4 +99,15 @@ describe('FigmaThemeBordersGenerator', () => {
       content: `export const borders = {}`,
     })
   })
+
+  it('should ignore a stroke without a type', () => {
+    const malformedNodes = [
+      {
+        strokeWeight: 1,
+        strokes: [{ color: { r: 1, g: 0, b: 0, a: 1 } }],
+      },
+    ]
+
+    expect(generator.getBorders(malformedNodes as never)).toEqual({})
+  })
 })
