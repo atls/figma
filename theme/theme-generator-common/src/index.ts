@@ -6,8 +6,7 @@ export interface FigmaThemeGeneratorValues {
 }
 
 export type FigmaThemeGeneratorResult =
-  | FigmaThemeGeneratorValues
-  | Promise<FigmaThemeGeneratorValues>
+  FigmaThemeGeneratorValues | Promise<FigmaThemeGeneratorValues>
 
 export abstract class FigmaThemeGenerator {
   method: 'default' | 'secondary'

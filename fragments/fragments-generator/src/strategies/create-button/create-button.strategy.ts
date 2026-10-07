@@ -22,6 +22,6 @@ export class CreateButtonStrategy {
       return React.createElement(Fragment)
     }
 
-    return React.createElement('Button', { variant: style?.value.toString().toLocaleLowerCase() })
+    return React.createElement('Button', { variant: style.value.toString().toLocaleLowerCase() })
   }
 }

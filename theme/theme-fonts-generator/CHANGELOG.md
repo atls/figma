@@ -1,42 +1,16 @@
-
-
 ## [1.0.8](https://github.com/atls/figma/compare/@atls/figma-theme-fonts-generator@1.0.8...@atls/figma-theme-fonts-generator@1.0.8) (2025-06-18)
-
-
-
-
-
 
 ## [1.0.7](https://github.com/atls/figma/compare/@atls/figma-theme-fonts-generator@1.0.6...@atls/figma-theme-fonts-generator@1.0.7) (2025-06-18)
 
-
-
-
-
-
 ## [1.0.6](https://github.com/atls/figma/compare/@atls/figma-theme-fonts-generator@1.0.5...@atls/figma-theme-fonts-generator@1.0.6) (2025-06-05)
-
-
-
-
-
 
 ## [1.0.5](https://github.com/atls/figma/compare/@atls/figma-theme-fonts-generator@1.0.4...@atls/figma-theme-fonts-generator@1.0.5) (2025-06-05)
 
-
-
-
-
-
 ## [1.0.4](https://github.com/atls/figma/compare/@atls/figma-theme-fonts-generator@1.0.3...@atls/figma-theme-fonts-generator@1.0.4) (2025-01-17)
-
 
 ### Features
 
-
-* **figma:** link and image fragment generator ([#50](https://github.com/atls/figma/issues/50)) ([5c7bf01](https://github.com/atls/figma/commit/5c7bf013046f44d038a763f9ee2d8ad263c2a69f))
-
-
+- **figma:** link and image fragment generator ([#50](https://github.com/atls/figma/issues/50)) ([5c7bf01](https://github.com/atls/figma/commit/5c7bf013046f44d038a763f9ee2d8ad263c2a69f))
 
 ## [1.0.3](https://github.com/atls/figma/compare/@atls/figma-theme-fonts-generator@1.0.2...@atls/figma-theme-fonts-generator@1.0.3) (2025-01-15)
 

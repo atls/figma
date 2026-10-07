@@ -1,5 +1,3 @@
-import type { Text }          from 'figma-js'
-
 import { describe }           from 'node:test'
 import { beforeEach }         from 'node:test'
 import { it }                 from 'node:test'
@@ -44,7 +42,7 @@ describe('CreateTextStrategy', () => {
       const mockCreateElement = mock.fn()
       mock.method(React, 'createElement', mockCreateElement)
 
-      strategy.createElement(node as never as Text)
+      strategy.createElement(node as never)
 
       expect(mockCreateElement.mock.callCount()).toEqual(2)
       expect(mockCreateElement.mock.calls[0].arguments).toEqual([
@@ -74,7 +72,7 @@ describe('CreateTextStrategy', () => {
       const mockCreateElement = mock.fn()
       mock.method(React, 'createElement', mockCreateElement)
 
-      strategy.createElement(node as never as Text)
+      strategy.createElement(node as never)
 
       expect(mockCreateElement.mock.callCount()).toEqual(2)
       expect(mockCreateElement.mock.calls[0].arguments).toEqual([

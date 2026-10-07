@@ -16,7 +16,7 @@ export class CreateLinkStrategy {
     if ('componentProperties' in node) {
       const style = (node.componentProperties as ComponentProperties).Style
 
-      variant = style?.value?.toString().toLocaleLowerCase()
+      variant = style?.value.toString().toLocaleLowerCase()
     }
 
     return React.createElement('Link', { variant, href: node.name })

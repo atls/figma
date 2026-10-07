@@ -2,6 +2,7 @@
   "name": "figma",
   "private": true,
   "license": "BSD-3-Clause",
+  "type": "module",
   "workspaces": [
     "assets/*",
     "fragments/*",
@@ -12,19 +13,18 @@
   "scripts": {
     "detect-circular": "madge . -c"
   },
-  "devDependencies": {
-    "@atls/code-runtime": "2.1.9",
-    "@atls/config-jest": "1.1.1",
-    "@jest/core": "29.7.0",
-    "@types/jest": "29.5.12",
-    "@types/node": "22.10.2",
-    "eslint": "9.14.0",
-    "madge": "7.0.0",
-    "prettier": "2.8.3",
-    "typescript": "5.5.4"
+  "lint-staged": {
+    "*.{yml,yaml,json,graphql,md}": "yarn format",
+    "*.{js,mjs,cjs,jsx,ts,tsx}": [
+      "yarn format",
+      "yarn lint"
+    ],
+    "*.{test,spec}.{ts,tsx}": "yarn test unit"
   },
-  "packageManager": "yarn@4.9.2",
-  "formatterIgnorePatterns": [
-    "**/*/CHANGELOG.md"
-  ]
+  "devDependencies": {
+    "@atls/raijin": "1.1.1",
+    "@types/node": "22.10.2",
+    "madge": "7.0.0"
+  },
+  "packageManager": "yarn@4.18.0"
 }

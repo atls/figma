@@ -35,7 +35,7 @@ describe('CreateLinkStrategy', () => {
       const mockCreateElement = mock.fn()
       mock.method(React, 'createElement', mockCreateElement)
 
-      strategy.createElement(node as never as Instance)
+      strategy.createElement(node as never)
 
       expect(mockCreateElement.mock.callCount()).toEqual(1)
       expect(mockCreateElement.mock.calls[0].arguments).toEqual([

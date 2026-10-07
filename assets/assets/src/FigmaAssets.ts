@@ -1,8 +1,9 @@
 import type { Node }       from 'figma-js'
 
+import path                from 'node:path'
+
 import fs                  from 'fs-extra'
 import fetch               from 'node-fetch'
-import path                from 'path'
 
 import { FigmaFileLoader } from '@atls/figma-file-loader'
 

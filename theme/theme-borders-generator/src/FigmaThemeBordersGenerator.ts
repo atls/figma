@@ -18,15 +18,18 @@ export class FigmaThemeBordersGenerator extends FigmaThemeGenerator {
     const borders: Map<string, Border> = new Map()
 
     walk(nodes, (node: Node) => {
-      if ('strokes' in node && Array.isArray(node.strokes) && node.strokes?.length) {
-        const weight = node.strokeWeight?.toString() || '1'
+      if ('strokes' in node && Array.isArray(node.strokes) && node.strokes.length) {
+        const { strokeWeight } = node as Partial<typeof node>
+        const weight = strokeWeight?.toString() || '1'
 
         node.strokes.forEach((stroke: Paint) => {
-          if (!stroke.type || !stroke.color) {
+          const { type: paintType } = stroke as Partial<Paint>
+
+          if (!paintType || !stroke.color) {
             return
           }
 
-          const type = String(stroke.type).toLowerCase()
+          const type = String(paintType).toLowerCase()
           const color = stroke.opacity
             ? toColorOpacityString(stroke.color, stroke.opacity)
             : toColorString(stroke.color)

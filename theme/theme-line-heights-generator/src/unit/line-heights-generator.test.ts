@@ -1,6 +1,4 @@
-import type { FileResponse }              from 'figma-js'
 import type { Node }                      from 'figma-js'
-import type { Text }                      from 'figma-js'
 
 import { describe }                       from 'node:test'
 import { beforeEach }                     from 'node:test'
@@ -45,7 +43,7 @@ describe('FigmaThemeLineHeightsGenerator', () => {
       },
     }
 
-    const result = generator.generate(file as never as FileResponse)
+    const result = generator.generate(file as never)
 
     expect(result).toEqual({
       name: 'lineHeights',
@@ -63,7 +61,7 @@ describe('FigmaThemeLineHeightsGenerator', () => {
       { type: 'TEXT', style: { fontSize: 16, lineHeightPx: 24 } },
     ]
 
-    const result = strategy.execute(textNodes as never as Array<Text>)
+    const result = strategy.execute(textNodes as never)
 
     expect(result).toEqual({
       [`${Group.NORMAL}.default`]: '1.3',
@@ -84,7 +82,7 @@ describe('FigmaThemeLineHeightsGenerator', () => {
       },
     }
 
-    const result = generator.generate(file as never as FileResponse)
+    const result = generator.generate(file as never)
 
     expect(result).toEqual({
       name: 'lineHeights',

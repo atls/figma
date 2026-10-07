@@ -2,8 +2,9 @@ import type { FigmaThemeGeneratorValues } from '@atls/figma-theme-generator-comm
 import type { FileResponse }              from 'figma-js'
 import type { Node }                      from 'figma-js'
 
-import { promises as fs }                 from 'fs'
-import path                               from 'path'
+import { promises as fs }                 from 'node:fs'
+import path                               from 'node:path'
+
 import prettier                           from 'prettier'
 
 import { FigmaThemeBordersGenerator }     from '@atls/figma-theme-borders-generator'
@@ -104,7 +105,9 @@ export class FigmaTheme {
   private getComponentsWithPrefix(nodes: Array<Node>, prefix: string): Array<Node> {
     const filteredNodes: Array<Node> = []
     walk(nodes, (node: Node) => {
-      if (node?.name?.startsWith(prefix)) {
+      const { name } = node as Partial<Node>
+
+      if (name?.startsWith(prefix)) {
         filteredNodes.push(node)
       }
     })

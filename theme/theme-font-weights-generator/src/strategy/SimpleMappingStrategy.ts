@@ -6,9 +6,9 @@ import { Strategy }    from './Strategy.js'
 export class SimpleMappingStrategy extends Strategy {
   fillWeights(fontWeights: Array<number>): object {
     return fontWeights.reduce((result, fontWeight) => {
-      const fontWeightItem = FontWeights.filter((item) => item.value === fontWeight)[0]
+      const fontWeightItem = FontWeights.find((item) => item.value === fontWeight)
 
-      if (fontWeight) return { ...result, [fontWeightItem?.weight]: String(fontWeight) }
+      if (fontWeight) return { ...result, [String(fontWeightItem?.weight)]: String(fontWeight) }
 
       return false
     }, {})
