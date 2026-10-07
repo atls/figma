@@ -18,7 +18,7 @@ export const run = async (
   const absoluteThemeFilePath = join(process.cwd(), themeFilePath)
   const exports = processFile(absoluteThemeFilePath)
 
-  const theme = Object.values(exports)?.[0] as Record<string, Record<string, string>>
+  const theme = Object.values(exports)[0] as Record<string, Record<string, string>> | undefined
 
   assert.ok(
     theme,

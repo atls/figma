@@ -1,5 +1,3 @@
-import type { Instance }      from 'figma-js'
-
 import { describe }           from 'node:test'
 import { beforeEach }         from 'node:test'
 import { it }                 from 'node:test'
@@ -41,7 +39,7 @@ describe('CreateIconStrategy', () => {
       const mockCreateElement = mock.fn()
       mock.method(React, 'createElement', mockCreateElement)
 
-      strategy.createElement(mockNode as never as Instance)
+      strategy.createElement(mockNode as never)
 
       expect(mockCreateElement.mock.callCount()).toEqual(1)
       expect(mockCreateElement.mock.calls[0].arguments).toEqual([
@@ -70,7 +68,7 @@ describe('CreateIconStrategy', () => {
       const mockCreateElement = mock.fn()
       mock.method(React, 'createElement', mockCreateElement)
 
-      strategy.createElement(mockNode as never as Instance)
+      strategy.createElement(mockNode as never)
 
       expect(mockCreateElement.mock.callCount()).toEqual(1)
       expect(mockCreateElement.mock.calls[0].arguments).toEqual([

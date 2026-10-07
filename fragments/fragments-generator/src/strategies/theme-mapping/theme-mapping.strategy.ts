@@ -11,7 +11,7 @@ import { THEME_KEY_PREFIX }     from '../strategies.constants.js'
 import { colorsIgnorePatterns } from '../strategies.constants.js'
 
 export class ThemeMappingStrategy {
-  private theme: Record<string, Record<string, string>> = {}
+  private theme: Record<string, Record<string, string> | undefined> = {}
 
   constructor(theme: Record<string, Record<string, string>>) {
     this.theme = theme
@@ -84,7 +84,7 @@ export class ThemeMappingStrategy {
     lineHeightPercentFontSize: TypeStyle['lineHeightPercentFontSize'],
     lineHeightPx?: TypeStyle['lineHeightPx']
   ): string | undefined {
-    const lineHeight = ((lineHeightPercentFontSize || 100) / 100)?.toFixed(1)
+    const lineHeight = ((lineHeightPercentFontSize || 100) / 100).toFixed(1)
 
     const lineHeightPxString = lineHeightPx ? toPxString(lineHeightPx) : undefined
 

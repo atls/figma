@@ -4,7 +4,7 @@ import type { Color }               from 'figma-js'
 
 import namer                        from 'color-namer'
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
+// eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-explicit-any
 export const isColor = (node: any): node is Color => node.r && node.g && node.b && node.a
 
 export const toAverage = (node: Color): number => ((node.r + node.g + node.b) / 3) * node.a
@@ -38,16 +38,17 @@ export const toColorName = (color: string, skip: Array<string> = []): string => 
   try {
     const names: Record<Palette, Array<NamerColor>> = namer(color)
 
-    const [appropriate] = namespaces
+    const appropriate = namespaces
       .map((namespace) => {
-        const [item] = names[namespace].filter(
+        const item = names[namespace].find(
           (current: NamerColor) => !skip.includes(formatColorName(current.name))
         )
 
         return item
       })
-      .filter(Boolean)
+      .filter((item): item is NamerColor => Boolean(item))
       .sort((a, b) => a.distance - b.distance)
+      .at(0)
 
     if (appropriate) {
       return formatColorName(appropriate.name)

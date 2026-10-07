@@ -1,4 +1,3 @@
-import type { FileResponse }          from 'figma-js'
 import type { Node }                  from 'figma-js'
 
 import { describe }                   from 'node:test'
@@ -66,7 +65,7 @@ describe('FigmaThemeShadowsGenerator', () => {
       },
     }
 
-    const result = generator.generate(file as never as FileResponse)
+    const result = generator.generate(file as never)
 
     expect(result).toEqual({
       name: 'shadows',
@@ -90,7 +89,7 @@ describe('FigmaThemeShadowsGenerator', () => {
       },
     }
 
-    const result = generator.generate(file as never as FileResponse)
+    const result = generator.generate(file as never)
 
     expect(result).toEqual({
       name: 'shadows',

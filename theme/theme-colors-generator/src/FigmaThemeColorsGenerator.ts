@@ -58,8 +58,12 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
       return { background, font, border }
     }
 
-    if ('backgroundColor' in state && state.backgroundColor) {
-      background = toColorString(state.backgroundColor)
+    if ('backgroundColor' in state) {
+      const { backgroundColor } = state as Partial<typeof state>
+
+      if (backgroundColor) {
+        background = toColorString(backgroundColor)
+      }
     }
 
     if ('children' in state) {
@@ -67,8 +71,10 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
       font = text ? this.getColor(text) : font
     }
 
-    if ('strokes' in state && state.strokes?.[0]?.color) {
-      border = toColorOpacityString(state.strokes[0].color, state.strokes[0]?.opacity || 1)
+    const stroke = 'strokes' in state ? state.strokes.at(0) : undefined
+
+    if (stroke?.color) {
+      border = toColorOpacityString(stroke.color, stroke.opacity || 1)
     }
 
     return { background, font, border }
@@ -115,7 +121,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
 
           const buttonState = buttonStatesSet.get(this.formatString(style))
           const formattedStyle = this.formatString(style)
-          const formattedState = this.formatString(state) as keyof typeof buttonState
+          const formattedState = this.formatString(state) as keyof ButtonState
 
           if (buttonState?.[formattedState]) return
 
@@ -153,7 +159,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
 
       if ('color' in node && node.color && isColor(node.color)) {
         const color = toColorString(node.color)
-        if (!colors[color]) {
+        if (!Object.hasOwn(colors, color)) {
           colors[color] = node.color
         }
       }
@@ -196,8 +202,8 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
             name: item.name,
             default: item.children[0],
             hover: item.children[1],
-            pressed: item.children[2] !== undefined ? item.children[2] : item.children[0],
-            disabled: item.children[3] !== undefined ? item.children[3] : item.children[0],
+            pressed: item.children.at(2) ?? item.children[0],
+            disabled: item.children.at(3) ?? item.children[0],
           }
 
           buttonStates.push({
@@ -229,7 +235,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
             active: item.children[1],
             error: item.children[2],
             focus: item.children[3],
-            disabled: item.children[4] !== undefined ? item.children[4] : item.children[0],
+            disabled: item.children.at(4) ?? item.children[0],
           }
 
           inputStates.push({
@@ -250,7 +256,7 @@ export class FigmaThemeColorsGenerator extends FigmaThemeGenerator {
 
       if ('color' in node && node.color && isColor(node.color)) {
         const color = toColorString(node.color)
-        if (!colors[color]) {
+        if (!Object.hasOwn(colors, color)) {
           colors[color] = node.color
         }
       }

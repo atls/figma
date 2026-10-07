@@ -1,4 +1,3 @@
-import type { FileResponse }        from 'figma-js'
 import type { Node }                from 'figma-js'
 
 import { describe }                 from 'node:test'
@@ -46,7 +45,7 @@ describe('FigmaThemeRadiiGenerator', () => {
       },
     }
 
-    const result = generator.generate(file as never as FileResponse)
+    const result = generator.generate(file as never)
 
     expect(result).toEqual({
       name: 'radii',
@@ -69,7 +68,7 @@ describe('FigmaThemeRadiiGenerator', () => {
       { cornerRadius: 20 },
     ]
 
-    const result = strategy.execute(nodes as never as ReadonlyArray<Node>)
+    const result = strategy.execute(nodes as never)
 
     expect(result).toEqual({
       [`${Group.SMALL}.semiDefault`]: '2px',
@@ -93,7 +92,7 @@ describe('FigmaThemeRadiiGenerator', () => {
       },
     }
 
-    const result = generator.generate(file as never as FileResponse)
+    const result = generator.generate(file as never)
 
     expect(result).toEqual({
       name: 'radii',

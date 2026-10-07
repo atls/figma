@@ -1,63 +1,22 @@
-
-
 ## [2.0.17](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.15...@atls/figma-theme@2.0.17) (2025-06-25)
-
-
-
-
-
 
 ## [2.0.15](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.15...@atls/figma-theme@2.0.15) (2025-06-18)
 
-
-
-
-
-
 ## [2.0.14](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.13...@atls/figma-theme@2.0.14) (2025-06-18)
-
-
-
-
-
 
 ## [2.0.13](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.13...@atls/figma-theme@2.0.13) (2025-06-18)
 
-
-
-
-
-
 ## [2.0.13](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.12...@atls/figma-theme@2.0.13) (2025-06-05)
-
-
-
-
-
 
 ## [2.0.12](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.11...@atls/figma-theme@2.0.12) (2025-06-05)
 
-
-
-
-
-
 ## [2.0.11](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.10...@atls/figma-theme@2.0.11) (2025-06-04)
-
-
-
-
-
 
 ## [2.0.10](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.9...@atls/figma-theme@2.0.10) (2025-01-17)
 
-
 ### Features
 
-
-* **figma:** link and image fragment generator ([#50](https://github.com/atls/figma/issues/50)) ([5c7bf01](https://github.com/atls/figma/commit/5c7bf013046f44d038a763f9ee2d8ad263c2a69f))
-
-
+- **figma:** link and image fragment generator ([#50](https://github.com/atls/figma/issues/50)) ([5c7bf01](https://github.com/atls/figma/commit/5c7bf013046f44d038a763f9ee2d8ad263c2a69f))
 
 ## [2.0.9](https://github.com/atls/figma/compare/@atls/figma-theme@2.0.8...@atls/figma-theme@2.0.9) (2025-01-15)
 

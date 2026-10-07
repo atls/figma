@@ -9,7 +9,7 @@ export const isFrame = (node: Node): node is Frame => node.type === 'FRAME'
 
 export const isInstance = (node: Node): node is Instance => node.type === 'INSTANCE'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const walk = (targetNode: any, cb: (node: any) => any): void => {
   if (
     !targetNode ||

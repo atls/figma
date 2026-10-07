@@ -13,7 +13,8 @@ export class CreateTextStrategy extends ThemeMappingStrategy {
   }
 
   createElement(node: Text): ReactElement {
-    const { characters, style, fills } = node
+    const { style, fills } = node
+    const { characters } = node as Partial<Text>
 
     const childrenElement = React.createElement('FormattedMessage', {
       id: characters?.replaceAll(' ', '_').toLowerCase() || 'text',
@@ -27,11 +28,10 @@ export class CreateTextStrategy extends ThemeMappingStrategy {
     style: TypeStyle,
     fills: ReadonlyArray<Paint>
   ): Record<string, number | string | undefined> {
-    const fontSize = style?.fontSize || undefined
-    const fontWeight = style?.fontWeight || undefined
-    const lineHeightPercentFontSize = style?.lineHeightPercentFontSize || undefined
-    const lineHeightPx = style?.lineHeightPx || undefined
-    const textAlignHorizontal = style?.textAlignHorizontal || undefined
+    const fontSize = style.fontSize || undefined
+    const { fontWeight, textAlignHorizontal } = style
+    const lineHeightPercentFontSize = style.lineHeightPercentFontSize || undefined
+    const lineHeightPx = style.lineHeightPx || undefined
 
     return {
       color: this.getColor(fills),

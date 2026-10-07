@@ -16,4 +16,4 @@ export interface ComponentProperty {
   value: boolean | string
 }
 
-export type ComponentProperties = Record<string, ComponentProperty>
+export type ComponentProperties = Partial<Record<string, ComponentProperty>>

@@ -1,4 +1,3 @@
-import type { FileResponse }        from 'figma-js'
 import type { Text }                from 'figma-js'
 import type { Node }                from 'figma-js'
 
@@ -52,7 +51,7 @@ describe('FigmaThemeFontsGenerator', () => {
       },
     }
 
-    const result = generator.generate(file as never as FileResponse)
+    const result = generator.generate(file as never)
 
     expect(result).toEqual({
       name: 'fonts',
@@ -97,7 +96,7 @@ describe('FigmaThemeFontsGenerator', () => {
       },
     }
 
-    const result = generator.generate(file as never as FileResponse)
+    const result = generator.generate(file as never)
 
     expect(result).toEqual({
       name: 'fonts',

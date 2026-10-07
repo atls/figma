@@ -1,14 +1,14 @@
 import type { FileResponse } from 'figma-js'
 import type { Node }         from 'figma-js'
 
+import { promises as fs }    from 'node:fs'
+import path                  from 'node:path'
 import { describe }          from 'node:test'
 import { beforeEach }        from 'node:test'
 import { it }                from 'node:test'
 import { mock }              from 'node:test'
 
-import { promises as fs }    from 'fs'
 import { expect }            from 'playwright/test'
-import path                  from 'path'
 import prettier              from 'prettier'
 
 import { FigmaTheme }        from '../FigmaTheme.js'

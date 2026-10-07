@@ -17,7 +17,9 @@ export class CreateInputStrategy {
   createElement(node: Instance): ReactElement {
     if ('componentProperties' in node) {
       const type = (node.componentProperties as ComponentProperties).Type
-      const field = node.children.find((child) => child.name?.toLocaleLowerCase() === 'field')
+      const field = node.children.find(
+        (child) => (child as Partial<typeof child>).name?.toLocaleLowerCase() === 'field'
+      )
 
       let placeholder: string | undefined
 

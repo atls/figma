@@ -31,7 +31,7 @@ import { isIcon }                   from './create-fragment.utils.js'
 import { isInput }                  from './create-fragment.utils.js'
 
 export class CreateFragmentStrategy {
-  private elements: Record<string, TreeElement> = {}
+  private elements: Record<string, TreeElement | undefined> = {}
 
   private text: CreateTextStrategy
 
@@ -64,7 +64,7 @@ export class CreateFragmentStrategy {
       }
 
       if (isIcon(node)) {
-        walk(node?.children, (child: Node) => ignoreNodes.add(child.id))
+        walk(node.children, (child: Node) => ignoreNodes.add(child.id))
 
         this.elements[node.id] = {
           element: this.icon.createElement(node),
@@ -79,7 +79,7 @@ export class CreateFragmentStrategy {
         this.button.getImports().forEach((value) => imports.add(value))
 
         const buttonChildren = new Set<string>()
-        walk(node?.children, (child: Node) => buttonChildren.add(child.id))
+        walk(node.children, (child: Node) => buttonChildren.add(child.id))
 
         this.elements[node.id] = {
           element: this.button.createElement(node),
@@ -91,7 +91,7 @@ export class CreateFragmentStrategy {
       if (isInput(node)) {
         this.input.getImports().forEach((value) => imports.add(value))
 
-        walk(node?.children, (child: Node) => ignoreNodes.add(child.id))
+        walk(node.children, (child: Node) => ignoreNodes.add(child.id))
 
         this.elements[node.id] = {
           element: this.input.createElement(node),
@@ -105,7 +105,7 @@ export class CreateFragmentStrategy {
 
         this.elements[node.id] = {
           element: this.link.createElement(node),
-          childrenIds: node?.children.map((child) => child.id) || [],
+          childrenIds: node.children.map((child) => child.id),
           parentId: this.findParentId(node.id),
         }
       }
@@ -125,7 +125,7 @@ export class CreateFragmentStrategy {
 
         this.elements[node.id] = {
           element: this.box.createElement(node),
-          childrenIds: node?.children.map((child) => child.id) || [],
+          childrenIds: node.children.map((child) => child.id),
           parentId: this.findParentId(node.id),
         }
       }
@@ -153,7 +153,8 @@ export class CreateFragmentStrategy {
       }
     })
 
-    const rootNodes = Object.values(this.elements).filter((element) => !element.parentId)
+    const rootNodes = Object.values(this.elements).filter((element): element is TreeElement =>
+      Boolean(element && !element.parentId))
 
     const fragment = format(this.createFragmentElement(rootNodes), {
       plugins: [plugins.ReactElement],
@@ -190,16 +191,19 @@ export class CreateFragmentStrategy {
     const element = cloneElement(
       rootElement.element,
       rootElement.element.props as Partial<Attributes> | undefined,
-      rootElement.childrenIds.map((id) =>
-        this.elements[id] ? this.createElementsTree(this.elements[id]) : null)
+      rootElement.childrenIds.map((id) => {
+        const child = this.elements[id]
+
+        return child ? this.createElementsTree(child) : null
+      })
     )
 
     return element
   }
 
   private findParentId(childrenId: string): string | null {
-    const parentId = Object.entries(this.elements).find((element) =>
-      element[1].childrenIds.includes(childrenId))?.[0]
+    const parentId = Object.entries(this.elements).find(([, element]) =>
+      element?.childrenIds.includes(childrenId))?.[0]
 
     return parentId || null
   }

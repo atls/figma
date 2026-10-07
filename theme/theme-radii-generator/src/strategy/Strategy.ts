@@ -17,7 +17,7 @@ export abstract class Strategy {
         node.rectangleCornerRadii &&
         Array.isArray(node.rectangleCornerRadii)
       ) {
-        node.rectangleCornerRadii?.forEach((radius: number) => {
+        node.rectangleCornerRadii.forEach((radius: number) => {
           const roundedRadius = Math.round(radius)
           stat.set(roundedRadius, (stat.get(roundedRadius) || 0) + 1)
         })

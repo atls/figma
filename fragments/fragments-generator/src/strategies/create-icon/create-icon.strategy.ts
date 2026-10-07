@@ -28,9 +28,11 @@ export class CreateIconStrategy extends ThemeMappingStrategy {
   }
 
   private getChildWithFills(children: ReadonlyArray<Node>): Vector | undefined {
-    const child = children.find((item) => item.type === 'VECTOR' && item.fills?.length)
+    const child = children.find(
+      (item) => item.type === 'VECTOR' && (item as Partial<Vector>).fills?.length
+    )
 
-    return child && child.type === 'VECTOR' ? child : undefined
+    return child?.type === 'VECTOR' ? child : undefined
   }
 
   private createIconName(nodeName: string): string {
